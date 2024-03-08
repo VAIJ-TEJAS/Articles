@@ -37,7 +37,9 @@ button = tk.Button(window, text="Click here!", command=button_click)
 button.pack()
 ```
 ![button](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_button.png)
+
 After clicking the button:
+
 ![button_clicked](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_button_output.png)
 
 - **Entry**: A text field where users can input text or numbers. It is often used for data entry or search functionality.
@@ -111,7 +113,9 @@ menu_bar.add_cascade(label="Click to see options", menu=file_menu)
 window.config(menu=menu_bar)
 ```
 ![menu](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_menu.png)
+
 After selecting "Print Something":
+
 ![menu_output](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_menu_output.png)
 
 These widgets form the core building blocks of Tkinter GUI applications and are commonly used in various projects to create user-friendly interfaces.
@@ -192,20 +196,134 @@ The line `entry = tk.Entry(window)` creates a Text Entry widget named `entry` wi
  - **Integration with SQLite**: If your Tkinter app needs to store and manage data locally, you can use SQLite, a lightweight relational database. It can be used to store user preferences or application settings. By integrating SQLite, you can create a database within your app to store and retrieve data as needed.
 
 2. Tkinter also provides advanced widgets beyond the basic ones, for example:
- - A **canvas** where you can draw shapes or create diagrams.
  - A **treeview** to display hierarchical data, like a file explorer.
+    ```sh
+    import tkinter as tk
+    from tkinter import ttk     #for themed widgets
+    window = tk.Tk()
+    window.geometry("640x300")
+    tree = ttk.Treeview(window)
+    tree["columns"] = ("Fruits", "Quantity")
+    tree.heading("#0", text="Sr. No.")     #First column (index=0) will be Sr. No.
+    tree.heading("Fruits", text="Fruits")
+    tree.heading("Quantity", text="Quantity (kg)")
+    tree.insert("", tk.END, text="1", values=("Apple", 30))
+    tree.insert("", tk.END, text="2", values=("Orange", 25))
+    tree.insert("", tk.END, text="3", values=("Mango", 29))
+    tree.pack()
+    window.mainloop()
+    ```
+    ![trreview](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_treeview.png)
+   
  - A **notebook** to organize your app into different tabs, like in a web browser.
+    ```sh
+    import tkinter as tk
+    from tkinter import ttk     #for themed widgets
+    window = tk.Tk()
+    window.geometry("457x335")
+    notebook = ttk.Notebook(window)
+    tab1 = ttk.Frame(notebook)
+    tab2 = ttk.Frame(notebook)
+    tab3 = ttk.Frame(notebook)
+    label1 = tk.Label(tab1, text="This is Tab 1")     #for tab 1
+    label1.pack()
+    entry2 = tk.Entry(tab2)     #for tab 2
+    entry2.pack()
+    check_var = tk.BooleanVar()
+    check_button3 = tk.Checkbutton(tab3, text="This is Tab 3", variable=check_var)     #for tab 3
+    check_button3.pack()
+    notebook.add(tab1, text="Tab 1")
+    notebook.add(tab2, text="Tab 2")
+    notebook.add(tab3, text="Tab 3")
+    notebook.pack()
+    window.mainloop()
+    ```
+    ![Tab1](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_notebook1.png)
+   
+    ![Tab2](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_notebook2.png)
+   
+    ![Tab3](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_notebook3.png)
+   
  - A **progressbar** to show how far along a task is, like when you're downloading a file.
+    ```sh
+    import tkinter as tk
+    from tkinter import ttk
+    import time
+    
+    def start_task():
+        progress_bar.start(10)     #start the progressbar (animation is updated every 10 milliseconds)
+        window.after(3000, stop_task)     #simulate task completion after 3 seconds
+    
+    def stop_task():
+        progress_bar.stop()      #stop the progressbar
+    
+    window = tk.Tk()
+    window.geometry("457x335")
+    progress_bar = ttk.Progressbar(window, orient="horizontal", length=200, mode="indeterminate")
+    progress_bar.pack()
+    start_button = tk.Button(window, text="Start Task", command=start_task)
+    start_button.pack(pady=20)
+    window.mainloop()
+    ```
+    ![progressbar](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_progressbar.png)
+   
  Whether you're building a game, a productivity tool, or a social networking app, there's a widget for every occasion.
 
 3. Tkinter allows implementation of file handling features in your Tkinter application:
  - Tkinter comes with a handy tool called `filedialog`, which pops up a window where users can pick a file from their computer.
  - Your app can help users create, open, save, and even edit files like documents, images, or spreadsheets.
 
-4. Advanced Layout Management can be used to make your Tkinter app look polished. Layout management helps you move widgets around and make your app look just the way you want using  `grid`, `place`, and `pack managers`, etc.
+4. Advanced Layout Management can be used to make your Tkinter app look polished. Layout management helps you move widgets around and make your app look just the way you want using  `grid`, `place`, and `pack` managers.
  - **Grid**: You can place widgets in rows and columns, and they will organize neatly into place.
+    ```sh
+    import tkinter as tk
+    window = tk.Tk()
+    window.geometry("457x335")
+    label1 = tk.Label(window, text="Subject")
+    label2 = tk.Label(window, text="Marks")
+    entry1 = tk.Entry(window)     #Widgets
+    entry2 = tk.Entry(window)
+    entry3 = tk.Entry(window)
+    entry4 = tk.Entry(window)
+    label1.grid(row=0, column=0)     #Layout
+    label2.grid(row=0, column=1)
+    entry1.grid(row=1, column=0)
+    entry2.grid(row=1, column=1)
+    entry3.grid(row=2, column=0)
+    entry4.grid(row=2, column=1)
+    window.mainloop()
+    ```
+    ![grid](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_grid.png)
+
  - **Pack**: You can stack widgets on top of each other or arrange them side by side, and Tkinter will figure out how to fit them all in.
+    ```sh
+    import tkinter as tk
+    window = tk.Tk()
+    window.geometry("457x335")
+    button1 = tk.Button(window, text="Left")     #Widgets
+    button2 = tk.Button(window, text="Top")
+    button3 = tk.Button(window, text="Right")
+    button4 = tk.Button(window, text="Bottom")
+    button1.pack(side=tk.LEFT)     #Layout
+    button2.pack(side=tk.TOP)
+    button3.pack(side=tk.RIGHT)
+    button4.pack(side=tk.BOTTOM)
+    window.mainloop()
+    ```
+    ![pack](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_pack.png)
+   
  - **Place**: You can specify exactly where you want each widget to go by giving it coordinates, like x and y coordinates on a graph.
+    ```sh
+    import tkinter as tk
+    window = tk.Tk()
+    window.geometry("457x335")
+    label1 = tk.Label(window, text="x_50_y_50")     #Widgets
+    label2 = tk.Label(window, text="x_200_y_200")
+    label1.place(x=50, y=50)     #Layout
+    label2.place(x=200, y=200)
+    window.mainloop()
+    ```
+    ![place](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_place.png)
 
 
 ### Advantages
