@@ -1,4 +1,4 @@
-![image](https://github.com/Parinitha-Samaga/Article_img/assets/147930872/9af26bf8-aa99-49b3-9073-2b4e008bd88b)# Introduction to Tkinter
+# Introduction to Tkinter
 
 Embarking on the journey of **Graphical User Interface (GUI)** development in **Python** opens up a realm of possibilities, with **Tkinter** emerging as a stalwart companion. Whether you're a novice programmer venturing into the world of GUIs or a seasoned developer seeking simplicity and efficiency, Tkinter is a reliable toolkit. In this article, we'll unravel the intricacies of Tkinter, explore its fundamental **widgets**, discuss its advantages and disadvantages, and equip you with the knowledge to excel in Python GUI development.
 
