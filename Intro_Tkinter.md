@@ -162,7 +162,7 @@ paned_window.add(frame2)
 ```
 ![panedwindow1](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_paned1.png)
 
-After dreagging the divider to the left:
+After dragging the divider to the left:
 
 ![panedwindow2](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_paned2.png)
 
