@@ -1,4 +1,4 @@
-# Introduction to Tkinter
+![image](https://github.com/Parinitha-Samaga/Article_img/assets/147930872/9af26bf8-aa99-49b3-9073-2b4e008bd88b)# Introduction to Tkinter
 
 Embarking on the journey of **Graphical User Interface (GUI)** development in **Python** opens up a realm of possibilities, with **Tkinter** emerging as a stalwart companion. Whether you're a novice programmer venturing into the world of GUIs or a seasoned developer seeking simplicity and efficiency, Tkinter is a reliable toolkit. In this article, we'll unravel the intricacies of Tkinter, explore its fundamental **widgets**, discuss its advantages and disadvantages, and equip you with the knowledge to excel in Python GUI development.
 
@@ -49,6 +49,44 @@ entry.pack()
 ```
 ![entry](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_entry.png)
 
+- **Text**: A text field that provides a multi-line text editing area for users to input or display text.
+```sh
+text = tk.Text(window, height=5, width=30)
+text.pack()
+```
+![text](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_text.png)
+
+- **Scale**: Allows users to select a value within a range by dragging a slider. It is useful for selecting values like volume, brightness, etc.
+```sh
+def update_value(value):
+    label.config(text=f"Volume Level: {value}")
+
+scale = tk.Scale(window, from_=0, to=100, orient=tk.HORIZONTAL, command=update_value)     #create a scale to select values from 0 to 100
+scale.pack()
+label = tk.Label(window, text="Volume Level: ")
+label.pack()
+```
+![scale](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_scale.png)
+
+- **Spinbox**: A numerical input field with up and down arrow buttons for incrementing or decrementing the value.
+```sh
+spinbox = tk.Spinbox(window, from_=0, to=10)
+spinbox.pack()
+```
+![spinbox](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_spinbox.png)
+
+- **Separator**: A horizontal or vertical line to visually separate sections or groups of widgets.
+```sh
+from tkinter import ttk     #for themed widgets
+label1 = tk.Label(window, text="This is above the separator.")
+label1.pack()
+separator = ttk.Separator(window, orient=tk.HORIZONTAL)
+separator.pack(fill=tk.X)
+label2 = tk.Label(window, text="This is below the separator.")
+label2.pack()
+```
+![separator](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_separator.png)
+
 - **Checkbutton**: A checkbox that allows users to select or deselect an option.
 ```sh
 check_var = tk.BooleanVar()     #To keep track of the checkbox's state (checked or unchecked)
@@ -80,7 +118,21 @@ for i in range(30):
     listbox.insert(tk.END, f"Item {i+1}")
 ```
 ![scroll_list1](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_scroll_list1.png)
+
 ![scroll_list2](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_scroll_list2.png)
+
+- **ColorChooser**: A dialog for users to select a color. It provides a graphical interface for choosing colors using a palette or entering RGB values.
+```sh
+from tkinter import colorchooser
+
+def choose_color():
+    color = colorchooser.askcolor()
+    print("Selected color:", color)
+
+button = tk.Button(window, text="Choose Color", command=choose_color)
+button.pack()
+```
+![color](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_color.png)
 
 - **Frame**: A container used to group and organize other widgets. It is often used for layout purposes to create sections or divisions within a window.
 ```sh
@@ -98,6 +150,21 @@ canvas.pack()
 canvas.create_rectangle(50, 25, 150, 75, fill="red")     #draw a red-coloured rectangle
 ```
 ![canvas](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_canvas.png)
+
+- **PanedWindow**: A container for arranging multiple panes or frames with adjustable sizes. It allows users to resize panes by dragging the divider between them.
+```sh
+paned_window = tk.PanedWindow(window, orient=tk.HORIZONTAL)
+paned_window.pack(fill=tk.BOTH, expand=True)     #will expand both horizontally and vertically
+frame1 = tk.Frame(paned_window, width=228, height=200, background="red")
+frame2 = tk.Frame(paned_window, width=228, height=200, background="blue")
+paned_window.add(frame1)
+paned_window.add(frame2)
+```
+![panedwindow1](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_paned1.png)
+
+After dreagging the divider to the left:
+
+![panedwindow2](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_paned2.png)
 
 - **Menu**: Creates a menu bar or dropdown menu with options and commands. It is often used for adding navigation, settings, and other functionality to the application's interface.
 ```sh
