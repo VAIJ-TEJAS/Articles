@@ -10,20 +10,112 @@ Tkinter, short for **Tk interface**, is a built-in Python library designed for c
 
 ### Exploring Basic Widgets
 
-Let's start by looking at some basic things you can create with Tkinter.
+Let's start by looking at some basic things you can create with Tkinter. The following snippets must be preceeded by:
+```sh
+import tkinter as tk
+window = tk.Tk()
+window.geometry("457x335")
+```
+and followed by:
+```sh
+window.mainloop()
+```
 
 - **Label**: Displays text or an image. It is a static element and doesn't allow user interaction.
+```sh
+label = tk.Label(window, text="This is a Label")
+label.pack()
+```
+![label_output](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_label.png)
+
 - **Button**: A clickable element that performs an action when pressed, such as submitting a form or triggering a function.
+```sh
+def button_click():
+    print("Button clicked")
+
+button = tk.Button(window, text="Click here!", command=button_click)
+button.pack()
+```
+![button](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_button.png)
+After clicking the button:
+![button_clicked](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_button_output.png)
+
 - **Entry**: A text field where users can input text or numbers. It is often used for data entry or search functionality.
+```sh
+entry = tk.Entry(window)
+entry.pack()
+```
+![entry](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_entry.png)
+
 - **Checkbutton**: A checkbox that allows users to select or deselect an option.
+```sh
+check_var = tk.BooleanVar()     #To keep track of the checkbox's state (checked or unchecked)
+check_button = tk.Checkbutton(window, text="Checkbox", variable=check_var)
+check_button.pack()
+```
+![checkbox](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_checkbox.png)
+
 - **Radiobutton**: A set of mutually exclusive buttons, allowing users to choose only one option from multiple choices.
+```sh
+radio_var = tk.StringVar()     #To track which radio button is selected
+radio_button1 = tk.Radiobutton(window, text="Option 1", variable=radio_var, value="Option 1")
+radio_button2 = tk.Radiobutton(window, text="Option 2", variable=radio_var, value="Option 2")
+radio_button1.pack()
+radio_button2.pack()
+```
+![radiobutton](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_radiobutton.png)
+
 - **Listbox**: A widget that displays a list of items from which users can select one or more options. It's often used for selecting items from a list or displaying results.
 - **Scrollbar**: Allows users to scroll through content that exceeds the visible area of a widget, such as a text box or list.
+```sh
+listbox = tk.Listbox(window)
+scrollbar = tk.Scrollbar(window)
+scrollbar.pack(side=tk.RIGHT, fill=tk.Y)     #scrollbar will be at the right side of the window and expands vertically 
+listbox.pack(side=tk.LEFT, fill=tk.BOTH)     #listbox will be at the left side of the window and expands horizontally and vertically 
+listbox.config(yscrollcommand=scrollbar.set)     #Attach scrollbar to listbox
+scrollbar.config(command=listbox.yview)
+for i in range(30):
+    listbox.insert(tk.END, f"Item {i+1}")
+```
+![scroll_list1](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_scroll_list1.png)
+![scroll_list2](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_scroll_list2.png)
+
 - **Frame**: A container used to group and organize other widgets. It is often used for layout purposes to create sections or divisions within a window.
+```sh
+frame = tk.Frame(window, bg="lightblue", bd=5)
+frame.pack()
+label = tk.Label(frame, text="Inside the Frame", bg="lightblue")
+label.pack()
+```
+![frame](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_frame.png)
+
 - **Canvas**: Provides a drawing area for creating graphics, shapes, and custom elements. It is used for creating diagrams, charts, and interactive visualizations.
+```sh
+canvas = tk.Canvas(window, width=200, height=100, bg="white")
+canvas.pack()
+canvas.create_rectangle(50, 25, 150, 75, fill="red")     #draw a red-coloured rectangle
+```
+![canvas](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_canvas.png)
+
 - **Menu**: Creates a menu bar or dropdown menu with options and commands. It is often used for adding navigation, settings, and other functionality to the application's interface.
+```sh
+def print_something():
+    print("You chose the first option")
+
+menu_bar = tk.Menu(window)
+file_menu = tk.Menu(menu_bar, tearoff=0)
+file_menu.add_command(label="Print Something", command=print_something)
+file_menu.add_separator()
+file_menu.add_command(label="Exit", command=window.quit)
+menu_bar.add_cascade(label="Click to see options", menu=file_menu)
+window.config(menu=menu_bar)
+```
+![menu](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_menu.png)
+After selecting "Print Something":
+![menu_output](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_menu_output.png)
 
 These widgets form the core building blocks of Tkinter GUI applications and are commonly used in various projects to create user-friendly interfaces.
+
 
 ### Basic Functionalities
 
