@@ -35,7 +35,7 @@ Let's dive into some code examples to see these concepts in action.
 import tkinter as tk
 window = tk.Tk()
 window.title("Welcome to Tkinter")
-window.geometry("900x700")
+window.geometry("457x335")
 label = tk.Label(window, text="Hello World!")
 label.pack()
 window.mainloop()
@@ -64,7 +64,7 @@ def hello():
 
 window = tk.Tk()
 window.title("Hello!")
-window.geometry("900x700")
+window.geometry("457x335")
 instruction_label = tk.Label(window, text="Enter your name:")
 instruction_label.pack()
 entry = tk.Entry(window)
