@@ -11,31 +11,31 @@ Tkinter, short for **Tk interface**, is a built-in Python library designed for c
 ### Exploring Basic Widgets
 
 Let's start by looking at some basic things you can create with Tkinter. The following snippets must be preceeded by:
-```sh
-import tkinter as tk
-window = tk.Tk()
-window.geometry("457x335")
-```
+
+    import tkinter as tk
+    window = tk.Tk()
+    window.geometry("457x335")
+
 and followed by:
-```sh
-window.mainloop()
-```
+
+    window.mainloop()
+
 
 - **Label**: Displays text or an image. It is a static element and doesn't allow user interaction.
-```sh
-label = tk.Label(window, text="This is a Label")
-label.pack()
-```
+
+    label = tk.Label(window, text="This is a Label")
+    label.pack()
+
 ![label_output](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_label.png)
 
 - **Button**: A clickable element that performs an action when pressed, such as submitting a form or triggering a function.
-```sh
-def button_click():
-    print("Button clicked")
 
-button = tk.Button(window, text="Click here!", command=button_click)
-button.pack()
-```
+    def button_click():
+        print("Button clicked")
+    
+    button = tk.Button(window, text="Click here!", command=button_click)
+    button.pack()
+
 ![button](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_button.png)
 
 After clicking the button:
@@ -43,17 +43,17 @@ After clicking the button:
 ![button_clicked](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_button_output.png)
 
 - **Entry**: A text field where users can input text or numbers. It is often used for data entry or search functionality.
-```sh
-entry = tk.Entry(window)
-entry.pack()
-```
+
+    entry = tk.Entry(window)
+    entry.pack()
+
 ![entry](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_entry.png)
 
 - **Text**: A text field that provides a multi-line text editing area for users to input or display text.
-```sh
-text = tk.Text(window, height=5, width=30)
-text.pack()
-```
+
+    text = tk.Text(window, height=5, width=30)
+    text.pack()
+
 ![text](https://github.com/Parinitha-Samaga/Article_img/blob/main/Tkinter_text.png)
 
 - **Scale**: Allows users to select a value within a range by dragging a slider. It is useful for selecting values like volume, brightness, etc.
