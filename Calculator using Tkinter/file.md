@@ -43,8 +43,8 @@ Next, we need to install Tkinter, which is included with Python by default. So, 
 In Python, the tkinter module is used for creating GUI applications. 
 Now let's import these required libraries along with other required modules:
 ```sh
-  import tkinter as tk
-  from tkinter import messagebox
+import tkinter as tk
+from tkinter import messagebox
 ```
 ## Explanation
 
