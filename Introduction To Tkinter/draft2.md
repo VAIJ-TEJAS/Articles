@@ -182,7 +182,7 @@ A horizontal or vertical line to visually separate sections or groups of widgets
 
 from tkinter import ttk #for themed widgets
 
-label1 = tk.Label(window, text="This is above the separator.")
+label1 = tk.Label(window, text="This statement appears above the separator.")
 
 label1.pack()
 
@@ -190,7 +190,7 @@ separator = ttk.Separator(window, orient=tk.HORIZONTAL)
 
 separator.pack(fill=tk.X)
 
-label2 = tk.Label(window, text="This is below the separator.")
+label2 = tk.Label(window, text="This statement appears below the separator.")
 
 label2.pack()
 
