@@ -304,23 +304,21 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 **Solution**: Restrict the input to a certain format or implement a safer method for evaluation, such as parsing the expression manually.
 Here's a safer approach to evaluate expressions using `ast.literal_eval()`:
 ```sh
-import ast
-
-    def evaluate_expression(self, expression):
-        try:
-            return ast.literal_eval(expression)
-        except (SyntaxError, ValueError):
-            raise ValueError("Invalid expression")
-    
-    def on_button_click(self, text):
-        if text == '=':
-            try:
-                result = self.evaluate_expression(self.entry.get())
-                self.entry.delete(0, tk.END)
-                self.entry.insert(tk.END, str(result))
-            except ValueError as e:
-                messagebox.showerror("Error", str(e))
-
+  import ast
+  def evaluate_expression(self, expression):
+      try:
+          return ast.literal_eval(expression)
+      except (SyntaxError, ValueError):
+          raise ValueError("Invalid expression")
+  
+  def on_button_click(self, text):
+      if text == '=':
+          try:
+              result = self.evaluate_expression(self.entry.get())
+              self.entry.delete(0, tk.END)
+              self.entry.insert(tk.END, str(result))
+          except ValueError as e:
+              messagebox.showerror("Error", str(e))
 ```
 
 ### Advantages:
