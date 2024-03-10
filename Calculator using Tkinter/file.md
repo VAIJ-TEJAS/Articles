@@ -28,9 +28,6 @@ Before we start building our calculator, ensure that you have Python installed o
 
 ### For Linux:
 1. Prefer this for the [installation of python](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu) 
-   
-    > **_TIPs:_**  Always update repository.
-<!-- YAHA ADD KAR GREEN COLOR ME TIPS KARKE -->
 2. Verify by running the following command:
     ```sh 
         python --version
