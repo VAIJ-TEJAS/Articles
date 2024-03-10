@@ -44,7 +44,9 @@ python --version
 
 2. Verify by running the following command:
 
+```sh
 python --version
+```
 
 **For MacOs:**
 
