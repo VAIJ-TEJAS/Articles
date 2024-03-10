@@ -358,7 +358,7 @@ When working with Tkinter, adhering to good programming practices ensures that y
 - Handle Events Properly: Implement event handling using Tkinter's event-driven model and use event bindings or command callbacks to respond to user interactions.
 - Error Handling: Implement error handling to gracefully handle unexpected errors and exceptions. Use `try` and `except` blocks to catch and handle exceptions, and provide informative error messages to the user when applicable.
 
-## Conclusion:
+# Conclusion:
 In conclusion, developing a simple calculator `using Tkinter in Python` offers a practical introduction to GUI application development. Tkinter's intuitive design, coupled with its `cross-platform compatibility` ,empowers developers to create interactive interfaces effortlessly. By leveraging Tkinter's event-driven model, we constructed a calculator with basic arithmetic operations, error handling, and clear functionality. Utilizing widgets like Entry and Button, we orchestrated a user-friendly interface, enhancing accessibility and user experience.
 
 Throughout the process, we capitalized on `object-oriented programming` principles, encapsulating functionality within the Calculator class.</span> This modular approach facilitates code organization and maintenance, promoting scalability and extensibility. Moreover, the integration of error handling mechanisms, such as `try-except blocks` and message boxes, underscores the importance of robustness in software design. These measures ensure graceful handling of unexpected inputs, enhancing the calculator's reliability and user confidence.</p>
