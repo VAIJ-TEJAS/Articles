@@ -94,7 +94,7 @@ create a class called Calculator that will represent our calculator application:
 
 **Initialization:**
 
-**Initialization Method (__init__):** This method is called when a new instance of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
+**(__init__):** This method is called when a new instance of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
 
 **master:** This parameter represents the parent window or container in which the calculator will be displayed.
 
