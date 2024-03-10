@@ -60,7 +60,7 @@ Now let's import these required libraries along with other required modules:
 ### Step 3: Creating the Calculator Class
 create a class called Calculator that will represent our calculator application:
 ```sh
-    class Calculator:
+class Calculator:
     def __init__(self, master):
         self.master = master
         self.master.title("Simple Calculator")
@@ -308,22 +308,22 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 **Solution**: Restrict the input to a certain format or implement a safer method for evaluation, such as parsing the expression manually.
 Here's a safer approach to evaluate expressions using `ast.literal_eval()`:
 ```sh
-   import ast
+    import ast
 
-def evaluate_expression(self, expression):
-    try:
-        return ast.literal_eval(expression)
-    except (SyntaxError, ValueError):
-        raise ValueError("Invalid expression")
-
-def on_button_click(self, text):
-    if text == '=':
+    def evaluate_expression(self, expression):
         try:
-            result = self.evaluate_expression(self.entry.get())
-            self.entry.delete(0, tk.END)
-            self.entry.insert(tk.END, str(result))
-        except ValueError as e:
-            messagebox.showerror("Error", str(e))
+            return ast.literal_eval(expression)
+        except (SyntaxError, ValueError):
+            raise ValueError("Invalid expression")
+
+    def on_button_click(self, text):
+        if text == '=':
+            try:
+                result = self.evaluate_expression(self.entry.get())
+                self.entry.delete(0, tk.END)
+                self.entry.insert(tk.END, str(result))
+            except ValueError as e:
+                messagebox.showerror("Error", str(e))
 
 ```
 
