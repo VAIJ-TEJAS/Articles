@@ -16,7 +16,7 @@ The tkinter package ("Tk interface") is the standard Python interface to the Tcl
 ## Creating the Calculator 
 Now let us actually dive into the process of building the calculator using one step at a time.
 
-### Step 1: Setting Up the Environment
+## Step 1: Setting Up the Environment
 Before we start building our calculator, ensure that you have Python installed on your system.
 ### For Windows:
 1. Download and install Python from the [official website](https://www.python.org/downloads/)
@@ -39,21 +39,20 @@ For reference [Steps to install python on MacOs](https://www.dataquest.io/blog/i
 
 Next, we need to install Tkinter, which is included with Python by default. So, there's no need to install it separately
 
-### Step 2: Importing Necessary Libraries
+## Step 2: Importing Necessary Libraries
 In Python, the tkinter module is used for creating GUI applications. 
 Now let's import these required libraries along with other required modules:
 ```sh
     import tkinter as tk
     from tkinter import messagebox
 ```
-### Explanation
+## Explanation
 
 **tkinter**: This module provides classes and functions for creating GUI applications.
 
 **messagebox**: This submodule allows us to display message boxes for showing information or prompting the user for confirmation.
 
-##
-### Step 3: Creating the Calculator Class
+## Step 3: Creating the Calculator Class
 create a class called Calculator that will represent our calculator application:
 ```sh
 class Calculator:
@@ -85,7 +84,7 @@ class Calculator:
 
 ```
 
-### Explanation:
+## Explanation:
 **Initialization:**
 
 **(__init__):** This method is called when a new instance of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
@@ -111,8 +110,8 @@ Next, it defines a list of tuples named buttons, where each tuple represents the
 Using a loop, it creates Button widgets for each button in the buttons list. Each button is configured with specific text, width, height, font, and a command that calls the on_button_click method with the button's text as an argument.
 
 The Button widgets are also placed in the window using the grid method, positioning them according to their row and column values in the grid layout.
-##
-### Step 4: Implementing Button Click Functionality
+
+## Step 4: Implementing Button Click Functionality
 Next, we define the on_button_click() method to handle button clicks:
 
 ```sh
@@ -132,7 +131,7 @@ Next, we define the on_button_click() method to handle button clicks:
                 self.entry.insert(tk.END, text)
 
 ```
-### Explanation
+## Explanation
 **if text = = '=':** Checks if the button text is equal to '=' (the equal sign).
 
 **result** = eval(self.entry.get()): Uses the eval() function to evaluate the mathematical expression entered in the entry widget (self.entry) and stores the result in the result variable.
@@ -150,8 +149,8 @@ Next, we define the on_button_click() method to handle button clicks:
 **self.entry.delete(0, tk.END):** Clears the contents of the entry widget when the 'C' button is clicked.
 
 **self.entry.insert(tk.END, text):** Inserts the text of the clicked button into the entry widget at the end (tk.END), effectively appending it to the current input string.
-##
-### Step 5: Running the Application
+
+## Step 5: Running the Application
 Lastly, we need to create an instance of the Calculator class and run the main event loop:
 ```sh
    if __name__ == "__main__":
@@ -160,7 +159,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
     root.mainloop()     
 
 ```
-### Explanation
+## Explanation
 **if __name__ == "__main__":** This line checks whether the script is being run directly by the Python interpreter. When a Python script is executed, Python sets the special variable __name__ to "__main__" if the script is the main program being run. This condition ensures that the following code block is only executed if the script is being run directly.
 
 **root = tk.Tk():** Creates a new instance of the Tkinter Tk class, which represents the main window or root window of the GUI application. This window serves as the container for all other GUI elements.
@@ -169,8 +168,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 
 **root.mainloop():** Enters the Tkinter event loop, which listens for events such as user input, button clicks, and window resizing. This function call blocks further execution of the script until the main window is closed by the user.
 
-##
-### Step 6: Results 
+## Step 6: Results 
    
    ![output_lable](./img/vscode.png)
 
