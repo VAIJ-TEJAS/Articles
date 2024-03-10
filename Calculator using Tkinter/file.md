@@ -270,7 +270,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 2. Users can input numbers and perform arithmetic operations by clicking the respective buttons. They can clear the input by clicking 'C' and get the result by clicking '='.
    
 
-## Possible Errors that might occur
+# Possible Errors that might occur
 
 ### Division by zero error:
 
