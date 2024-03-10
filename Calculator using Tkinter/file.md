@@ -30,7 +30,7 @@ Before we start building our calculator, ensure that you have Python installed o
 1. Prefer this for the [installation of python](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu) 
 2. Verify by running the following command:
     ```sh 
-        python --version
+    python --version
     ```
    
 ### For MacOs:
@@ -154,10 +154,10 @@ Next, we define the on_button_click() method to handle button clicks:
 ## Step 5: Running the Application
 Lastly, we need to create an instance of the Calculator class and run the main event loop:
 ```sh
-   if __name__ == "__main__":
-    root = tk.Tk()
-    app = Calculator(root)
-    root.mainloop()     
+ if __name__ == "__main__":
+  root = tk.Tk()
+  app = Calculator(root)
+  root.mainloop()     
 
 ```
 ## Explanation
