@@ -35,8 +35,9 @@ Before we start building our calculator, ensure that you have Python installed o
 2. Prefer this for the[ further steps in installation](https://www.tomshardware.com/how-to/install-python-on-windows-10-and-11)
 
 2. Verify by running the following command:
-
+```sh
 python --version
+```
 
 **For Linux:**
 
