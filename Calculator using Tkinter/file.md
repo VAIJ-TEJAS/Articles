@@ -177,79 +177,79 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 
 ## Code snippet
 ```sh
-    import tkinter as tk
-    from tkinter import messagebox
+import tkinter as tk
+from tkinter import messagebox
+
+class Calculator:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Simple Calculator")
+        self.master.geometry("300x400")
+        self.master.resizable(False, False)
+        self.create_widgets()
+
+    # creating the widgets
     
-    class Calculator:
-        def __init__(self, master):
-            self.master = master
-            self.master.title("Simple Calculator")
-            self.master.geometry("300x400")
-            self.master.resizable(False, False)
-            self.create_widgets()
-    
-        # creating the widgets
-        
-        def create_widgets(self):
-            # Create entry widget for displaying input and results
-            self.entry = tk.Entry(
-                self.master, width=20, font=("Arial", 14), bd=5, justify="right"
+    def create_widgets(self):
+        # Create entry widget for displaying input and results
+        self.entry = tk.Entry(
+            self.master, width=20, font=("Arial", 14), bd=5, justify="right"
+        )
+        self.entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+
+        # Define buttons
+        buttons = [
+            ("7", 1, 0),
+            ("8", 1, 1),
+            ("9", 1, 2),
+            ("/", 1, 3),
+            ("4", 2, 0),
+            ("5", 2, 1),
+            ("6", 2, 2),
+            ("*", 2, 3),
+            ("1", 3, 0),
+            ("2", 3, 1),
+            ("3", 3, 2),
+            ("-", 3, 3),
+            ("0", 4, 0),
+            (".", 4, 1),
+            ("=", 4, 2),
+            ("+", 4, 3),
+        ]
+
+        # Create buttons using a loop
+        for text, row, col in buttons:
+            button = tk.Button(
+                self.master,
+                text=text,
+                width=5,
+                height=2,
+                font=("Arial", 14),
+                command=lambda t=text: self.on_button_click(t),
             )
-            self.entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
-    
-            # Define buttons
-            buttons = [
-                ("7", 1, 0),
-                ("8", 1, 1),
-                ("9", 1, 2),
-                ("/", 1, 3),
-                ("4", 2, 0),
-                ("5", 2, 1),
-                ("6", 2, 2),
-                ("*", 2, 3),
-                ("1", 3, 0),
-                ("2", 3, 1),
-                ("3", 3, 2),
-                ("-", 3, 3),
-                ("0", 4, 0),
-                (".", 4, 1),
-                ("=", 4, 2),
-                ("+", 4, 3),
-            ]
-    
-            # Create buttons using a loop
-            for text, row, col in buttons:
-                button = tk.Button(
-                    self.master,
-                    text=text,
-                    width=5,
-                    height=2,
-                    font=("Arial", 14),
-                    command=lambda t=text: self.on_button_click(t),
-                )
-                button.grid(row=row, column=col, padx=5, pady=5)
-    
-        # funtion creation for on click feature
-        def on_button_click(self, text):
-            if text == "=":
-                try:
-                    result = eval(self.entry.get())
-                    self.entry.delete(0, tk.END)
-                    self.entry.insert(tk.END, str(result))
-                except Exception as e:
-                    messagebox.showerror("Error", "Invalid Input")
-    
-            elif text == "C":
+            button.grid(row=row, column=col, padx=5, pady=5)
+
+    # funtion creation for on click feature
+    def on_button_click(self, text):
+        if text == "=":
+            try:
+                result = eval(self.entry.get())
                 self.entry.delete(0, tk.END)
-    
-            else:
-                self.entry.insert(tk.END, text)
-    
-        # main funtion is defined                
-        if __name__ == "__main__":
-            root = tk.Tk()
-            app = Calculator(root)
-            root.mainloop()
+                self.entry.insert(tk.END, str(result))
+            except Exception as e:
+                messagebox.showerror("Error", "Invalid Input")
+
+        elif text == "C":
+            self.entry.delete(0, tk.END)
+
+        else:
+            self.entry.insert(tk.END, text)
+
+    # main funtion is defined                
+    if __name__ == "__main__":
+        root = tk.Tk()
+        app = Calculator(root)
+        root.mainloop()
 ```    
 
 ## Code Explanation or Working
