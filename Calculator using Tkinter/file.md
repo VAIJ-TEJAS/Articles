@@ -176,7 +176,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 
 ## Entire Code snippet
 ```sh
-     import tkinter as tk
+    import tkinter as tk
     from tkinter import messagebox
     
     class Calculator:
