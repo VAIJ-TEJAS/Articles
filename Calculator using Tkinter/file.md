@@ -242,7 +242,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 3. When any button is clicked, it triggers the on_button_click function. If the button is an arithmetic operation or a digit, it adds that value to the entry widget. If the button is '=' (equal sign), it evaluates the expression in the entry widget and displays the result. If it's 'C' (clear), it clears the entry widget.
 
 4. When '=' is pressed, it tries to evaluate the expression entered in the entry widget using Python's eval() function. If the expression is valid, it computes the result and displays it in the entry widget. If there's an error, such as invalid input or division by zero, it shows an error message.
-> **Warning :** Avoid using the eval() function with untrusted input to prevent code injection vulnerabilities.
+   **Warning :** Avoid using the eval() function with untrusted input to prevent code injection vulnerabilities.
 <!-- YAHA WARNING ADD KAR RED ME -->
 
 1. The program keeps running in a loop, waiting for user interactions, until the window is closed.
