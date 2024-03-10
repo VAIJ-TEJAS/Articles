@@ -12,8 +12,7 @@ The tkinter package ("Tk interface") is the standard Python interface to the Tcl
 - **Built-in Widgets:** Tkinter provides a wide range of widgets such as buttons, labels, entry fields, etc., for creating interactive interfaces.
 - **Customization:** Widgets can be easily customized in terms of appearance and behavior to suit application requirements.
 - **Event-Driven:** Tkinter follows an event-driven programming model, where user actions trigger events that are handled by event handlers.
-
-
+  
 ## Creating the Calculator 
 Now let us actually dive into the process of building the calculator using one step at a time.
 
@@ -50,7 +49,7 @@ Now let's import these required libraries along with other required modules:
     import tkinter as tk
     from tkinter import messagebox
 ```
-### Explanation</ins>
+### Explanation
 
 **tkinter**: This module provides classes and functions for creating GUI applications.
 
@@ -90,8 +89,6 @@ create a class called Calculator that will represent our calculator application:
 ```
 
 ### Explanation:
-
-
 **Initialization:**
 
 **(__init__):** This method is called when a new instance of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
@@ -114,7 +111,6 @@ It first creates an Entry widget (self.entry) for displaying input and results. 
 The Entry widget is placed in the window using the grid method, specifying its position in the grid layout.
 
 Next, it defines a list of tuples named buttons, where each tuple represents the text, row, and column position of a button on the calculator.
-
 Using a loop, it creates Button widgets for each button in the buttons list. Each button is configured with specific text, width, height, font, and a command that calls the on_button_click method with the button's text as an argument.
 
 The Button widgets are also placed in the window using the grid method, positioning them according to their row and column values in the grid layout.
