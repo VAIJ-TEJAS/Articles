@@ -12,8 +12,7 @@ The tkinter package ("Tk interface") is the standard Python interface to the Tcl
 - **Built-in Widgets:** Tkinter provides a wide range of widgets such as buttons, labels, entry fields, etc., for creating interactive interfaces.
 - **Customization:** Widgets can be easily customized in terms of appearance and behavior to suit application requirements.
 - **Event-Driven:** Tkinter follows an event-driven programming model, where user actions trigger events that are handled by event handlers.
-
-
+  
 ## Creating the Calculator 
 Now let us actually dive into the process of building the calculator using one step at a time.
 
@@ -29,9 +28,6 @@ Before we start building our calculator, ensure that you have Python installed o
 
 ### For Linux:
 1. Prefer this for the [installation of python](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu) 
-   
-    > **_TIPs:_**  Always update repository.
-<!-- YAHA ADD KAR GREEN COLOR ME TIPS KARKE -->
 2. Verify by running the following command:
     ```sh 
         python --version
@@ -50,7 +46,7 @@ Now let's import these required libraries along with other required modules:
     import tkinter as tk
     from tkinter import messagebox
 ```
-### Explanation</ins>
+### Explanation
 
 **tkinter**: This module provides classes and functions for creating GUI applications.
 
@@ -90,11 +86,9 @@ class Calculator:
 ```
 
 ### Explanation:
-
-
 **Initialization:**
 
-**Initialization Method (__init__):** This method is called when a new instance of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
+**(__init__):** This method is called when a new instance of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
 
 **master:** This parameter represents the parent window or container in which the calculator will be displayed.
 
@@ -114,7 +108,6 @@ It first creates an Entry widget (self.entry) for displaying input and results. 
 The Entry widget is placed in the window using the grid method, specifying its position in the grid layout.
 
 Next, it defines a list of tuples named buttons, where each tuple represents the text, row, and column position of a button on the calculator.
-
 Using a loop, it creates Button widgets for each button in the buttons list. Each button is configured with specific text, width, height, font, and a command that calls the on_button_click method with the button's text as an argument.
 
 The Button widgets are also placed in the window using the grid method, positioning them according to their row and column values in the grid layout.
@@ -308,23 +301,21 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 **Solution**: Restrict the input to a certain format or implement a safer method for evaluation, such as parsing the expression manually.
 Here's a safer approach to evaluate expressions using `ast.literal_eval()`:
 ```sh
-    import ast
-
-    def evaluate_expression(self, expression):
-        try:
-            return ast.literal_eval(expression)
-        except (SyntaxError, ValueError):
-            raise ValueError("Invalid expression")
-
-    def on_button_click(self, text):
-        if text == '=':
-            try:
-                result = self.evaluate_expression(self.entry.get())
-                self.entry.delete(0, tk.END)
-                self.entry.insert(tk.END, str(result))
-            except ValueError as e:
-                messagebox.showerror("Error", str(e))
-
+  import ast
+  def evaluate_expression(self, expression):
+      try:
+          return ast.literal_eval(expression)
+      except (SyntaxError, ValueError):
+          raise ValueError("Invalid expression")
+  
+  def on_button_click(self, text):
+      if text == '=':
+          try:
+              result = self.evaluate_expression(self.entry.get())
+              self.entry.delete(0, tk.END)
+              self.entry.insert(tk.END, str(result))
+          except ValueError as e:
+              messagebox.showerror("Error", str(e))
 ```
 
 ### Advantages:
