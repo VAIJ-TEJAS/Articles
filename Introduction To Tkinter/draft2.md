@@ -468,7 +468,7 @@ To delve deeper into Tkinter and explore its capabilities, you can start with th
 
 [2]: https://docs.python.org/3/library/tkinter.html#label-widget
 
-[3]: https://logiclair.org/?qa=blob&qa_blobid=15447304320421249354
+<!-- [3]: https://logiclair.org/?qa=blob&qa_blobid=15447304320421249354
 
 [4]: https://logiclair.org/?qa=blob&qa_blobid=17225166072514634203
 
@@ -504,7 +504,45 @@ To delve deeper into Tkinter and explore its capabilities, you can start with th
 
 [20]: https://logiclair.org/?qa=blob&qa_blobid=1591595257121153453
 
-[21]: https://logiclair.org/?qa=blob&qa_blobid=5942132127197068255
+[21]: https://logiclair.org/?qa=blob&qa_blobid=5942132127197068255 -->
+
+[3]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_label.png
+
+[4]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_button.png
+
+[5]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_button_output.png
+
+[6]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_entry.png
+
+[7]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_text.png
+
+[8]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_scale.png
+
+[9]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_spinbox.png
+
+[10]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_separator.png
+
+[11]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_checkbox.png
+
+[12]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_radiobutton.png
+
+[13]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_scroll_list1.png
+
+[14]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_scroll_list2.png
+
+[15]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_color.png
+
+[16]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_frame.png
+
+[17]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_canvas.png
+
+[18]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_paned1.png
+
+[19]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_paned2.png
+
+[20]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_menu.png
+
+[21]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Introduction%20To%20Tkinter/Tkinter_menu_output.png
 
 [22]: https://docs.python.org/3/library/tkinter.html
 
