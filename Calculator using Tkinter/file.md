@@ -54,6 +54,7 @@ from tkinter import messagebox
 
 ## Step 3: Creating the Calculator Class
 create a class called Calculator that will represent our calculator application:
+
 ```sh
 class Calculator:
     def __init__(self, master):
