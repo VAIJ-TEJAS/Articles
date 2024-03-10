@@ -349,7 +349,7 @@ Here's a safer approach to evaluate expressions using `ast.literal_eval()`:
 2. **Limited Functionality:** While Tkinter is suitable for simple applications like a calculator, it might not contain the libraries that are used to build more complex or feature-rich applications.
 3. **Steep Learning Curve for Advanced Features:** While it's easy to get started with the basics of Tkinter functionality, it becomes hard to master the advanced features and creating complex interfaces.
 4. **Not the Trendiest Choice:** Some developers prefer more modern and feature-rich GUI libraries, such as `PyQt` or `Kivy`. Tkinter might be less fashionable or powerful for certain types of application's GUI.
-### Good Programming Practices for Tkinter
+## Good Programming Practices for Tkinter
 When working with Tkinter, adhering to good programming practices ensures that your code is organized, maintainable, and efficient. Some recommended practices are as follows:
 
 - Modularize Your Code: Break your GUI application into smaller, reusable components. Breaking it into smaller, reusable parts makes it easier to work with.
