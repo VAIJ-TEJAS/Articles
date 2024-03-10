@@ -272,7 +272,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 
 # Possible Errors that might occur
 
-### Division by zero error:
+## Division by zero error:
 
 **Problem**: If the user divides by zero, Python will raise a ZeroDivisionError.
 
@@ -286,7 +286,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
         self.entry.delete(0, tk.END)
         self.entry.insert(tk.END, str(result))
 ```
-### Syntax error in evaluation:
+## Syntax error in evaluation:
 
 **Problem**: If the user enters an invalid expression that can't be evaluated, it will raise a SyntaxError.
 
@@ -295,7 +295,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
      except SyntaxError:
      messagebox.showerror("Error", "Invalid Expression")
 ```
-### NameError due to undefined variable:
+## NameError due to undefined variable:
 
 **Problem**: The code checks for the '=' and 'C' buttons, but they're not defined in the button list.
 
@@ -306,7 +306,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
         ('=', 4, 2), ('C', 4, 0)
      ]
 ```
-### Missing import statement:
+## Missing import statement:
 
 **Problem**: The code uses messagebox without importing it.
 
@@ -314,7 +314,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 ```sh
    from tkinter import messagebox
 ```
-### Unsupported operations:
+## Unsupported operations:
 
 **Problem**: The calculator allows arbitrary evaluation of expressions `using eval()`, which can lead to unintended consequences.
 
@@ -338,13 +338,13 @@ Here's a safer approach to evaluate expressions using `ast.literal_eval()`:
               messagebox.showerror("Error", str(e))
 ```
 
-### Advantages:
+## Advantages:
 
 1. **Ease of Use:** Tkinter is a user-friendly `GUI toolkit for Python`, making it relatively easy to create simple graphical interfaces, such as a calculator.
 2. **Cross-Platform:** Tkinter is platform-independent, which means the calculator application is able to work on different operating systems without major modifications.
 3. **Integration with Python:** Since Tkinter is part of the standard library that Python has pre-installed, you don't need to install additional packages to use it. This makes it convenient and ensures compatibility with most Python.
 4. **Customization:** Tkinter provides a range of widgets and options for customizing the appearance of the calculator that you build. You can design a user interface that suits well to your preferences and requirements.
-### Disadvantages:
+## Disadvantages:
 1. **Limited Aesthetics:** While using Tkinter ther is an issue with the appearance, which might be considered less modern as compared to some other GUI frameworks. If you need a highly polished and modern-looking interface, you might consider other frameworks.
 2. **Limited Functionality:** While Tkinter is suitable for simple applications like a calculator, it might not contain the libraries that are used to build more complex or feature-rich applications.
 3. **Steep Learning Curve for Advanced Features:** While it's easy to get started with the basics of Tkinter functionality, it becomes hard to master the advanced features and creating complex interfaces.
