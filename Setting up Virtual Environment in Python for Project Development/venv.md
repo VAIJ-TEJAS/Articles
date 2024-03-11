@@ -165,6 +165,6 @@ virtualenv venv
 
 <h2 id="conclusion">Conclusion</h2>
 <p>Setting up virtual environments in Python is essential for effective project development. By isolating dependencies, you can avoid conflicts and ensure consistent behavior across different environments. Whether you choose <code>virtualenv</code> or <code>virtualenvwrapper</code>, incorporating virtual environments into your workflow will streamline development and enhance collaboration.</p>
-<p><img src="https://example.com/virtual_environment.png" alt="Virtual Environment"></p>
+<p><img src="virtual_environment.png" alt="Virtual Environment"></p>
 <p>Happy coding!</p>
 
