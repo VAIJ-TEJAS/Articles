@@ -162,7 +162,7 @@ virtualenv venv
 <div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body">Use absolute paths or specify the full path to scripts or executables to avoid `Command Not Found` errors.</span> </div>
 <h2 id="common-errors">Common Errors</h2>
 <p>Virtual environments are powerful tools for managing Python dependencies, but they can encounter errors from time to time. By understanding common errors and their solutions, you can effectively <strong>troubleshoot issues</strong> that arise within virtual environments and streamline your development process.</p>
-<p><img src="https://example.com/common_errors.png" alt="Common Errors"></p>
+
 <h2 id="conclusion">Conclusion</h2>
 <p>Setting up virtual environments in Python is essential for effective project development. By isolating dependencies, you can avoid conflicts and ensure consistent behavior across different environments. Whether you choose <code>virtualenv</code> or <code>virtualenvwrapper</code>, incorporating virtual environments into your workflow will streamline development and enhance collaboration.</p>
 <p><img src="https://example.com/virtual_environment.png" alt="Virtual Environment"></p>
