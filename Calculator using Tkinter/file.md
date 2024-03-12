@@ -266,7 +266,10 @@ class Calculator:
 1. The program keeps running in a loop, waiting for user interactions, until the window is closed.
 
 2. Users can input numbers and perform arithmetic operations by clicking the respective buttons. They can clear the input by clicking 'C' and get the result by clicking '='.
-   
+
+## Testing 
+![adding_numbers](./img/testing1)
+![display_output](./img/testing2)
 
 ## Possible Errors that might occur
 
