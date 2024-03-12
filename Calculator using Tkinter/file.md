@@ -1,5 +1,5 @@
 
-In this section, we will walk through the process of building a simple calculator using Tkinter, a standard GUI (Graphical User Interface) toolkit for Python. Tkinter provides easy-to-use components for building graphical user interfaces, making it perfect for creating applications like calculators.
+It is employed when crafting a straightforward calculator utilizing Tkinter, a prevalent GUI toolkit for Python. Tkinter facilitates the integration of user-friendly components essential for constructing graphical user interfaces, thereby suiting applications like calculators due to its simplicity and effectiveness in handling user interactions.
 
 ## What is Tkinter
 
