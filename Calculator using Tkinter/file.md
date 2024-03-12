@@ -273,7 +273,8 @@ class Calculator:
 ## Division by zero error:
 
 **Problem**: If the user divides by zero, Python will raise a ZeroDivisionError.
-[Invalid_output](./img/invalid.png)
+
+![Invalid_output](./img/invalid.png)
 
 **Solution**: Handle division by zero within the try-except block.
 ```sh
