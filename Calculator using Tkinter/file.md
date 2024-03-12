@@ -268,8 +268,8 @@ class Calculator:
 2. Users can input numbers and perform arithmetic operations by clicking the respective buttons. They can clear the input by clicking 'C' and get the result by clicking '='.
 
 ## Testing 
-![adding_numbers](./img/testing1)
-![display_output](./img/testing2)
+![adding_numbers](./img/testing1.png)
+![display_output](./img/testing2.png)
 
 ## Possible Errors that might occur
 
