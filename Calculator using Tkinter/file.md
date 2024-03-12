@@ -1,5 +1,4 @@
-# Building a Calculator Using Tkinter in Python
-<div align="justify">
+
 In this section, we will walk through the process of building a simple calculator using Tkinter, a standard GUI (Graphical User Interface) toolkit for Python. Tkinter provides easy-to-use components for building graphical user interfaces, making it perfect for creating applications like calculators.
 
 ## What is Tkinter
@@ -18,24 +17,23 @@ Now let us actually dive into the process of building the calculator using one s
 
 ## Step 1: Setting Up the Environment
 Before we start building our calculator, ensure that you have Python installed on your system.
-### For Windows:
+## For Windows:
 1. Download and install Python from the [official website](https://www.python.org/downloads/)
-2. Prefer this for the[ further steps in installation](https://www.tomshardware.com/how-to/install-python-on-windows-10-and-11)
 2. Verify by running the following command:
    ```sh 
    python --version
    ```
 
-### For Linux:
+## For Linux:
 1. Prefer this for the [installation of python](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu) 
 2. Verify by running the following command:
     ```sh 
     python --version
     ```
    
-### For MacOs:
-For reference [Steps to install python on MacOs](https://www.dataquest.io/blog/installing-python-on-mac/)
-##
+## For MacOs:
+1. Download and install Python from the[official_website](https://www.python.org/downloads/macos/)
+2. For reference [Steps to install python on MacOs](https://docs.python.org/3/using/mac.html)
 
 Next, we need to install Tkinter, which is included with Python by default. So, there's no need to install it separately
 
@@ -171,9 +169,9 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 
 ## Step 6: Results 
    
-   ![output_lable](./img/vscode.png)
+   ![Editor_Output](./img/vscode.png)
 
-   ![output_lable](./img/command.png)  
+   ![Commandline_Output](./img/command.png)  
 
 ## Code snippet
 ```sh
