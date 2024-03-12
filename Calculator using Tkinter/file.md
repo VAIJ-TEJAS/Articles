@@ -263,9 +263,9 @@ class Calculator:
    >**Warning :** Avoid using the eval() function with untrusted input to prevent code injection vulnerabilities.
 <!-- YAHA WARNING ADD KAR RED ME -->
 
-1. The program keeps running in a loop, waiting for user interactions, until the window is closed.
+5. The program keeps running in a loop, waiting for user interactions, until the window is closed.
 
-2. Users can input numbers and perform arithmetic operations by clicking the respective buttons. They can clear the input by clicking 'C' and get the result by clicking '='.
+6. Users can input numbers and perform arithmetic operations by clicking the respective buttons. They can clear the input by clicking 'C' and get the result by clicking '='.
 
 ## Testing 
 ![adding_numbers](./img/testing1.png)
