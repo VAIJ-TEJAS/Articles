@@ -20,9 +20,9 @@ Before we start building our calculator, ensure that you have Python installed o
 ## For Windows:
 1. Download and install Python from the [official website](https://www.python.org/downloads/)
 2. Verify by running the following command:
-   ```sh 
-   python --version
-   ```
+```sh 
+python --version
+```
 
 ## For Linux:
 1. Prefer this for the [installation of python](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu) 
