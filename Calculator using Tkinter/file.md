@@ -272,7 +272,7 @@ class Calculator:
 ![display_output](./img/testing2.png)
 
 ## Possible Errors that might occur
-
+In building a calculator using Tkinter, potential errors include syntax mistakes, input validation issues, and challenges with complex operations. Effective debugging are crucial for ensuring the calculator functions reliably.Have a look on some of the problems along with there solutions that are listed below
 ## Division by zero error:
 
 **Problem**: If the user divides by zero, Python will raise a ZeroDivisionError.
