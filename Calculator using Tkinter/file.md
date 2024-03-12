@@ -274,7 +274,7 @@ class Calculator:
 
 **Problem**: If the user divides by zero, Python will raise a ZeroDivisionError.
 
-![Invalid_output](./img/invalid.png)
+![Invalid_output](./img/invalid1.png)
 
 **Solution**: Handle division by zero within the try-except block.
 ```sh
@@ -289,6 +289,8 @@ class Calculator:
 ## Syntax error in evaluation:
 
 **Problem**: If the user enters an invalid expression that can't be evaluated, it will raise a SyntaxError.
+
+![Invalid_output](./img/invalid_input.png)
 
 **Solution**: Catch SyntaxError and display an appropriate error message.
 ```sh
