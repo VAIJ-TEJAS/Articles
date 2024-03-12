@@ -15,15 +15,15 @@ The tkinter package ("Tk interface") is the standard Python interface to the Tcl
 ## Creating the Calculator 
 Now let us actually dive into the process of building the calculator using one step at a time.
 
-## Step 1: Setting Up the Environment
+## Step 1: Setting Up Environment
 Before we start building our calculator, ensure that you have Python installed on your system.
+To do so the following section gives short information of the steps to be followed for different Platform
 ## For Windows:
 1. Download and install Python from the [official website](https://www.python.org/downloads/)
 2. Verify by running the following command:
   ```sh 
   python --version
   ```
-
 ## For Linux:
 1. Prefer this for the [installation of python](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu) 
 2. Verify by running the following command:
@@ -37,7 +37,7 @@ Before we start building our calculator, ensure that you have Python installed o
 
 Next, we need to install Tkinter, which is included with Python by default. So, there's no need to install it separately
 
-## Step 2: Importing Necessary Libraries
+## Step 2: Importing Libraries
 In Python, the tkinter module is used for creating GUI applications. 
 Now let's import these required libraries along with other required modules:
 ```sh
@@ -84,7 +84,7 @@ class Calculator:
 ```
 
 ## Explanation:
-**Initialization:**
+**Step 1:Initialization**
 
 **(__init__):** This method is called when a new instance of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
 
@@ -98,7 +98,7 @@ class Calculator:
 
 **self.create_widgets():** Calls the create_widgets() method to create the calculator's user interface.
 
-**Widget Creation:**
+**Step 2:Widget Creation**
 
 The create_widgets method is responsible for creating the user interface elements of the calculator.
 
@@ -149,7 +149,7 @@ Next, we define the on_button_click() method to handle button clicks:
 
 **self.entry.insert(tk.END, text):** Inserts the text of the clicked button into the entry widget at the end (tk.END), effectively appending it to the current input string.
 
-## Step 5: Running the Application
+## Step 5: Driver Function
 Lastly, we need to create an instance of the Calculator class and run the main event loop:
 ```sh
  if __name__ == "__main__":
@@ -167,7 +167,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 
 **root.mainloop():** Enters the Tkinter event loop, which listens for events such as user input, button clicks, and window resizing. This function call blocks further execution of the script until the main window is closed by the user.
 
-## Step 6: Results 
+## Step 6: Outcome of Implementation 
    
    ![Editor_Output](./img/vscode.png)
 
@@ -250,7 +250,7 @@ class Calculator:
         root.mainloop()
 ```    
 
-## Code Explanation or Working
+## Understanding Code Functionality
 1. When the calculator starts, it creates a window with an entry widget. This widget is where you can input numbers and view the results.
 
 2. The calculator has buttons for digits 0-9, decimal point '.', and arithmetic operations like addition '+', subtraction '-', multiplication '*', and division '/'. These buttons are arranged in a grid layout.
@@ -268,7 +268,7 @@ class Calculator:
 2. Users can input numbers and perform arithmetic operations by clicking the respective buttons. They can clear the input by clicking 'C' and get the result by clicking '='.
    
 
-# Possible Errors that might occur
+## Possible Errors that might occur
 
 ## Division by zero error:
 
