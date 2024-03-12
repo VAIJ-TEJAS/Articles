@@ -13,7 +13,7 @@ The tkinter package ("Tk interface") is the standard Python interface to the Tcl
 - **Event-Driven:** Tkinter follows an event-driven programming model, where user actions trigger events that are handled by event handlers.
   
 ## Creating the Calculator 
-Now let us actually dive into the process of building the calculator using one step at a time.
+Now let us actually dive into the process of building the calculator using one step at a time. All the required steps are given below, follow it one by one and you would be able to build the calculator.
 
 ## Step 1: Setting Up Environment
 Before we start building our calculator, ensure that you have Python installed on your system.
