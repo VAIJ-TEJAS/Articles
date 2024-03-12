@@ -273,6 +273,7 @@ class Calculator:
 ## Division by zero error:
 
 **Problem**: If the user divides by zero, Python will raise a ZeroDivisionError.
+[Invalid_output](./img/invalid.png)
 
 **Solution**: Handle division by zero within the try-except block.
 ```sh
@@ -363,21 +364,3 @@ In conclusion, developing a simple calculator `using Tkinter in Python` offers a
 Throughout the process, we capitalized on `object-oriented programming` principles, encapsulating functionality within the Calculator class.</span> This modular approach facilitates code organization and maintenance, promoting scalability and extensibility. Moreover, the integration of error handling mechanisms, such as `try-except blocks` and message boxes, underscores the importance of robustness in software design. These measures ensure graceful handling of unexpected inputs, enhancing the calculator's reliability and user confidence.</p>
 
 By adhering to best practices and leveraging Tkinter's capabilities, we've crafted a functional calculator application that demonstrates the synergy between `Python's versatility and Tkinter's simplicity`. This endeavor serves as a springboard for aspiring developers to delve deeper into GUI programming and explore the myriad possibilities of Python's ecosystem.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-   
-
