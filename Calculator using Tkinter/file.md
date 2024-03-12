@@ -268,8 +268,7 @@ class Calculator:
 6. Users can input numbers and perform arithmetic operations by clicking the respective buttons. They can clear the input by clicking 'C' and get the result by clicking '='.
 
 ## Testing Result 
-![adding_numbers](./img/testing1.png)
-![display_output](./img/testing2.png)
+![adding_numbers](./img/testing1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![display_output](./img/testing2.png)
 
 ## Possible Errors that might occur
 In building a calculator using Tkinter, potential errors include syntax mistakes, input validation issues, and challenges with complex operations. Effective debugging are crucial for ensuring the calculator functions reliably.Have a look on some of the problems along with there solutions that are listed below
