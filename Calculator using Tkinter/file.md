@@ -37,7 +37,7 @@ Follow the following commands for installation
   ```
    
 ## For MacOs:
-1. Download and install Python from the [official_website](https://www.python.org/downloads/macos/)
+1. Download and install Python from the [official website](https://www.python.org/downloads/macos/)
 2. For reference [Steps to install python on MacOs](https://docs.python.org/3/using/mac.html)
 
 Next, we need to install Tkinter, which is included with Python by default. So, there's no need to install it separately
