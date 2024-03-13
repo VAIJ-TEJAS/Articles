@@ -1,7 +1,7 @@
 In this article, we'll delve into some of the more intricate aspects of **Tkinter**, exploring advanced techniques that will empower you to create even more powerful and polished GUI applications. Throughout our exploration, we'll uncover invaluable tools such as the **`ttk` module** for enhanced widget styling, the **Canvas** widget for versatile graphics rendering, and the **Grid** geometry manager for precise layout control.  From **custom themes** to **file handling strategies**, gear up to elevate your Tkinter expertise to the next level.
 
 
-<div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> If you are unfamiliar with or new to Tkinter, it is highly recommended to thoroughly review  <a href=[1]> this article</a>. Familiarizing oneself with its contents will provide a solid foundation for understanding and effectively utilizing Tkinter in GUI development.</span> </div>
+<div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> If you are unfamiliar with or new to Tkinter, it is highly recommended to thoroughly review  <a href=[1]> this article</a> or the <a href=[18]>official documentation</a>. Familiarizing yourself with its contents will provide a solid foundation for understanding and effectively utilizing Tkinter in GUI development.</span> </div>
 
 
 # Custom Styles and Themes
@@ -363,22 +363,21 @@ Whenever the "Open a Modeless Dialog" button is clicked in the provided example,
 Tkinter serves as a versatile framework for Python GUI development, offering a range of functionalities to enhance user interaction and application functionality. Through custom themes, threading capabilities, file handling, modal and modeless dialogs, layout management, advanced widgets, and integration with libraries like Matplotlib and scikit-learn, Tkinter enables developers to craft dynamic and user-friendly desktop applications tailored to their specific needs. By leveraging these features, developers can create unique and engaging GUIs that elevate the overall user experience, making Tkinter a preferred choice for Python GUI development projects.
 
 
-<!--
 [1]: https://coderlegion.com/190/introduction-to-tkinter-library-in-python
-[2]: custom_styles
-[3]: integrations
-[4]: treeview
-[5]: tab1
-[6]: tab2
-[7]: tab3
-[8]: progressbar
-[9]: grid
-[10]: pack
-[11]: place
-[12]: file
-[13]: file_dialogbox
-[14]: file_written_text
-[15]: modal_dialog
-[16]: modeless_dialog
-[17]: threads
--->
+[2]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_custom.png
+[3]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_interface.png
+[4]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_treeview.png
+[5]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_notebook1.png
+[6]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_notebook2.png
+[7]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_notebook3.png
+[8]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_progressbar.png
+[9]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_grid.png
+[10]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_pack.png
+[11]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_place.png
+[12]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_file.png
+[13]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_file_open1.png
+[14]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_file_open2.png
+[15]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_modal_dialog.png
+[16]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_modeless_dialog.png
+[17]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/Advanced_Tkinter/Tkinter_threads.png
+[18]: https://docs.python.org/3/library/tkinter.html
