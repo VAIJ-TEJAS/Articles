@@ -266,7 +266,8 @@ class Calculator:
 5. The program keeps running in a loop, waiting for user interactions, until the window is closed.
 
 6. Users can input numbers and perform arithmetic operations by clicking the respective buttons. They can clear the input by clicking 'C' and get the result by clicking '='.
-
+## Calculator Functionality Flowchart
+![functionality_flowchart](./img/flowchart.jpg)
 ## Testing Result 
 ![adding_numbers](./img/testing1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![display_output](./img/testing2.png)
 
