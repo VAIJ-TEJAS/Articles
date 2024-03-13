@@ -25,8 +25,13 @@ To do so the following section gives short information of the steps to be follow
   python --version
   ```
 ## For Linux:
-1. Prefer this for the [installation of python](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu) 
-2. Verify by running the following command:
+Follow the following commands for installation
+1. Open terminal and copy and paste the code
+  ```sh
+  sudo apt-get update
+  sudo apt-get install python3
+  ```
+2. Once installed verify by running the following command:
   ```sh 
   python --version
   ```
