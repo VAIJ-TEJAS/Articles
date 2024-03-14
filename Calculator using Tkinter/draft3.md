@@ -169,9 +169,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 
 ## Step 6: Outcome of Implementation 
    
-   ![Editor_Output](./img/vscode.png)
-
-   ![Commandline_Output](./img/command2.png)  
+  ![Editor_Output](./img/Test1.png)
 
 # Code snippet
 
