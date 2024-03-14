@@ -27,12 +27,12 @@ To do so the following section gives short information of the steps to be follow
 Follow the following commands for installation
 1. Open terminal and copy and paste the code
 
-	  sudo apt-get update
-	  sudo apt-get install python3
+	sudo apt-get update
+	sudo apt-get install python3
 
 2. Once installed verify by running the following command:
 
-	  python --version
+	 python --version
 
    
 ### For MacOs:
