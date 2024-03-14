@@ -279,7 +279,7 @@ In building a calculator using Tkinter, potential errors include syntax mistakes
 
 **Problem**: If the user divides by zero, Python will raise a ZeroDivisionError.
 
-![Invalid_output](./img/invalid1.png)
+![Invalid_output](./img/invalid.png)
 
 **Solution**: Handle division by zero within the try-except block.
 
