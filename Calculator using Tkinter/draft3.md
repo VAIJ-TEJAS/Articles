@@ -1,4 +1,4 @@
-When working on a basic calculator with **Tkinter**, a widely-used GUI toolkit for Python, you're tapping into a powerful resource. Tkinter streamlines the incorporation of user-friendly elements necessary for crafting graphical user interfaces, making it particularly well-suited for applications such as calculators. Its simplicity and efficiency in managing user interactions make it an ideal choice for projects of this nature.
+When working on a basic calculator with **Tkinter**, a widely-used GUI toolkit for **Python**, you're tapping into a powerful resource. Tkinter streamlines the incorporation of user-friendly elements necessary for crafting graphical user interfaces, making it particularly well-suited for applications such as calculators. Its simplicity and efficiency in managing user interactions make it an ideal choice for projects of this nature.
 
 # What is Tkinter
 
@@ -16,7 +16,7 @@ Now let us actually dive into the process of building the calculator using one s
 
 ## Step 1: Setting Up Environment
 Before we start building our calculator, ensure that you have Python installed on your system.
-To do so the following section gives short information of the steps to be followed for different Platform
+To do so the following section gives short information of the steps to be followed for different Platforms
 ### For Windows:
 1. Download and install Python from the [official website](https://www.python.org/downloads/)
 2. Verify by running the following command:
@@ -55,7 +55,7 @@ Now let's import these required libraries along with other required modules:
 **messagebox**: This submodule allows us to display message boxes for showing information or prompting the user for confirmation.
 
 ## Step 3: Creating the Calculator Class
-create a class called Calculator that will represent our calculator application:
+Create a class called **class Calculator** that will represent our calculator application:
 
 	class Calculator:
 	    def __init__(self, master):
@@ -88,9 +88,9 @@ create a class called Calculator that will represent our calculator application:
 ### Explanation:
 **Initialization**
 
-**(__init__):** This method is called when a new instance of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
+**(__init__):** This method is called when a new **instance** of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
 
-**master:** This parameter represents the parent window or container in which the calculator will be displayed.
+**master:** This parameter represents the **parent window** or container in which the calculator will be displayed.
 
 **self.master.title("Simple Calculator"):** Sets the title of the GUI window to "Simple Calculator".
 
@@ -102,8 +102,8 @@ create a class called Calculator that will represent our calculator application:
 
 **Widget Creation**
 
-The create_widgets method is responsible for creating the user interface elements of the calculator.
-It first creates an Entry widget (self.entry) for displaying input and results. This widget is configured with a width of 20 characters, a font size of 14 points, a border width of 5 pixels, and text alignment to the right.
+The **create_widgets** method is responsible for creating the user interface elements of the calculator.
+It first creates an Entry widget **(self.entry)** for displaying input and results. This widget is configured with a width of 20 characters, a font size of 14 points, a border width of 5 pixels, and text alignment to the right.
 The Entry widget is placed in the window using the grid method, specifying its position in the grid layout.
 
 Next, it defines a list of tuples named buttons, where each tuple represents the text, row, and column position of a button on the calculator.
