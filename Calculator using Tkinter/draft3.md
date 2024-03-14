@@ -266,9 +266,8 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 7. Users can input numbers and perform arithmetic operations by clicking the respective buttons. They can clear the input by clicking 'C' and get the result by clicking '='.
 # Calculator Functionality Flowchart
 Illustrate the functionality of a simple calculator program through a clear and logical flowchart. Cover window creation, button layout, event handling, expression evaluation, error handling, and program loop.
-<p align="center">
-  <img src="./img/flowchart.png" />
-</p>
+
+![flowchart](./img/flowchart.png)
 
 # Testing Result 
 ![adding_numbers](./img/testing1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![display_output](./img/testing2.png)
