@@ -17,13 +17,13 @@ Now let us actually dive into the process of building the calculator using one s
 ## Step 1: Setting Up Environment
 Before we start building our calculator, ensure that you have Python installed on your system.
 To do so the following section gives short information of the steps to be followed for different Platforms
-### For Windows:
+## For Windows:
 1. Download and install Python from the [official website](https://www.python.org/downloads/)
 2. Verify by running the following command:
 
 		python --version
 
-### For Linux:
+## For Linux:
 Follow the following commands for installation
 1. Open terminal and copy and paste the code
 
@@ -35,7 +35,7 @@ Follow the following commands for installation
 		python --version
 
    
-### For MacOs:
+## For MacOs:
 1. Download and install Python from the [official website](https://www.python.org/downloads/macos/)
 2. For reference [Steps to install python on MacOs](https://docs.python.org/3/using/mac.html)
 
@@ -48,7 +48,7 @@ Now let's import these required libraries along with other required modules:
 	import tkinter as tk
 	from tkinter import messagebox
 
-### Explanation
+## Explanation
 
 **tkinter**: This module provides classes and functions for creating GUI applications.
 
@@ -85,7 +85,7 @@ Create a class called **class Calculator** that will represent our calculator ap
 	            button.grid(row=row, column=col, padx=5, pady=5)
 
 
-### Explanation:
+## Explanation:
 **Initialization**
 
 **(__init__):** This method is called when a new **instance** of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
@@ -131,7 +131,7 @@ Next, we define the on_button_click() method to handle button clicks:
 	              self.entry.insert(tk.END, text)
 
 
-### Explanation
+## Explanation
 **if text = = '=':** Checks if the button text is equal to '=' (the equal sign).
 
 **result** = eval(self.entry.get()): Uses the eval() function to evaluate the mathematical expression entered in the entry widget (self.entry) and stores the result in the result variable.
@@ -158,7 +158,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 	  app = Calculator(root)
 	  root.mainloop()     
 
-### Explanation
+## Explanation
 **if __name__ == "__main__":** This line checks whether the script is being run directly by the Python interpreter. When a Python script is executed, Python sets the special variable __name__ to "__main__" if the script is the main program being run. This condition ensures that the following code block is only executed if the script is being run directly.
 
 **root = tk.Tk():** Creates a new instance of the Tkinter Tk class, which represents the main window or root window of the GUI application. This window serves as the container for all other GUI elements.
