@@ -171,7 +171,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
    
    ![Editor_Output](./img/vscode.png)
 
-   ![Commandline_Output](./img/command.png)  
+   ![Commandline_Output](./img/command2.png)  
 
 # Code snippet
 
