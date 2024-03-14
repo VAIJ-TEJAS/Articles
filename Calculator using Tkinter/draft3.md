@@ -1,4 +1,4 @@
-When working on a basic calculator with **Tkinter**, a widely-used GUI toolkit for **Python**, you're tapping into a powerful resource. Tkinter streamlines the incorporation of user-friendly elements necessary for crafting graphical user interfaces, making it particularly well-suited for applications such as calculators. Its simplicity and efficiency in managing user interactions make it an ideal choice for projects of this nature.
+When working on a basic calculator with **Tkinter**, a widely-used GUI toolkit for **Python**. Tkinter streamlines the incorporation of user-friendly elements necessary for crafting graphical user interfaces, making it particularly well-suited for applications such as calculators. Its simplicity and efficiency in managing user interactions make it an ideal choice for projects of this nature.
 
 # What is Tkinter
 
