@@ -1,29 +1,29 @@
-It is employed when crafting a straightforward calculator utilizing Tkinter, a prevalent GUI toolkit for Python. Tkinter facilitates the integration of user-friendly components essential for constructing graphical user interfaces, thereby suiting applications like calculators due to its simplicity and effectiveness in handling user interactions.
+When working on a basic calculator with **Tkinter**, a widely-used GUI toolkit for Python, you're tapping into a powerful resource. Tkinter streamlines the incorporation of user-friendly elements necessary for crafting graphical user interfaces, making it particularly well-suited for applications such as calculators. Its simplicity and efficiency in managing user interactions make it an ideal choice for projects of this nature.
 
-## What is Tkinter
+# What is Tkinter
 
-The tkinter package ("Tk interface") is the standard Python interface to the Tcl/Tk GUI toolkit. Both Tk and tkinter are available on most Unix platforms, including macOS, as well as on Windows systems. Running this command `python -m tkinter` from the command line will open a window demonstrating a simple Tk interface, which will let you know if tkinter is properly installed on your system or not. Tkinter is not a thin wrapper, but adds a fair amount of its own logic to make the experience more pythonic. For more details, you can visit [Tkinter Documentation](https://docs.python.org/3/library/tkinter.html).
+The tkinter package ("Tk interface") is the standard Python interface to the **Tcl/Tk GUI toolkit**. Both Tk and tkinter are available on most Unix platforms, including macOS, as well as on Windows systems. Running this command `python -m tkinter` from the command line will open a window demonstrating a simple Tk interface, which will let you know if tkinter is properly installed on your system or not. Tkinter is not a thin wrapper, but adds a fair amount of its own logic to make the experience more pythonic. For more details, you can visit [Tkinter Documentation](https://docs.python.org/3/library/tkinter.html).
 
-## Features
+# Features
 - **Simplicity:** Tkinter offers an easy-to-use interface for building GUI applications in Python.
 - **Cross-Platform:** It works seamlessly across various operating systems, including Windows, macOS, and Linux.
 - **Built-in Widgets:** Tkinter provides a wide range of widgets such as buttons, labels, entry fields, etc., for creating interactive interfaces.
 - **Customization:** Widgets can be easily customized in terms of appearance and behavior to suit application requirements.
 - **Event-Driven:** Tkinter follows an event-driven programming model, where user actions trigger events that are handled by event handlers.
   
-## Creating the Calculator 
+# Creating the Calculator 
 Now let us actually dive into the process of building the calculator using one step at a time. All the required steps are given below, follow it one by one and you would be able to build the calculator.
 
 ## Step 1: Setting Up Environment
 Before we start building our calculator, ensure that you have Python installed on your system.
 To do so the following section gives short information of the steps to be followed for different Platform
-## For Windows:
+### For Windows:
 1. Download and install Python from the [official website](https://www.python.org/downloads/)
 2. Verify by running the following command:
 
 	  python --version
 
-## For Linux:
+### For Linux:
 Follow the following commands for installation
 1. Open terminal and copy and paste the code
 
@@ -35,7 +35,7 @@ Follow the following commands for installation
 	  python --version
 
    
-## For MacOs:
+### For MacOs:
 1. Download and install Python from the [official website](https://www.python.org/downloads/macos/)
 2. For reference [Steps to install python on MacOs](https://docs.python.org/3/using/mac.html)
 
@@ -48,7 +48,7 @@ Now let's import these required libraries along with other required modules:
 	import tkinter as tk
 	from tkinter import messagebox
 
-## Explanation
+### Explanation
 
 **tkinter**: This module provides classes and functions for creating GUI applications.
 
@@ -85,8 +85,8 @@ create a class called Calculator that will represent our calculator application:
 	            button.grid(row=row, column=col, padx=5, pady=5)
 
 
-## Explanation:
-**Step 1:Initialization**
+### Explanation:
+**Initialization**
 
 **(__init__):** This method is called when a new instance of the Calculator class is created. It initializes the calculator's attributes and sets up the GUI window.
 
@@ -100,10 +100,9 @@ create a class called Calculator that will represent our calculator application:
 
 **self.create_widgets():** Calls the create_widgets() method to create the calculator's user interface.
 
-**Step 2:Widget Creation**
+**Widget Creation**
 
 The create_widgets method is responsible for creating the user interface elements of the calculator.
-
 It first creates an Entry widget (self.entry) for displaying input and results. This widget is configured with a width of 20 characters, a font size of 14 points, a border width of 5 pixels, and text alignment to the right.
 The Entry widget is placed in the window using the grid method, specifying its position in the grid layout.
 
@@ -132,7 +131,7 @@ Next, we define the on_button_click() method to handle button clicks:
 	              self.entry.insert(tk.END, text)
 
 
-## Explanation
+### Explanation
 **if text = = '=':** Checks if the button text is equal to '=' (the equal sign).
 
 **result** = eval(self.entry.get()): Uses the eval() function to evaluate the mathematical expression entered in the entry widget (self.entry) and stores the result in the result variable.
@@ -159,7 +158,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 	  app = Calculator(root)
 	  root.mainloop()     
 
-## Explanation
+### Explanation
 **if __name__ == "__main__":** This line checks whether the script is being run directly by the Python interpreter. When a Python script is executed, Python sets the special variable __name__ to "__main__" if the script is the main program being run. This condition ensures that the following code block is only executed if the script is being run directly.
 
 **root = tk.Tk():** Creates a new instance of the Tkinter Tk class, which represents the main window or root window of the GUI application. This window serves as the container for all other GUI elements.
@@ -174,7 +173,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 
    ![Commandline_Output](./img/command.png)  
 
-## Code snippet
+# Code snippet
 
 	import tkinter as tk
 	from tkinter import messagebox
@@ -251,7 +250,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 	        root.mainloop()
   
 
-## Understanding Code Functionality
+# Understanding Code Functionality
 1. When the calculator starts, it creates a window with an entry widget. This widget is where you can input numbers and view the results.
 
 2. The calculator has buttons for digits 0-9, decimal point '.', and arithmetic operations like addition '+', subtraction '-', multiplication '*', and division '/'. These buttons are arranged in a grid layout.
@@ -267,13 +266,13 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 5. The program keeps running in a loop, waiting for user interactions, until the window is closed.
 
 7. Users can input numbers and perform arithmetic operations by clicking the respective buttons. They can clear the input by clicking 'C' and get the result by clicking '='.
-## Calculator Functionality Flowchart
+# Calculator Functionality Flowchart
 Illustrate the functionality of a simple calculator program through a clear and logical flowchart. Cover window creation, button layout, event handling, expression evaluation, error handling, and program loop.
 ![functionality_flowchart](./img/flowchart.jpg)
-## Testing Result 
+# Testing Result 
 ![adding_numbers](./img/testing1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![display_output](./img/testing2.png)
 
-## Possible Errors that might occur
+# Possible Errors that might occur
 In building a calculator using Tkinter, potential errors include syntax mistakes, input validation issues, and challenges with complex operations. Effective debugging are crucial for ensuring the calculator functions reliably.Have a look on some of the problems along with there solutions that are listed below
 ## Division by zero error:
 
@@ -345,19 +344,19 @@ Here's a safer approach to evaluate expressions using `ast.literal_eval()`:
 	              messagebox.showerror("Error", str(e))
 
 
-## Advantages:
-
+# Advantages:
 1. **Ease of Use:** Tkinter is a user-friendly `GUI toolkit for Python`, making it relatively easy to create simple graphical interfaces, such as a calculator.
 2. **Cross-Platform:** Tkinter is platform-independent, which means the calculator application is able to work on different operating systems without major modifications.
 3. **Integration with Python:** Since Tkinter is part of the standard library that Python has pre-installed, you don't need to install additional packages to use it. This makes it convenient and ensures compatibility with most Python.
 4. **Customization:** Tkinter provides a range of widgets and options for customizing the appearance of the calculator that you build. You can design a user interface that suits well to your preferences and requirements.
-## Disadvantages:
+
+# Disadvantages:
 1. **Limited Aesthetics:** While using Tkinter ther is an issue with the appearance, which might be considered less modern as compared to some other GUI frameworks. If you need a highly polished and modern-looking interface, you might consider other frameworks.
 2. **Limited Functionality:** While Tkinter is suitable for simple applications like a calculator, it might not contain the libraries that are used to build more complex or feature-rich applications.
 3. **Steep Learning Curve for Advanced Features:** While it's easy to get started with the basics of Tkinter functionality, it becomes hard to master the advanced features and creating complex interfaces.
 4. **Not the Trendiest Choice:** Some developers prefer more modern and feature-rich GUI libraries, such as `PyQt` or `Kivy`. Tkinter might be less fashionable or powerful for certain types of application's GUI.
 
-## Good Programming Practices for Tkinter
+# Good Programming Practices for Tkinter
 When working with Tkinter, adhering to good programming practices ensures that your code is organized, maintainable, and efficient. Some recommended practices are as follows:
 
 - Modularize Your Code: Break your GUI application into smaller, reusable components. Breaking it into smaller, reusable parts makes it easier to work with.
@@ -366,7 +365,7 @@ When working with Tkinter, adhering to good programming practices ensures that y
 - Handle Events Properly: Implement event handling using Tkinter's event-driven model and use event bindings or command callbacks to respond to user interactions.
 - Error Handling: Implement error handling to gracefully handle unexpected errors and exceptions. Use `try` and `except` blocks to catch and handle exceptions, and provide informative error messages to the user when applicable.
 
-## Conclusion:
+# Conclusion:
 In conclusion, developing a simple calculator `using Tkinter in Python` offers a practical introduction to GUI application development. Tkinter's intuitive design, coupled with its `cross-platform compatibility` ,empowers developers to create interactive interfaces effortlessly. By leveraging Tkinter's event-driven model, we constructed a calculator with basic arithmetic operations, error handling, and clear functionality. Utilizing widgets like Entry and Button, we orchestrated a user-friendly interface, enhancing accessibility and user experience.
 
 Throughout the process, we capitalized on `object-oriented programming` principles, encapsulating functionality within the Calculator class.</span> This modular approach facilitates code organization and maintenance, promoting scalability and extensibility. Moreover, the integration of error handling mechanisms, such as `try-except blocks` and message boxes, underscores the importance of robustness in software design. These measures ensure graceful handling of unexpected inputs, enhancing the calculator's reliability and user confidence.</p>
