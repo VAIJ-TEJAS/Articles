@@ -2,7 +2,7 @@ When working on a basic calculator with **Tkinter**, a widely-used GUI toolkit f
 
 # What is Tkinter
 
-The tkinter package ("Tk interface") is the standard Python interface to the **Tcl/Tk GUI toolkit**. Both Tk and tkinter are available on most Unix platforms, including macOS, as well as on Windows systems. Running this command `python -m tkinter` from the command line will open a window demonstrating a simple Tk interface, which will let you know if tkinter is properly installed on your system or not. Tkinter is not a thin wrapper, but adds a fair amount of its own logic to make the experience more pythonic. For more details, you can visit [Tkinter Documentation](https://docs.python.org/3/library/tkinter.html).
+The tkinter package ("Tk interface") is the standard Python interface to the **Tcl/Tk GUI toolkit**. Both Tk and tkinter are available on most Unix platforms, including macOS, as well as on Windows systems. Running this command **`python -m tkinter`** from the command line will open a window demonstrating a simple Tk interface, which will let you know if tkinter is properly installed on your system or not. Tkinter is not a thin wrapper, but adds a fair amount of its own logic to make the experience more pythonic. For more details, you can visit [Tkinter Documentation](https://docs.python.org/3/library/tkinter.html).
 
 # Features
 - **Simplicity:** Tkinter offers an easy-to-use interface for building GUI applications in Python.
