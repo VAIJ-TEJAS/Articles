@@ -267,7 +267,7 @@ Lastly, we need to create an instance of the Calculator class and run the main e
 # Calculator Functionality Flowchart
 Illustrate the functionality of a simple calculator program through a clear and logical flowchart. Cover window creation, button layout, event handling, expression evaluation, error handling, and program loop.
 
-![functionality_flowchart](./img/flowchart2.jpg)
+![functionality_flowchart](./img/flowchart.jpg)
 # Testing Result 
 ![adding_numbers](./img/testing1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![display_output](./img/testing2.png)
 
