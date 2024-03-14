@@ -20,16 +20,20 @@ To do so the following section gives short information of the steps to be follow
 ### For Windows:
 1. Download and install Python from the [official website](https://www.python.org/downloads/)
 2. Verify by running the following command:
-	  python --version
+
+	python --version
 
 ### For Linux:
 Follow the following commands for installation
 1. Open terminal and copy and paste the code
+
 	sudo apt-get update
+	
 	sudo apt-get install python3
 
 3. Once installed verify by running the following command:
-	 python --version
+
+	python --version
 
    
 ### For MacOs:
