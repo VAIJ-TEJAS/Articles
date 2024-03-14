@@ -28,9 +28,10 @@ Follow the following commands for installation
 1. Open terminal and copy and paste the code
 
 	sudo apt-get update
+
 	sudo apt-get install python3
 
-2. Once installed verify by running the following command:
+3. Once installed verify by running the following command:
 
 	 python --version
 
