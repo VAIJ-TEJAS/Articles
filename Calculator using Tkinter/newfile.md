@@ -85,9 +85,11 @@ Create a class called  `class Calculator` that will represent our calculator app
 	            button.grid(row=row, column=col, padx=5, pady=5)
 
 **Initialization**
+
 The `init` method in the Calculator class sets up the basic features of the calculator when it's first created. It's like laying out the blueprint for how the calculator will look and work. The `master` part helps in putting the calculator in the right place on the screen. With `self.master.title("Simple Calculator")`, it gives the calculator window a name, like "Simple Calculator". The `self.master.geometry("300x400")` part determines how big the calculator window will be, making sure it's neither too small nor too big. The line `self.master.resizable(False, False)` prevents users from changing the size of the calculator window, keeping it neat and tidy. Finally, `self.create_widgets()` starts the process of actually creating all the buttons and numbers you see on the calculator screen. It's like setting up the stage before the show begins. So, with all these steps, the calculator is ready to go when you open it up!
 
 **Widget Creation**
+
 The `create_widgets` method orchestrates the construction of the calculator's user interface, beginning with the establishment of an Entry widget named `self.entry` for displaying input and results, meticulously configured with specific attributes such as width, font size, border width, and text alignment. Positioned within the window using the grid method, this Entry widget ensures clarity and organization of numerical data. Subsequently, utilizing a list named `buttons` containing tuples of button details, the method dynamically generates Button widgets for each entry within the list. These buttons, equipped with attributes such as text labels and dimensions, are seamlessly integrated into the window using the grid method, with each button assigned a command to execute the `on_button_click` method upon interaction, passing the corresponding button text as an argument. Through meticulous placement and configuration, the `create_widgets` method establishes a coherent and functional user interface, essential for intuitive interaction and efficient calculation.
 
 ## Step 4: Implementing Button Click Functionality
