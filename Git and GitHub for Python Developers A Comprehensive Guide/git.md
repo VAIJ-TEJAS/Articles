@@ -91,6 +91,8 @@ To install Git on your system, follow the instructions for your respective platf
 <p>The <code>git diff</code> command shows the differences between files:</p>
 <pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> <span class="token function">diff</span> file.py
 </code></pre>
+<p><img src="git.png" alt=".git Folder"><br>
+<em>Figure 2: Diagram illustrating  .git folder</em></p>
 <h3 id="putting-it-all-together-simple-git-workflow">Putting It All Together: Simple Git Workflow</h3>
 <ol>
 <li>Clone the repository.</li>
@@ -101,7 +103,7 @@ To install Git on your system, follow the instructions for your respective platf
 <li>Pull changes from the remote repository to stay up-to-date.</li>
 </ol>
 <p><img src="workflow.png" alt="Git Workflow"><br>
-<em>Figure 2: Diagram illustrating  Git Workflow</em></p>
+<em>Figure 3: Diagram illustrating  Git Workflow</em></p>
 <h3 id="aside-the-staging-area">Aside: The Staging Area</h3>
 <p>The staging area is where changes are prepared before committing them to the repository. It allows for selective commits.</p>
 <h3 id="working-with-branches">Working with Branches</h3>
@@ -127,7 +129,7 @@ To install Git on your system, follow the instructions for your respective platf
 <h4 id="resolving-merge-conflicts">4. Resolving Merge Conflicts</h4>
 <p>When merging branches, resolve conflicts by editing the conflicting files and then committing the changes.</p>
 <p><img src="branch.png" alt="Git branch operations*"><br>
-<em>Figure 3: Diagram illustrating Git branch operations</em></p>
+<em>Figure 4: Diagram illustrating Git branch operations</em></p>
 <h3 id="collaborating-with-github">Collaborating with GitHub</h3>
 <p>what’s the deal with Python GitHub? Python GitHub, a term synonymous with Python projects hosted on GitHub, offers a wealth of resources, libraries, and collaborative opportunities for Python developers.</p>
 <h4 id="creating-a-github-account">1. Creating a GitHub Account</h4>
@@ -153,7 +155,7 @@ To install Git on your system, follow the instructions for your respective platf
 <h4 id="reviewing-pull-requests-and-merging-changes">6. Reviewing Pull Requests and Merging Changes</h4>
 <p>Review pull requests submitted by collaborators and merge changes into the main branch after review.</p>
 <p><img src="branches.png" alt="branches by different collaborators"><br>
-<em>Figure 4: Diagram illustrating branches created by different collaborators</em></p>
+<em>Figure 5: Diagram illustrating branches created by different collaborators</em></p>
 <h4 id="fetching">7. Fetching</h4>
 <p>The git fetch command downloads objects and refs from another repository, but it does not merge them into your current branch.</p>
 <h3 id="aside-what-is-a-sha">Aside: What is a SHA</h3>
@@ -191,7 +193,7 @@ To install Git on your system, follow the instructions for your respective platf
 <h4 id="using-branches-effectively">3. Using Branches Effectively</h4>
 <p>Use branches for feature development, bug fixes, and experimentation.</p>
 <p><img src="branch_graph.png" alt="Git network graph*"><br>
-<em>Figure 5: Diagram illustrating Git network graph</em></p>
+<em>Figure 6: Diagram illustrating Git network graph</em></p>
 <h4 id="regularly-pulling-changes">4. Regularly Pulling Changes</h4>
 <p>Pull changes from remote repositories frequently to stay up-to-date with the latest developments.</p>
 <p>The git pull command fetches changes from a remote repository and merges them into your current branch.</p>
