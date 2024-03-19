@@ -199,7 +199,7 @@ The line ` if __name__ == "__main__"` serves as a conditional statement that ens
 # Understanding Code Functionality
 - When the calculator starts, it creates a window with an entry widget. This widget is where you can input numbers and view the results.
 
-- The calculator has buttons for digits 0-9, decimal point '.', and arithmetic operations like addition '+', subtraction '-', multiplication '*', and division '/'. These buttons are arranged in a grid layout.
+- The calculator has buttons for digits from 0 to 9,the decimal point '.', and arithmetic operations like addition '+', subtraction '-', multiplication '*', and division '/'. These buttons are arranged in a grid layout.
 
 <div  class="div-green">  <span  class="alert-header">Tip:</span>  <span  class="alert-body">Implement input validation to avoid potential security vulnerabilities or crashes.</span>  </div>
 
