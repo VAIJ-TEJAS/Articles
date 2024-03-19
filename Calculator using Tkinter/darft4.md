@@ -221,7 +221,7 @@ Following is an illustration of the functionality of a simple calculator program
 ![adding_numbers](./img/testing1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![display_output](./img/testing2.png)
 
 # Possible Errors that might occur
-In building a calculator using Tkinter, potential errors include syntax mistakes, input validation issues, and challenges with complex operations. Effective debugging are crucial for ensuring the calculator functions reliably. Have a look on some of the problems along with their solutions that are listed below
+In building a calculator using Tkinter, potential errors include syntax mistakes, input validation issues, and challenges with complex operations. Effective debugging is crucial for ensuring the calculator functions reliably. Have a look at some of the problems along with their solutions that are listed below.
 ## Division by zero error:
 
 **Problem**: If the user divides by zero, Python will raise a ZeroDivisionError.
