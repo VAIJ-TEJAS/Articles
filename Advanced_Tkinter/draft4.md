@@ -2,7 +2,7 @@
 
 In this article, we'll delve into some of the more intricate aspects of **Tkinter**, exploring advanced techniques that will empower you to create even more powerful and polished GUI applications. Throughout your exploration, you'll uncover invaluable tools such as the **`ttk` module** for enhanced widget styling, the **Canvas** widget for versatile graphics rendering, and the **Grid** geometry manager for precise layout control.  From **custom themes** to **file handling strategies**, gear up to elevate your Tkinter expertise to the next level.
 
-<div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> If you are unfamiliar with or new to Tkinter, it is highly recommended to thoroughly review [this article][1] or the [official documentation][17]. Familiarizing yourself with its contents will provide a solid foundation for understanding and effectively utilizing Tkinter in GUI development.</span> </div>
+<div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> If you are unfamiliar with or new to Tkinter, it is highly recommended to thoroughly review <a href=[1]>this article</a> or the <a href=[17]>official documentation</a>. Familiarizing yourself with its contents will provide a solid foundation for understanding and effectively utilizing Tkinter in GUI development.</span> </div>
 
 # Custom Styles and Themes
 Tkinter enables you to customize visual presentation through custom styles and themes, using the `ttk` module for personalized widget designs, ensuring consistency across platforms.
@@ -166,7 +166,7 @@ Tkinter provides a wide range of widgets beyond the basic ones like labels and b
 
     ![Tkinter_progressbar][7]
 
-<div class="div-green"> <span class="alert-header">Tip:</span><span class="alert-body"> You can learn more about advanced widgets by visiting the [official User Interface documentation][18].</span> </div>
+<div class="div-green"> <span class="alert-header">Tip:</span><span class="alert-body"> You can learn more about advanced widgets by visiting the <a href=[18]>official User Interface documentation</a>.</span> </div>
 
 # Advanced Layout Management
 Advanced Layout Management can be used to make your Tkinter app look polished. Layout management helps you move widgets around and make your app look just the way you want using  `grid`, `place`, and `pack` managers.
