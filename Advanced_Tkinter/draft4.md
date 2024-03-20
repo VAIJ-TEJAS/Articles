@@ -4,20 +4,25 @@ In this article, we'll delve into some of the more intricate aspects of **Tkinte
 
 If you are unfamiliar with or new to Tkinter, I highly recommended you to thoroughly review [this article][16] or the [official documentation][17]. Familiarizing yourself with its contents will provide a solid foundation for understanding and effectively utilizing Tkinter in GUI development.
 
+In the following code snippets, add the following lines at the beginning:
+
+    import tkinter as tk
+    from tkinter import ttk
+    window = tk.Tk()
+    window.geometry("457x335")
+and this line at the end:
+    
+    window.mainloop()
+
 # Custom Styles and Themes
 Tkinter enables you to customize visual presentation through custom styles and themes, using the `ttk` module for personalized widget designs, ensuring consistency across platforms.
 
 To deepen our understanding, let's personalize our textbox, button, and label by customizing their appearance:
 
-    import tkinter as tk
-    from tkinter import ttk
-    
-    def submit_text():
+     def submit_text():
         text = text_entry.get()
         text_label.config(text=text, font=("Times New Roman", 12, "bold"), foreground="green")     #customize label
     
-    window = tk.Tk()
-    window.geometry("457x335")
     window.title("Custom Styles")
     
     style = ttk.Style()     #to define custom styles
@@ -30,7 +35,6 @@ To deepen our understanding, let's personalize our textbox, button, and label by
     submit_button.pack(padx=10, pady=5)
     text_label = ttk.Label(window)
     text_label.pack(padx=10, pady=10)
-    window.mainloop()
 
 ![Tkinter_custom][1]
 
@@ -50,8 +54,6 @@ The `submit_text` function retrieves your text from the `text_entry` textbox and
 
 Let's delve into the concept using an example of Linear Regression applied to predict outcomes for the Diabetes dataset:
 
-    import tkinter as tk
-    from tkinter import ttk     #for themed widgets
     import matplotlib.pyplot as plt
     from sklearn.datasets import load_diabetes
     from sklearn.model_selection import train_test_split
@@ -61,9 +63,7 @@ Let's delve into the concept using an example of Linear Regression applied to pr
     diabetes = load_diabetes()     #Load the dataset
     X_train, X_test, y_train, y_test = train_test_split(diabetes.data, diabetes.target, test_size=0.2, random_state=42)
     
-    window = tk.Tk()
-    window.geometry("650x500")
-    window.title("Diabetes Linear Regression")
+    window.title("Diabetes Linear Regression")     #window's dimensions are "650x500"
     
     def train_and_plot():
         model = LinearRegression()
@@ -90,7 +90,6 @@ Let's delve into the concept using an example of Linear Regression applied to pr
     train_button.pack(pady=10)
     result_label = ttk.Label(window, text="")
     result_label.pack()
-    window.mainloop()
 
 ![Tkinter_interface][2]
 
@@ -100,11 +99,8 @@ The `train_and_plot` function trains a linear regression model on the dataset, p
 Tkinter provides a wide range of widgets beyond the basic ones like labels and buttons. You can explore and utilize widgets like treeview, notebook, progressbar, etc. to create sophisticated user interfaces.
 
  - A **treeview** to display hierarchical data, like a file explorer.
-        
-        import tkinter as tk
-        from tkinter import ttk     #for themed widgets
-        window = tk.Tk()
-        window.geometry("640x300")
+   
+        #window's dimensions are "650x500"
         tree = ttk.Treeview(window)
         tree["columns"] = ("Fruits", "Quantity")
         tree.heading("#0", text="Sr. No.")     #First column (index=0) will be Sr. No.
@@ -114,7 +110,6 @@ Tkinter provides a wide range of widgets beyond the basic ones like labels and b
         tree.insert("", tk.END, text="2", values=("Orange", 25))
         tree.insert("", tk.END, text="3", values=("Mango", 29))
         tree.pack()
-        window.mainloop()
     
     ![treeview][3]
 
@@ -122,10 +117,6 @@ The Treeview widget `tree` consists of two columns: "Fruits" and "Quantity (kg)"
    
  - A **notebook** to organize your app into different tabs, like in a web browser.
         
-        import tkinter as tk
-        from tkinter import ttk     #for themed widgets
-        window = tk.Tk()
-        window.geometry("457x335")
         notebook = ttk.Notebook(window)
         tab1 = ttk.Frame(notebook)
         tab2 = ttk.Frame(notebook)
@@ -141,7 +132,6 @@ The Treeview widget `tree` consists of two columns: "Fruits" and "Quantity (kg)"
         notebook.add(tab2, text="Tab 2")
         notebook.add(tab3, text="Tab 3")
         notebook.pack()
-        window.mainloop()
     
     ![Tab1][4]
    
@@ -152,9 +142,7 @@ The Treeview widget `tree` consists of two columns: "Fruits" and "Quantity (kg)"
 It creates a Notebook widget `notebook`, which allows 3 tabs to be displayed, namely `Tab 1`, `Tab 2`, and `Tab 3`, ceated using `ttk.Frame`. `Tab 1` contains a `Label` widget with the text "This is Tab 1". `Tab 2` contains an `Entry` widget for user input. `Tab 3` contains a `Checkbutton` widget with the text "This is Tab 3".
    
  - A **progressbar** to show how far along a task is, like when you're downloading a file.
-    
-        import tkinter as tk
-        from tkinter import ttk
+   
         import time
         
         def start_task():
@@ -164,13 +152,10 @@ It creates a Notebook widget `notebook`, which allows 3 tabs to be displayed, na
         def stop_task():
             progress_bar.stop()      #stop the progressbar
         
-        window = tk.Tk()
-        window.geometry("457x335")
         progress_bar = ttk.Progressbar(window, orient="horizontal", length=200, mode="indeterminate")
         progress_bar.pack()
         start_button = tk.Button(window, text="Start Task", command=start_task)
         start_button.pack(pady=20)
-        window.mainloop()
 
     ![Tkinter_progressbar][7]
 
@@ -184,9 +169,6 @@ Advanced Layout Management can be used to make your Tkinter app look polished. L
 - **Grid**
 You can place widgets in rows and columns, and they will organize neatly into place.
     
-        import tkinter as tk
-        window = tk.Tk()
-        window.geometry("457x335")
         label1 = tk.Label(window, text="Subject")
         label2 = tk.Label(window, text="Marks")
         entry1 = tk.Entry(window)     #Widgets
@@ -199,7 +181,6 @@ You can place widgets in rows and columns, and they will organize neatly into pl
         entry2.grid(row=1, column=1)
         entry3.grid(row=2, column=0)
         entry4.grid(row=2, column=1)
-        window.mainloop()
 
     ![Tkinter_grid][8]
 
@@ -208,9 +189,6 @@ This code sets up two labels ("Subject" and "Marks") and four `entry` widgets fo
 - **Pack**
 You can stack widgets on top of each other or arrange them side by side, and Tkinter will figure out how to fit them all in.
     
-        import tkinter as tk
-        window = tk.Tk()
-        window.geometry("457x335")
         button1 = tk.Button(window, text="Left")     #Widgets
         button2 = tk.Button(window, text="Top")
         button3 = tk.Button(window, text="Right")
@@ -219,7 +197,6 @@ You can stack widgets on top of each other or arrange them side by side, and Tki
         button2.pack(side=tk.TOP)
         button3.pack(side=tk.RIGHT)
         button4.pack(side=tk.BOTTOM)
-        window.mainloop()
 
     ![Tkinter_pack][9]
 
@@ -228,14 +205,10 @@ The buttons `button1`, `button2`, `button3` and `button4` are positioned by prov
 - **Place**
 You can specify exactly where you want each widget to go by giving it coordinates, like x and y coordinates on a graph.
     
-        import tkinter as tk
-        window = tk.Tk()
-        window.geometry("457x335")
         label1 = tk.Label(window, text="x_50_y_50")     #Widgets
         label2 = tk.Label(window, text="x_200_y_200")
         label1.place(x=50, y=50)     #Layout
         label2.place(x=200, y=200)
-        window.mainloop()
     
     ![Tkinter_place][10]
 
@@ -247,7 +220,6 @@ Tkinter facilitates file handling through the `filedialog` tool, enabling you to
   
 Let's understand this using an example:
 
-    import tkinter as tk
     from tkinter import filedialog
     
     def open_file():
@@ -262,14 +234,11 @@ Let's understand this using an example:
             file.write("May\n")
         status_label.config(text=f"File '{file_path}' has been written and closed.")
     
-    window = tk.Tk()
-    window.geometry("457x335")
     window.title("File Writer")
     open_button = tk.Button(window, text="Open a File", command=open_file)
     open_button.pack(pady=20)
     status_label = tk.Label(window, text="")
     status_label.pack()
-    root.mainloop()
 
 ![file][11]
 
@@ -286,18 +255,14 @@ Tkinter offers both modal and modeless dialogs, ideal for user input, confirmati
 
 - **Modal dialogs** are windows that require users to interact with them before returning to the main application window. They typically block interaction with other windows in the application until they are closed.
 
-        import tkinter as tk
         from tkinter import messagebox
     
         def show_modal_dialog():
             messagebox.showinfo("Modal Dialog", "Pay attention to this dialog box!")     #does not let you proceed until you click the "OK" button
     
-        window = tk.Tk()
-        window.geometry("457x335")
         window.title("Modal Dialog Example")
         modal_button = tk.Button(window, text="Click me", command=show_modal_dialog)
         modal_button.pack(padx=20, pady=10)
-        window.mainloop()
 
     ![Tkinter_modal_dialog][14]
 
@@ -305,8 +270,6 @@ It creates a button labeled "Click me". When clicked, the button triggers the `s
 
 - **Modeless dialogs** are windows that allow users to interact with both the dialog and the main application window simultaneously. They do not block interaction with other windows in the application, allowing you to switch between them freely.
 
-        import tkinter as tk
-    
         def show_modeless_dialog():
             modeless_dialog = tk.Toplevel(window)     #allows you to interact with other open windows
             modeless_dialog.title("Modeless Dialog")
@@ -314,12 +277,9 @@ It creates a button labeled "Click me". When clicked, the button triggers the `s
             label = tk.Label(modeless_dialog, text="Have a nice day!")
             label.pack(padx=20, pady=10)
     
-        window = tk.Tk()
-        window.geometry("457x335")
         window.title("Modeless Dialog Example")
         modeless_button = tk.Button(window, text="Click me", command=show_modeless_dialog)
         modeless_button.pack(padx=20, pady=10)
-        window.mainloop()
 
     ![Tkinter_modaless_dialog][15]
 
