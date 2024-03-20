@@ -4,7 +4,7 @@ In this article, we'll delve into some of the more intricate aspects of **Tkinte
 
 If you are unfamiliar with or new to Tkinter, I highly recommended you to thoroughly review [this article][16] or the [official documentation][17]. Familiarizing yourself with its contents will provide a solid foundation for understanding and effectively utilizing Tkinter in GUI development.
 
-In the following code snippets, add the following lines at the beginning:
+In the following code snippets, add these lines at the beginning:
 
     import tkinter as tk
     from tkinter import ttk
