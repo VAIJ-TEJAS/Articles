@@ -5,13 +5,13 @@ Now let us actually dive into the process of building the calculator, one step a
 
 ## Step 1: Setting Up Environment
 Before we start building our calculator, ensure that you have Python installed on your system. To do so the following section gives short information of the steps to be followed for different Platforms
-**For Windows:**
+**For Windows**
 1. Download and install Python from the [official website](https://www.python.org/downloads/)
 2. Verify by running the following command:
 
 		python --version
 
-**For Linux:**
+**For Linux**
 Follow the following commands for installation
 1. Open terminal and copy and paste the code
 
@@ -22,7 +22,7 @@ Follow the following commands for installation
 
 		python --version
 		
- **For MacOs:**
+ **For MacOs**
 1. Download and install Python from the [official website](https://www.python.org/downloads/macos/)
 2. For reference [Steps to install python on MacOs](https://docs.python.org/3/using/mac.html)
 
@@ -42,7 +42,7 @@ Now let's import these required libraries along with other required modules:
 **messagebox**: This submodule allows us to display message boxes for showing information or prompting the user for confirmation.
 
 ## Step 3: Creating the Calculator Class
-Create a class called  `class Calculator` that will represent our calculator application:
+Create a class called `class Calculator` that will represent our calculator application:
 
 	class Calculator:
 	    def __init__(self, master):
@@ -68,7 +68,7 @@ Create a class called  `class Calculator` that will represent our calculator app
 	        # Create buttons using a loop
 	        for (text, row, col) in buttons:
 	            button = tk.Button(self.master, text=text, width=5, height=2, 
-	            font=('Arial', 14), command=lambda t=text: self.on_button_click(t))
+	            font= ('Arial', 14), command=lambda t=text: self.on_button_click(t))
 	            button.grid(row=row, column=col, padx=5, pady=5)
 
 **Initialization**
@@ -99,7 +99,7 @@ Next, we define the `on_button_click()` method to handle button clicks:
 	              self.entry.insert(tk.END, text)
 
 
-**Explanation:**
+**Explanation**
 
 In this block of code, several conditional statements and actions are executed based on the text of the clicked button within the calculator interface. First, there's a check to see if the button text is equal to '=' (the equal sign). If so, the mathematical expression entered in the entry widget (self.entry) is evaluated using the `eval()` function, and the result is stored in the `result` variable. The contents of the entry widget are then cleared using `self.entry.delete(0, tk.END)`, and the calculated result is inserted into the entry widget using `self.entry.insert(tk.END, str(result))`. In case an exception occurs during evaluation, it's caught using a try-except block, and an error message box is displayed using `messagebox.showerror("Error", "Invalid Input")`. Lastly, the text of the clicked button is inserted into the entry widget at the end (tk.END) using `self.entry.insert(tk.END, text)`, allowing users to append their input string. These actions ensure proper functionality and user feedback within the calculator interface, facilitating smooth interaction and accurate computation.
 
@@ -111,7 +111,7 @@ Lastly, we need to create an instance of the Calculator class and run the `main`
 	  app = Calculator(root)
 	  root.mainloop()     
 
-**Explanation:**
+**Explanation**
 
 The line ` if __name__ == "__main__"` serves as a conditional statement that ensures the subsequent code block is only executed if the Python script is directly run by the interpreter, rather than being imported as a module into another script. Following this condition, `root = tk.Tk()` initializes a new instance of the Tkinter Tk class, establishing the main window or root window for the graphical user interface (GUI) application. This window acts as a container for all other GUI elements to be displayed. Subsequently, `app = Calculator(root)` creates an instance of the Calculator class, utilizing the root window as an argument, thereby initializing the calculator application within this main window. Lastly, `root.mainloop()` initiates the Tkinter event loop, a critical component that continuously listens for user interactions, such as button clicks and window resizing, effectively maintaining the responsiveness of the GUI. This function call essentially blocks further script execution until the main window is closed by the user, ensuring the seamless functioning of the GUI application.
 
@@ -119,13 +119,13 @@ The line ` if __name__ == "__main__"` serves as a conditional statement that ens
    
   ![Editor_Output](./img/Test1.png)
 
-# Code snippet
+# Code Snippet
 
 	import tkinter as tk
 	from tkinter import messagebox
 
 	class Calculator:
-	    def __init__(self, master):
+	    def __init__ (self, master):
 	        self.master = master
 	        self.master.title("Simple Calculator")
 	        self.master.geometry("300x400")
@@ -199,15 +199,15 @@ The line ` if __name__ == "__main__"` serves as a conditional statement that ens
 # Understanding Code Functionality
 - When the calculator starts, it creates a window with an entry widget. This widget is where you can input numbers and view the results.
 
-- The calculator has buttons for digits from 0 to 9,the decimal point '.', and arithmetic operations like addition '+', subtraction '-', multiplication '*', and division '/'. These buttons are arranged in a grid layout.
+- The calculator has buttons for digits from 0 to 9, the decimal point '.', and arithmetic operations like addition '+', subtraction '-', multiplication '*', and division '/'. These buttons are arranged in a grid layout.
 
-<div  class="div-green">  <span  class="alert-header">Tip:</span>  <span  class="alert-body">Implement input validation to avoid potential security vulnerabilities or crashes.</span>  </div>
+<div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body">Implement input validation to avoid potential security vulnerabilities or crashes. </span> </div>
 
 - When any button is clicked, it triggers the `on_button_click` function. If the button is an arithmetic operation or a digit, it adds that value to the entry widget. If the button is '=' (equal sign), it evaluates the expression in the entry widget and displays the result. If it's 'C' (clear), it clears the entry widget.
 
 - When '=' is pressed, it tries to evaluate the expression entered in the entry widget using Python's `eval()` function. If the expression is valid, it computes the result and displays it in the entry widget. If there's an error, such as invalid input or division by zero, it shows an error message.
 
-<div  class="div-red">  <span  class="alert-header">Warning:</span>  <span  class="alert-body">Avoid using the eval() function with untrusted input to prevent code injection vulnerabilities.</span>  </div>
+<div class="div-red"> <span class="alert-header">Warning:</span> <span class="alert-body">Avoid using the eval() function with untrusted input to prevent code injection vulnerabilities.</span>  </div>
 
 - The program keeps running in a loop, waiting for user interactions, until the window is closed.
 
@@ -292,9 +292,9 @@ Here's a safer approach to evaluate expressions using `ast.literal_eval()`:
 	              messagebox.showerror("Error", str(e))
 
 # Conclusion:
-In conclusion, developing a simple calculator using **Tkinter** in Python ,offers a practical introduction to GUI application development. Tkinter's intuitive design, coupled with its **cross-platform compatibility** ,empowers developers to create interactive interfaces effortlessly. By leveraging Tkinter's event-driven model, we constructed a calculator with **basic arithmetic operations**, **error handling**, and **clear functionality**. Utilizing widgets like **Entry** and **Button**, we orchestrated a user-friendly interface, enhancing accessibility and the user experience.
+In conclusion, developing a simple calculator using **Tkinter** in Python, offers a practical introduction to GUI application development. Tkinter's intuitive design, coupled with its **cross-platform compatibility**, empowers developers to create interactive interfaces effortlessly. By leveraging Tkinter's event-driven model, we constructed a calculator with **basic arithmetic operations**, **error handling**, and **clear functionality**. Utilizing widgets like **Entry** and **Button**, we orchestrated a user-friendly interface, enhancing accessibility and the user experience.
 
-Throughout the process, we capitalized on **object-oriented programming**  principles, encapsulating functionality within the Calculator class. This modular approach facilitates code organization and maintenance, promoting scalability and extensibility. Moreover, the integration of error handling mechanisms, such as **try-except blocks** and **message boxes**, underscores the importance of robustness in software design. These measures ensure graceful handling of unexpected inputs, enhancing the calculator's reliability and user confidence.
+Throughout the process, we capitalized on **object-oriented programming** principles, encapsulating functionality within the Calculator class. This modular approach facilitates code organization and maintenance, promoting scalability and extensibility. Moreover, the integration of error handling mechanisms, such as **try-except blocks** and **message boxes**, underscores the importance of robustness in software design. These measures ensure graceful handling of unexpected inputs, enhancing the calculator's reliability and user confidence.
 
 By adhering to best practices and leveraging Tkinter's capabilities, we've crafted a functional calculator application that demonstrates the synergy between Python's versatility and Tkinter's simplicity. This endeavor serves as a springboard for aspiring developers to delve deeper into GUI programming and explore the myriad possibilities of Python's ecosystem.
 
