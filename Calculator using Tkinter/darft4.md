@@ -5,6 +5,7 @@ Now let us actually dive into the process of building the calculator, one step a
 
 ## Step 1: Setting Up the Environment
 Before we start building our calculator, ensure that you have Python installed on your system. To do so, the following section gives short information on the steps to be followed for different platforms.
+
 **For Windows**
 1. Download and install Python from the [official website](https://www.python.org/downloads/) .
 2. Verify by running the following command:
@@ -12,6 +13,7 @@ Before we start building our calculator, ensure that you have Python installed o
 		python --version
 
 **For Linux**
+
 Follow the following commands for installation:
 1. Open the terminal and copy and paste the code.
 
