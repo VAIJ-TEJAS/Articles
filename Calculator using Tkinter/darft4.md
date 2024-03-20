@@ -3,7 +3,7 @@ When working on a basic calculator with **Tkinter**, a widely-used GUI toolkit f
 # Creating the Calculator 
 Now let us actually dive into the process of building the calculator, one step at a time. All the required steps are given below; follow them one by one, and you will be able to develop an efficient and interactive calculator.
 
-## Step 1: Setting Up Environment
+## Step 1: Setting Up the Environment
 Before we start building our calculator, ensure that you have Python installed on your system. To do so the following section gives short information of the steps to be followed for different Platforms
 **For Windows**
 1. Download and install Python from the [official website](https://www.python.org/downloads/)
