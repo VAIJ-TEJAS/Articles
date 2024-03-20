@@ -37,9 +37,9 @@ We'll discuss the following subjects in this post:
 
 Now, let's delve into each topic in detail.
 
-#### Getting Started with Git
+## Getting Started with Git
 
-1. Installing Git on Different Platforms
+**1. Installing Git on Different Platforms**
 
 Where can you find Git and GitHub for Python developers download? Look no further than the official Git and GitHub websites, which offer downloads tailored for various platforms and provide comprehensive documentation for getting started.
 To install Git on your system, follow the instructions for your respective platform:
@@ -64,7 +64,7 @@ import git
 ```
 This code snippet demonstrates how to import GitPython into your Python projects after installing the GitPython package using pip.
 
-2. Configuring Git
+**2. Configuring Git**
 
 Once Git is installed, configure it with your username and email:
 
@@ -73,7 +73,7 @@ git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
 ```
 
-3. Creating Your First Git Repository Locally
+**3. Creating Your First Git Repository Locally**
 
 To create a new Git repository for your Python project, navigate to your project directory in the terminal and run:
 
@@ -86,7 +86,7 @@ This initializes a new Git repository in the current directory.
 ![Git Repository](repo.png)
 *Figure 1: Diagram illustrating a Git Repository*
 
-#### Basic Git Commands
+## Basic Git Commands
 
 1. `git init`
 
@@ -150,9 +150,9 @@ git diff file.py
 **Aside: The Staging Area**
 The staging area is where changes are prepared before committing them to the repository. It allows for selective commits.
 
-#### Working with Branches
+## Working with Branches
 
-1. `git branch`
+**1. `git branch`**
 
 The `git branch` command lists, creates, or deletes branches:
 
@@ -163,7 +163,7 @@ git branch -d branch-name     # Delete a branch
 ```
 <div class="div-green"> <span class="alert-header">Tip:</span> Use Meaningful Branch Names: When creating branches in Git, use descriptive names that reflect the purpose of the branch, such as feature/xyz or bugfix/123. </div>
 
-2. `git checkout`
+**2. `git checkout`**
 
 The `git checkout` command switches between branches:
 
@@ -177,7 +177,7 @@ To revert your code to a previous commit, use the git checkout command followed 
 ```bash
 git checkout <commit-hash>
 ```
-3. Merging Branches
+**3. Merging Branches**
 
 Merge branches using `git merge`:
 
@@ -185,24 +185,24 @@ Merge branches using `git merge`:
 git merge branch-name
 ```
 
-4. Resolving Merge Conflicts
+**4. Resolving Merge Conflicts**
 
 When merging branches, resolve conflicts by editing the conflicting files and then committing the changes.
 
 ![Git branch operations*](branch.png)
 *Figure 4: Diagram illustrating Git branch operations*
 
-#### Collaborating with GitHub
+## Collaborating with GitHub
 
 what's the deal with Python GitHub? Python GitHub, a term synonymous with Python projects hosted on GitHub, offers a wealth of resources, libraries, and collaborative opportunities for Python developers.
 
-1. Creating a GitHub Account
+**1. Creating a GitHub Account**
 
 Visit [github.com](https://github.com/) and sign up for a free account.
 
 <div class="div-blue"> <span class="alert-header">Note:</span> License Your Projects: When hosting projects on GitHub, consider adding a license file (e.g., MIT, Apache) to define how others can use, modify, and distribute your code. It's an essential aspect of open-source collaboration and legal protection.</div>
 
-2. Setting up SSH Keys
+**2. Setting up SSH Keys**
 
 Generate SSH keys and add them to your GitHub account for secure authentication:
 
@@ -210,7 +210,7 @@ Generate SSH keys and add them to your GitHub account for secure authentication:
 ssh-keygen -t rsa -b 4096 -C "your@email.com"
 ```
 
-3. Pushing Local Repositories to GitHub
+**3. Pushing Local Repositories to GitHub**
 
 To push your local repository to GitHub, use the following commands:
 
@@ -220,7 +220,7 @@ git push -u origin master
 ```
 <div class="div-red"> <span class="alert-header">Caution:</span> Be Careful with Force Push: Avoid using **git push --force** (or **-f**) unless absolutely necessary. Force pushing can overwrite history and cause irreversible changes, potentially leading to data loss for you and collaborators.</div>
 
-4. Cloning Repositories from GitHub
+**4. Cloning Repositories from GitHub**
 
 Use the following to copy a repository from GitHub to your PC:
 
@@ -228,20 +228,20 @@ Use the following to copy a repository from GitHub to your PC:
 git clone git@github.com:username/repository.git
 ```
 
-5. Forking Repositories and Creating Pull Requests
+**5. Forking Repositories and Creating Pull Requests**
 
 Fork repositories on GitHub to contribute changes. Create a pull request to propose your changes for merging into the original repository.
 
 <div class="div-green"> <span class="alert-header">Tip:</span> Regularly Update Your Forks: If you fork a repository on GitHub to contribute changes, remember to regularly update your fork with changes from the original repository to avoid conflicts and stay in sync.</div>
 
-6. Reviewing Pull Requests and Merging Changes
+**6. Reviewing Pull Requests and Merging Changes**
 
 Review pull requests submitted by collaborators and merge changes into the main branch after review.
 
 ![branches by different collaborators](branches.png)
 *Figure 5: Diagram illustrating branches created by different collaborators*
 
-7. Fetching
+**7. Fetching**
 
 The git fetch command downloads objects and refs from another repository, but it does not merge them into your current branch.
 
@@ -249,9 +249,9 @@ The git fetch command downloads objects and refs from another repository, but it
 
 A SHA (Secure Hash Algorithm) is a unique identifier for a commit. It's a 40-character string that uniquely identifies a commit.
 
-### Advanced Git Concepts
+## Advanced Git Concepts
 
-1. Rebasing Commits
+**1. Rebasing Commits**
 
 Rebase commits to maintain a linear commit history:
 
@@ -260,7 +260,7 @@ git rebase branch-name
 ```
 <div class="div-blue"> <span class="alert-header">Note:</span> Understanding Git Rebase: While rebasing commits can create a cleaner commit history, it's important to understand that it rewrites commit history, which can cause conflicts for collaborators. Use with caution and communicate changes to team members.</div>
 
-2. Git Aliases
+**2. Git Aliases**
 
 Define aliases for commonly used Git commands:
 
@@ -268,7 +268,7 @@ Define aliases for commonly used Git commands:
 git config --global alias.co checkout
 ```
 
-3. Using `.gitignore`
+**3. Using `.gitignore`**
 
 Create a `.gitignore` file to specify files and directories to ignore:
 
@@ -276,7 +276,7 @@ Create a `.gitignore` file to specify files and directories to ignore:
 echo "venv/" >> .gitignore
 ```
 
-4. Git Hooks
+**4. Git Hooks**
 
 Set up Git hooks for automation tasks like running tests before commits:
 
@@ -284,52 +284,52 @@ Set up Git hooks for automation tasks like running tests before commits:
 nano .git/hooks/pre-commit
 ```
 
-5. Cherry-picking Commits
+**5. Cherry-picking Commits**
 
 Cherry-pick commits from one branch to another:
 
 ```bash
 git cherry-pick <commit-hash>
 ```
-what about Git-python? Git-python, a Python library for interacting with Git repositories, offers a convenient way for Python developers to automate Git operations and integrate version control into their Python projects.
+**what about Git-python?** Git-python, a Python library for interacting with Git repositories, offers a convenient way for Python developers to automate Git operations and integrate version control into their Python projects.
 
-where can you find Git python examples? Git python examples abound in tutorials, documentation, and open-source projects hosted on GitHub, providing practical demonstrations of Git usage in Python development.
+**where can you find Git python examples?** Git python examples abound in tutorials, documentation, and open-source projects hosted on GitHub, providing practical demonstrations of Git usage in Python development.
 
-how do you perform git-python install? Installing git-python is straightforward: simply use pip to install the GitPython package, which provides a Python interface for interacting with Git repositories.
+**how do you perform git-python install?** Installing git-python is straightforward: simply use pip to install the GitPython package, which provides a Python interface for interacting with Git repositories.
 
-### Best Practices and Tips
+## Best Practices and Tips
 
-1. Writing Descriptive Commit Messages
+**1. Writing Descriptive Commit Messages**
 
 Provide clear and concise commit messages that describe the changes made.
 
-2. Keeping Commits Atomic and Focused
+**2. Keeping Commits Atomic and Focused**
 
 Commit small, focused changes to keep the commit history clean and understandable.
 
-3. Using Branches Effectively
+**3. Using Branches Effectively**
 
 Use branches for feature development, bug fixes, and experimentation.
 
 ![Git network graph*](branch_graph.png)
 *Figure 6: Diagram illustrating Git network graph*
 
-4. Regularly Pulling Changes
+**4. Regularly Pulling Changes**
 
 Pull changes from remote repositories frequently to stay up-to-date with the latest developments. 
 
 The git pull command fetches changes from a remote repository and merges them into your current branch.
 
-5. Collaborating Effectively
+**5. Collaborating Effectively**
 
 Communicate with team members, participate in code reviews, and follow project guidelines for effective collaboration.
 
-6. Handling Large Repositories
+**6. Handling Large Repositories**
 
 Optimize repository size, use shallow clones when necessary, and adopt efficient Git workflows for managing large projects.
 
 
-#### Conclusion
+## Conclusion
 
 In this comprehensive guide, we've covered essential Git and GitHub concepts tailored specifically for Python developers. By mastering these tools, you can efficiently manage your projects, collaborate with others, and contribute to the Python ecosystem effectively.
 
