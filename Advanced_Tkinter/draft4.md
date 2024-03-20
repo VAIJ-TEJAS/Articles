@@ -34,7 +34,7 @@ To deepen our understanding, let's personalize our textbox, button, and label by
 
 ![Tkinter_custom][1]
 
-The `submit_text` function is defined, which retrieves the text you entered in the textbox `text_entry` and updates the text of a label `text_label`. It also customizes the label's appearance by setting its font to Times New Roman, size 12, bold, and color green. The `ttk.Style()` method is used to create a `Style` object for customizing widget appearance as per you liking. Custom styles, `Custom.TEntry` for the textbox and `Custom.TButton` for the button, are defined and configured using the configure method to set properties like `foreground` and `background` color.
+The `submit_text` function retrieves your text from the `text_entry` textbox and updates the `text_label` with it. The label's appearance is customized using Times New Roman font, size 12, bold, and green color. Custom styles (`Custom.TEntry` for the textbox and `Custom.TButton` for the button) are defined and configured using the `ttk.Style()` method to set properties like `foreground` and `background` colors.
 
 # Integration with Python Libraries
 
@@ -118,7 +118,7 @@ Tkinter provides a wide range of widgets beyond the basic ones like labels and b
     
     ![treeview][3]
 
-The Treeview widget `tree` consists of two columns: "Fruits" and "Quantity (kg)". The `heading` method is used to set the headings for each column, and the `insert` method is used to add items to the Treeview. Each item is inserted with a unique identifier "Sr. No.", and its corresponding values for the "Fruits" and "Quantity" columns are entered.
+The Treeview widget `tree` consists of two columns: "Fruits" and "Quantity (kg)". The `heading` method is sets headings for each column, and the `insert` method adds items to the Treeview. Each item is inserted with a unique identifier "Sr. No.", and its corresponding values for the "Fruits" and "Quantity" columns are entered.
    
  - A **notebook** to organize your app into different tabs, like in a web browser.
         
@@ -203,7 +203,7 @@ You can place widgets in rows and columns, and they will organize neatly into pl
 
     ![Tkinter_grid][8]
 
-This code creates two `labels`, "Subject" and "Marks", and four `entry` widgets for inputting your data. The label `Subject` is placed in row 0, column 0, `Marks` is placed in row 0, column 1. The entry widget `entry1` is placed in row 1, column 0, `entry2` is placed in row 1, column 1, `entry3` is placed in row 2, column 0 and `entry4` is placed in row 2, column 1.
+This code sets up two labels ("Subject" and "Marks") and four `entry` widgets for data input. The layout is organized with "Subject" in row 0, column 0, "Marks" in row 0, column 1. Entry widgets `entry1` and `entry2` occupy row 1, columns 0 and 1 respectively, while `entry3` and `entry4` are in row 2, columns 0 and 1.
 
 - **Pack**
 You can stack widgets on top of each other or arrange them side by side, and Tkinter will figure out how to fit them all in.
@@ -277,7 +277,7 @@ Let's understand this using an example:
 
 ![file_open_2][13]
 
-It creates a button labeled "Open a File". When clicked, the button triggers the `open_file` function, which opens a dialog window allowing you to select an existing file or create a new one. If a file is selected, the code appends the strings "January", "February", "March", "April", and "May" to the file and the file is closed. After writing to the file, the `status_label` is updated to display a message confirming the file write operation.
+When clicked, the button "Open a File" triggers the `open_file` function, which opens a dialog window allowing you to select an existing file or create a new one. If a file is selected, the code appends the strings "January", "February", "March", "April", and "May" to the file and the file is closed. After writing to the file, the `status_label` is updated to display a message confirming the file write operation.
 
 <div class="div-blue"> <span class="alert-header">Note:</span>  <span class="alert-body"> The file will automatically be closed when the `with` block is exited. However, you may explicitly close the file by calling `file.close()`.</span> </div>
 
@@ -301,7 +301,7 @@ Tkinter offers both modal and modeless dialogs, ideal for user input, confirmati
 
     ![Tkinter_modal_dialog][14]
 
-It creates a button labeled "Click me". When clicked, the button triggers the `show_modal_dialog` function, which displays a `modal dialog box` with the title "Modal Dialog" and the message "Pay attention to this dialog box!", and will not diasppear till "OK" is clicked.
+It creates a button labeled "Click me". When clicked, the button triggers the `show_modal_dialog` function, which displays a `modal dialog box` with the title "Modal Dialog" and the message "Pay attention to this dialog box!", and will not disappear till "OK" is clicked.
 
 - **Modeless dialogs** are windows that allow users to interact with both the dialog and the main application window simultaneously. They do not block interaction with other windows in the application, allowing you to switch between them freely.
 
