@@ -2,7 +2,7 @@
 
 In this article, we'll delve into some of the more intricate aspects of **Tkinter**, exploring advanced techniques that will empower you to create even more powerful and polished GUI applications. Throughout your exploration, you'll uncover invaluable tools such as the **`ttk` module** for enhanced widget styling, the **Canvas** widget for versatile graphics rendering, and the **Grid** geometry manager for precise layout control.  From **custom themes** to **file handling strategies**, gear up to elevate your Tkinter expertise to the next level.
 
-<div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> If you are unfamiliar with or new to Tkinter, it is highly recommended to thoroughly review <a href=[1]>this article</a> or the <a href=[17]>official documentation</a>. Familiarizing yourself with its contents will provide a solid foundation for understanding and effectively utilizing Tkinter in GUI development.</span> </div>
+If you are unfamiliar with or new to Tkinter, it is highly recommended to thoroughly review [this article][16] or the [official documentation][17]. Familiarizing yourself with its contents will provide a solid foundation for understanding and effectively utilizing Tkinter in GUI development.
 
 # Custom Styles and Themes
 Tkinter enables you to customize visual presentation through custom styles and themes, using the `ttk` module for personalized widget designs, ensuring consistency across platforms.
@@ -33,6 +33,8 @@ To deepen our understanding, let's personalize our textbox, button, and label by
     window.mainloop()
 
 ![Tkinter_custom][1]
+
+The `submit_text` function is defined, which retrieves the text entered in the textbox `text_entry` and updates the text of a label `text_label`. It also customizes the label's appearance by setting its font to Times New Roman, size 12, bold, and color green. The `ttk.Style()` method is used to create a `Style` object for customizing widget appearance. Custom styles, `Custom.TEntry` for the textbox and `Custom.TButton` for the button, are defined and configured using the configure method to set properties like `foreground` and `background` color.
 
 # Integration with Python Libraries
 
@@ -92,6 +94,8 @@ Let's delve into the concept using an example of Linear Regression applied to pr
 
 ![Tkinter_interface][2]
 
+The `train_and_plot` function trains a linear regression model on the dataset, predicts the target values, calculates the mean squared error for both training and testing sets, and then plots the predicted values against the actual values using matplotlib. It also displays the calculated mean squared errors on the GUI window.
+
 # Advanced Widgets
 Tkinter provides a wide range of widgets beyond the basic ones like labels and buttons. You can explore and utilize widgets like treeview, notebook, progressbar, etc. to create sophisticated user interfaces.
 
@@ -113,6 +117,8 @@ Tkinter provides a wide range of widgets beyond the basic ones like labels and b
         window.mainloop()
     
     ![treeview][3]
+
+The Treeview widget `tree` consists of two columns: "Fruits" and "Quantity (kg)". The `heading` method is used to set the headings for each column, and the `insert` method is used to add items to the Treeview. Each item is inserted with a unique identifier "Sr. No.", and its corresponding values for the "Fruits" and "Quantity" columns are entered.
    
  - A **notebook** to organize your app into different tabs, like in a web browser.
         
@@ -142,6 +148,8 @@ Tkinter provides a wide range of widgets beyond the basic ones like labels and b
     ![Tab2][5]
    
     ![Tab3][6]
+
+It creates a Notebook widget `notebook`, which allows 3 tabs to be displayed, namely `Tab 1`, `Tab 2`, and `Tab 3`, ceated using `ttk.Frame`. `Tab 1` contains a `Label` widget with the text "This is Tab 1". `Tab 2` contains an `Entry` widget for user input. `Tab 3` contains a `Checkbutton` widget with the text "This is Tab 3".
    
  - A **progressbar** to show how far along a task is, like when you're downloading a file.
     
@@ -166,7 +174,9 @@ Tkinter provides a wide range of widgets beyond the basic ones like labels and b
 
     ![Tkinter_progressbar][7]
 
-<div class="div-green"> <span class="alert-header">Tip:</span><span class="alert-body"> You can learn more about advanced widgets by visiting the <a href=[18]>official User Interface documentation</a>.</span> </div>
+When the "Start Task" button is clicked, it triggers the `start_task` function, which starts the progress bar animation using the `start` method. The `after` method is used to schedule the `stop_task` function to run after 3 seconds. The `stop_task` function stops the progress bar animation using the `stop` method.
+
+You can learn more about advanced widgets by visiting the [official User Interface documentation][18].
 
 # Advanced Layout Management
 Advanced Layout Management can be used to make your Tkinter app look polished. Layout management helps you move widgets around and make your app look just the way you want using  `grid`, `place`, and `pack` managers.
@@ -210,6 +220,8 @@ You can stack widgets on top of each other or arrange them side by side, and Tki
         window.mainloop()
 
     ![Tkinter_pack][9]
+
+`button1`, `button2`, `button3` and `button4` are positioned by providing the `side` parameter with values such as `tk.LEFT`, `tk.TOP`, `tk.RIGHT`, or `tk.BOTTOM` respectively.
    
 - **Place**
 You can specify exactly where you want each widget to go by giving it coordinates, like x and y coordinates on a graph.
@@ -224,6 +236,8 @@ You can specify exactly where you want each widget to go by giving it coordinate
         window.mainloop()
     
     ![Tkinter_place][10]
+
+The `place` method is used to position widgets precisely using the x and y coordinates. `label1` is placed at coordinates (50, 50), and `label2` is placed at coordinates (200, 200).
     
 # File Handling
 
@@ -261,6 +275,8 @@ Let's understand this using an example:
 
 ![file_open_2][13]
 
+It creates a button labeled "Open a File". When clicked, the button triggers the `open_file` function, which opens a dialog window allowing the user to select an existing file or create a new one. If a file is selected, the code appends the strings "January", "February", "March", "April", and "May" to the file and the file is closed. After writing to the file, the `status_label` is updated to display a message confirming the file write operation.
+
 <div class="div-blue"> <span class="alert-header">Note:</span>  <span class="alert-body"> The file will automatically be closed when the `with` block is exited. However, you may explicitly close the file by calling `file.close()`.</span> </div>
 
 # Modal and Modeless Dialogs
@@ -283,6 +299,8 @@ Tkinter offers both modal and modeless dialogs, ideal for user input, confirmati
 
     ![Tkinter_modal_dialog][14]
 
+It creates a button labeled "Click me". When clicked, the button triggers the `show_modal_dialog` function, which displays a `modal dialog box` with the title "Modal Dialog" and the message "Pay attention to this dialog box!", and will not diasppear till "OK" is clicked.
+
 - **Modeless dialogs** are windows that allow you to interact with both the dialog and the main application window simultaneously. They do not block interaction with other windows in the application, allowing you to switch between them freely.
 
         import tkinter as tk
@@ -302,6 +320,8 @@ Tkinter offers both modal and modeless dialogs, ideal for user input, confirmati
         window.mainloop()
 
     ![Tkinter_modaless_dialog][15]
+
+It creates a button labeled "Click me". When clicked, the button triggers the `show_modeless_dialog` function, which creates a `modeless dialog box` using the `Toplevel` widget. The dialog box will not hinder your interaction with the other windows.
 
 <div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> Using a class for modeless dialogs can organize and encapsulate dialog functionality, particularly for more intricate dialogs with multiple components and interactions.</span> </div>
 
@@ -323,6 +343,6 @@ Tkinter offers both modal and modeless dialogs, ideal for user input, confirmati
 [13]: https://logiclair.org/?qa=blob&qa_blobid=15519562952456146282
 [14]: https://logiclair.org/?qa=blob&qa_blobid=5781727160550960337
 [15]: https://logiclair.org/?qa=blob&qa_blobid=1548469847260034179
-[16]: https://logiclair.org/?qa=blob&qa_blobid=10486969455584799544
+[16]: https://coderlegion.com/190/introduction-to-tkinter-library-in-python
 [17]: https://docs.python.org/3/library/tkinter.html
 [18]: https://docs.python.org/3/library/tk.html
