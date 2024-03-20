@@ -4,7 +4,7 @@ When working on a basic calculator with **Tkinter**, a widely-used GUI toolkit f
 Now let us actually dive into the process of building the calculator, one step at a time. All the required steps are given below; follow them one by one, and you will be able to develop an efficient and interactive calculator.
 
 ## Step 1: Setting Up the Environment
-Before we start building our calculator, ensure that you have Python installed on your system. To do so, the following section gives short information on the steps to be followed for different platforms.
+Before we start building our calculator, ensure that you have Python installed on your system. To do so, the following section gives a short guide on the steps to be followed for different platforms.
 
 **For Windows**
 1. Download and install Python from the [official website](https://www.python.org/downloads/) .
@@ -15,7 +15,7 @@ Before we start building our calculator, ensure that you have Python installed o
 **For Linux**
 
 Follow the following commands for installation:
-1. Open the terminal and copy and paste the code.
+1. Open the terminal and paste the following code:
 
 		sudo apt-get update
 		sudo apt-get install python3
@@ -25,8 +25,8 @@ Follow the following commands for installation:
 		python --version
 		
  **For MacOs**
-1. Download and install Python from the [official website](https://www.python.org/downloads/macos/) .
-2. For reference, [Steps to Install Python on MacOs](https://docs.python.org/3/using/mac.html) .
+1. Download and install Python from the [official website](https://www.python.org/downloads/macos/).
+2. For reference, [Steps to Install Python on MacOs](https://docs.python.org/3/using/mac.html).
 
 Next, we need to install Tkinter, which is included with Python by default. So, there's no need to install it separately.
 
@@ -75,7 +75,7 @@ Create a class called `class Calculator` that will represent our calculator appl
 
 **Initialization**
 
-The `init` method in the Calculator class sets up the basic features of the calculator when it's first created. It's like laying out the blueprint for how the calculator will look and work. The `master` part helps in putting the calculator in the right place on the screen. With`self.master.title("Simple Calculator")`, it gives the calculator window a name, like "Simple Calculator". The `self.master.geometry("300x400")` part determines how big the calculator window will be, making sure it's neither too small nor too big. The line`self.master.resizable(False, False)` prevents users from changing the size of the calculator window, keeping it neat and tidy. Finally, `self.create_widgets()` starts the process of actually creating all the buttons and numbers you see on the calculator screen. It's like setting up the stage before the show begins. So, with all these steps, the calculator is ready to go when you open it up!
+The `init` method in the Calculator class sets up the basic features of the calculator when it's first created. It's like laying out the blueprint for how the calculator will look and work. The `master` part helps position the calculator in the right place on the screen. `self.master.title("Simple Calculator")` gives the calculator window a name, like "Simple Calculator". The `self.master.geometry("300x400")` part determines how big the calculator window will be, making sure it's neither too small nor too big. The line`self.master.resizable(False, False)` prevents users from changing the size of the calculator window, keeping it neat and tidy. Finally, `self.create_widgets()` starts the process of actually creating all the buttons and numbers you see on the calculator screen. It's like setting up the stage before the show begins. So, with all these steps, the calculator is ready to go when you open it up!
 
 **Widget Creation**
 
@@ -115,7 +115,7 @@ Lastly, we need to create an instance of the Calculator class and run the `main`
 
 **Explanation**
 
-The line ` if __name__ == "__main__"` serves as a conditional statement that ensures the subsequent code block is only executed if the Python script is directly run by the interpreter, rather than being imported as a module into another script. Following this condition, `root = tk.Tk()` initializes a new instance of the Tkinter Tk class, establishing the main window or root window for the graphical user interface (GUI) application. This window acts as a container for all other GUI elements to be displayed. Subsequently, `app = Calculator(root)` creates an instance of the Calculator class, utilizing the root window as an argument, thereby initializing the calculator application within this main window. Lastly, `root.mainloop()` initiates the Tkinter event loop, a critical component that continuously listens for user interactions, such as button clicks and window resizing, effectively maintaining the responsiveness of the GUI. This function call essentially blocks further script execution until the main window is closed by the user, ensuring the seamless functioning of the GUI application.
+The line ` if __name__ == "__main__"` serves as a conditional statement that ensures that the subsequent code block is executed only if the Python script is directly run by the interpreter, rather than being imported as a module into another script. Following this condition, `root = tk.Tk()` initializes a new instance of the Tkinter Tk class, establishing the main window or root window for the graphical user interface (GUI) application. This window acts as a container for all other GUI elements to be displayed. Subsequently, `app = Calculator(root)` creates an instance of the Calculator class, utilizing the root window as an argument, thereby initializing the calculator application within this main window. Lastly, `root.mainloop()` initiates the Tkinter event loop, a critical component that continuously listens for user interactions, such as button clicks and window resizing, effectively maintaining the responsiveness of the GUI. This function call essentially blocks further script execution until the main window is closed by the user, ensuring the seamless functioning of the GUI application.
 
 ## Step 6: Outcome of Implementation 
    
@@ -205,7 +205,7 @@ The line ` if __name__ == "__main__"` serves as a conditional statement that ens
 
 <div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body">Implement input validation to avoid potential security vulnerabilities or crashes. </span> </div>
 
-- When any button is clicked, it triggers the `on_button_click` function. If the button is an arithmetic operation or a digit, it adds that value to the entry widget. If the button is '=' (equal sign), it evaluates the expression in the entry widget and displays the result. If it's 'C' (clear), it clears the entry widget.
+- When a button is clicked, it triggers the `on_button_click` function. If the button is an arithmetic operation or a digit, it adds that value to the entry widget. If the button is '=' (equal sign), it evaluates the expression in the entry widget and displays the result. If it's 'C' (clear), it clears the entry widget.
 
 - When '=' is pressed, it tries to evaluate the expression entered in the entry widget using Python's `eval()` function. If the expression is valid, it computes the result and displays it in the entry widget. If there's an error, such as invalid input or division by zero, it shows an error message.
 
