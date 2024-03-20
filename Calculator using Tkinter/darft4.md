@@ -4,29 +4,29 @@ When working on a basic calculator with **Tkinter**, a widely-used GUI toolkit f
 Now let us actually dive into the process of building the calculator, one step at a time. All the required steps are given below; follow them one by one, and you will be able to develop an efficient and interactive calculator.
 
 ## Step 1: Setting Up the Environment
-Before we start building our calculator, ensure that you have Python installed on your system. To do so the following section gives short information of the steps to be followed for different Platforms
+Before we start building our calculator, ensure that you have Python installed on your system. To do so, the following section gives short information on the steps to be followed for different platforms.
 **For Windows**
-1. Download and install Python from the [official website](https://www.python.org/downloads/)
+1. Download and install Python from the [official website](https://www.python.org/downloads/) .
 2. Verify by running the following command:
 
 		python --version
 
 **For Linux**
-Follow the following commands for installation
-1. Open terminal and copy and paste the code
+Follow the following commands for installation:
+1. Open the terminal and copy and paste the code.
 
 		sudo apt-get update
 		sudo apt-get install python3
 		
-3. Once installed verify by running the following command:
+3. Once installed, verify by running the following command:
 
 		python --version
 		
  **For MacOs**
-1. Download and install Python from the [official website](https://www.python.org/downloads/macos/)
-2. For reference [Steps to install python on MacOs](https://docs.python.org/3/using/mac.html)
+1. Download and install Python from the [official website](https://www.python.org/downloads/macos/) .
+2. For reference, [Steps to Install Python on MacOs](https://docs.python.org/3/using/mac.html) .
 
-Next, we need to install Tkinter, which is included with Python by default. So, there's no need to install it separately
+Next, we need to install Tkinter, which is included with Python by default. So, there's no need to install it separately.
 
 ## Step 2: Importing Libraries
 In Python, the tkinter module is used for creating GUI applications. 
@@ -57,7 +57,7 @@ Create a class called `class Calculator` that will represent our calculator appl
 	        self.entry = tk.Entry(self.master, width=20, font=('Arial', 14), bd=5, justify="right")
 	        self.entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
-	        # Define buttons
+	        # Define buttons.
 	        buttons = [
 	            ('7', 1, 0), ('8', 1, 1), ('9', 1, 2), ('/', 1, 3),
 	            ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('*', 2, 3),
@@ -65,7 +65,7 @@ Create a class called `class Calculator` that will represent our calculator appl
 	            ('0', 4, 0), ('.', 4, 1), ('=', 4, 2), ('+', 4, 3)
 	        ]
 
-	        # Create buttons using a loop
+	        # Create buttons using a loop.
 	        for (text, row, col) in buttons:
 	            button = tk.Button(self.master, text=text, width=5, height=2, 
 	            font= ('Arial', 14), command=lambda t=text: self.on_button_click(t))
@@ -132,7 +132,7 @@ The line ` if __name__ == "__main__"` serves as a conditional statement that ens
 	        self.master.resizable(False, False)
 	        self.create_widgets()
 
-	    # creating the widgets
+	    # creating the widgets.
 	    
 	    def create_widgets(self):
 	        # Create entry widget for displaying input and results
@@ -141,7 +141,7 @@ The line ` if __name__ == "__main__"` serves as a conditional statement that ens
 	        )
 	        self.entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
-	        # Define buttons
+	        # Define buttons.
 	        buttons = [
 	            ("7", 1, 0),
 	            ("8", 1, 1),
@@ -173,7 +173,7 @@ The line ` if __name__ == "__main__"` serves as a conditional statement that ens
 	            )
 	            button.grid(row=row, column=col, padx=5, pady=5)
 
-	    # funtion creation for on click feature
+	    # funtion creation for on click feature.
 	    def on_button_click(self, text):
 	        if text == "=":
 	            try:
@@ -189,7 +189,7 @@ The line ` if __name__ == "__main__"` serves as a conditional statement that ens
 	        else:
 	            self.entry.insert(tk.END, text)
 
-	    # main funtion is defined                
+	    # main funtion is defined.                
 	    if __name__ == "__main__":
 	        root = tk.Tk()
 	        app = Calculator(root)
@@ -220,7 +220,7 @@ Following is an illustration of the functionality of a simple calculator program
 # Testing Result 
 ![adding_numbers](./img/testing1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![display_output](./img/testing2.png)
 
-# Possible Errors that might occur
+# Possible errors that might occur
 In building a calculator using Tkinter, potential errors include syntax mistakes, input validation issues, and challenges with complex operations. Effective debugging is crucial for ensuring the calculator functions reliably. Have a look at some of the problems along with their solutions that are listed below.
 ## Division by zero error:
 
@@ -249,7 +249,7 @@ In building a calculator using Tkinter, potential errors include syntax mistakes
      except SyntaxError:
      messagebox.showerror("Error", "Invalid Expression")
 
-## NameError due to undefined variable:
+## NameError due to an undefined variable:
 
 **Problem**: The code checks for the '=' and 'C' buttons, but they're not defined in the button list.
 
@@ -273,7 +273,7 @@ In building a calculator using Tkinter, potential errors include syntax mistakes
 **Problem**: The calculator allows arbitrary evaluation of expressions `using eval()`, which can lead to unintended consequences.
 
 **Solution**: Restrict the input to a certain format or implement a safer method for evaluation, such as parsing the expression manually.
-Here's a safer approach to evaluate expressions using `ast.literal_eval()`:
+Here's a safer approach for evaluating the expressions using `ast.literal_eval()`:
 
 	  import ast
 	  def evaluate_expression(self, expression):
