@@ -259,5 +259,70 @@ In the tutorial on libraries like NumPy or Pandas, you could interlink to tutori
 
 By interlinking related tutorials in this manner, you not only help readers navigate through the topics more seamlessly but also encourage them to explore related concepts, thereby enhancing their overall understanding of Python programming.
 <br>
-</p><p><strong>## NLP(Natural Language Processing):</strong> Sprinkle NLP keywords provided into your article. This will be appear in csv-freelancer URL with bulb icon showing means that the topic has NLP to take care of.</p>
+
+</p><p><strong>#28# NLP(Natural Language Processing):</strong> Sprinkle NLP keywords provided into your article. This will be appear in csv-freelancer URL with bulb icon showing means that the topic has NLP to take care of.</p>
+
+
+
+<b>29) Things to include in Tutorial?</b> <br><br>
+
+
+
+A programming tutorial article should include several key elements to effectively convey information and guide readers through the learning process. Here are some essential components to consider: <br> <br>
+
+<b>1. **Introduction**: </b><br>
+
+<b>a). What is this topic</b>, give short explanation. Mention the Topic keyword in first paragraph.<br>
+<b>b). Provide importance, usefulness and lessons to learn</b> of the topic you'll be covering. <br>
+1)Explain why it's important or useful and <br>
+2)What readers can expect to learn from the tutorial or What you will be covering in this topic <br> <br>
+
+<b>2. **Body of Article**: </b><br>
+
+<b>a. Define Topic:</b> Define explain about topic like for example Dictionary  <br> <br>
+
+
+<b>b. Syntax and explanation</b> if only required.  <br> <br>
+
+<b>c. Practical example </b>followed with example.  <br> <br>
+
+<b>d. Give diagram if possible. </b>
+<br>
+Some diagrams like the following in some places when you storytelling in the tutorial article will be good.
+https://media.geeksforgeeks.org/wp-content/uploads/Blank-Diagram-Page-1-3.png
+
+
+ <br> <br>
+
+
+<b>e. **Step-by-Step Instructions**:</b> Break down the tutorial into manageable steps, each clearly explained and accompanied by examples or code snippets. Use a logical progression from basic to more advanced concepts. <br> <br>
+
+<b>f. **Code Examples**: </b>Include plenty of code examples to illustrate the concepts you're explaining. Make sure the code is well-commented and easy to follow. <br> <br>
+
+<b>g. **Explanations and Insights**: </b>Don't just show code—explain it. Help readers understand why each step is necessary and how it contributes to achieving the tutorial's goals. Provide insights, tips, and best practices along the way. <br> <br>
+
+<b>h. **Visual Aids**: </b>Supplement your explanations with diagrams, charts, screenshots, or other visual aids to help clarify complex concepts or workflows. <br> <br>
+
+<br> 
+<b>I. I will encourage you to use our all divs</b> at least once in the tutorial
+like tips, caution, FAQ, note. <br> <br> 
+
+<b>J. Also, 2-3 images </b> showing like the output from your screen<br> <br> 
+
+<b>K. Outlines check: </b> Each points in outlines will need to be crossed off perfectly better than competitor sites.<br> <br> 
+
+
+
+<b>3. **Conclusion**: </b><br>Summarize the key takeaways from the tutorial and encourage readers to continue exploring the topic further on their own. Provide additional resources or links to related tutorials, documentation, or community forums.
+
+
+
+<p></p>
+
+
+<br> 
+
+
+
 </div>
+
