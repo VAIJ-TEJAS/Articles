@@ -1,14 +1,15 @@
 
-In this article, we'll dive into the world of **Tkinter**, a popular GUI (Graphical User Interface) toolkit for Python, and harness its capabilities to build a robust **to-do list application** from scratch. We'll walk you through each step, from designing a **user-friendly interface** to adding crucial functions like **task creation**, **deletion** and **prioritization**.
+
+In this article, we'll dive into the world of **Tkinter**, a popular GUI (Graphical User Interface) toolkit for Python, and harness its capabilities to build a robust **to-do list application** from scratch. I'll walk you through each step, from designing a **user-friendly interface** to adding crucial functions like **task creation**, **deletion** and **prioritization**.
 
 # Brief Overview of Tkinter
-Tkinter is a popular Python library for creating graphical user interfaces. It provides a simple but powerful way to design and implement interactive applications with ease. With Tkinter, you can create windows, buttons, labels, text boxes, and other GUI elements to build intuitive and user-friendly interfaces for your Python programs.
+Tkinter, a popular Python library, makes GUI creation straightforward. It enables you to design interactive applications easily by providing tools for windows, buttons, labels, text boxes, and more.
 
 Feel free to check out this article to discover more about [advanced Tkinter concepts][1].
 
 # What is a To-Do List?
 
-A to-do list is like your personal task manager. It's a simple way to jot down all the things you need to do, whether it's groceries to buy, assignments to finish, or calls to make. It helps to keep you organized and on track. Instead of trying to remember everything in your head, you can write it down on your list. It helps you prioritize, stay focused, and feel accomplished as you tick off tasks one by one.
+A to-do list serves as your personal task manager, allowing you to jot down everything from groceries to buy, assignments to complete, or calls to make. It keeps you organized, aiding in prioritization, focus, and a sense of accomplishment as tasks are checked off one by one.
 
 This article will guide you through the process of creating an interactive to-do list using Tkinter, enabling you to effectively manage your tasks.
 
@@ -25,28 +26,24 @@ Before starting to build a to-do list app with Tkinter, make sure you have the f
   - **For MacOS**: You can download Python using Homebrew:
 
 		brew install python3
-
-Tkinter comes pre-installed with Python. Hence, you need not download it again.
 	
-<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> You can verify the installation by typing `python3 --version` in the terminal.</span> </div>
+<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> To confirm the installation, enter `python3 --version` in the terminal.</span> </div>
 
-- Text Editor or IDE: Choose a text editor or IDE you're comfortable with, such as Visual Studio Code or PyCharm, for writing and running Python code.
-- Basic Python Skills: Understand basic Python concepts like variables, data types, functions, and control flow.
-- Tkinter Basics: Knowing the basics of Tkinter, such as widgets and event handling, can be helpful. You can learn through [Tkinter documentation][3] or [this article][4].
-
-With these basics in place, you'll be ready to create your own to-do list app using Tkinter.
+- Text Editor or IDE: Select a preferred text editor or IDE, such as Visual Studio Code or PyCharm, to write and execute Python code.
+- Basic Python Skills: Learn core Python concepts: variables, data types, functions, and control flow.
+- Tkinter Basics: Basic familiarity with Tkinter, including widgets and event handling, can be useful. You can learn through [Tkinter documentation][3] or [this article][4].
 
 
 # Designing the User Interface
 **Importing necessary Libraries**
-Tkinter (`tk`) is the primary module for building GUI applications, while `ttk` provides themed widget components for a more modern and customized look. The `messagebox` module allows you to display various types of message boxes for user interaction. We shal be using SQLite3 for storing our tasks. It is a lightweight database engine used for storing and managing data locally.
+Tkinter (`tk`) is the go-to module for GUI applications, complemented by `ttk` for themed widgets, offering a modern appearance. Utilizing the `messagebox` module enables the display of user interaction messages. Additionally, SQLite3, a lightweight database engine, handles local data storage and management for our tasks.
 
 	import tkinter as tk
 	from tkinter import ttk, messagebox
 	import sqlite3
 
 **Creating the Main Window**
-First, we create the main window for the Todo List App with Tkinter, setting its size and geometry. Then, we instantiate the TodoListApp class to integrate its functionalities (discussed later) into the window. Finally, we start the event loop to ensure the application responds to user interactions.
+We create the main window using Tkinter, set its size, and instantiate the `TodoListApp` class (discussed later) to integrate its functionalities. Finally, we start the event loop for user interaction.
 
 	window = tk.Tk()
 	window.geometry("457x335")
@@ -67,7 +64,7 @@ You can add a catchy title to your To-Do app. Here, I have named it "Todo List A
     self.task_list_frame.pack(padx=10, pady=5, fill=tk.BOTH, expand=True)
 
 **Adding Widgets for Task Entry**
-Following that, we require a text field where users can input a name for a new task. Additionally, users should be able to choose one of two priorities: "Urgent" or "General." In the case of an urgent task, users will also need a text field to input the deadline.
+To add a new task, provide the task name, priority, and deadline. All tasks require a name and set priority. For urgent tasks, a deadline is mandatory..
 
 	self.task_text = tk.StringVar()
     self.task_entry = ttk.Entry(entry_frame, textvariable=self.task_text)
@@ -107,7 +104,7 @@ Every task entered into the database table is retrieved and processed. A separat
             else:
                 task_label = ttk.Label(task_frame, text=task_text)
             task_label.grid(row=0, column=1, padx=5)
-For each task, `task_id`, `task_text`, `task_priority`, and `task_deadline` is extracted. Then, it creates a frame to contain the task details, ensuring visual separation and organization. `task_checkbutton` is created for each task, allowing users to mark tasks as complete. Additionally, the task name is displayed as a Label within the frame. If the task is urgent or has a deadline, the task name is appended with the deadline information.
+For each task, relevant details like `ID`, `task`, `priority`, and `deadline` are extracted. Frames are created to organize task information neatly. `task_checkbutton` enable task completion marking, while task names are displayed as Labels. If urgent or with a deadline, task names include this information.
 
 This represents the expected appearance of the GUI:
 
@@ -135,7 +132,7 @@ The `create_table` function sets up a table named `tasks` in the SQLite database
 <div class="div-red"> <span class="alert-header">Caution:</span> <span class="alert-body"> Ensure that there is no existing table named `tasks` in the database as it may lead to data loss or corruption if the existing table structure is overwritten or altered unintentionally.</span> </div>
 
 **Function to Add Tasks**
-To input a new task, you need to provide task details including the task name, priority, and deadline. All tasks should have a name and its priority must be set. It's important to note that a deadline is required for urgent tasks.
+To add a new task, provide the task name, priority, and deadline. All tasks require a name and set priority. For urgent tasks, a deadline is mandatory.
 
         task_text = self.task_text.get().strip()
         task_priority = self.priority_selection.get()
@@ -149,7 +146,7 @@ To input a new task, you need to provide task details including the task name, p
             self.task_deadline.set("")
         else:
             messagebox.showwarning("Warning", "Task or Priority cannot be empty, and Urgent task must have a deadline.")
-It collects task details such as name, priority, and deadline from input fields. If the name is not empty and the priority is either "General" or "Urgent" with a specified deadline, the task is added to the database. After insertion, the task list updates, and input fields reset. If the description or priority is empty, or an urgent task lacks a deadline, a warning message appears.
+It collects task details from input fields. If the name isn't empty and the priority is valid, the task is added to the database. After insertion, the task list refreshes, and input fields reset. If inputs are invalid, a warning message appears.
 
 If task name or priority or deadline for an urgent task is not entered:
 
@@ -161,14 +158,15 @@ After successfully entering a task:
 
 **Function to Delete Tasks**
 To delete tasks, you click the "Delete Tasks" button, opening a window where you select tasks for removal. At least one task must be chosen before clicking "Delete." After confirmation, the selected tasks are deleted from the SQLite table.
+
 This opens a Toplevel window:  
 
         delete_window = tk.Toplevel(self.window)
         delete_window.geometry("457x335")
         delete_window.title("Delete Tasks")
-        task_list_frame = ttk.Frame(delete_window)
+        task_list_frame = ttk.Frame(delete_window)     #to contain the list of tasks
         task_list_frame.pack(padx=10, pady=10)
-        self.c.execute("SELECT id, task FROM tasks")
+        self.c.execute("SELECT id, task FROM tasks")      #retrieve tasks from database
         tasks = self.c.fetchall()
 
 This displays the retrieved tasks with checkboxes:
@@ -363,7 +361,7 @@ It fetches the task's `priority` and `initial_priority` from the database. If th
 
 
 # Conclusion
-In summary, crafting a Todo List App with Tkinter provides a hands-on introduction to Python GUI development. You've successfully built an intuitive interface for a **To-Do list app**, highlighting Python's **versatility** for practical applications. Through this project, you gain insights into **user experience design**, making it an ideal starting point for aspiring developers.
+In summary, creating a Todo List App with Tkinter offers a practical introduction to Python GUI development. You've built an intuitive interface for a **To-Do list app**, showcasing Python's **versatility**. Through this project, you gain insights into **user experience design**, ideal for aspiring developers.
 
 
 [2]: https://www.python.org/downloads/
