@@ -1,3 +1,6 @@
+
+In this article, we'll dive into the world of **Tkinter**, a popular GUI (Graphical User Interface) toolkit for Python, and harness its capabilities to build a robust **to-do list application** from scratch. We'll walk you through each step, from designing a **user-friendly interface** to adding crucial functions like **task creation**, **deletion** and **prioritization**.
+
 # Brief Overview of Tkinter
 Tkinter is a popular Python library for creating graphical user interfaces. It provides a simple but powerful way to design and implement interactive applications with ease. With Tkinter, you can create windows, buttons, labels, text boxes, and other GUI elements to build intuitive and user-friendly interfaces for your Python programs.
 
@@ -163,9 +166,9 @@ This opens a Toplevel window:
         delete_window = tk.Toplevel(self.window)
         delete_window.geometry("457x335")
         delete_window.title("Delete Tasks")
-        task_list_frame = ttk.Frame(delete_window)     #to contain the list of tasks
+        task_list_frame = ttk.Frame(delete_window)
         task_list_frame.pack(padx=10, pady=10)
-        self.c.execute("SELECT id, task FROM tasks")      #retrieve tasks from database
+        self.c.execute("SELECT id, task FROM tasks")
         tasks = self.c.fetchall()
 
 This displays the retrieved tasks with checkboxes:
@@ -360,17 +363,17 @@ It fetches the task's `priority` and `initial_priority` from the database. If th
 
 
 # Conclusion
-In summary, crafting a Todo List App with Tkinter provides a hands-on introduction to Python GUI development. You've successfully built an intuitive interface for managing tasks efficiently, highlighting Python's versatility for practical applications. Through this project, you gain insights into user experience design and software development principles, making it an ideal starting point for aspiring developers.
+In summary, crafting a Todo List App with Tkinter provides a hands-on introduction to Python GUI development. You've successfully built an intuitive interface for a **To-Do list app**, highlighting Python's **versatility** for practical applications. Through this project, you gain insights into **user experience design**, making it an ideal starting point for aspiring developers.
 
 
 [2]: https://www.python.org/downloads/
 [3]: https://docs.python.org/3/library/tkinter.html
 [4]: https://coderlegion.com/190/introduction-to-tkinter-library-in-python
-[5]: nsdhvsdmvhcsmdhgcvsmdhgfvhsgdfvnehsdgcshvcnsehgvcnfesghdc
-[6]: jhgfvsdgcjsdgcvjdsgfcjeghdcfredcehdcrfjecfrecvegshdcvvjhjhgdshcvrv
-[7]: jhgfvsdgcjsdgcvjdsgfcjeghdcfredcehdcrfjecfrecvegshdcvvjhjhgdshcvrv
-[8]: jhgfvsdgcjsdgcvjdsgfcjeghdcfredcehdcrfjecfrecvegshdcvvjhjhgdshcvrv
-[9]: jhgfvsdgcjsdgcvjdsgfcjeghdcfredcehdcrfjecfrecvegshdcvvjhjhgdshcvrv
-[10]: jhgfvsdgcjsdgcvjdsgfcjeghdcfredcehdcrfjecfrecvegshdcvvjhjhgdshcvrv
-[11]: jhgfvsdgcjsdgcvjdsgfcjeghdcfredcehdcrfjecfrecvegshdcvvjhjhgdshcvrv
-[12]: jhgfvsdgcjsdgcvjdsgfcjeghdcfredcehdcrfjecfrecvegshdcvvjhjhgdshcvrv
+[5]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/ToDo%20List/todo_gui.png
+[6]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/ToDo%20List/todo_error_insert.png
+[7]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/ToDo%20List/todo_insert.png
+[8]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/ToDo%20List/todo_del_window1.png
+[9]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/ToDo%20List/todo_del_window2.png
+[10]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/ToDo%20List/todo_del_window3.png
+[11]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/ToDo%20List/todo_del_window4.png
+[12]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/ToDo%20List/todo_complete.png
