@@ -1,6 +1,7 @@
 
 
-In this article, we'll dive into the world of **Tkinter**, a popular GUI (Graphical User Interface) toolkit for Python, and harness its capabilities to build a robust **to-do list application** from scratch. I'll walk you through each step, from designing a **user-friendly interface** to adding crucial functions like **task creation**, **deletion** and **prioritization**.
+
+In this article, we'll explore **Tkinter**, a renowned GUI toolkit for Python, and leverage its features to develop a comprehensive **to-do list application**. I'll guide you through crafting a **user-friendly interface** and implementing essential functions such as **task creation**, **deletion**, and **prioritization**.
 
 # Brief Overview of Tkinter
 Tkinter, a popular Python library, makes GUI creation straightforward. It enables you to design interactive applications easily by providing tools for windows, buttons, labels, text boxes, and more.
@@ -27,14 +28,15 @@ Before starting to build a to-do list app with Tkinter, make sure you have the f
 
 		brew install python3
 	
-<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> To confirm the installation, enter `python3 --version` in the terminal.</span> </div>
+To confirm the installation, enter `python3 --version` in the terminal.
 
 - Text Editor or IDE: Select a preferred text editor or IDE, such as Visual Studio Code or PyCharm, to write and execute Python code.
-- Basic Python Skills: Learn core Python concepts: variables, data types, functions, and control flow.
 - Tkinter Basics: Basic familiarity with Tkinter, including widgets and event handling, can be useful. You can learn through [Tkinter documentation][3] or [this article][4].
 
+<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> This project assumes familiarity with Python fundamentals.</span> </div>
 
 # Designing the User Interface
+
 **Importing necessary Libraries**
 Tkinter (`tk`) is the go-to module for GUI applications, complemented by `ttk` for themed widgets, offering a modern appearance. Utilizing the `messagebox` module enables the display of user interaction messages. Additionally, SQLite3, a lightweight database engine, handles local data storage and management for our tasks.
 
@@ -51,7 +53,7 @@ We create the main window using Tkinter, set its size, and instantiate the `Todo
 	window.mainloop()
 
 **Adding a Title and necessary Frames and Labels**
-You can add a catchy title to your To-Do app. Here, I have named it "Todo List App". The app features two frames: one for entering new tasks and another for displaying existing ones. The new task frame includes labels for "Task Name," "Priority," and "Deadline."
+You can add a catchy title to your To-Do app. I have named it "Todo List App". The app features two frames: one for entering new tasks and another for displaying existing ones. The new task frame includes labels for "Task Name," "Priority," and "Deadline."
 
 	self.window = window
 	window.title("Todo List App")
@@ -64,7 +66,7 @@ You can add a catchy title to your To-Do app. Here, I have named it "Todo List A
     self.task_list_frame.pack(padx=10, pady=5, fill=tk.BOTH, expand=True)
 
 **Adding Widgets for Task Entry**
-To add a new task, provide the task name, priority, and deadline. All tasks require a name and set priority. For urgent tasks, a deadline is mandatory..
+To add a new task, provide the task name, priority, and deadline. All tasks require a name and set priority. For urgent tasks, a deadline is mandatory.
 
 	self.task_text = tk.StringVar()
     self.task_entry = ttk.Entry(entry_frame, textvariable=self.task_text)
@@ -110,11 +112,14 @@ This represents the expected appearance of the GUI:
 
 ![todo_gui][5]
 
-<div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> Customize the labels to give different colours for tasks having different priorities. The code for the same is provided at the end.</span> </div>
+<div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> Customize labels with different colors based on task priorities. See code at the end.</span> </div>
 
 
 # Implementing Functionality
-<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> The following functions are defined in the `TodoListApp` class.</span> </div>
+
+The following functions are defined in the `TodoListApp` class.
+
+<div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> It is best to encapsulate multiple functions in a class.</span> </div>
 
 **Create a Table in the SQLite Database**
 To store your tasks effectively, a database is necessary. We will proceed by creating a table within an SQLite database for this purpose.
@@ -361,7 +366,7 @@ It fetches the task's `priority` and `initial_priority` from the database. If th
 
 
 # Conclusion
-In summary, creating a Todo List App with Tkinter offers a practical introduction to Python GUI development. You've built an intuitive interface for a **To-Do list app**, showcasing Python's **versatility**. Through this project, you gain insights into **user experience design**, ideal for aspiring developers.
+In summary, crafting a Todo List App with Tkinter provides a practical introduction to Python GUI development. You've built an intuitive interface for a **To-Do list app** with **addition**, **deletion**, and **task completion** features. Using **SQLite** for **data storage**, you've showcased Python's **versatility**. This project offers insights into **user experience design**, beneficial for aspiring developers.
 
 
 [1]: https://docs.python.org/3/library/tk.html
