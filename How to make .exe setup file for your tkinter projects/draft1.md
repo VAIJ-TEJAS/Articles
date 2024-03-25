@@ -163,6 +163,7 @@ We'll now test our executable file. I've converted the Python script to a .exe f
 The `SimpleCalculator.exe` file can be found in the `dist` folder.
 
 ![pyinstl_exec1][6]
+
 Upon running the file, it works as intended.
 
 ![pyinstl_exec2][7]
@@ -195,7 +196,7 @@ You have various options for distributing your .exe file to users:
    - **Dropbox**: Similar to Google Drive, you can upload the .exe file to Dropbox and share the link.
    - **OneDrive**: Microsoft's OneDrive offers file hosting and sharing capabilities.
 
-You can download the executable file we made in this article by clicking [here][10].
+You can download the executable file we made in this article by clicking <a href=[10] download="SimpleCalculator.exe">here</a>.
 
 # Conclusion
 In conclusion, creating a calculator application that can add, subtract, multiply and divide, using **Tkinter** and converting it into a **.exe file** using **PyInstaller** is a straightforward process that opens up numerous opportunities for **software distribution**. By following the steps outlined in this article, you've learned how to harness the power of Tkinter to build intuitive graphical user interfaces and leverage PyInstaller to package your Python scripts into **standalone executables**.
@@ -213,4 +214,4 @@ Now that you've successfully created your calculator application and transformed
 [7]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile2.png
 [8]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile3.png
 [9]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_flowchart.png
-[10]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/SimpleCalculator.exe
+[10]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects
