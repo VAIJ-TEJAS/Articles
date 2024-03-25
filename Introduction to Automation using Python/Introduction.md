@@ -71,14 +71,14 @@ A powerful tool for automating web browsers, which allows you to interact with w
 		pyautogui.press("winleft")
 		pyautogui.write("notepad")
 		pyautogui.press("enter")
-		time.sleep(1)  # Wait for Notepad to open
+		time.sleep(5)  # Wait for Notepad to open
 
 		#Type a message
 		pyautogui.write("Hello, PyAutoGUI!")
 
 		#Save the file
 		pyautogui.hotkey("ctrl", "s")
-		time.sleep(1)  # Wait for the save dialog to appear
+		time.sleep(5)  # Wait for the save dialog to appear
 		pyautogui.write("example.txt")
 		pyautogui.press("enter")
 
@@ -132,7 +132,7 @@ Requests is a simple yet elegant **HTTP library** for Python, which allows you t
 		#Display the DataFrame
 		print("DataFrame:")
 		print(df)
-![dataframe](./img/dataframe.png)
+![dataframe]()
 
 # Getting Started with Automation
 
@@ -251,8 +251,7 @@ The `os` module in Python provides a **platform-independent** way of interacting
 	#Remove a directory
 	os.rmdir(new_dir)
 	print("Directory removed:", new_dir)
-![os_module](./img/os_module.png)
-
+![os_module]()
 **Note :** While renaming the files make sure to create the file whose name you want to change.
 
 
@@ -279,8 +278,7 @@ The `shutil` module offers a high-level interface for **file operations**, inclu
 	except Exception as e:
 	    print("An error occurred:", e)
 
-![shutil_module](./img/shutil_module.png)
-
+![shutil_module]()
 **Note :** Make sure to pass the correct path of the source and destination file in the same way as mentioned above
 
 ## Subprocess Module:
@@ -299,7 +297,7 @@ The `subprocess` module in Python provides a powerful way to spawn new processes
 	    print("Command not found.")
 	except Exception as e:
 	    print("An error occurred:", e)
-![subprocess_module](./img/subprocess_module.png)
+![subprocess_module]()
 
 ## Time  and  Datetime Modules:
 
@@ -321,9 +319,8 @@ The `time` and `datetime` modules in Python provide functionalities for handling
 
 	#Print a message after the delay
 	print("Automation job executed after {} seconds.".format(delay))
-![time-date_module](./img/time_date.png)
-
 **Note:** When this code is executed than after the delay of 5 seconds the message is displayed
+
 
 
 # Automating File Operations
