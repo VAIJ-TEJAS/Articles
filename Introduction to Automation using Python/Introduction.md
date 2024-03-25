@@ -218,7 +218,7 @@ In this brief overview, we'll explore why **Python** stands out as the optimal l
 6.  **Integration Capabilities**: Easily integrates with other languages and tools.
 # Essential Python Libraries for Automation
 
-##  `os` Module:
+##  OS Module:
 
 The `os` module in Python provides a **platform-independent** way of interacting with the **operating system**, offering functions for various operating system-related tasks such as **file and directory operations**, **process management**, and **environment variables manipulation**.
 
@@ -255,7 +255,7 @@ The `os` module in Python provides a **platform-independent** way of interacting
 **Note :** While renaming the files make sure to create the file whose name you want to change.
 
 
-## `shutil` Module:
+## Shutil Module:
 
 The `shutil` module offers a high-level interface for **file operations**, including file **copying**, **moving**, and **deletion**. It simplifies common file management tasks and ensures **cross-platform compatibility**.
 
@@ -281,16 +281,47 @@ The `shutil` module offers a high-level interface for **file operations**, inclu
 ![shutil_module]()
 **Note :** Make sure to pass the correct path of the source and destination file in the same way as mentioned above
 
-## `subprocess` Module:
+## Subprocess Module:
 
 The `subprocess` module in Python provides a powerful way to spawn new processes, connect to their input/output/error pipes, and obtain their return codes. It allows you to execute system commands, run external programs, and interact with them programmatically from within your Python script.
+
 **Example :**
 
+	import subprocess
+	try:
+	    #Run the command and capture output
+	    result = subprocess.run(['-l'], capture_output=True, text=True)
+	    # Print the command output
+	    print("Command output:", result.stdout)
+	except FileNotFoundError:
+	    print("Command not found.")
+	except Exception as e:
+	    print("An error occurred:", e)
+![subprocess_module]()
+
+## Time  and  Datetime Modules:
+
+The `time` and `datetime` modules in Python provide functionalities for handling time-related tasks, including measuring time intervals, formatting dates and times, and scheduling automation jobs.
+
+**Example :**
+
+	import time
+
+	#Define the delay in seconds
+	delay = 5
+
+	#Get the current time
+	start_time = time.time()
+
+	#Wait for the specified delay
+	while time.time() < start_time + delay:
+	    pass
+
+	#Print a message after the delay
+	print("Automation job executed after {} seconds.".format(delay))
+**Note:** When this code is executed than after the delay of 5 seconds the message is displayed
 
 
-## `time` and `datetime` Modules:
-
-The `time` and `datetime` modules provide functionalities for working with dates, times, and time intervals in Python. These modules are essential for scheduling automation jobs, measuring execution times, and handling time-related operations.
 
 # Automating File Operations
 
