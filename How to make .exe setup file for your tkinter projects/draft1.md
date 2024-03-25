@@ -208,9 +208,9 @@ Now that you've successfully created your calculator application and transformed
 [2]: https://docs.python.org/3/library/tkinter.html
 [3]: https://coderlegion.com/190/introduction-to-tkinter-library-in-python
 [4]: https://docs.python.org/3/library/tk.html
-[5]: pyinstl_calculator
-[6]: pyinstl_exec1
-[7]: pyinstl_exec2
-[8]: pyinstl_exec3
-[9]: pyinstl_flowchart
-[10]: SimpleCalculator.exe
+[5]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_calculator.png
+[6]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile1.png
+[7]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile2.png
+[8]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile3.png
+[9]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_flowchart.png
+[10]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/SimpleCalculator.exe
