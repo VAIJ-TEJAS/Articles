@@ -252,6 +252,7 @@ The `os` module in Python provides a **platform-independent** way of interacting
 	os.rmdir(new_dir)
 	print("Directory removed:", new_dir)
 ![os_module](./img/os_module.png)
+
 **Note :** While renaming the files make sure to create the file whose name you want to change.
 
 
@@ -279,6 +280,7 @@ The `shutil` module offers a high-level interface for **file operations**, inclu
 	    print("An error occurred:", e)
 
 ![shutil_module](./img/shutil_module.png)
+
 **Note :** Make sure to pass the correct path of the source and destination file in the same way as mentioned above
 
 ## Subprocess Module:
@@ -319,8 +321,9 @@ The `time` and `datetime` modules in Python provide functionalities for handling
 
 	#Print a message after the delay
 	print("Automation job executed after {} seconds.".format(delay))
-**Note:** When this code is executed than after the delay of 5 seconds the message is displayed
 ![time-date_module](./img/time_date.png)
+
+**Note:** When this code is executed than after the delay of 5 seconds the message is displayed
 
 
 # Automating File Operations
