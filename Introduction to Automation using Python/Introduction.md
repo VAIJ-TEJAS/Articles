@@ -1,5 +1,5 @@
 In this guide, we'll explore automation with Python. Automation is key in today's fast-paced world, saving time and effort across various tasks. Python, known for its simplicity and vast libraries, is a top choice for automation. We'll cover its basics, essential libraries, practical uses, and best practices. By the end, you'll be ready to automate tasks efficiently using Python.
-# Introduction
+# Understanding Automation
 Automation with Python offers a transformative approach to **streamlining repetitive tasks** and **optimizing workflows** across industries. In this section we are going to learn about automation and how Automation can be done using Python .
 
 ## What is automation
