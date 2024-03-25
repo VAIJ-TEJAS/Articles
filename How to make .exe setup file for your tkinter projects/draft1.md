@@ -12,7 +12,7 @@ In this article, you will learn how to distribute a **Tkinter** project an as **
 
 			brew install python3
 Confirm the installation by typing `python3 --version` in the terminal.
-- PyInstaller: It is necessary for converting Python scripts into executable files. Open your terminal or command prompt and run the following:
+- PyInstaller: It is necessary for converting Python scripts into executable files. Launch your terminal or command prompt and execute the following command:
 
 		pip install pyinstaller
 - IDE or Text Editor: Choose a preferred text editor or IDE like Visual Studio Code for coding.
