@@ -18,7 +18,7 @@ Examples of automation include **robotic assembly lines** in manufacturing, **au
 ## Introduction of Python in  Automation
 Python is a powerful language for automation tasks due to its **simplicity**, **versatility**, and **extensive libraries**. It allows users to automate repetitive tasks, streamline workflows, and increase productivity across various domains.
 
-### Python Basics
+**Python Basics**
 Python basics encompass understanding fundamental concepts such as variables, data types, control structures (like loops and conditionals), functions, and basic input/output operations.
 Here is an example of Python input/output
 
@@ -32,7 +32,7 @@ Here is an example of Python input/output
 ## Python Modules for Automation
 Python modules for automation encompass a wide range of tools and libraries. These modules offer functionalities to automate various tasks such as **file operations**, **web scraping**, **data manipulation**, **system administration**, and more.
 
-### 1.Selenium: 
+**1. Selenium** 
 A powerful tool for automating web browsers, which allows you to interact with web elements, fill forms, and navigate through web pages programmatically. 
 - **uses** : It's widely used for **web scraping**, **testing**, and **automating repetitive tasks** in web applications.
 
@@ -60,7 +60,7 @@ A powerful tool for automating web browsers, which allows you to interact with w
 		#Close the browser window
 		driver.quit()	
 						
-### 2. PyAutoGUI
+**2. PyAutoGUI**
 **PyAutoGUI** enables you to automate GUI interactions by simulating mouse and keyboard actions.
 - **uses** : It is useful for automating tasks involving graphical user interfaces, such as opening applications
 			
@@ -82,7 +82,7 @@ A powerful tool for automating web browsers, which allows you to interact with w
 		pyautogui.write("example.txt")
 		pyautogui.press("enter")
 
-### 3. Requests
+**3. Requests**
 Requests is a simple yet elegant **HTTP library** for Python, which allows you to send HTTP requests easily. 
   - **uses :** It's commonly used for web scraping, **accessing APIs**.
   
@@ -98,7 +98,7 @@ Requests is a simple yet elegant **HTTP library** for Python, which allows you t
 		else:
 		    print("Error:", response.status_code)
 
-### 4. Beautiful Soup
+**4. Beautiful Soup**
  This library provides functions for **parsing HTML and XML documents**, making it invaluable for web scraping tasks.
  - **uses** : It allows you to extract data from web pages effortlessly, facilitating     automation of data extraction processes.
  
@@ -115,7 +115,7 @@ Requests is a simple yet elegant **HTTP library** for Python, which allows you t
 		for link in soup.find_all("a"):
 		    print(link.get_text())
 		    
-### 5. Pandas
+**5. Pandas**
  Pandas is a powerful data manipulation library that provides high-level data structures and functions for working with structured data. 
  - **uses :** It's commonly used for automating data processing tasks, such as cleaning, transforming, and analyzing datasets.
 		
@@ -139,11 +139,11 @@ Requests is a simple yet elegant **HTTP library** for Python, which allows you t
 Before diving into automation with Python, it's essential to understand the basic concepts of automation workflows and common tasks. Automation workflows typically involve identifying repetitive tasks, defining a sequence of steps to accomplish them, and implementing scripts or software to execute these steps automatically.
 
 ## How to Automate a Task: A Step-by-Step Guide
-### Step 1: Identify Task
+**Step 1: Identify Task**
 
 Identify a task that is repetitive and time-consuming, such as organizing files in a directory based on their types.
 
-### Step 2: Divide the Task into Smaller Steps
+**Step 2: Divide the Task into Smaller Steps**
 
 Break down the task into smaller, manageable steps. For instance:
 
@@ -151,11 +151,11 @@ Break down the task into smaller, manageable steps. For instance:
 -   Create separate folders for each file type.
 -   Move files into their respective folders based on their types.
 
-### Step 3: Research Python Libraries
+**Step 3: Research Python Libraries**
 
 Research Python libraries that can assist in automating each step of the task. For our example, you might consider libraries like os for file operations and shutil for moving files.
 
-### Step 4: Write the Code
+**Step 4: Write the Code**
 
 Write Python code to automate each step of the task. Here's an example:
 
@@ -179,20 +179,21 @@ Write Python code to automate each step of the task. Here's an example:
 	        file_type = filename.split('.')[-1]
 	        shutil.move(filename, os.path.join(file_type, filename))
 	        
- ### Step 5: Test the Code
+**Step 5: Test the Code**
 
 Test the code with sample data to ensure that it performs as expected. Verify that files are organized correctly into their respective folders.
 
-### Step 6: Update the Code
+**Step 6: Update the Code**
 
 Refine and update the code as needed based on test results and feedback. Ensure it handles edge cases and exceptions gracefully.
 
 ## Introduction to Automation Scripting Languages
 Scripting and automation have become indispensable tools for individuals and organizations alike. Whether you're a software developer, system administrator, data analyst, or just an enthusiast seeking to simplify repetitive tasks, understanding scripting and automation languages is essential
 
-### Understanding Automation Scripting Languages:
+**Understanding Automation Scripting Languages:**
 Automation scripting languages are programming languages specifically designed to automate repetitive tasks, system operations, and processes. These languages provide a set of syntax and functionalities tailored for automating various tasks efficiently.
-### Characteristics of Automation Scripting Languages:
+
+**Characteristics of Automation Scripting Languages:**
 
 1.  **Readable Syntax**: Automation scripting languages typically have a concise and readable syntax, facilitating easier understanding and maintenance of scripts.
     
@@ -200,7 +201,7 @@ Automation scripting languages are programming languages specifically designed t
     
 4.  **Community Support**: Popular automation scripting languages often have vibrant communities of developers who contribute libraries, documentation, and support resources, fostering collaboration and knowledge sharing.
 
-### Popular Automation Scripting Languages:
+**Popular Automation Scripting Languages:**
 1.  **Python**: Versatile, with rich libraries; used for automation, web dev, and data analysis.
     
 2.  **Bash (Shell)**: Default on Unix; excels in system tasks and command-line ops.
