@@ -32,7 +32,7 @@ Here is an example of Python input/output
 ## Python Modules for Automation
 Python modules for automation encompass a wide range of tools and libraries. These modules offer functionalities to automate various tasks such as **file operations**, **web scraping**, **data manipulation**, **system administration**, and more.
 
-### 1.Selenium: 
+### 1. Selenium: 
 A powerful tool for automating web browsers, which allows you to interact with web elements, fill forms, and navigate through web pages programmatically. 
 - **uses** : It's widely used for **web scraping**, **testing**, and **automating repetitive tasks** in web applications.
 
