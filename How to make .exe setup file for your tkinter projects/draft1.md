@@ -1,8 +1,9 @@
+
 In this article, you will learn how to distribute a **Tkinter** project an as **.exe** setup file using **PyInstaller**. This converts Python scripts into **standalone executables** and makes it easy for people to install and use your applications. Users don't need to worry about installing Python or managing dependencies. This way, your programs can be easily moved between different computers and run securely. Plus, it gives your projects a more polished and professional look.
 
 #  Environment Setup
 
-- Python: Ensure that Python is installed on your system, which includes Tkinter by default. 
+- **Python**: Ensure that Python is installed on your system, which includes Tkinter by default. 
 	- **For Windows**: Download and install Python from the [official website][1].
 	- **For Ubuntu**: You can download Python using the terminal:
 
@@ -11,12 +12,15 @@ In this article, you will learn how to distribute a **Tkinter** project an as **
 	- **For MacOS**: You can download Python using Homebrew:
 
 			brew install python3
-Confirm the installation by typing `python3 --version` in the terminal.
-- PyInstaller: It is necessary for converting Python scripts into executable files. Launch your terminal or command prompt and execute the following command:
+	Confirm the installation by typing `python3 --version` in the terminal.
+	
+- **PyInstaller**: It is necessary for converting Python scripts into executable files. Launch your terminal or command prompt and execute the following command:
 
 		pip install pyinstaller
-- IDE or Text Editor: Choose a preferred text editor or IDE like Visual Studio Code for coding.
-- Tkinter: Basic understanding of Tkinter, including widgets and event handling, is beneficial. Refer to the [Tkinter documentation][2] or [this article][3] for learning.
+	
+- **IDE or Text Editor**: Choose a preferred text editor or IDE like Visual Studio Code for coding.
+
+- **Tkinter**: Basic understanding of Tkinter, including widgets and event handling, is beneficial. Refer to the [Tkinter documentation][2] or [this article][3] for learning.
 
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> This project expects familiarity with basic Python concepts.</span> </div>
 
@@ -119,17 +123,27 @@ Let's convert our calculator script to a .exe file.
 - Run the following command:
 
 		pyinstaller --onefile --windowed calculator.py
+
 	`--onefile` bundles everything into a single executable and `--windowed` creates a GUI application without a console window.
 - PyInstaller will analyze your script and create a `dist` directory in the same location, containing the converted .exe file (calculator.exe).
 - Once the process is complete, you can find the `calculator.exe` file in the `dist` directory.
 
+![pyinstl_run][6]
+
+![pyinstl_dist][7]
+
 <div class="div-red"> <span class="alert-header">Caution:</span> <span class="alert-body"> Ensure that the Tkinter module has been installed.</span> </div>
 
 Possible Errors that you may encounter:
+
 - **ModuleNotFoundError**: To resolve PyInstaller's inability to locate some imported modules or dependencies, ensure all required modules are installed and accessible. You can install missing modules using pip.
+
 - **Large Executable Size**: Optimize PyInstaller options to reduce .exe size. Use `--onefile` for a single executable or `--exclude-module` to exclude modules.
+
 - **PermissionError**: Ensure you have write permissions for the output directory to avoid permission errors during PyInstaller execution.
+
 - **Anti-virus False Positives**: Anti-virus programs may flag the .exe file as suspicious due to file bundling. To fix, whitelist the .exe or sign it with a digital signature.
+
 
 # Customizing the .exe Setup File
 
@@ -162,28 +176,34 @@ We'll now test our executable file. I've converted the Python script to a .exe f
 	pyinstaller --onefile --windowed --name=SimpleCalculator --icon=calculator_icon.ico calculator.py
 The `SimpleCalculator.exe` file can be found in the `dist` folder.
 
-![pyinstl_exec1][6]
+![pyinstl_exec1][8]
 
 Upon running the file, it works as intended.
 
-![pyinstl_exec2][7]
+![pyinstl_exec2][9]
 
-![pyinstl_exec3][8]
+![pyinstl_exec3][10]
 
 To ensure compatibility, the file can be run on other systems as well.
 
 The following flowchart provides a comprehensive overview of the entire process from start to finish:
 
-![pyinstl_flowchart][9]
+![pyinstl_flowchart][11]
 
 # Distributing Your Tkinter Application
 To include multiple files while creating an executable using PyInstaller, you can use the `--add-data` option.
 
 	pyinstaller --onefile --add-data "file1.extension;." --add-data "file2.extension;." calculator.py
+
 The `--add-data` option allows you to specify the path to the extra file or folder you wish to include. Use a semicolon `;` to distinguish the source path from the destination directory inside the executable. A dot `.` indicates that the file should be copied to the same directory as the executable.
+
 It can be used to include .csv files or SQLite databases. For example:
 
 	pyinstaller --onefile --add-data "todo_data.db;." todo_list.py
+
+![pyinstl_add_run][12]
+
+![pyinstl_add_dist][13]
 
 You have various options for distributing your .exe file to users:
 
@@ -196,7 +216,7 @@ You have various options for distributing your .exe file to users:
    - **Dropbox**: Similar to Google Drive, you can upload the .exe file to Dropbox and share the link.
    - **OneDrive**: Microsoft's OneDrive offers file hosting and sharing capabilities.
 
-You can download the executable file we made in this article by clicking <a href=[10] download="SimpleCalculator.exe">here</a>.
+You can download the executable file we made in this article by clicking <a href=[14] download="SimpleCalculator.exe">here</a>.
 
 # Conclusion
 In conclusion, creating a calculator application that can add, subtract, multiply and divide, using **Tkinter** and converting it into a **.exe file** using **PyInstaller** is a straightforward process that opens up numerous opportunities for **software distribution**. By following the steps outlined in this article, you've learned how to harness the power of Tkinter to build intuitive graphical user interfaces and leverage PyInstaller to package your Python scripts into **standalone executables**.
@@ -210,8 +230,12 @@ Now that you've successfully created your calculator application and transformed
 [3]: https://coderlegion.com/190/introduction-to-tkinter-library-in-python
 [4]: https://docs.python.org/3/library/tk.html
 [5]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_calculator.png
-[6]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile1.png
-[7]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile2.png
-[8]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile3.png
-[9]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_flowchart.png
-[10]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects
+[6]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_run.png
+[7]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_dist.png
+[8]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile1.png
+[9]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile2.png
+[10]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_execfile3.png
+[11]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_flowchart.png
+[12]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_add_run.png
+[13]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects/pyinstl_add_dist.png
+[14]: https://github.com/VAIJ-TEJAS/LogicLair_Articles/blob/main/How%20to%20make%20.exe%20setup%20file%20for%20your%20tkinter%20projects
