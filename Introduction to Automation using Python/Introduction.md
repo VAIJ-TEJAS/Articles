@@ -348,16 +348,6 @@ The `time` and `datetime` modules in Python provide functionalities for handling
 	print("Automation job executed after {} seconds.".format(delay))
 **Note:** When this code is executed than after the delay of 5 seconds the message is displayed
 
-
-
-# Automating File Operations
-
-A. **File Management:**
-   Python enables automation of file creation, deletion, copying, and moving through its built-in file manipulation functions and libraries like `os` and `shutil`.
-
-B. **Working with Directory Structures:**
-   Automation scripts can navigate directory structures, search for files based on specific criteria, and perform bulk operations such as renaming or deleting files.
-
 # Web Scraping and Automation:
 Web scraping and automation, in particular, empower users to automate repetitive tasks and extract valuable data from websites automatically. By utilizing automation scripts, users can interact with web pages, submit forms, extract data, and perform various other tasks, thereby optimizing web-based workflows and saving time and effort.
 
@@ -438,13 +428,33 @@ PowerShell script for Windows
    Automation scripts can be scheduled to run periodically using tools like cron on Unix-like systems or Task Scheduler on Windows, enabling automated task execution at predefined intervals.
 
 # Data Processing and Automation
+## Introduction to Data Processing:
+Data processing is the method of transforming raw data into valuable information or insights. It involves several stages such as data collection, cleaning, transformation, analysis, and visualization. Automation accelerates data processing pipelines by reducing manual intervention, minimizing errors, and improving efficiency and scalability. 
+## Using Pandas for Data Automation:
+When we use `Pandas` for data automation allows for efficient **processing**, **manipulation**, and **analysis** of data in Python. `Pandas` is a powerful library that provides data structures such as `DataFrame` and **Series**.
 
-A. **Introduction to Data Processing:**
-   Data processing involves transforming raw data into meaningful insights. Automation accelerates data processing pipelines, improving efficiency and scalability.
+**Example :**
 
-B. **Using Pandas for Data Automation:**
-   Pandas, a popular data manipulation library in Python, offers powerful tools for automating tasks such as data cleaning, transformation, aggregation, and analysis.
+	import pandas as pd
 
+	#Step 1: Read data from CSV file
+	data = pd.read_csv('data.csv')
+	print(data.head())
+
+	#Step 2: Convert data to DataFrame
+	df = pd.DataFrame(data)
+	print(df.head())
+
+	#Step 3: Find missing values (NaNs)
+	missing_values = df.isna().sum()
+	print(missing_values)
+
+	#Step 4: Replace missing values with a specified value (e.g., 0)
+	df_filled = df.fillna(0)
+	print(df_filled.head())
+
+
+		
 # Testing and Automation
 
 A. **Overview of Testing Automation:**
