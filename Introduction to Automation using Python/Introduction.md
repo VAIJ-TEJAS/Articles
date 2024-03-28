@@ -224,9 +224,8 @@ Automation scripting languages are programming languages specifically designed t
 1.  **Readable Syntax**: Clear and concise code for easier comprehension.
 2.  **Abundance of Libraries**: Extensive pre-built functions streamline development.
 3.  **Interpretation or Compilation**: Code execution either directly (interpreted) or translated into machine language (compiled).
-4.  **Community Support**: Vibrant developer communities foster collaboration and provide resources. 
-5.  **Cross-Platform Compatibility**: Capable of running on various operating systems. 
-6.  **Integration Capabilities**: Seamless integration with other tools and systems.
+4.  **Cross-Platform Compatibility**: Capable of running on various operating systems. 
+5.  **Integration Capabilities**: Seamless integration with other tools and systems.
 
 **Popular Automation Scripting Languages:**
 1.  **Python**: Versatile, with rich libraries; used for automation, web dev, and data analysis.
