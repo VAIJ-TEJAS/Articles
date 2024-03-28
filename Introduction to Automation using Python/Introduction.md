@@ -66,21 +66,36 @@ A powerful tool for automating web browsers, which allows you to interact with w
 			
 		import pyautogui
 		import time
-		
-		#Open Notepad (Windows example)
-		pyautogui.press("winleft")
-		pyautogui.write("notepad")
-		pyautogui.press("enter")
-		time.sleep(5)  # Wait for Notepad to open
 
-		#Type a message
-		pyautogui.write("Hello, PyAutoGUI!")
+		try:
+		    #Open Notepad
+		    pyautogui.press('win')
+		    pyautogui.write('notepad')
+		    pyautogui.press('enter')
+		    time.sleep(4)  # Wait for Notepad to open
 
-		#Save the file
-		pyautogui.hotkey("ctrl", "s")
-		time.sleep(5)  # Wait for the save dialog to appear
-		pyautogui.write("example.txt")
-		pyautogui.press("enter")
+		    #Type a message
+		    pyautogui.write('Hello')
+		    time.sleep(2)  # Let's type slowly for demonstration
+
+		    #Save the file
+		    pyautogui.hotkey('ctrl', 's')
+		    time.sleep(4)  # Wait for Save As dialog to open
+
+		    #Type the file name and press Enter
+		    pyautogui.write('Hello.txt')
+		    time.sleep(2)  # Give time for typing
+
+		    #Press Enter to save the file
+		    pyautogui.press('enter')
+		    time.sleep(2)  # Give time for the save dialog to close
+
+		    print("Task completed successfully!")
+		except Exception as e:
+		    print("An error occurred:", e)
+![pyautogui]()
+![pyautogui]()
+![pyautogui]()
 
 **3. Requests**
 Requests is a simple yet elegant **HTTP library** for Python, which allows you to send HTTP requests easily. 
@@ -88,15 +103,24 @@ Requests is a simple yet elegant **HTTP library** for Python, which allows you t
   
 		import requests
 
-		#Make a GET request to a URL
-		response = requests.get("https://api.example.com/data")
+		try:
+		  #Send a GET request to Google
+		  response = requests.get("https://www.google.com")
 
-		#Check if the request was successful (status code 200)
-		if response.status_code == 200:
-		    # Print the response content
-		    print(response.text)
-		else:
-		    print("Error:", response.status_code)
+		  #Check if the request was successful (status code 200)
+		  if response.status_code == 200:
+		      print("Request to Google successful!")
+
+		      # Print the HTML content of the response
+		      print("HTML Content:")
+		      print(response.text)
+		  else:
+		      print("Failed to retrieve data from Google. Status code:", response.status_code)
+
+		except Exception as e:
+		  print("An error occurred:", e)
+
+![request]()
 
 **4. Beautiful Soup**
  This library provides functions for **parsing HTML and XML documents**, making it invaluable for web scraping tasks.
@@ -114,6 +138,7 @@ Requests is a simple yet elegant **HTTP library** for Python, which allows you t
 		#Find all <a> tags and print their text
 		for link in soup.find_all("a"):
 		    print(link.get_text())
+![beutiful]()		    
 		    
 **5. Pandas**
  Pandas is a powerful data manipulation library that provides high-level data structures and functions for working with structured data. 
@@ -182,6 +207,8 @@ Write Python code to automate each step of the task. Here's an example:
 **Step 5: Test the Code**
 
 Test the code with sample data to ensure that it performs as expected. Verify that files are organized correctly into their respective folders.
+
+![flow]()                                                    ![flow2]()
 
 **Step 6: Update the Code**
 
