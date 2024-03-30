@@ -439,11 +439,11 @@ When we use `Pandas` for data automation allows for efficient **processing**, **
 
 	#Step 1: Read data from CSV file
 	data = pd.read_csv('data.csv')
-	print(data.head())
+	data.head(7)
 
 	#Step 2: Convert data to DataFrame
 	df = pd.DataFrame(data)
-	print(df.head())
+	df.head()
 
 	#Step 3: Find missing values (NaNs)
 	missing_values = df.isna().sum()
@@ -451,9 +451,9 @@ When we use `Pandas` for data automation allows for efficient **processing**, **
 
 	#Step 4: Replace missing values with a specified value (e.g., 0)
 	df_filled = df.fillna(0)
-	print(df_filled.head())
+	df_filled.head(7)
 
-
+![panda1]()    ![panda2]()
 		
 # Testing and Automation
 
