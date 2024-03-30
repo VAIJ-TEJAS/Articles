@@ -453,15 +453,43 @@ When we use `Pandas` for data automation allows for efficient **processing**, **
 	df_filled = df.fillna(0)
 	df_filled.head(7)
 
-![panda1]()    ![panda2]()
+![panda1]()       ![panda2]()
 		
 # Testing and Automation
+**Testing** and **automation** are crucial aspects of software development, ensuring **software reliability** and **quality**. Testing involves systematically evaluating software to find defects, while automation utilizes tools and scripts to execute tests efficiently
 
-A. **Overview of Testing Automation:**
-   Automated testing ensures software reliability and quality by executing predefined test cases automatically. It saves time, reduces human error, and facilitates continuous integration and delivery.
+## Overview of Testing Automation
 
-B. **Using pytest for Testing Automation:**
-   Pytest is a feature-rich testing framework for Python, offering simplicity, scalability, and extensive plugin support. It simplifies test case creation, execution, and result analysis, making it an ideal choice for automation testing.
+Testing automation involves the use of software tools and frameworks to automate the process of testing software applications. By automating test cases, developers can efficiently verify the functionality and performance of their code, ensuring that it meets the required specifications and standards. One popular testing automation framework is `pytest`.
+
+## Using pytest for Testing Automation
+**Pytest** is a popular testing framework in Python known for its **simplicity** and **scalability**. It offers powerful features for writing and executing test cases efficiently. With `pytest`, developers can easily create **test functions**, **organize test suites**, and **assert expected outcomes**, making it suitable for both **small** and **large-scale projects**.
+
+**Example :**
+
+	#Define a simple calculator class
+	class Calculator:
+	    def add(self, a, b):
+	        return a + b
+	    
+	   def subtract(self, a, b):
+	         return a - b
+
+	#Instantiate the calculator object
+	calculator = Calculator()
+
+	#Define test functions using pytest
+	def test_addition():
+	    assert calculator.add(2, 3)==5
+	    assert calculator.add(5, -1)==4
+
+	def test_subtraction():
+	    assert calculator.subtract(5, 3)==2
+	    assert calculator.subtract(10, 7)==3
+
+![pytest]()
+		
+**NOTE:** Always save your `pytest` file with the following naming convention that is `test_filename`
 
 # Building Automation Scripts
 
