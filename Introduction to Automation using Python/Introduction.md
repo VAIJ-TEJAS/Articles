@@ -214,6 +214,8 @@ Test the code with sample data to ensure that it performs as expected. Verify th
 
 ![flow](./img/flow1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![flow2](./img/flow2.png)
 
+![flow](./img/flow3.png)
+
 **Step 6: Update the Code**
 
 Refine and update the code as needed based on test results and feedback. Ensure it handles edge cases and exceptions gracefully.
@@ -282,7 +284,8 @@ The `os` module in Python provides a **platform-independent** way of interacting
 	#Remove a directory
 	os.rmdir(new_dir)
 	print("Directory removed:", new_dir)
-![os_module]()
+![os_module](./img/os_module.png)
+
 **Note :** While renaming the files make sure to create the file whose name you want to change.
 
 
@@ -309,7 +312,8 @@ The `shutil` module offers a high-level interface for **file operations**, inclu
 	except Exception as e:
 	    print("An error occurred:", e)
 
-![shutil_module]()
+![shutil_module](./img/shutil_module.png)
+
 **Note :** Make sure to pass the correct path of the source and destination file in the same way as mentioned above
 
 ## Subprocess Module:
@@ -328,7 +332,7 @@ The `subprocess` module in Python provides a powerful way to spawn new processes
 	    print("Command not found.")
 	except Exception as e:
 	    print("An error occurred:", e)
-![subprocess_module]()
+![subprocess_module](./img/subprocess_module.png)
 
 ## Time  and  Datetime Modules:
 
@@ -350,6 +354,7 @@ The `time` and `datetime` modules in Python provide functionalities for handling
 
 	#Print a message after the delay
 	print("Automation job executed after {} seconds.".format(delay))
+ ![tmie_date](./img/time_date1.png)
 **Note:** When this code is executed than after the delay of 5 seconds the message is displayed
 
 # Web Scraping and Automation:
