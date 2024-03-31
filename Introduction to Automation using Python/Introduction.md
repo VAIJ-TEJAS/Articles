@@ -355,6 +355,7 @@ The `time` and `datetime` modules in Python provide functionalities for handling
 	#Print a message after the delay
 	print("Automation job executed after {} seconds.".format(delay))
  ![tmie_date](./img/time_date1.png)
+ 
 **Note:** When this code is executed than after the delay of 5 seconds the message is displayed
 
 # Web Scraping and Automation:
@@ -403,7 +404,7 @@ Web scraping and automation, in particular, empower users to automate repetitive
 	except Exception as e:
 	  print("An error occurred:", e)
 
-![web_scrap]()
+![web_scrap](./img/web_scrap1.jpg)
  
 # Automating System Tasks
 Automating system tasks involves streamlining repetitive processes on both **Windows** and **Linux** operating systems, enhancing **productivity** and **efficiency**.
@@ -414,7 +415,6 @@ Automating system tasks involves streamlining repetitive processes on both **Win
 **Example :**
 
 **Windows**
-PowerShell script for Windows
 	
 	#Define source and destination directories
 	$sourceDir = "C:\Users\dell\Desktop\File1.txt"
@@ -427,7 +427,7 @@ PowerShell script for Windows
 	#Create a compressed backup archive
 	Compress-Archive -Path $sourceDir -DestinationPath "$destDir\$backupFile"
 	Write-Host "Backup created: $destDir\$backupFile"
-![powershell]()	
+![powershell](./img/powershell.png)	
 
 **Linux**
 
@@ -462,7 +462,7 @@ When we use `Pandas` for data automation allows for efficient **processing**, **
 	df_filled = df.fillna(0)
 	df_filled.head(7)
 
-![panda1]()       ![panda2]()
+![panda1](./img/panda1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![panda2](./img/panda2.png)
 		
 # Testing and Automation
 **Testing** and **automation** are crucial aspects of software development, ensuring **software reliability** and **quality**. Testing involves systematically evaluating software to find defects, while automation utilizes tools and scripts to execute tests efficiently
