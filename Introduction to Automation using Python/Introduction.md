@@ -19,6 +19,7 @@ Examples of automation include **robotic assembly lines** in manufacturing, **au
 Python is a powerful language for automation tasks due to its **simplicity**, **versatility**, and **extensive libraries**. It allows users to automate repetitive tasks, streamline workflows, and increase productivity across various domains.
 
 **Python Basics**
+
 Python basics encompass understanding fundamental concepts such as variables, data types, control structures (like loops and conditionals), functions, and basic input/output operations.
 Here is an example of Python input/output
 
@@ -32,7 +33,7 @@ Here is an example of Python input/output
 ## Python Modules for Automation
 Python modules for automation encompass a wide range of tools and libraries. These modules offer functionalities to automate various tasks such as **file operations**, **web scraping**, **data manipulation**, **system administration**, and more.
 
-**1. Selenium** 
+**1. Selenium :** 
 A powerful tool for automating web browsers, which allows you to interact with web elements, fill forms, and navigate through web pages programmatically. 
 - **uses** : It's widely used for **web scraping**, **testing**, and **automating repetitive tasks** in web applications.
 
@@ -61,7 +62,7 @@ A powerful tool for automating web browsers, which allows you to interact with w
 		driver.quit()	
 ![selenium](./img/selenium.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![selenium](./img/selenium2.jpg)
 
-**2. PyAutoGUI**
+**2. PyAutoGUI :**
 **PyAutoGUI** enables you to automate GUI interactions by simulating mouse and keyboard actions.
 - **uses** : It is useful for automating tasks involving graphical user interfaces, such as opening applications
 			
@@ -94,11 +95,13 @@ A powerful tool for automating web browsers, which allows you to interact with w
 		    print("Task completed successfully!")
 		except Exception as e:
 		    print("An error occurred:", e)
-![pyautogui]()
-![pyautogui]()
-![pyautogui]()
+![pyautogui](./img/pyautogui.png)
 
-**3. Requests**
+![pyautogui](./img/pyautogui2new.jpg)
+
+![pyautogui](./img/pyautogui3.png)
+
+**3. Requests :**
 Requests is a simple yet elegant **HTTP library** for Python, which allows you to send HTTP requests easily. 
   - **uses :** It's commonly used for web scraping, **accessing APIs**.
   
@@ -121,9 +124,9 @@ Requests is a simple yet elegant **HTTP library** for Python, which allows you t
 		except Exception as e:
 		  print("An error occurred:", e)
 
-![request]()
+![request](./img/request1.png)
 
-**4. Beautiful Soup**
+**4. Beautiful Soup :**
  This library provides functions for **parsing HTML and XML documents**, making it invaluable for web scraping tasks.
  - **uses** : It allows you to extract data from web pages effortlessly, facilitating     automation of data extraction processes.
  
@@ -139,9 +142,9 @@ Requests is a simple yet elegant **HTTP library** for Python, which allows you t
 		#Find all <a> tags and print their text
 		for link in soup.find_all("a"):
 		    print(link.get_text())
-![beutiful]()		    
+![beutiful](./img/beautiful.png)		    
 		    
-**5. Pandas**
+**5. Pandas :**
  Pandas is a powerful data manipulation library that provides high-level data structures and functions for working with structured data. 
  - **uses :** It's commonly used for automating data processing tasks, such as cleaning, transforming, and analyzing datasets.
 		
@@ -158,7 +161,7 @@ Requests is a simple yet elegant **HTTP library** for Python, which allows you t
 		#Display the DataFrame
 		print("DataFrame:")
 		print(df)
-![dataframe]()
+![dataframe](./img/dataframe1.png)
 
 # Getting Started with Automation
 
@@ -209,7 +212,7 @@ Write Python code to automate each step of the task. Here's an example:
 
 Test the code with sample data to ensure that it performs as expected. Verify that files are organized correctly into their respective folders.
 
-![flow]()                                                    ![flow2]()
+![flow](./img/flow1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![flow2](./img/flow2.png)
 
 **Step 6: Update the Code**
 
