@@ -59,7 +59,7 @@ A powerful tool for automating web browsers, which allows you to interact with w
 
 		#Close the browser window
 		driver.quit()	
-![selenium](./img/selenium.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![selenium](./img/selenium2.png)
+![selenium](./img/selenium.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![selenium](./img/selenium2.jpg)
 
 **2. PyAutoGUI**
 **PyAutoGUI** enables you to automate GUI interactions by simulating mouse and keyboard actions.
