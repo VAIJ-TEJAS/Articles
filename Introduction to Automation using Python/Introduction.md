@@ -496,7 +496,7 @@ Testing automation involves the use of software tools and frameworks to automate
 	    assert calculator.subtract(5, 3)==2
 	    assert calculator.subtract(10, 7)==3
 
-![pytest]()
+![pytest](./img/pytest.png)
 		
 **NOTE:** Always save your `pytest` file with the following naming convention that is `test_filename`
 
