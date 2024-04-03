@@ -403,10 +403,6 @@ Automating system tasks involves streamlining repetitive processes on both **Win
 	Write-Host "Backup created: $destDir\$backupFile"
 ![powershell](./img/powershell.png)	
 
-**Linux**
-
-
-
 ## Creating Scheduled Tasks:
    Automation scripts can be scheduled to run periodically using tools like cron on Unix-like systems or Task Scheduler on Windows, enabling automated task execution at predefined intervals.
 
