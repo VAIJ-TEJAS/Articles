@@ -486,14 +486,11 @@ Handling errors and exceptions effectively is crucial in building robust automat
 
 - **Graceful Failure**: Handle exceptions in a way that allows the script to fail gracefully, ensuring that it exits cleanly without causing further issues.
 
-- **Raising Exceptions**: Raise exceptions when necessary to indicate errors or exceptional conditions that cannot be handled within the script.
-
 - **Testing**: Write automated tests to verify error-handling logic and ensure that exceptions are handled correctly under different scenarios.
 
 - **Fallback Mechanisms**: Implement fallback mechanisms or alternative strategies to handle errors and continue script execution if possible.
 
 # Real-World Automation Examples
-
 
 - **Backup Automation**: Schedule regular backups of critical data to prevent loss in case of hardware failure or data corruption.
 - **Server Maintenance**: Automate routine server maintenance tasks such as software updates, disk cleanup, and system reboots.
