@@ -31,23 +31,17 @@ A powerful tool for automating web browsers, which allows you to interact with w
 		from selenium.webdriver.common.keys import Keys
 		import time
 
-		#Initialize a WebDriver (e.g., Chrome)
 		driver = webdriver.Chrome()
 
-		#Open a website
 		driver.get("https://www.google.com")
 
-		#Find the search input element by its ID
 		search_input = driver.find_element(By.NAME, "q")  # Google's search input element name is "q"
 
-		#Interact with the search input
 		search_input.send_keys("Python automation")
 		search_input.send_keys(Keys.RETURN)
 
-		#Wait for 1 minute (60 seconds) for demonstration
 		time.sleep(60)
 
-		#Close the browser window
 		driver.quit()	
 ![selenium](./img/selenium.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![selenium](./img/selenium2.jpg)
 
