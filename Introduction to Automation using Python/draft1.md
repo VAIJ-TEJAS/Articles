@@ -68,7 +68,9 @@ This enables you to automate GUI interactions by simulating mouse and keyboard a
 		except Exception as e:
 		    print("An error occurred:", e)
 ![pyautogui](./img/pyautogui.png)
+
 ![pyautogui](./img/pyautogui2new.jpg)
+
 ![pyautogui](./img/pyautogui3.png)
 
 **3. Requests :**
