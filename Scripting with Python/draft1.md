@@ -30,11 +30,11 @@ Python files with the `.py` extension store Python code and are generated using 
 **Writing your first Python Script**
 Let's start our scripting journey by writing the "Hello, World!" program in Python.
 - Create a new file in the text editor named `hello.py`.
-- Type the following code and save the file:
+- Please write and save the code provided below:
 
 		print("Hello World!")
 - Open a command prompt or terminal and navigate to the directory containing the `hello.py` file.
-- Run your script by typing the following command:
+- Execute your script using the command.:
 
 		python hello.py
 
@@ -52,7 +52,7 @@ You can typecast it to int, float or bool as follows:
 		age = int(input("Enter your age: "))
 - float:
 
-		height = float(input("Enter your height in cm: "))
+		temp = float(input("Enter temperature in F: "))
 - bool:
 
 		stud_bool = int(input("Are you a student? (True/False): "))
@@ -69,7 +69,7 @@ For each of the examples listed below, the following variables and their values 
 
 	item = "Lemons"
 	quantity = 10
-- You can print multiple items by separating them with commas.
+- Multiple items can be printed by separating them with commas.
 
 		print("I need", quantity, item, "for this dish.")
 	Output:
@@ -124,7 +124,7 @@ Comments annotate code for explanations, documentation, or notes, enhancing read
 Control structures in Python manage code execution based on conditions or loops. They enable decision-making, action repetition, and selective code execution.
 
 **Conditional Statements**: Conditional statements allow you to execute certain blocks of code based on specific conditions.
-- **if statement**: Allows you to execute a block of code if a condition is true. If the condition is false, the code block is skipped.
+- **if statement**: Allows you to execute a block of code if a condition is true. If false, the code block is skipped.
 
 		x = 6
 		if (x%2 == 0):
@@ -164,7 +164,7 @@ Control structures in Python manage code execution based on conditions or loops.
 	
 	![for_loop][11]
 
-- **While Loop**: Executes a block of code as long as a specified condition is true.
+- **While Loop**: Runs code while a condition remains true.
 
 		i = 5
 		while i>0:
@@ -210,7 +210,7 @@ The above modules can be imported and their functions can be used in your main p
 
 
 # File Handling in Python
-File handling in Python involves reading from and writing to files. It allows you to interact with external files on your computer's file system.
+Python file handling includes both reading from and writing to files. It allows you to interact with external files on your computer's file system.
 
 **Reading from Files**
 To open a file, use the `open()` function with the file path and desired mode. Once opened, you can read its contents using methods like `read()`, `readline()`, or `readlines()`.
@@ -234,7 +234,7 @@ To open a file, use the `open()` function with the file path and desired mode. O
 	
 	![readline][15]
 
-- **`readlines()`**: The `readlines()` method reads all lines from the file and returns them as a list of strings. Each string in the list represents a line from the file.
+- **`readlines()`**: The `readlines()` method reads all lines from the file and returns them as a list of strings. Each string in the list represents a file line.
 
 		with open("myfile.txt", "r") as file:
 		    lines = file.readlines()
@@ -283,7 +283,7 @@ The `os` module in Python offers functions for file management tasks like creati
 			os.path.isdir("renamedir")
 
 2. Operations on **Files**
-	- `os.path.exists(path)`: Checks if a file or directory exists at the specified path.
+	- `os.path.exists(path)`: Verifies the existence of a file or directory at the given path.
 
 			os.path.exists("myfile.txt")
 	- `os.listdir(path)`: Return a list of files and directories in the specified directory.
@@ -296,7 +296,7 @@ The `os` module in Python offers functions for file management tasks like creati
 
 # Error Handling
 Error handling in Python involves dealing with exceptions that may occur while executing your program. 
-- **Try-Except Blocks**: The code that may raise an exception is placed inside the try block, and the code to handle the exception is placed inside the except block. Let's use one to handle division by zero error.
+- **Try-Except Blocks**: The try block contains code that might trigger an exception, while the except block contains code to manage the exception. Let's use one to handle division by zero error.
 
 		try:
 		    num = 10
@@ -317,7 +317,7 @@ Error handling in Python involves dealing with exceptions that may occur while e
 		finally:
 		    if 'file' in locals():
 		        file.close()
-	The `finally` block is always executed, regardless of whether an exception occurs or not. It's typically used for cleanup tasks, such as closing files or releasing resources.
+	The `finally` block always executes, irrespective of whether an exception occurs. It's typically used for cleanup tasks, such as closing files or releasing resources.
 
 - **Else Block**: The `else` block in the try-except-finally structure executes when no exception occurs within the try block. It's useful for code that should run only when no exceptions are raised.
 
@@ -339,21 +339,21 @@ Regular expressions (regex or regexp) define search patterns, widely used in tex
 	-   `.`: Matches any single character except newline.
 	-   `^`: Matches the start of the string.
 	-   `$`: Matches the end of the string.
-	-   `*`: Matches zero or more occurrences of the preceding character.
+	-   `*`: Matches zero or more of the preceding character.
 	-   `+`: Matches one or more occurrences of the preceding character.
 	-   `?`: Matches zero or one occurrence of the preceding character.
-	-   `[]`: Matches any single character within the brackets.
+	-   `[]`: Matches any character found within the brackets.
 	-   `|`: Matches either the expression before or after the pipe symbol.
 	-   `{m}`: Exactly `m` occurrences.
 	-   `{m, n}`: Between `m` and `n` occurrences.
 
-- **Character classes** allow you to match specific sets of characters.
+- **Character classes** enable matching specific sets of characters.
 	-   `\d`: Matches any digit (`[0-9]`).
 	-   `\w`: Matches any alphanumeric character (`[a-zA-Z0-9_]`).
 	-   `\s`: Matches any whitespace character (space, tab, newline).
 	-   `\b`: Marks word boundary.
 
-- **Anchors** are used to specify the position of a match within the text.
+- **Anchors** indicate the position of a match within the text.
 	-   `^`: Matches the start of the string.
 	-   `$`: Matches the end of the string.
 
@@ -412,7 +412,7 @@ Unit testing and test-driven development (TDD) are two software development prac
 
 **Unit testing** involves testing isolated software components, like functions or methods, to ensure they perform as expected, aiding in bug detection and code maintainability.
 
-**Test-driven development (TDD)** is a development approach where tests precede code implementation. It encompasses writing failing tests, coding to pass them, and refactoring for improved design while ensuring test success.
+**Test-driven development (TDD)** is a method of development where tests are written before code implementation. It encompasses writing failing tests, coding to pass them, and refactoring for improved design while ensuring test success.
 
 Python's `unittest` module facilitates writing and running unit tests. It offers classes and methods for creating and executing test cases, automating verification of code components like functions and methods.
 
