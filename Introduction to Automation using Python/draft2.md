@@ -351,8 +351,6 @@ Automating system tasks involves streamlining repetitive processes on both **Win
     $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
     $backupFile = "backup_$timestamp.tar.gz"
 
-#Create a compressed backup archive
-
     Compress-Archive -Path $sourceDir -DestinationPath "$destDir\$backupFile"
     Write-Host "Backup created: $destDir\$backupFile"
 
