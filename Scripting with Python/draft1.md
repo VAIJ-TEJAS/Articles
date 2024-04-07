@@ -73,18 +73,21 @@ For each of the examples listed below, the following variables and their values 
 
 		print("I need", quantity, item, "for this dish.")
 	Output:
+	
 	![print1][3]
 
 - Formatted strings (f-strings) embed variables or expressions directly within a string.
 
 		print(f"Bring me {quantity} yellow {item} from the market.")
 	Output:
+	
 	![print2][4]
 
 - You can concatenate strings and variables using the `+` operator.
 
 		print("We are " + str(quantity) + " " + item + " short!")
 	Output:
+	
 	![print3][5]
 
 - Specify the character or string to print at the output's end using the `end` parameter.
@@ -92,6 +95,7 @@ For each of the examples listed below, the following variables and their values 
 		items = ["Lemons", "Limes", "Oranges"]
 		print(items[0], items[1], items[2], sep = ", ")
 	Output:
+	
 	![print4][6]
 
 - Specify the character or string to print at the output's end with the `end` parameter.
@@ -99,6 +103,7 @@ For each of the examples listed below, the following variables and their values 
 		print("I have only", quantity, end = " ")
 		print(item, "left.")
 	Output:
+	
 	![print5][7]
 
 **Adding Comments**
@@ -125,6 +130,7 @@ Control structures in Python manage code execution based on conditions or loops.
 		if (x%2 == 0):
 			print("x is even.")
 	Output:
+	
 	![if_stmt][8]
 	
 - **elif statement**: Stands for "else if." It follows an if statement and allows you to check additional conditions if the previous if or elif conditions are false.
@@ -135,6 +141,7 @@ Control structures in Python manage code execution based on conditions or loops.
 		elif (x%2==1 and x<0):
 		  	print("x is odd and negative.")
 	Output:
+	
 	![elif_stmt][9]
 
 - **else statement**: Optionally follows an if statement or a series of elif statements. It executes a block of code if none of the preceding conditions are true.
@@ -145,6 +152,7 @@ Control structures in Python manage code execution based on conditions or loops.
 		else:
 			print("x is odd.")
 	Output:
+	
 	![else_stmt][10]
 
 **Loops**: Loops enable you to execute a block of code repeatedly.
@@ -153,6 +161,7 @@ Control structures in Python manage code execution based on conditions or loops.
 		for i in range(1, 6):       # i will start from 1 and end at 5
 		    print(i)
 	Output:
+	
 	![for_loop][11]
 
 - **While Loop**: Executes a block of code as long as a specified condition is true.
@@ -162,6 +171,7 @@ Control structures in Python manage code execution based on conditions or loops.
 		    print(i)
 		    i-=1
 	Output:
+	
 	![while_loop][12]
 
 
@@ -175,6 +185,7 @@ Arguments are the actual values that are passed to the function when it is calle
 
 	print(add_nums(2, 7))       # prints the value returned by the function
 Output:
+
 ![function][13]
 
 **Modular Programming**
@@ -209,6 +220,7 @@ To open a file, use the `open()` function with the file path and desired mode. O
 		    content = file.read()
 		print(content)
 	Output:
+	
 	![read][14]
 
 - **`readline()`**: The `readline()` method reads a single line from the file and returns it as a string, advancing the file pointer to the next line with each call.
@@ -219,6 +231,7 @@ To open a file, use the `open()` function with the file path and desired mode. O
 		    line2 = file.readline()
 		    print(f"line2: {line2}")
 	Output:
+	
 	![readline][15]
 
 - **`readlines()`**: The `readlines()` method reads all lines from the file and returns them as a list of strings. Each string in the list represents a line from the file.
@@ -227,6 +240,7 @@ To open a file, use the `open()` function with the file path and desired mode. O
 		    lines = file.readlines()
 		print(lines)
 	Output:
+	
 	![readlines][16]
 
 **Writing to Files**
@@ -235,9 +249,11 @@ To write data to a file, you open the file in write mode ("w") or append mode ("
 	with open("myfile.txt", "a") as file:
 	    file.write("\nEnjoying so far?")
 Before writing:
+
 ![write1][17]
 
 After writing:
+
 ![write2][18]
 
 
@@ -252,6 +268,7 @@ The `os` module in Python offers functions for file management tasks like creati
 
 			os.mkdir("newdir")
 		Output:
+		
 		![mkdir][19]
 	
 	- `os.rmdir(path)`: Removes the directory at the specified path only if the directory is empty.
@@ -352,6 +369,7 @@ Let's look at an example:
 	print("Five-letter words:", matches)
 
 It matches the expression with words comprising of exactly 5 letters and produces the following output:
+
 ![reg_exp][20]
 
 **Command-Line Arguments**
@@ -377,6 +395,7 @@ Save the above script in a file `CLI.py`. Run it in the command-line by typing:
 
 	python CLI.py 5 7
 It will multiply the numbers 5 and 7 and display the output:
+
 ![argparse][21]
 
 
@@ -420,6 +439,7 @@ Import `unittest` and `multiply` from `calc`, create `TestMyMath` inheriting fro
 
 	python test_calc.py
 Output:
+
 ![unittest][22]
 
 Debugging Python scripts is crucial for identifying and fixing errors. This can be achieved using breakpoints, print statements, and tools like `pdb`.
