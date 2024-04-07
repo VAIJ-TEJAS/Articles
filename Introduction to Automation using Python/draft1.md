@@ -153,6 +153,7 @@ Write Python code to automate each step of the task. Here's an example:
 	        
 **Step 5: Test the Code**
 Test the code with sample data to ensure that it performs as expected. Verify that files are organized correctly into their respective folders.
+
 ![flow](./img/flow1.png)
 ![flow2](./img/flow2.png) ![flow](./img/flow3.png)
 
