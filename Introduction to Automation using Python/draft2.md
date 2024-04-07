@@ -237,8 +237,7 @@ The `os` module in Python provides a **platform-independent** way of interacting
     print("File renamed from 'old_file.txt' to 'new_file.txt'")
 
 ![os_module][12]
-
-**Note :** While renaming the files make sure to create the file whose name you want to change.
+<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">While renaming the files make sure to create the file whose name you want to change.</span> </div>
 
 ## Shutil Module
 
@@ -261,8 +260,7 @@ The `shutil` module offers a high-level interface for **file operations**, inclu
         print("An error occurred:", e)
 
 ![shutil_module][13]
-
-**Note :** Make sure to pass the correct path of the source and destination file in the same way as mentioned above
+<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">Make sure to pass the correct path of the source and destination file in the same way as mentioned above.</span> </div>
 
 ## Subprocess Module
 
@@ -294,12 +292,10 @@ The `time` and `datetime` modules in Python provide functionalities for handling
     start_time = time.time()
     while time.time() < start_time + delay:
         pass
-    #Print a message after the delay
     print("Automation job executed after {} seconds.".format(delay))
 
 ![time_date][15]
- 
-**Note:** When this code is executed than after the delay of 5 seconds the message is displayed
+<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">When this code is executed than after the delay of 5 seconds the message is displayed</span> </div>
 
 # Web Scraping and Automation
 
