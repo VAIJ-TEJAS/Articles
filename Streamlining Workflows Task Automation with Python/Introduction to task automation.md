@@ -74,7 +74,7 @@ The `shutil` module offers a high-level interface for **file operations**, inclu
     except Exception as e:
         print("An error occurred:", e)
 
-![shutil_module][13]
+![shutil_module](./img/shutil_module.png)
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">Make sure to pass the correct path of the source and destination file in the same way as mentioned above.</span> </div>
 
 ## Subprocess Module
