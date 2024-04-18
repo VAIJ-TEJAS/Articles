@@ -4,7 +4,7 @@ Task automation plays a pivotal role in enhancing productivity across various in
 ## Why Python for Task Automation?
 Python is renowned as a versatile language for automating repetitive tasks across various domains. Its **simplicity**, **readability**, and **extensive library** support make it an ideal choice for tasks like **file management**, **data processing**, **web scraping**, and **system administration**.
 
-## III. Getting Started with Python for Task Automation
+## Getting Started with Python for Task Automation
 **Setting Up the Python Environment**
 To begin automating tasks with Python, you first need to set up the Python environment. This involves installing Python and choosing an Integrated Development Environment (IDE) for scripting tasks.
 
