@@ -15,18 +15,18 @@ Here are the steps in short:
 5.  **Test Your Setup**: Create a simple Python script and run it in your chosen IDE to ensure everything is set up correctly. You can print a "Hello, World!" message to verify that Python is installed and the IDE is configured properly.
 ## Writing Your First Automation Script
 Let's create a simple Python script to automate a basic task, such as file management.
-```python
-# Simple Python Script for File Management
-import os
 
-def organize_files(directory):
-    for filename in os.listdir(directory):
-        if filename.endswith('.txt'):
-            # Move text files to a 'TextFiles' directory
-            os.rename(os.path.join(directory, filename), os.path.join(directory, 'TextFiles', filename))
-directory_path = 'C:\\Users\\dell\\Desktop\\temp'
-organize_files(directory_path)
-1[first]()
+	#Simple Python Script for File Management
+	import os
+	
+	def organize_files(directory):
+	    for filename in os.listdir(directory):
+	        if filename.endswith('.txt'):
+	            # Move text files to a 'TextFiles' directory
+	            os.rename(os.path.join(directory, filename), os.path.join(directory, 'TextFiles', filename))
+	directory_path = 'C:\\Users\\dell\\Desktop\\temp'
+	organize_files(directory_path)
+	1[first]()
 
 # Essential Python Libraries for Automation
 
