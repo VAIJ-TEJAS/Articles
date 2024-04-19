@@ -26,8 +26,7 @@ def organize_files(directory):
             os.rename(os.path.join(directory, filename), os.path.join(directory, 'TextFiles', filename))
 directory_path = 'C:\\Users\\dell\\Desktop\\temp'
 organize_files(directory_path)
-```
-
+1[first]()
 
 # Essential Python Libraries for Automation
 
