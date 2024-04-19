@@ -5,7 +5,7 @@ Task automation plays a pivotal role in enhancing productivity across various in
 Python is renowned as a versatile language for automating repetitive tasks across various domains. Its **simplicity**, **readability**, and **extensive library** support make it an ideal choice for tasks like **file management**, **data processing**, **web scraping**, and **system administration**.
 
 # Getting Started with Python for Task Automation
-**Setting Up the Python Environment**
+## Setting Up the Python Environment
 Here are the steps in short:
 
 1.  **Install Python**: Download and install the latest version of Python from the official website ([https://www.python.org/downloads/](https://www.python.org/downloads/)). Make sure to add Python to the system PATH during installation.  
