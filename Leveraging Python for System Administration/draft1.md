@@ -109,7 +109,7 @@ We can create, modify, and delete user accounts using Python by calling system c
 
 		delete_user("Sia")
 
-	The script uses the `subprocess` module to execute a PowerShell command, deleting an existing local user account on a Windows system. The `delete_user` function accepts a `username` parameter indicating the user account to be deleted. It constructs a PowerShell command using string formatting, utilizing the `Remove-LocalUser` cmdlet. Upon successful deletion, a confirmation message is printed.
+	The script uses the `subprocess` module to execute a PowerShell command, deleting an existing local user account on a Windows system. The `delete_user` function accepts a `username` parameter indicating the user account to be deleted. It constructs a PowerShell command using string formatting, utilizing the `Remove-LocalUser` cmdlet. After deletion, a success message is displayed.
 	
 	Output:
 	
