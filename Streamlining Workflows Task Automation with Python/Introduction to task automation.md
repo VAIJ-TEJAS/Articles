@@ -251,15 +251,20 @@ Configure scheduled tasks using utilities like Cron Jobs on Unix systems or Task
 ## A. Introduction to Testing Automation
 Automated testing is essential for ensuring the reliability and stability of software applications.
 ### B. Using pytest and unittest
-Frameworks like pytest and unittest facilitate automated test execution and validation.
-```python
-# Example: Unit test for a function
-def add(a, b):
-    return a + b
+Pytest is a popular testing framework in Python known for its simplicity and scalability. It offers powerful features for writing and executing test cases efficiently. With pytest, developers can easily create test functions, organize test suites, and assert expected outcomes, making it suitable for both small and large-scale projects.
 
-def test_add():
-    assert add(2, 3) == 5
-```
+	class Calculator:
+	    def add(self, a, b):
+	        return a + b
+	   def subtract(self, a, b):
+	         return a - b
+	calculator = Calculator()
+	def test_addition():
+	    assert calculator.add(2, 3)==5
+	    assert calculator.add(5, -1)==4
+	def test_subtraction():
+	    assert calculator.subtract(5, 3)==2
+	    assert calculator.subtract(10, 7)==3
 ## Continuous Integration and Deployment (CI/CD)
 Integrate automation scripts with CI/CD pipelines for automated testing, building, and deployment of software projects.
 
