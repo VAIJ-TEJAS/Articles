@@ -206,6 +206,7 @@ Automating server monitoring, log analysis, and generating status reports is cru
 	    print("Network I/O (Bytes Sent/Received):", network_io.bytes_sent, "/", network_io.bytes_recv)
 monitor_server()
 ![sys_admin]()
+
 **Backup and Recovery Automation**
 Automating data backup, disaster recovery, and system restore tasks is essential for ensuring data integrity and continuity in the event of hardware failures, data loss, or system crashes.
 
