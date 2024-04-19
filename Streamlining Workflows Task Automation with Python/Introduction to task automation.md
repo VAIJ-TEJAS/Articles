@@ -24,7 +24,7 @@ def organize_files(directory):
         if filename.endswith('.txt'):
             # Move text files to a 'TextFiles' directory
             os.rename(os.path.join(directory, filename), os.path.join(directory, 'TextFiles', filename))
-directory_path = '/path/to/files'
+directory_path = 'C:\\Users\\dell\\Desktop\\temp'
 organize_files(directory_path)
 ```
 
