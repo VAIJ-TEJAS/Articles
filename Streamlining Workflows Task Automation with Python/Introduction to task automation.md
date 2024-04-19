@@ -26,7 +26,7 @@ Let's create a simple Python script to automate a basic task, such as file manag
 	            os.rename(os.path.join(directory, filename), os.path.join(directory, 'TextFiles', filename))
 	directory_path = 'C:\\Users\\dell\\Desktop\\temp'
 	organize_files(directory_path)
-	1[first]()
+1[first]()
 
 # Essential Python Libraries for Automation
 
