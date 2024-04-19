@@ -186,7 +186,7 @@ response = requests.post('https://example.com/login', data=payload)
 ```
 
 ## System Administration and Maintenance Automation
-**Server Monitoring and Reporting**
+## Server Monitoring and Reporting
 Automating server monitoring, log analysis, and generating status reports is crucial for maintaining the health and performance of systems. By scripting these tasks, administrators can proactively detect issues, analyze system behavior, and generate actionable insights.
 
 	import psutil
@@ -207,7 +207,7 @@ Automating server monitoring, log analysis, and generating status reports is cru
 monitor_server()
 ![sys_admin]()
 
-**Backup and Recovery Automation**
+## Backup and Recovery Automation
 Automating data backup, disaster recovery, and system restore tasks is essential for ensuring data integrity and continuity in the event of hardware failures, data loss, or system crashes.
 
 	import shutil
@@ -236,10 +236,10 @@ Automating data backup, disaster recovery, and system restore tasks is essential
 	backup_data(source_directory, destination_directory)
 
 
-## VIII. Task Scheduling and Job Automation
-### A. Introduction to Task Scheduling
+## Task Scheduling and Job Automation
+## Introduction to Task Scheduling
 Task scheduling involves automating recurring tasks and batch processes.
-### B. Using Cron Jobs (Unix) and Task Scheduler (Windows)
+## Using Cron Jobs (Unix) and Task Scheduler (Windows)
 Configure scheduled tasks using utilities like Cron Jobs on Unix systems or Task Scheduler on Windows.
 ```python
 # Example: Schedule a Python script using Cron
