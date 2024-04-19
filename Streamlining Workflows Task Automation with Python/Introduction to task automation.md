@@ -51,7 +51,7 @@ The `os` module in Python provides a **platform-independent** way of interacting
     os.rename(old_file, new_file)
     print("File renamed from 'old_file.txt' to 'new_file.txt'")
 
-![os_module](./img/os_module.png)
+![os_module][12]
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">While renaming the files make sure to create the file whose name you want to change.</span> </div>
 
 ## Shutil Module
@@ -74,7 +74,7 @@ The `shutil` module offers a high-level interface for **file operations**, inclu
     except Exception as e:
         print("An error occurred:", e)
 
-![shutil_module](./img/shutil_module.png)
+![shutil_module][13]
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">Make sure to pass the correct path of the source and destination file in the same way as mentioned above.</span> </div>
 
 ## Subprocess Module
@@ -149,26 +149,35 @@ Automate data processing tasks using libraries like Pandas for parsing, cleaning
 	    print(df)
 
 ![dataframe][8]
-## VI. Web Scraping and Data Retrieval Automation
-### A. Introduction to Web Scraping
-Web scraping involves extracting data from websites for various purposes such as data analysis and research.
-```python
-# Example: Scraping data from a website
-import requests
-from bs4 import BeautifulSoup
+## Web Scraping and Data Retrieval Automation
+**Introduction to Web Scraping**
+Web scraping is the process of extracting data from websites. It involves retrieving HTML content from web pages and then parsing and extracting the desired information. Web scraping is commonly used in various applications for data retrieval and extraction:
+-   **Data Collection**: Gathering information for analysis or research.
+-   **Lead Generation**: Extracting contact information for sales.
+-   **Content Aggregation**: Collecting and curating content from multiple sources.
+-   **Search Engine Indexing**: Indexing web pages for search engines.
 
-url = 'https://example.com'
-response = requests.get(url)
-soup = BeautifulSoup(response.text, 'html.parser')
-```
-### B. Using BeautifulSoup and Requests
-The BeautifulSoup and Requests libraries are commonly used for web scraping and automating web interactions.
-```python
-# Example: Extracting all links from a webpage
-for link in soup.find_all('a'):
-    print(link.get('href'))
-```
-### C. Automating Web Tasks
+**Using BeautifulSoup and Requests**
+Beautiful Soup and Requests form a powerful combination for web scraping tasks. Requests is used to fetch the HTML content of web pages, while Beautiful Soup is employed to parse and extract data from the HTML, enabling users to automate web interactions and extract valuable information from websites seamlessly.
+
+	import requests
+	from bs4 import BeautifulSoup
+	#URL of the website to scrape
+	url = 'https://www.google.com'
+	response = requests.get(url)
+
+	#Check if the request was successful (status code 200)
+	if response.status_code == 200:
+	    # Parse the HTML content of the page
+	    soup = BeautifulSoup(response.text, 'html.parser')
+	    links = soup.find_all('a')
+	    for link in links:
+	        print(link.text)
+	        print("Retrival of data successfull")
+	else:
+	    print("Failed to retrieve data from the website.")
+![web_scrap]()
+**Automating Web Tasks**
 Automate tasks such as data scraping, form submission, and content extraction from websites.
 ```python
 # Example: Submitting a form and extracting results
@@ -176,20 +185,55 @@ payload = {'username': 'user', 'password': 'pass'}
 response = requests.post('https://example.com/login', data=payload)
 ```
 
-## VII. System Administration and Maintenance Automation
-### A. Server Monitoring and Reporting
-Automate tasks to monitor servers, analyze logs, and generate status reports.
-```python
-# Example: Monitoring server disk space
-disk_usage = subprocess.check_output(['df', '-h'])
-print(disk_usage.decode('utf-8'))
-```
-### B. Backup and Recovery Automation
-Automate data backup, disaster recovery, and system restore tasks to ensure data integrity and continuity.
-```python
-# Example: Backup data to a remote server
-shutil.make_archive('/path/to/backup', 'zip', '/path/to/data')
-```
+## System Administration and Maintenance Automation
+**Server Monitoring and Reporting**
+Automating server monitoring, log analysis, and generating status reports is crucial for maintaining the health and performance of systems. By scripting these tasks, administrators can proactively detect issues, analyze system behavior, and generate actionable insights.
+
+	import psutil
+	import datetime
+
+	def monitor_server():
+	    cpu_usage = psutil.cpu_percent(interval=1)
+	    memory_usage = psutil.virtual_memory().percent
+	    disk_usage = psutil.disk_usage('/').percent
+	    network_io = psutil.net_io_counters()
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+	    #Print server metrics
+	    print("Timestamp:", timestamp)
+	    print("CPU Usage:", cpu_usage, "%")
+	    print("Memory Usage:", memory_usage, "%")
+	    print("Disk Usage:", disk_usage, "%")
+	    print("Network I/O (Bytes Sent/Received):", network_io.bytes_sent, "/", network_io.bytes_recv)
+monitor_server()
+![sys_admin]()
+**Backup and Recovery Automation**
+Automating data backup, disaster recovery, and system restore tasks is essential for ensuring data integrity and continuity in the event of hardware failures, data loss, or system crashes.
+
+	import shutil
+	import os
+	import datetime
+
+	def backup_data(source_dir, dest_dir):
+	    #Generate timestamp for backup folder
+	    timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+	    
+	    #Create a backup folder with timestamp
+	    backup_folder = os.path.join(dest_dir, f"backup_{timestamp}")
+	    os.makedirs(backup_folder)
+	    
+	    #Copy files from source directory to backup folder
+	    for root, dirs, files in os.walk(source_dir):
+	        for file in files:
+	            source_path = os.path.join(root, file)
+	            dest_path = os.path.join(backup_folder, os.path.relpath(source_path, source_dir))
+	            shutil.copy2(source_path, dest_path)
+	    
+	    print("Backup completed successfully.")
+
+	source_directory = 'C:\\Users\\dell\\Desktop\\src'
+	destination_directory = 'C:\\Users\\dell\\Desktop'
+	backup_data(source_directory, destination_directory)
+
 
 ## VIII. Task Scheduling and Job Automation
 ### A. Introduction to Task Scheduling
