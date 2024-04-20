@@ -287,15 +287,19 @@ Task scheduling involves automating the execution of tasks or jobs at predefined
 	while True:
 	    schedule.run_pending()
 	    time.sleep(1)  # Sleep for 1 second to avoid high CPU usage
-![task_schedule2]()
+![task_schedule2](./img/task_schedule2.png)
 ## Using Cron Jobs (Unix) and Task Scheduler (Windows)
-Configure scheduled tasks using utilities like Cron Jobs on Unix systems or Task Scheduler on Windows.
-```python
-# Example: Schedule a Python script using Cron
-# Add the following line to crontab
-# 0 0 * * * /usr/bin/python3 /path/to/script.py
-```
-
+	import os
+	def create_task():
+	    #Define the command to run (in this case, open Notepad)
+	    command = 'notepad.exe'
+	    
+	    #Use os.system to run the command to create a scheduled task
+	    os.system(f'schtasks /create /sc once /tn "open_notepad" /tr "{command}" /st 00:00')
+	
+	if __name__ == "__main__":
+	    create_task()
+![task_auto]()
 # Testing and Deployment Automation
 ## Introduction to Testing Automation
 Automated testing involves the use of software tools and scripts to execute test cases, validate functionality, and identify defects in a software application.
