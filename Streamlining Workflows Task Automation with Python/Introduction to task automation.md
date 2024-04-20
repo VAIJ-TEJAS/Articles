@@ -153,7 +153,7 @@ Automate data processing tasks using libraries like Pandas for parsing, cleaning
 	    print("DataFrame:")
 	    print(df)
 
-![dataframe](./img/dataframe.png)
+![dataframe](./img/dataframe1.png)
 # Web Scraping and Data Retrieval Automation
 ## Introduction to Web Scraping
 Web scraping is the process of extracting data from websites. It involves retrieving HTML content from web pages and then parsing and extracting the desired information. Web scraping is commonly used in various applications for data retrieval and extraction:
@@ -200,7 +200,7 @@ Automate tasks such as data scraping, form submission, and content extraction fr
 	message = MIMEMultipart()
 	message['From'] = sender_email
 	message['To'] = receiver_email
-	message['Subject'] = 'Demo mail Python!'
+	message['Subject'] = 'Demo mail'
 
 	#Add message body
 	message.attach(MIMEText('Welcome!! This is Test Mail.', 'plain'))
@@ -220,7 +220,7 @@ Automate tasks such as data scraping, form submission, and content extraction fr
 	finally:
 	    #Close SMTP session
 	    server.quit()
-![email_send]()
+![email_send](./img/email_send)
 # System Administration and Maintenance Automation
 ## Server Monitoring and Reporting
 Automating server monitoring, log analysis, and generating status reports is crucial for maintaining the health and performance of systems. By scripting these tasks, administrators can proactively detect issues, analyze system behavior, and generate actionable insights.
