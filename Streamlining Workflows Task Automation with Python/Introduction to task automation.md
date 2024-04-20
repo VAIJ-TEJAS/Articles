@@ -1,6 +1,6 @@
 
 
-In this comprehensive guide, we embark on a journey into the realm of task automation using Python.We'll explore how Python can streamline workflows by automating repetitive tasks. From setup to practical examples, you'll learn essential libraries, scheduling, testing, and deployment.
+In this comprehensive guide, we embark on a journey into the realm of task automation using Python.We'll explore how Python can **streamline workflows** by automating repetitive tasks. From setup to practical examples, you'll learn **essential libraries**, **scheduling**, **testing**, and **deployment**.
 # Task automation
 Task automation plays a pivotal role in enhancing productivity across various industries and professions. By automating repetitive tasks, organizations can significantly reduce manual effort and minimize errors.
 ## Why Python for Task Automation?
