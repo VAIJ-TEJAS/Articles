@@ -240,7 +240,7 @@ Automating server monitoring, log analysis, and generating status reports is cru
 	    print("Memory Usage:", memory_usage, "%")
 	    print("Disk Usage:", disk_usage, "%")
 	    print("Network I/O (Bytes Sent/Received):", network_io.bytes_sent, "/", network_io.bytes_recv)
-monitor_server()
+	monitor_server()
 ![sys_admin]()
 
 ## Backup and Recovery Automation
