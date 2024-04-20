@@ -137,7 +137,7 @@ Automating file organization, renaming, and cleanup tasks can significantly impr
     directory_path =  'C:\\Users\\dell\\Desktop\\temp'
     organize_files(directory_path)
 
-![before_file](./img/before_file.png) ![after_file](./img/after_file.png)
+![before_file](./img/before_file1.png) ![after_file](./img/after_file1.png)
 
 ## Data Processing and Analysis
 Automate data processing tasks using libraries like Pandas for parsing, cleaning, and transforming datasets.
