@@ -26,7 +26,7 @@ Let's create a simple Python script to automate a basic task, such as file manag
 	            os.rename(os.path.join(directory, filename), os.path.join(directory, 'TextFiles', filename))
 	directory_path = 'C:\\Users\\dell\\Desktop\\temp'
 	organize_files(directory_path)
-![first]()
+![first](./img/first.png)
 
 # Essential Python Libraries for Automation
 
@@ -55,7 +55,7 @@ The `os` module in Python provides a **platform-independent** way of interacting
     os.rename(old_file, new_file)
     print("File renamed from 'old_file.txt' to 'new_file.txt'")
 
-![os_module][12]
+![os_module](./img/os_module.png)
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">While renaming the files make sure to create the file whose name you want to change.</span> </div>
 
 ## Shutil Module
@@ -78,7 +78,7 @@ The `shutil` module offers a high-level interface for **file operations**, inclu
     except Exception as e:
         print("An error occurred:", e)
 
-![shutil_module][13]
+![shutil_module](./img/shutil_module.png)
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">Make sure to pass the correct path of the source and destination file in the same way as mentioned above.</span> </div>
 
 ## Subprocess Module
@@ -98,7 +98,7 @@ The `subprocess` module in Python provides a powerful way to **spawn** new proce
     except Exception as e:
         print("An error occurred:", e)
 
-![subprocess_module][14]
+![subprocess_module](./img/subprocess_module.png)
 
 ## Scheduled Module
 The `schedule` module in Python provides a simple and intuitive way to schedule recurring tasks and automate job execution. It allows you to define tasks to be executed at specific intervals, such as daily, hourly, or at a custom frequency. With `schedule`, you can automate repetitive tasks like data backups, report generation, and system maintenance effortlessly.
@@ -113,7 +113,7 @@ The `schedule` module in Python provides a simple and intuitive way to schedule 
 	while True:
 	    schedule.run_pending()
 	    time.sleep(1)  # Wait for 1 second
-![task_schedule]()
+![task_schedule](./img/task_schedule.png)
 # Automating File and Data Management
 ## File Organization and Cleanup
 Automating file organization, renaming, and cleanup tasks can significantly improve efficiency and maintain a tidy file system. Python provides powerful tools for automating these processes.
@@ -137,7 +137,7 @@ Automating file organization, renaming, and cleanup tasks can significantly impr
     directory_path =  'C:\\Users\\dell\\Desktop\\temp'
     organize_files(directory_path)
 
-![before_file]() ![after_file]()
+![before_file](./img/before_file.png) ![after_file](./img/after_file.png)
 
 ## Data Processing and Analysis
 Automate data processing tasks using libraries like Pandas for parsing, cleaning, and transforming datasets.
@@ -152,7 +152,7 @@ Automate data processing tasks using libraries like Pandas for parsing, cleaning
 	    print("DataFrame:")
 	    print(df)
 
-![dataframe][8]
+![dataframe](./img/dataframe.png)
 # Web Scraping and Data Retrieval Automation
 ## Introduction to Web Scraping
 Web scraping is the process of extracting data from websites. It involves retrieving HTML content from web pages and then parsing and extracting the desired information. Web scraping is commonly used in various applications for data retrieval and extraction:
@@ -180,7 +180,7 @@ Beautiful Soup and Requests form a powerful combination for web scraping tasks. 
 	        print("Retrival of data successfull")
 	else:
 	    print("Failed to retrieve data from the website.")
-![web_scrap]()
+![web_scrap](./img/web_scrap.png)
 ## Automating Web Tasks
 Automate tasks such as data scraping, form submission, and content extraction from websites.
 ```python
@@ -238,7 +238,7 @@ Automating data backup, disaster recovery, and system restore tasks is essential
 	source_directory = 'C:\\Users\\dell\\Desktop\\src'
 	destination_directory = 'C:\\Users\\dell\\Desktop'
 	backup_data(source_directory, destination_directory)
-
+![backup](./img/backup.png)
 
 ## Task Scheduling and Job Automation
 ## Introduction to Task Scheduling
