@@ -220,7 +220,7 @@ Automate tasks such as data scraping, form submission, and content extraction fr
 	finally:
 	    #Close SMTP session
 	    server.quit()
-![email_send](./img/email_send)
+![email_send](./img/email_send.png)
 # System Administration and Maintenance Automation
 ## Server Monitoring and Reporting
 Automating server monitoring, log analysis, and generating status reports is crucial for maintaining the health and performance of systems. By scripting these tasks, administrators can proactively detect issues, analyze system behavior, and generate actionable insights.
