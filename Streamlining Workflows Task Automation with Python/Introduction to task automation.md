@@ -1,3 +1,4 @@
+
 In this comprehensive guide, we embark on a journey into the realm of task automation using Python.We'll explore how Python can streamline workflows by automating repetitive tasks. From setup to practical examples, you'll learn essential libraries, scheduling, testing, and deployment.
 # Task automation
 Task automation plays a pivotal role in enhancing productivity across various industries and professions. By automating repetitive tasks, organizations can significantly reduce manual effort and minimize errors.
@@ -183,12 +184,43 @@ Beautiful Soup and Requests form a powerful combination for web scraping tasks. 
 ![web_scrap](./img/web_scrap.png)
 ## Automating Web Tasks
 Automate tasks such as data scraping, form submission, and content extraction from websites.
-```python
-# Example: Submitting a form and extracting results
-payload = {'username': 'user', 'password': 'pass'}
-response = requests.post('https://example.com/login', data=payload)
-```
 
+	import smtplib
+	from email.mime.text import MIMEText
+	from email.mime.multipart import MIMEMultipart
+
+	#Set up SMTP settings
+	smtp_host = 'smtp.hostinger.com'
+	smtp_port = 465
+	sender_email = 'sender@gmail.com'
+	receiver_email = 'receiver@gmail.com'
+	password = 'password'
+
+	#Create a multipart message
+	message = MIMEMultipart()
+	message['From'] = sender_email
+	message['To'] = receiver_email
+	message['Subject'] = 'Demo mail Python!'
+
+	#Add message body
+	message.attach(MIMEText('Welcome!! This is Test Mail.', 'plain'))
+
+	try:
+	    #Create SMTP session
+	    server = smtplib.SMTP_SSL(smtp_host, smtp_port)
+	    server.login(sender_email, password)
+
+	    #Send email
+	    server.sendmail(sender_email, receiver_email, message.as_string())
+	    print("Email sent successfully!")
+
+	except Exception as e:
+	    print(f"Failed to send email. Error: {e}")
+
+	finally:
+	    #Close SMTP session
+	    server.quit()
+![email_send]()
 # System Administration and Maintenance Automation
 ## Server Monitoring and Reporting
 Automating server monitoring, log analysis, and generating status reports is crucial for maintaining the health and performance of systems. By scripting these tasks, administrators can proactively detect issues, analyze system behavior, and generate actionable insights.
@@ -209,7 +241,7 @@ Automating server monitoring, log analysis, and generating status reports is cru
 	    print("Disk Usage:", disk_usage, "%")
 	    print("Network I/O (Bytes Sent/Received):", network_io.bytes_sent, "/", network_io.bytes_recv)
 monitor_server()
-![sys_admin]((./img/sys_admin.png))
+![sys_admin]()
 
 ## Backup and Recovery Automation
 Automating data backup, disaster recovery, and system restore tasks is essential for ensuring data integrity and continuity in the event of hardware failures, data loss, or system crashes.
@@ -251,11 +283,12 @@ Configure scheduled tasks using utilities like Cron Jobs on Unix systems or Task
 # 0 0 * * * /usr/bin/python3 /path/to/script.py
 ```
 
-## IX. Testing and Deployment Automation
-## A. Introduction to Testing Automation
-Automated testing is essential for ensuring the reliability and stability of software applications.
-### B. Using pytest and unittest
-Pytest is a popular testing framework in Python known for its simplicity and scalability. It offers powerful features for writing and executing test cases efficiently. With pytest, developers can easily create test functions, organize test suites, and assert expected outcomes, making it suitable for both small and large-scale projects.
+# Testing and Deployment Automation
+## Introduction to Testing Automation
+Automated testing involves the use of software tools and scripts to execute test cases, validate functionality, and identify defects in a software application.
+
+**Using pytest and unittest**
+`pytest` is a mature and feature-rich testing framework known for its simplicity and extensibility. It provides powerful features such as fixtures, parameterized testing, and plugins for customizing test execution.
 
 	class Calculator:
 	    def add(self, a, b):
@@ -269,6 +302,23 @@ Pytest is a popular testing framework in Python known for its simplicity and sca
 	def test_subtraction():
 	    assert calculator.subtract(5, 3)==2
 	    assert calculator.subtract(10, 7)==3
+![pytest]()
+
+	import unittest
+
+	def add(x, y):
+	    return x + y
+
+	class TestMathOperations(unittest.TestCase):
+
+	    def test_addition(self):
+	        self.assertEqual(add(2, 3), 5)
+	        self.assertEqual(add(-1, 1), 0)
+	        self.assertEqual(add(0, 0), 0)
+
+	if __name__ == '__main__':
+	    unittest.main()
+![test_uni]()
 ## Continuous Integration and Deployment (CI/CD)
 Integrate automation scripts with CI/CD pipelines for automated testing, building, and deployment of software projects.
 
