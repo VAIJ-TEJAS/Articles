@@ -1,4 +1,5 @@
 
+
 In this comprehensive guide, we embark on a journey into the realm of task automation using Python.We'll explore how Python can streamline workflows by automating repetitive tasks. From setup to practical examples, you'll learn essential libraries, scheduling, testing, and deployment.
 # Task automation
 Task automation plays a pivotal role in enhancing productivity across various industries and professions. By automating repetitive tasks, organizations can significantly reduce manual effort and minimize errors.
@@ -274,7 +275,19 @@ Automating data backup, disaster recovery, and system restore tasks is essential
 
 ## Task Scheduling and Job Automation
 ## Introduction to Task Scheduling
-Task scheduling involves automating recurring tasks and batch processes.
+Task scheduling involves automating the execution of tasks or jobs at predefined times or intervals. It eliminates the need for manual intervention and ensures timely execution of repetitive tasks.
+
+	import schedule
+	import time
+	def print_message():
+	    print("Scheduled task: Hello, world!")
+
+	schedule.every(5).seconds.do(print_message)
+
+	while True:
+	    schedule.run_pending()
+	    time.sleep(1)  # Sleep for 1 second to avoid high CPU usage
+![task_schedule2]()
 ## Using Cron Jobs (Unix) and Task Scheduler (Windows)
 Configure scheduled tasks using utilities like Cron Jobs on Unix systems or Task Scheduler on Windows.
 ```python
