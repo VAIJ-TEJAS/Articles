@@ -299,7 +299,7 @@ Task scheduling involves automating the execution of tasks or jobs at predefined
 	
 	if __name__ == "__main__":
 	    create_task()
-![task_auto](./img/task_auto.png)
+![task_auto](./img/task_auto1.png)
 # Testing and Deployment Automation
 ## Introduction to Testing Automation
 Automated testing involves the use of software tools and scripts to execute test cases, validate functionality, and identify defects in a software application.
