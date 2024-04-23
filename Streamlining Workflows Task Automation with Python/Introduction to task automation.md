@@ -107,6 +107,7 @@ The `subprocess` module in Python provides a powerful way to **spawn** new proce
 
 ## Scheduled Module
 The `schedule` module in Python provides a simple and intuitive way to schedule recurring tasks and automate job execution. It allows you to define tasks to be executed at specific intervals, such as daily, hourly, or at a custom frequency. With `schedule`, you can automate repetitive tasks like data backups, report generation, and system maintenance effortlessly.
+
 **Example :**
 
 	import schedule
