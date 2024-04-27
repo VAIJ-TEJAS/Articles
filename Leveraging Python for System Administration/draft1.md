@@ -52,7 +52,7 @@ Python is a valuable asset for system administrators, offering a range of librar
 
 - **psutil Module**: The `psutil` module in Python offers a cross-platform interface for accessing information on running processes, system utilization, and resources. It enables sysadmins to monitor system performance, manage processes, and collect detailed data on CPU, memory, disk, and network usage.
 
-<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> Although the aforementioned modules come pre-installed and need not be installed separately, you may install a module using the command: `pip install module_name`. Import a module using the command: `import module_name`.</span> </div>
+<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> Although the aforementioned modules come pre-installed with Python and need not be installed separately, you may install a module using the command: `pip install module_name`. Import a module using the command: `import module_name`.</span> </div>
 
 
 # Examples of Python Scripts for System Administration
