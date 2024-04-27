@@ -26,9 +26,7 @@ Python is a powerful language for automation tasks due to its **simplicity**, **
 
 Given below are the python Modules to automate various tasks such as **file operations**, **web scraping**, **data manipulation**, **system administration**, and more.
 
-**1. Selenium :** A powerful tool for automating web browsers, which allows you to interact with web elements, fill forms, and navigate through web pages programmatically. 
-
-**uses** : It's widely used for **web scraping**, **testing** and **fill forms**  in web applications.
+**1. Selenium :** A powerful tool for automating web browsers, which allows you to interact with web elements, fill forms, and navigate through web pages programmatically. It's widely used for **web scraping**, **testing** and **fill forms**  in web applications.
 
     from selenium import webdriver
     from selenium.webdriver.common.by import By
@@ -47,9 +45,7 @@ Given below are the python Modules to automate various tasks such as **file oper
 
 ![selenium][1] ![selenium][2]
 
-**2. PyAutoGUI :** This enables you to automate GUI interactions by simulating mouse and keyboard actions.
-
-**uses** : It is useful for automating tasks involving graphical user interfaces, such as opening applications
+**2. PyAutoGUI :** This enables you to automate GUI interactions by simulating mouse and keyboard actions. It is useful for automating tasks involving graphical user interfaces, such as opening applications
 
     import pyautogui
     import time
@@ -78,9 +74,7 @@ Given below are the python Modules to automate various tasks such as **file oper
 
 ![pyautogui3][5]
 
-**3. Requests :** A is a simple yet elegant **HTTP library** for Python, which allows you to send HTTP requests easily. 
-
-**uses :** It's commonly used for web scraping, **accessing APIs**.
+**3. Requests :** A is a simple yet elegant **HTTP library** for Python, which allows you to send HTTP requests easily. It's commonly used for web scraping, **accessing APIs**.
   
     import requests
     try:
@@ -96,9 +90,7 @@ Given below are the python Modules to automate various tasks such as **file oper
 
 ![request][6]
 
-**4. Beautiful Soup :** This library provides functions for **parsing HTML and XML documents**, making it invaluable for web scraping tasks.
-
-**uses** : It allows you to extract data from web pages effortlessly, facilitating     automation of data extraction processes.
+**4. Beautiful Soup :** This library provides functions for **parsing HTML and XML documents**, making it invaluable for web scraping tasks. It allows you to extract data from web pages effortlessly, facilitating     automation of data extraction processes.
 
     from bs4 import BeautifulSoup
     import requests
@@ -111,9 +103,7 @@ Given below are the python Modules to automate various tasks such as **file oper
 
 ![beautiful][7]  
     
-**5. Pandas :** Pandas is a powerful data manipulation library that provides high-level data structures and functions for working with structured data. 
-
-**uses :** It's commonly used for automating data processing tasks, such as cleaning, transforming, and analyzing datasets.
+**5. Pandas :** Pandas is a powerful data manipulation library that provides high-level data structures and functions for working with structured data. It's commonly used for automating data processing tasks, such as cleaning, transforming, and analyzing datasets.
     
      import pandas as pd
      data = {
