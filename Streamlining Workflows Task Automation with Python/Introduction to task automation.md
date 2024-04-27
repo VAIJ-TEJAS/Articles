@@ -326,7 +326,7 @@ Automated testing involves the use of software tools and scripts to execute test
 	    assert calculator.subtract(10, 7)==3
 ![pytest](./img/pytest.png)
 
-`unittest` is a built-in Python framework for automated testing that allows you to create, organize, and run test cases to validate the functionality of the code. It supports **test case classes**, **assertions**, **setup** and **teardown methods**. For more details prefer to [Unnitest Documentation] (https://docs.python.org/3/library/unittest.html)
+`unittest` is a built-in Python framework for automated testing that allows you to create, organize, and run test cases to validate the functionality of the code. It supports **test case classes**, **assertions**, **setup** and **teardown methods**. For more details prefer to [unnitest Documentation](https://docs.python.org/3/library/unittest.html) 
 
 	import unittest
 
