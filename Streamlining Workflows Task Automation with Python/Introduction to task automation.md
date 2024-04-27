@@ -172,13 +172,10 @@ Beautiful Soup and Requests form a powerful combination for web scraping tasks. 
 
 	import requests
 	from bs4 import BeautifulSoup
-	#URL of the website to scrape
 	url = 'https://www.google.com'
 	response = requests.get(url)
 
-	#Check if the request was successful (status code 200)
 	if response.status_code == 200:
-	    # Parse the HTML content of the page
 	    soup = BeautifulSoup(response.text, 'html.parser')
 	    links = soup.find_all('a')
 	    for link in links:
@@ -186,6 +183,7 @@ Beautiful Soup and Requests form a powerful combination for web scraping tasks. 
 	        print("Retrival of data successfull")
 	else:
 	    print("Failed to retrieve data from the website.")
+     
 ![web_scrap](./img/web_scrap.png)
 ## Automating Web Tasks
 Automate tasks such as data scraping, form submission, and content extraction from websites.
