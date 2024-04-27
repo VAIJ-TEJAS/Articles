@@ -292,6 +292,7 @@ Task scheduling involves automating the execution of tasks or jobs at predefined
 	    schedule.run_pending()
 	    time.sleep(1)  # Sleep for 1 second to avoid high CPU usage
 ![task_schedule2](./img/task_schedule2.png)
+
 **Using Cron Jobs (Unix) and Task Scheduler (Windows)**
 
 	import os
