@@ -31,7 +31,7 @@ Let's create a simple Python script to automate a basic task, such as file manag
 	            os.rename(os.path.join(directory, filename), os.path.join(directory, 'TextFiles', filename))
 	directory_path = 'C:\\Users\\dell\\Desktop\\temp'
 	organize_files(directory_path)
-![first](./img/first.png)
+![first](./img/first1.png)
 
 # Essential Python Libraries for Automation
 
@@ -60,7 +60,7 @@ The `os` module in Python provides a **platform-independent** way of interacting
     os.rename(old_file, new_file)
     print("File renamed from 'old_file.txt' to 'new_file.txt'")
 
-![os_module](./img/os_module.png)
+![os_module](./img/os_module1.png)
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">While renaming the files make sure to create the file whose name you want to change.</span> </div>
 
 **Shutil Module**
@@ -83,7 +83,7 @@ The `shutil` module offers a high-level interface for **file operations**, inclu
     except Exception as e:
         print("An error occurred:", e)
 
-![shutil_module](./img/shutil_module.png)
+![shutil_module](./img/shutil_module1.png)
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">Make sure to pass the correct path of the source and destination file in the same way as mentioned above.</span> </div>
 
 **Subprocess Module**
@@ -103,7 +103,7 @@ The `subprocess` module in Python provides a powerful way to **spawn** new proce
     except Exception as e:
         print("An error occurred:", e)
 
-![subprocess_module](./img/subprocess_module.png)
+![subprocess_module](./img/subprocess_module1.png)
 
 **Scheduled Module**
 The `schedule` module in Python provides us withe the most simple and intuitive way to schedule repeating tasks and automate job execution. With `schedule`, you can automate tasks like **data backups**, **report generation**, and **system maintenance**.
@@ -235,7 +235,7 @@ Automating server monitoring and generating status reports is crucial for mainta
 	    print("Disk Usage:", disk_usage, "%")
 	    print("Network I/O (Bytes Sent/Received):", network_io.bytes_sent, "/", network_io.bytes_recv)
 	monitor_server()
-![sys_admin](./img/sys_admin.png)
+![sys_admin](./img/sys_admin1.png)
 
 **Backup and Recovery Automation**
 Automating **data backup** helps in disaster recovery and system restoration tasks. It is essential to ensure that the data integrity and continuity is maintained.
@@ -263,7 +263,7 @@ Automating **data backup** helps in disaster recovery and system restoration tas
 	source_directory = 'C:\\Users\\dell\\Desktop\\src'
 	destination_directory = 'C:\\Users\\dell\\Desktop'
 	backup_data(source_directory, destination_directory)
-![backup](./img/backup.png)
+![backup](./img/backup1.png)
 
 ## Task Scheduling and Job Automation
 **Introduction to Task Scheduling**
@@ -329,7 +329,7 @@ Automated testing involves the use of software tools and scripts to execute **te
 
 	if __name__ == '__main__':
 	    unittest.main()
-![test_uni](./img/test_uni.png)
+![test_uni](./img/test_uni1.png)
 # Best Practices for Task Automation with Python
 
 When creating task automation scripts in Python, you need to follow the  best practices to ensure that your code is reliable, maintainable, and easy to understand. Here are some of the best practices that are listed below :-
