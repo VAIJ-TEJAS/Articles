@@ -159,6 +159,7 @@ Automate data processing tasks using libraries like `pandas` for **parsing**, **
 ![dataframe](./img/dataframe1.png)
 # Web Scraping and Data Retrieval Automation
 **Introduction to Web Scraping**
+
 **Web scraping** is the process of extracting data from websites. It involves retrieving HTML content from web pages and then parsing and extracting the desired information. 
 It is commonly used foe the following :-
 -   **Data Collection**: Gathering information for analysis or research.
@@ -167,6 +168,7 @@ It is commonly used foe the following :-
 -   **Search Engine Indexing**: Indexing web pages for search engines.
 
 **Using BeautifulSoup and Requests**
+
 `Beautiful Soup` and `requests` form a powerful combination for web scraping tasks. **Requests** is used to fetch the HTML content of web pages, while **Beautiful Soup** is employed to parse and extract data from the HTML, enabling to extract valuable information from websites through automation.
 
 	import requests
@@ -184,6 +186,7 @@ It is commonly used foe the following :-
 	    print("Failed to retrieve data from the website.")
      
 ![web_scrap](./img/web_scrap.png)
+
 **Automating Web Tasks**
 Automate tasks such as **data scraping**, **form submission**, and **content extraction** from websites helps people to extract and discover more about the websites as well as reduce the time for filling of the form manually.
 
