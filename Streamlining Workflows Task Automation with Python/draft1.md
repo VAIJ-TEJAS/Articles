@@ -13,6 +13,7 @@ Task automation helps in enhancing the  productivity by automating repeating tas
 
 # Getting Started with Python for Task Automation
 **Setting Up the Python Environment**
+
 The steps are given below: -
 1.  **Install Python**: Download and install the latest version of Python from the official website ([https://www.python.org/downloads/](https://www.python.org/downloads/)). 
 2.  **Choose an IDE**: Select an Integrated Development Environment (IDE) for Python development. 
@@ -21,6 +22,7 @@ The steps are given below: -
 You have installed python successfully now write your first code and explore different concepts.
 
 **Writing Your First Automation Script**
+
 Let's create a simple Python script to automate a basic task, such as file management.
 
 	import os
