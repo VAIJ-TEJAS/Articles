@@ -289,7 +289,7 @@ Automating **data backup** helps in disaster recovery and system restoration tas
 	while True:
 	    schedule.run_pending()
 	    time.sleep(1)  # Sleep for 1 second to avoid high CPU usage
-![task_schedule2](./img/task_schedule2.png)
+![task_schedule2](./img/task_schedule21.png)
 
 **Using Cron Jobs (Unix) and Task Scheduler (Windows)**
 
