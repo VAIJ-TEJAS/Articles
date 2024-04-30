@@ -340,14 +340,6 @@ Output:
 ![sys_metrics][7]
 
 
-# Best Practices
-- Prioritize readability and documentation.
-- Implement error handling strategies.
-- Utilize modular design principles.
-- Place a strong emphasis on security practices.
-- Regularly maintain and update scripts to ensure effectiveness.
-
-
 # Conclusion
 System Administration faces challenges with manual tasks and the need for efficiency. Python offers a solution with its libraries like `os`, `subprocess`, and `shutil`, making it ideal for **automation**. Python scripts can handle **user management**, **permissions**, **access control**, **file system** operations, software **installation**, and system **monitoring**. This empowers administrators to enhance productivity and proactively manage computer systems effectively.
 
