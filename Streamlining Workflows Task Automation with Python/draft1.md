@@ -4,6 +4,7 @@ In this comprehensive guide, we embark on a journey into the realm of task autom
 Task automation helps in enhancing the  productivity by automating repeating tasks, reducing manual effort, and minimizing errors. This allows the organizations to streamline operations and redirect resources. Automation tools like Python comes in very handy for these tasks.
 
 **Why Python for Task Automation?**
+
 - **Simplicity**: Python's clear and easy-to-read syntax makes it ideal for automating tasks with minimal code complexity.  
 - **Extensive Libraries**: A wealth of libraries, like `os`, `shutil`, `requests`, and `pandas`, provide tools for various automation tasks, from file management to data processing.  
 - **Cross-Platform**: Python runs on multiple operating systems, allowing scripts to be used in diverse environments.  
@@ -106,6 +107,7 @@ The `subprocess` module in Python provides a powerful way to **spawn** new proce
 ![subprocess_module](./img/subprocess_module1.png)
 
 **Scheduled Module**
+
 The `schedule` module in Python provides us withe the most simple and intuitive way to schedule repeating tasks and automate job execution. With `schedule`, you can automate tasks like **data backups**, **report generation**, and **system maintenance**.
 
 **Example :**
@@ -122,6 +124,7 @@ The `schedule` module in Python provides us withe the most simple and intuitive 
 ![task_schedule](./img/task_schedule.png)
 # Automating File and Data Management
 **File Organization and Cleanup**
+
 Automating file organization, renaming, and cleanup tasks can significantly improve efficiency and maintain a tidy file system. Python provides powerful tools for automating these processes such as `os` and `shutil`.
 
 	import os
@@ -145,6 +148,7 @@ Automating file organization, renaming, and cleanup tasks can significantly impr
 ![after_file](./img/after_file1.png)
 
 **Data Processing and Analysis**
+
 Automate data processing tasks using libraries like `pandas` for **parsing**, **cleaning**, and **transforming** datasets.
 
 	  import pandas as pd
@@ -189,6 +193,7 @@ It is commonly used foe the following :-
 ![web_scrap](./img/web_scrap1.png)
 
 **Automating Web Tasks**
+
 Automate tasks such as **data scraping**, **form submission**, and **content extraction** from websites helps people to extract and discover more about the websites as well as reduce the time for filling of the form manually.
 
 	import smtplib
@@ -271,6 +276,7 @@ Automating **data backup** helps in disaster recovery and system restoration tas
 
 ## Task Scheduling and Job Automation
 **Introduction to Task Scheduling**
+
 **Task scheduling** involves automating the execution of tasks or jobs at predefined times or intervals.
 
 	import schedule
