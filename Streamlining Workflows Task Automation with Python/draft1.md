@@ -64,6 +64,7 @@ The `os` module in Python provides a **platform-independent** way of interacting
     print("File renamed from 'old_file.txt' to 'new_file.txt'")
 
 ![os_module](./img/os_module1.png)
+
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">While renaming the files make sure to create the file whose name you want to change.</span> </div>
 
 **Shutil Module**
@@ -87,6 +88,7 @@ The `shutil` module offers a high-level interface for **file operations**, inclu
         print("An error occurred:", e)
 
 ![shutil_module](./img/shutil_module1.png)
+
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">Make sure to pass the correct path of the source and destination file in the same way as mentioned above.</span> </div>
 
 **Subprocess Module**
