@@ -141,7 +141,8 @@ Automating file organization, renaming, and cleanup tasks can significantly impr
     directory_path =  'C:\\Users\\dell\\Desktop\\temp'
     organize_files(directory_path)
 
-![before_file](./img/before_file1.png) ![after_file](./img/after_file1.png)
+![before_file](./img/before_file1.png) 
+![after_file](./img/after_file1.png)
 
 **Data Processing and Analysis**
 Automate data processing tasks using libraries like `pandas` for **parsing**, **cleaning**, and **transforming** datasets.
@@ -185,7 +186,7 @@ It is commonly used foe the following :-
 	else:
 	    print("Failed to retrieve data from the website.")
      
-![web_scrap](./img/web_scrap.png)
+![web_scrap](./img/web_scrap1.png)
 
 **Automating Web Tasks**
 Automate tasks such as **data scraping**, **form submission**, and **content extraction** from websites helps people to extract and discover more about the websites as well as reduce the time for filling of the form manually.
