@@ -234,7 +234,7 @@ Automation scripting languages are programming languages that are specifically d
     except Exception as e:
         print("An error occurred:", e)
 
-![subprocess_module][14]
+![subprocess_module](./img/subprocess_module.png)
 
 **Time  and  Datetime Modules** : The `time` and `datetime` modules in Python provide functionalities for handling time-related tasks and scheduling automation jobs.
 For further information check [Time module in python](https://docs.python.org/3/library/time.html#module-time)
@@ -247,7 +247,7 @@ For further information check [Time module in python](https://docs.python.org/3/
         pass
     print("Automation job executed after {} seconds.".format(delay))
 
-![time_date][15]
+![time_date](./img/time_date1.png)
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">When this code is executed than after the delay of 5 seconds the message is displayed</span> </div>
 
 # Web Scraping and Automation
