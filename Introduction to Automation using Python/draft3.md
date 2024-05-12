@@ -16,7 +16,7 @@ In this guide, we'll explore Automation with Python. **Automation** is key in to
 -   **Productivity:** Frees up time for strategic work.     
 -   **Data Analysis:** Provides valuable insights for decision-making.    
  
-# Introduction of Python in  Automation
+# Introduction of Python in Automation
 
 Python is a powerful language for automation tasks due to its **simplicity**, **versatility**, and **extensive libraries**. You can also visit [Python official site](https://docs.python.org/3/) for more information. 
 
@@ -24,7 +24,7 @@ Python is a powerful language for automation tasks due to its **simplicity**, **
 
 Given below are the essential python Modules to automate various tasks along with their examples for better understanding.
 
-**1. Selenium :** A powerful tool for automating web browsers, which allows you to interact with web elements programmatically. It's widely used for **web scraping**, **testing** and **fill forms**  in web applications.
+**1. Selenium :** A powerful tool for automating web browsers, which allows you to interact with web elements programmatically. It's widely used for **web scraping**, **testing** and **fill forms** in web applications.
 
     from selenium import webdriver
     from selenium.webdriver.common.by import By
@@ -33,7 +33,7 @@ Given below are the essential python Modules to automate various tasks along wit
     
     driver = webdriver.Chrome()
     driver.get("https://www.google.com")
-    search_input = driver.find_element(By.NAME, "q")  # Google's search input element name is "q"
+    search_input = driver.find_element(By.NAME, "q")
     
     search_input.send_keys("Python automation")
     search_input.send_keys(Keys.RETURN)
@@ -123,7 +123,7 @@ Before moving to any planning the first step is to identify the repetitive and t
 
 **Step 2: Divide the Task into Smaller Steps**
 
-Break down the task into smaller, manageable modules. Then start working on each modules independently.
+Break down the task into smaller, manageable modules. Then start working on each module independently.
 
 **Step 3: Research Python Libraries**
 
@@ -151,7 +151,7 @@ Write Python code to automate each step of the task. Given below is a short exam
         
 **Step 5: Test the Code**
 
-After you are done with coding it's time to test it with a sample data to ensure that it performs well.
+After you are done with coding its time to test it with a sample data to ensure that it performs well.
 
 ![flow1][9]
 
@@ -179,7 +179,7 @@ Automation scripting languages are programming languages that are specifically d
 2.  **Bash (Shell)**: Default on Unix; excels in system tasks and command-line ops.
 3.  **PowerShell**: Microsoft's automation tool for Windows; robust system management.
 # Essential Python Libraries for Automation
-**OS Module** : The `os` module in Python provides a **platform-independent** way of interacting with the **operating system**.
+**OS Module:** The `os` module in Python provides a **platform-independent** way of interacting with the **operating system**.
 
 **Example :**
 
@@ -205,9 +205,9 @@ Automation scripting languages are programming languages that are specifically d
 ![os_module][12]
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">While renaming the files make sure to create the file whose name you want to change.</span> </div>
 
-**Shutil Module** : The `shutil` module offers a high-level interface for **file operations**, including file **copying**, **moving**, and **deletion**. You can gain more knowledge from [shutil module](https://docs.python.org/3/library/shutil.html#module-shutil)
+**Shutil Module:** The `shutil` module offers a high-level interface for **file operations**, including file **copying**, **moving**, and **deletion**. You can gain more knowledge from [shutil module](https://docs.python.org/3/library/shutil.html#module-shutil)
 
-**Example :**
+**Example**
 
     import shutil
     source_file = 'C:\\Users\\dell\\Desktop\\temp\\source.txt'
@@ -226,9 +226,9 @@ Automation scripting languages are programming languages that are specifically d
 ![shutil_module](./img/shutil_module.png)
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">Make sure to pass the correct path of the source and destination file in the same way as mentioned above.</span> </div>
 
-**Subprocess Module** : The `subprocess` module provides a powerful way to **spawn** new processes. It allows you to execute **system commands**, **run external programs**.For more details visit [subpress module](https://docs.python.org/3/library/subprocess.html)
+**Subprocess Module:** The `subprocess` module provides a powerful way to **spawn** new processes. It allows you to execute **system commands**, **run external programs**.For more details visit [subpress module](https://docs.python.org/3/library/subprocess.html)
 
-**Example :**
+**Example**
 
     import subprocess
     try:
@@ -241,9 +241,9 @@ Automation scripting languages are programming languages that are specifically d
 
 ![subprocess_module](./img/subprocess_module.png)
 
-**Time  and  Datetime Modules** : The `time` and `datetime` modules in Python provide functionalities for handling time-related tasks and scheduling automation jobs.For further information check [Time module in python](https://docs.python.org/3/library/time.html#module-time)
+**Time and Datetime Modules:** The `time` and `datetime` modules in Python provide functionalities for handling time-related tasks and scheduling automation jobs.For further information check [Time module in python](https://docs.python.org/3/library/time.html#module-time)
 
-**Example :**
+**Example**
 
     import time
     delay = 5
@@ -288,13 +288,13 @@ Automation scripts can interact with web pages, submit forms, extract data, and 
 ![web_scrap][16]
 
 # Automating System Tasks
-This  involves streamlining repetitive processes on both **Windows** and **Linux** operating systems, enhancing **productivity** and **efficiency**.
+This involves streamlining repetitive processes on both **Windows** and **Linux** operating systems, enhancing **productivity** and **efficiency**.
 
 **Task Automation on Windows**
 
 On **Windows**, PowerShell is a powerful automation tool that provides a wide range of `cmdlets` and scripts for managing system tasks. With **PowerShell**, you can automate tasks such as **file manipulation**, **registry editing**, **user management**, and **system configuration**.
 
-**Example :**
+**Example**
 
     $sourceDir = "C:\Users\dell\Desktop\File1.txt"
     $destDir = "C:\Users\dell\Desktop\File2.txt"
@@ -315,9 +315,9 @@ On **Windows**, PowerShell is a powerful automation tool that provides a wide ra
 
 **Using Pandas for Data Automation**
 
-When the Python library `Pandas` is used for data automation then it allows efficient **processing**, **manipulation**, and **analysis** of data. `Pandas` is a powerful library that provides data structures such as `DataFrame` .
+When the Python library `Pandas` is used for data automation then it allows efficient **processing**, **manipulation**, and **analysis** of data. `Pandas` is a powerful library that provides data structures such as `DataFrame`.
 
-**Example :**
+**Example**
 
     import pandas as pd
     data = pd.read_csv('data.csv')
@@ -343,7 +343,7 @@ When the Python library `Pandas` is used for data automation then it allows effi
 
 **Pytest** is a popular testing framework in Python that is used for testing automation. It offers powerful features for writing and executing test cases efficiently. With `pytest`, developers can easily create **test functions**, **organize test suites**, and **assert expected outcomes**. Its suitable for both **small** and **large-scale projects**.
 
-**Example :**
+**Example**
 
     class Calculator:
         def add(self, a, b):
