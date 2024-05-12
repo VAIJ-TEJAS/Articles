@@ -111,7 +111,7 @@ Given below are the essential python Modules to automate various tasks along wit
     print("DataFrame:")
     print(df)
 
-![dataframe][8]
+![dataframe](./img/dataframe1.png)
 
 # Getting Started with Automation
 
