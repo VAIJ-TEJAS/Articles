@@ -68,9 +68,7 @@ Given below are the essential python Modules to automate various tasks along wit
 
 ![pyautogui1][3]
 
-![pyautogui2][4]
-
-![pyautogui3][5]
+![pyautogui2](./img/pyautogui2.png)
 
 **3. Requests :** This is a simple yet elegant **HTTP library** for Python, which allows you to send HTTP requests easily. It's commonly used for web scraping, **accessing APIs**.
   
@@ -99,7 +97,7 @@ Given below are the essential python Modules to automate various tasks along wit
     for link in soup.find_all("a"):
         print(link.get_text())
 
-![beautiful][7]  
+![beautiful](./img/)  
     
 **5. Pandas :** `pandas` is a powerful **data manipulation** library that help us to form data frames. It's commonly used for automating data processing tasks, such as cleaning, transforming, and analyzing datasets.
     
