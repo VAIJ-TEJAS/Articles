@@ -86,7 +86,7 @@ Given below are the essential python Modules to automate various tasks along wit
 
 ![request][6]
 
-**4. Beautiful Soup :** It provides us with different functions for **parsing HTML and XML documents**. It allows you to extract data from web pages effortlessly, facilitating     automation of data extraction processes.
+**4. Beautiful Soup :** It provides us with different functions for **parsing HTML and XML documents**. It allows you to extract data from web pages effortlessly, facilitating automation of data extraction processes.
 
     from bs4 import BeautifulSoup
     import requests
