@@ -324,7 +324,7 @@ When the Python library `Pandas` is used for data automation then it allows effi
     df_filled = df.fillna(0)
     df_filled.head(7)
 
-![panda1][17] ![panda2][18]
+![panda1][17]
 
 # Testing and Automation
 
