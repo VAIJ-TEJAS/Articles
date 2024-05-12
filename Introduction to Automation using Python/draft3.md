@@ -148,8 +148,9 @@ Write Python code to automate each step of the task. Given below is a short exam
 **Step 5: Test the Code**
 After you are done with coding it's time to test it with a sample data to ensure that it performs well.
 
-![flow1][9] ![flow2][10] 
-![flow3][11]
+![flow1][9]
+
+![flow2][10] 
 
 **Step 6: Update the Code**
 
