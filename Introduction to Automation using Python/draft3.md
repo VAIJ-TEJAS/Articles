@@ -200,7 +200,7 @@ Automation scripting languages are programming languages that are specifically d
 ![os_module][12]
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">While renaming the files make sure to create the file whose name you want to change.</span> </div>
 
-**Shutil Module** : The `shutil` module offers a high-level interface for **file operations**, including file **copying**, **moving**, and **deletion**.
+**Shutil Module** : The `shutil` module offers a high-level interface for **file operations**, including file **copying**, **moving**, and **deletion**. You can gain more knowledge from [shutil module](https://docs.python.org/3/library/shutil.html#module-shutil)
 
 **Example :**
 
@@ -221,7 +221,7 @@ Automation scripting languages are programming languages that are specifically d
 ![shutil_module][13]
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body">Make sure to pass the correct path of the source and destination file in the same way as mentioned above.</span> </div>
 
-**Subprocess Module** : The `subprocess` module provides a powerful way to **spawn** new processes. It allows you to execute **system commands**, **run external programs**.
+**Subprocess Module** : The `subprocess` module provides a powerful way to **spawn** new processes. It allows you to execute **system commands**, **run external programs**.For more details visit [subpress module](https://docs.python.org/3/library/subprocess.html)
 
 **Example :**
 
@@ -237,7 +237,7 @@ Automation scripting languages are programming languages that are specifically d
 ![subprocess_module][14]
 
 **Time  and  Datetime Modules** : The `time` and `datetime` modules in Python provide functionalities for handling time-related tasks and scheduling automation jobs.
-
+For further information check [Time module in python](https://docs.python.org/3/library/time.html#module-time)
 **Example :**
 
     import time
