@@ -41,7 +41,7 @@ Given below are the essential python Modules to automate various tasks along wit
     time.sleep(60)
     driver.quit()
 
-![selenium][1] ![selenium](./img/selenium2(2).png)
+ ![selenium](./img/selenium2(2).jpg)
 
 **2. PyAutoGUI :** This helps us to automate GUI interactions. It is useful for automating tasks involving graphical user interfaces, such as opening applications
 
