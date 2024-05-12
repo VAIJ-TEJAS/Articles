@@ -17,7 +17,7 @@ In this guide, we'll explore automation with Python. Automation is key in today'
  
 # Introduction of Python in  Automation
 
-Python is a powerful language for automation tasks due to its **simplicity**, **versatility**, and **extensive libraries**. 
+Python is a powerful language for automation tasks due to its **simplicity**, **versatility**, and **extensive libraries**.You can also visit [Python official site](https://docs.python.org/3/) for more information. 
 
 ## Python Modules for Automation
 
