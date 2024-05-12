@@ -97,7 +97,7 @@ Given below are the essential python Modules to automate various tasks along wit
     for link in soup.find_all("a"):
         print(link.get_text())
 
-![beautiful](./img/)  
+![beautiful](./img/beautiful1.png)  
     
 **5. Pandas :** `pandas` is a powerful **data manipulation** library that help us to form data frames. It's commonly used for automating data processing tasks, such as cleaning, transforming, and analyzing datasets.
     
