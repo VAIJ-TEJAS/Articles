@@ -136,9 +136,164 @@ The code contains a sample HTML script, from which tags, attributes and texts ar
 
 Output:
 
-![5][beautifulsoup]
+![beautifulsoup][5]
 
 # Scraping Dynamic Websites with Selenium
+
+**Dynamic Websites and their Challenges for Web Scraping**
+
+Websites that are dynamic produce material based on server-side processing or user interactions. This poses challenges for web scraping due to the dynamic nature of the content delivery.
+- Dynamic websites load the contents of the page asynchronously using JavaScript. Conventional web scraping tools like BeautifulSoup or Scrapy may lead to incomplete data extraction.
+- Since restricted material frequently requires user logins, session, cookie, and authentication token, management can be difficult, particularly for lengthy scraping jobs.  
+- In order to collect all the data from websites with endless scrolling, users must simulate their behavior and watch network requests as additional material loads down the page.  
+- Websites that use parameterized dynamic URLs make scraping more difficult since it can be challenging and error-prone to create and maintain these URLs dynamically.
+
+**Selenium for Automated Web Browser Interaction**
+
+When it comes to web scraping dynamic websites with JavaScript-loaded content, Selenium is an extremely useful tool. It makes it possible to programmatically operate a web browser, providing features like button clicks, form submission, and page navigation.
+In order to use Selenium, you need to set up Selenium WebDriver for your browser.
+- **Google Chrome**
+	- Download ChromeDriver from chromedriver.chromium.org
+	- Set up ChromeDriver:
+
+			from selenium import webdriver
+			from selenium.webdriver.chrome.service import Service
+			from webdriver_manager.chrome import ChromeDriverManager
+			service = Service(ChromeDriverManager().install())
+			driver = webdriver.Chrome(service=service)
+			
+- **Mozilla Firefox**
+	- Download GeckoDriver from github.com/mozilla/geckodriver/releases.
+	- Set up GeckoDriver:
+
+			from selenium import webdriver
+			from selenium.webdriver.firefox.service import Service
+			from webdriver_manager.firefox import GeckoDriverManager
+			service = Service(GeckoDriverManager().install())
+			driver = webdriver.Firefox(service=service)
+
+- **Microsoft Edge**
+	- Download EdgeDriver from developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/.
+	- Set up EdgeDriver:
+
+			from selenium import webdriver
+			from selenium.webdriver.edge.service import Service
+			from webdriver_manager.microsoft import EdgeChromiumDriverManager
+			service = Service(EdgeChromiumDriverManager().install())
+			driver = webdriver.Edge(service=service)
+
+**Extracting Elements**
+
+- **find_element() Method**
+	- To discover a single web element that meets the given criteria, use the `find_element()` function.
+	- Synatx:
+		- element = driver.find_element(By.ID, 'ID_value')
+
+- **find_elements() Method**
+	- To identify several web items that meet the given criteria, use the `find_elements()` function. All matched items are represented by a list of WebElement objects.
+	- Syntax:
+		- elements = driver.find_elements(By.CLASS_NAME, 'Class_name_val')
+
+- **get_attribute() Method**
+	- It retrieves the value of an attribute like `href`, `src`, etc. from a web element.
+	- Syntax:
+		- link = driver.find_element(By.TAG_NAME, 'Tag_value')
+		- href_value = link.get_attribute('attr_value')
+
+- **text Property**
+	- It extracts text content from elements like paragraphs, headings, or list items.
+	- Syntax:
+		- element = driver.find_element(By.CLASS_NAME, 'Class_val')
+		- txt = element.text
+
+- **send_keys() Method**
+	- This method is helpful for input fields since it mimics typing into text fields or search boxes.
+	- Syntax:
+		- inp_box = driver.find_element(By.NAME, 'Name_value')
+		- inp_box.send_keys('Hello!')
+
+- **click() Method**
+	- This method is used to click buttons, links, checkboxes, or any clickable element.
+	- Syntax:
+		- button = driver.find_element(By.ID, 'ID_value')
+		- button.click()
+
+- **execute_script() Method**
+	- JavaScript code for advanced interactions, such as scrolling and event triggering, is executed via this method.
+	- Syntax:
+		- driver.execute_script("your_JS_code")
+	- Example for scrolling: 
+		- driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+Let's take a look at an example to understand it better:
+
+samplepage.html:
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Sample Page for Selenium</title>
+	    <script>
+	        document.addEventListener('DOMContentLoaded', function() {
+	            document.getElementById('dynamicButton').addEventListener('click', function() {
+	                document.getElementById('dynamicContent').innerHTML = '<p class="dynamicText">I hope you are doing well.</p>';
+	                document.getElementById('dynamicContent').innerHTML += '<a href="https://samp.com" class="dynamicLink">Example Link</a>';
+	            });
+	        });
+	    </script>
+	</head>
+	<body>
+	    <h1 id="pageTitle">Welcome!</h1>
+	    <input type="text" id="inputField" name="inputName" placeholder="Enter something...">
+	    <button id="dynamicButton">Load Content</button>
+	    <div id="dynamicContent"></div>
+	</body>
+	</html>
+
+Python script for data extraction:
+
+	from selenium import webdriver
+	from selenium.webdriver.chrome.service import Service
+	from selenium.webdriver.common.by import By
+	from selenium.webdriver.common.keys import Keys
+	from selenium.webdriver.support.ui import WebDriverWait
+	from selenium.webdriver.support import expected_conditions as EC
+	from webdriver_manager.chrome import ChromeDriverManager
+
+	service = Service(ChromeDriverManager().install())
+	driver = webdriver.Chrome(service=service)
+	driver.get("samplepage.html")    # open the webpage
+
+	wait = WebDriverWait(driver, 20)
+	page_title = wait.until(EC.presence_of_element_located((By.ID, 'pageTitle')))     # to wait for 20 sec for page to load
+	page_title = driver.find_element(By.ID, 'pageTitle')
+	print("Page Title:", page_title.text)
+	input_field = driver.find_element(By.NAME, 'inputName')
+	input_field.send_keys('Hello, Alayne!')    # enters given data
+	print("Input Field Value:", input_field.get_attribute('value'))
+	dynamic_button = driver.find_element(By.ID, 'dynamicButton')
+	dynamic_button.click()    # clicks the button
+	wait = WebDriverWait(driver, 10)
+	dynamic_text = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'dynamicText')))
+	print("Dynamic Text:", dynamic_text.text)
+	dynamic_link = driver.find_element(By.CLASS_NAME, 'dynamicLink')
+	print("Dynamic Link Href:", dynamic_link.get_attribute('href'))
+	driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")    # scrolls
+	driver.quit()    # close the browser
+
+The code extracts data from the given JavaScript file and also enters data into the text field, clicks a button and scrolls through the webpage.
+
+Output:
+
+![selenium][6]
+
+
+# Scraping with Scrapy
+
+Scrapy is a high-level Python-based web crawling and scraping framework. It offers an extensive collection of tools and technologies to support developers in efficiently and methodically extracting data from websites. Scrapy can manage requests, follow links, and extract data from web pages with ease.
+
 
 
 
@@ -148,3 +303,4 @@ Output:
 [3]: https://www.selenium.dev/documentation/
 [4]: https://requests.readthedocs.io/en/latest/
 [5]: beautifulsoup.png
+[6]: selenium.png
