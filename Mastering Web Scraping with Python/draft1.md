@@ -133,6 +133,7 @@ Let's take a look at an example to understand the methods better:
 	print("Link Href:", a_tag['href'])    # displays 'href' attribute's value
 
 The code contains a sample HTML script, from which tags, attributes and texts are extracted.
+
 Output:
 
 ![5][beautifulsoup]
