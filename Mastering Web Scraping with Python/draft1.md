@@ -293,6 +293,130 @@ Output:
 # Scraping with Scrapy
 
 Scrapy is a high-level Python-based web crawling and scraping framework. It offers an extensive collection of tools and technologies to support developers in efficiently and methodically extracting data from websites. Scrapy can manage requests, follow links, and extract data from web pages with ease.
+An item is a container that stores scraped data. The objects that your spiders scrape are processed by item pipelines in Scrapy. Every Python class that implements a basic method that takes an item and acts upon it, makes up an item pipeline component.
+
+Let's understand how to set up and define pipelines in for a Scrapy project using an example. We will be using the following HTML script, stored as `samplepage.html`.
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Sample Quotes Page</title>
+	</head>
+	<body>
+	    <div class="quote">
+	        <span class="text">"The only limit to our realization of tomorrow is our doubts of today."</span>
+	        <span> - <small>Franklin D. Roosevelt</small></span>
+	        <div class="tags">
+	            <a class="tag" href="/tag/inspiration">inspiration</a>
+	            <a class="tag" href="/tag/tomorrow">tomorrow</a>
+	        </div>
+	    </div>
+	    <div class="quote">
+	        <span class="text">"In the end, we will remember not the words of our enemies, but the silence of our friends."</span>
+	        <span> - <small>Martin Luther King Jr.</small></span>
+	        <div class="tags">
+	            <a class="tag" href="/tag/friendship">friendship</a>
+	            <a class="tag" href="/tag/memory">memory</a>
+	        </div>
+	    </div>
+	</body>
+	</html>
+
+**Setting up Scrapy Projects and Defining Item Pipelines**
+
+1. Open your terminal and go to the directory where you want to create a Python project.
+2. Run the following command to create a Scrapy project consisting of files necessary for configuring the project.
+
+		scrapy startproject scrapy_test
+This creates a Scrapy project named `scrapy_test`.
+
+3. Navigate to the `items.py` file in the `scrapy_test` folder.  Here, you will be defining a Scrapy item class, which acts as a blueprint for the data you will be extracting. For doing so, `scrapy.Field()` is used, which creates field instances to store any type of data in.
+
+		import scrapy
+		class  ScrapyTestItem(scrapy.Item):
+			text = scrapy.Field()
+			author = scrapy.Field()
+			tags = scrapy.Field()
+This code creates `text`, `author` and `tags` fields to store data from the webpage.
+
+4. Navigate to `settings.py` file. Here, you can configure various settings for your project. We will be defining the pipelines that will be applied to process the scraped items, as well as their order of execution and priority. Lower the priority value, higher is the priority.
+
+		ITEM_PIPELINES = {
+		'scrapy_test.pipelines.JsonWriterPipeline': 300,
+		'scrapy_test.pipelines.HtmlWriterPipeline': 800,
+		}
+This ensures that `JsonWriterPipeline` executes before `HtmlWriterPipeline`. These pipelines are defined in the next step.
+
+5. Navigate to `pipelines.py` file. Processing of the scraped data, including cleansing, verifying, storing, and exporting, is handled via pipelines. Multiple pipelines can be defined in this file.
+
+		import json
+		class JsonWriterPipeline:
+		    def open_spider(self, spider):
+		        self.file = open('quotes.json', 'w')
+
+		    def close_spider(self, spider):
+		        self.file.close()
+
+		    def process_item(self, item, spider):
+		        line = json.dumps(dict(item), ensure_ascii=False) + "\n"     # extracted data is converted to JSON formatted string, and non-ASCII characters are handled properly.
+		        self.file.write(line)
+		        return item
+
+		class HtmlWriterPipeline:
+		    def open_spider(self, spider):
+		        self.file = open('quotes.html', 'w')
+		        self.file.write('<html><body><ul>')
+
+		    def close_spider(self, spider):
+		        self.file.write('</ul></body></html>')
+		        self.file.close()
+
+		    def process_item(self, item, spider):
+		        self.file.write(f"<li><p>{item['text']}</p><p>{item['author']}</p><p>{', '.join(item['tags'])}</p></li>")     # extracted data is stored in a list format
+		        return item
+
+This code stores the extracted data in two files: `quotes.json` and `quotes.html`. The data extracted in the fields defined previously is stored in the two files in a formatted manner.
+
+6. Navigate to scrapy_test/spiders and create a new Python Source file named `scrapy_code.py`. Here, we will be creating spider classes to perform the scraping. Spider classes describe which URLs to crawl, parse the responses, and then use XPath or CSS selectors to retrieve data from webpages. The item classes defined in the `items.py` file are used by the spider.
+
+		import scrapy
+		from scrapy_test.items import ScrapyTestItem
+		import urllib.parse
+		import urllib.request
+
+		class QuotesSpider(scrapy.Spider):
+		    name = 'quotes'
+		    file_url = urllib.parse.urljoin('file:', urllib.request.pathname2url("samplepage.html"))     # make sure to swap out the given path with your own
+		    start_urls = [file_url]
+
+		    def parse(self, response):
+		        for quote in response.css('div.quote'):
+		            item = ScrapyTestItem()
+		            item['text'] = quote.css('span.text::text').get()
+		            item['author'] = quote.css('span small::text').get()
+		            item['tags'] = quote.css('div.tags a.tag::text').getall()
+		            yield item
+
+This code creates a spider class and names the spider as `quotes`. Using a CSS selector, it selects all HTML elements with the class `quote` within the response HTML and creates a new instance of `ScrapyTestItem` class for each element. The `get()` method retrieves textual contents of each element and stores them in their respective field instances.
+
+7. In your terminal, navigate to the root directory of the project (`scrapy_test`) and run the command:
+
+		scrapy crawl quotes
+
+Where `quotes` is the spider we created.
+
+The extracted data is stored in `quotes.json` and `quotes.html` in the project's root directory.
+
+Output:
+
+![jsonfile][7]
+
+![htmlfile][8]
+
+
+
+
 
 
 
@@ -304,3 +428,5 @@ Scrapy is a high-level Python-based web crawling and scraping framework. It offe
 [4]: https://requests.readthedocs.io/en/latest/
 [5]: beautifulsoup.png
 [6]: selenium.png
+[7]: jsonfile.png
+[8]: htmlfile.png
