@@ -1,4 +1,4 @@
-**Web scraping** is the automated process of extracting information from websites, allowing you to collect huge amounts of statistics quickly and efficaciously. **Python** is an effective tool for this task due to its simple syntax and robust libraries like **BeautifulSoup**, **Scrapy**, and **Selenium**. Understanding web scraping is crucial for leveraging online data for **analysis**, whether you're monitoring prices, collecting reviews, or monitoring news. In this article, we'll explore the basics of web scraping, how Python can help you get started, and best practices for ethical scraping.
+Data gathering is made possible via **web scraping**, which automates the process of extracting information from websites. Powerful libraries like **Scrapy**, **BeautifulSoup**, and **Selenium**, together with its straightforward syntax, make **Python** the best choice. For **analysis** purposes, such as pricing tracking, review gathering, or news tracking, proficiency with web scraping is essential. In this article, we'll cover web scraping basics, usage of tools like BeautifulSoup, Selenium, and Scrapy and **Requests** for **API scraping**.
 
 # Understanding Web Scraping
 Web scraping makes use of a variety of tools and techniques to extract information.
@@ -9,10 +9,10 @@ Web scraping makes use of a variety of tools and techniques to extract informati
 - **Regular Expressions (regex)**: It is used to match patterns in the HTML source code and use them as filters.
 
 **Tools**
-- **BeautifulSoup**: It is a Python library for parsing HTML and XML documents. It creates a parse tree from web page source code that can be used to extract information easily. Learn more [here][1].
-- **Scrapy**: It is an effective Python library that uses self-contained crawlers called spiders, that extract data from websites. Learn more [2][here].
-- **Selenium**: It is a browser automation tool that scrapes dynamic content rendered by JavaScript. It controls a web browser and allows you to interact with web pages normally. Learn more [3][here].
-- **Requests**: It is an HTTP library for Python that allows you to send and handle HTTP requests and responses. Learn more [4][here].
+- **BeautifulSoup**: This Python module parses HTML and XML documents and can easily extract information by building a parse tree from the source code of webpages. Learn more [here][1].
+- **Scrapy**: It is an effective Python library that uses self-contained crawlers called spiders, that extract data from websites. Learn more [here][2].
+- **Selenium**: It's a browser automation tool that runs a web browser in a regular manner by scraping dynamic material generated using JavaScript. Learn more [here][3].
+- **Requests**: It is an HTTP library for Python that allows you to send and handle HTTP requests and responses. Learn more [here][4].
 
 **Legal Considerations**
 - Many websites' Terms of Service (TOS) specifically ban scraping.
@@ -58,6 +58,8 @@ Working in a virtual environment is recommended since it reduces conflicts with 
 	- On Linux and macOS:
 
 			source sampenv/bin/activate
+
+<div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> Working in a virtual environment is recommended since it reduces conflicts with other projects and helps manage dependencies.</span> </div>
 
 **Browser developer tools for inspecting web pages**
 
@@ -139,18 +141,7 @@ Output:
 ![beautifulsoup][5]
 
 # Scraping Dynamic Websites with Selenium
-
-**Dynamic Websites and their Challenges for Web Scraping**
-
-Websites that are dynamic produce material based on server-side processing or user interactions. This poses challenges for web scraping due to the dynamic nature of the content delivery.
-- Dynamic websites load the contents of the page asynchronously using JavaScript. Conventional web scraping tools like BeautifulSoup or Scrapy may lead to incomplete data extraction.
-- Since restricted material frequently requires user logins, session, cookie, and authentication token, management can be difficult, particularly for lengthy scraping jobs.  
-- In order to collect all the data from websites with endless scrolling, users must simulate their behavior and watch network requests as additional material loads down the page.  
-- Websites that use parameterized dynamic URLs make scraping more difficult since it can be challenging and error-prone to create and maintain these URLs dynamically.
-
-**Selenium for Automated Web Browser Interaction**
-
-When it comes to web scraping dynamic websites with JavaScript-loaded content, Selenium is an extremely useful tool. It makes it possible to programmatically operate a web browser, providing features like button clicks, form submission, and page navigation.
+Selenium is a great tool for scraping dynamic webpages using JavaScript. It enables button clicks, form submissions, and page navigation by allowing programmatic control of a web browser.
 In order to use Selenium, you need to set up Selenium WebDriver for your browser.
 - **Google Chrome**
 	- Download ChromeDriver from chromedriver.chromium.org
@@ -186,11 +177,11 @@ In order to use Selenium, you need to set up Selenium WebDriver for your browser
 
 - **find_element() Method**
 	- To discover a single web element that meets the given criteria, use the `find_element()` function.
-	- Synatx:
+	- Syntax:
 		- element = driver.find_element(By.ID, 'ID_value')
 
 - **find_elements() Method**
-	- To identify several web items that meet the given criteria, use the `find_elements()` function. All matched items are represented by a list of WebElement objects.
+	- Use the `find_elements()` function to find numerous web items that fit certain criteria. It will return a list of WebElement objects that represent all matched things.
 	- Syntax:
 		- elements = driver.find_elements(By.CLASS_NAME, 'Class_name_val')
 
@@ -264,10 +255,10 @@ Python script for data extraction:
 
 	service = Service(ChromeDriverManager().install())
 	driver = webdriver.Chrome(service=service)
-	driver.get("samplepage.html")    # open the webpage
+	driver.get("samplepage.html")    # opens the webpage
 
 	wait = WebDriverWait(driver, 20)
-	page_title = wait.until(EC.presence_of_element_located((By.ID, 'pageTitle')))     # to wait for 20 sec for page to load
+	page_title = wait.until(EC.presence_of_element_located((By.ID, 'pageTitle')))     # waits for 20 sec for page to load
 	page_title = driver.find_element(By.ID, 'pageTitle')
 	print("Page Title:", page_title.text)
 	input_field = driver.find_element(By.NAME, 'inputName')
@@ -292,36 +283,11 @@ Output:
 
 # Scraping with Scrapy
 
-Scrapy is a high-level Python-based web crawling and scraping framework. It offers an extensive collection of tools and technologies to support developers in efficiently and methodically extracting data from websites. Scrapy can manage requests, follow links, and extract data from web pages with ease.
-An item is a container that stores scraped data. The objects that your spiders scrape are processed by item pipelines in Scrapy. Every Python class that implements a basic method that takes an item and acts upon it, makes up an item pipeline component.
+A Python-based framework for online crawling and scraping, Scrapy provides a number of tools for effectively extracting data from webpages. It effortlessly pulls data, follows links, and manages requests.  
+An item is a container that item pipelines use to process and store scraped data. An item pipeline component is any Python class that implements a method on items.
 
-Let's understand how to set up and define pipelines in for a Scrapy project using an example. We will be using the following HTML script, stored as `samplepage.html`.
+Let's understand how to set up and define pipelines in for a Scrapy project using an example. We will be scraping [this][7] webpage
 
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-	    <meta charset="UTF-8">
-	    <title>Sample Quotes Page</title>
-	</head>
-	<body>
-	    <div class="quote">
-	        <span class="text">"The only limit to our realization of tomorrow is our doubts of today."</span>
-	        <span> - <small>Franklin D. Roosevelt</small></span>
-	        <div class="tags">
-	            <a class="tag" href="/tag/inspiration">inspiration</a>
-	            <a class="tag" href="/tag/tomorrow">tomorrow</a>
-	        </div>
-	    </div>
-	    <div class="quote">
-	        <span class="text">"In the end, we will remember not the words of our enemies, but the silence of our friends."</span>
-	        <span> - <small>Martin Luther King Jr.</small></span>
-	        <div class="tags">
-	            <a class="tag" href="/tag/friendship">friendship</a>
-	            <a class="tag" href="/tag/memory">memory</a>
-	        </div>
-	    </div>
-	</body>
-	</html>
 
 **Setting up Scrapy Projects and Defining Item Pipelines**
 
@@ -331,7 +297,7 @@ Let's understand how to set up and define pipelines in for a Scrapy project usin
 		scrapy startproject scrapy_test
 This creates a Scrapy project named `scrapy_test`.
 
-3. Navigate to the `items.py` file in the `scrapy_test` folder.  Here, you will be defining a Scrapy item class, which acts as a blueprint for the data you will be extracting. For doing so, `scrapy.Field()` is used, which creates field instances to store any type of data in.
+3. Go to `items.py` in the `scrapy_test` folder. Here, you'll define a Scrapy item class, acting as a blueprint for your extracted data. Use `scrapy.Field()` to create field instances capable of storing any data type.
 
 		import scrapy
 		class  ScrapyTestItem(scrapy.Item):
@@ -340,7 +306,7 @@ This creates a Scrapy project named `scrapy_test`.
 			tags = scrapy.Field()
 This code creates `text`, `author` and `tags` fields to store data from the webpage.
 
-4. Navigate to `settings.py` file. Here, you can configure various settings for your project. We will be defining the pipelines that will be applied to process the scraped items, as well as their order of execution and priority. Lower the priority value, higher is the priority.
+4. To set up the project settings, navigate to `settings.py`. This is where you design and configure the order of execution for the scraped item processing pipelines. Lower values indicate higher priority.
 
 		ITEM_PIPELINES = {
 		'scrapy_test.pipelines.JsonWriterPipeline': 300,
@@ -348,7 +314,7 @@ This code creates `text`, `author` and `tags` fields to store data from the webp
 		}
 This ensures that `JsonWriterPipeline` executes before `HtmlWriterPipeline`. These pipelines are defined in the next step.
 
-5. Navigate to `pipelines.py` file. Processing of the scraped data, including cleansing, verifying, storing, and exporting, is handled via pipelines. Multiple pipelines can be defined in this file.
+5. Navigate to `pipelines.py`. This file handles data processing, including cleansing, verifying, storing, and exporting. Multiple pipelines can be defined here.
 
 		import json
 		class JsonWriterPipeline:
@@ -376,19 +342,16 @@ This ensures that `JsonWriterPipeline` executes before `HtmlWriterPipeline`. The
 		        self.file.write(f"<li><p>{item['text']}</p><p>{item['author']}</p><p>{', '.join(item['tags'])}</p></li>")     # extracted data is stored in a list format
 		        return item
 
-This code stores the extracted data in two files: `quotes.json` and `quotes.html`. The data extracted in the fields defined previously is stored in the two files in a formatted manner.
+This code formats the fields and stores the extracted data into two files, `quotes.json` and `quotes.html`.
 
-6. Navigate to scrapy_test/spiders and create a new Python Source file named `scrapy_code.py`. Here, we will be creating spider classes to perform the scraping. Spider classes describe which URLs to crawl, parse the responses, and then use XPath or CSS selectors to retrieve data from webpages. The item classes defined in the `items.py` file are used by the spider.
+6. Open `scrapy_test/spiders`, then create `scrapy_code.py`. This file will include spider classes to define URLs to crawl, process answers, and retrieve data using XPath or CSS selectors. The item classes in `items.py` are used by the spider.
 
 		import scrapy
 		from scrapy_test.items import ScrapyTestItem
-		import urllib.parse
-		import urllib.request
 
 		class QuotesSpider(scrapy.Spider):
 		    name = 'quotes'
-		    file_url = urllib.parse.urljoin('file:', urllib.request.pathname2url("samplepage.html"))     # make sure to swap out the given path with your own
-		    start_urls = [file_url]
+		    start_urls = [http://quotes.toscrape.com]
 
 		    def parse(self, response):
 		        for quote in response.css('div.quote'):
@@ -398,7 +361,7 @@ This code stores the extracted data in two files: `quotes.json` and `quotes.html
 		            item['tags'] = quote.css('div.tags a.tag::text').getall()
 		            yield item
 
-This code creates a spider class and names the spider as `quotes`. Using a CSS selector, it selects all HTML elements with the class `quote` within the response HTML and creates a new instance of `ScrapyTestItem` class for each element. The `get()` method retrieves textual contents of each element and stores them in their respective field instances.
+This code defines a spider named `quotes`. Using a CSS selector, it selects all elements with the class `quote` and creates a `ScrapyTestItem` instance for each. The `get()` method retrieves the text content and stores it in the respective fields.
 
 7. In your terminal, navigate to the root directory of the project (`scrapy_test`) and run the command:
 
@@ -410,16 +373,80 @@ The extracted data is stored in `quotes.json` and `quotes.html` in the project's
 
 Output:
 
-![jsonfile][7]
+![jsonfile][8]
 
-![htmlfile][8]
-
-
+![htmlfile][9]
 
 
+# Scraping APIs and JSON Data
+
+Scraping APIs provide an organized way to obtain structured data. These APIs make endpoints available for accessing structured data in formats like XML and JSON. Using Requests, you may retrieve the required data by submitting queries to these endpoints and interpreting the returned responses.
+Accessing APIs might involve the usage of API keys or tokens. Keys or tokens are specified in the `request header`.
+
+**Making HTTP Requests and Accessing APIs**
+1. Acquire the API key or token by generating the key/token in the platform of your choice.
+2. Define the URL of the webpage you want to scrape and include the key/token in the request header. Also mention the content type.
+
+		url = https://website_name.com/data
+		api_key = 'abcxyz'
+		header = { 'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json' }
+3. Send an HTTP GET request to the specified URL with the provided headers using the `get()` method. It returns a `Response` object containing the server's response to the HTTP request, which can be used to extract the status code, content, etc.
+
+		response = requests.get(url, headers=header)
+4. If the `status code` of the response is 200, the request was successful and the contents can be extracted in text or JSON format.
+
+		if response.status_code == 200:
+			print(response.headers)
+			print(response.text)    # or response.json()
+		else:
+			print(f"Error: {response.status_code}")
+
+Let's take a simple example using the URL 'https://jsonplaceholder.typicode.com/todos/12'
+
+	import requests
+	url = 'https://jsonplaceholder.typicode.com/todos/12'
+	header = {'Content-type': 'application/json'}
+	response = requests.get(url, headers=header)
+	if response.status_code == 200:
+	    print(response.headers)
+	    print(response.json())
+	else:
+	    print(f"Error: {response.status_code}")
+
+This code does not involve the use of keys/tokens.
+
+Output:
+
+![apioutput][10]
+
+You can also use `Requests` to download ZIP file. For example, to download a Kaggle dataset:
+
+	import os
+	import requests
+
+	key = '82jfvyg3j4jngjr'    # Kaggle API key
+	dataset_url = 'https://www.kaggle.com/datasets/vivek468/superstore-dataset-final'
+	save_path = 'C:\\Downloads'    # replace with the path you want to store the file in
+
+	response = requests.get(dataset_url, headers={'Authorization': f'Bearer {key}'}, stream=True)
+	if response.status_code == 200:
+	    with open(os.path.join(save_path, 'dataset.zip'), 'wb') as f:    # download the file
+	        for chunk in response.iter_content(chunk_size=1024):
+	            f.write(chunk)
+	    print('Download successful.')
+	else:
+	    print('Failed to download dataset. Status code:', response.status_code)
 
 
+Output:
 
+![apikeyzip1][11]
+
+![apikeyzip2][12]
+
+
+# Conclusion
+Thus, a potent method for obtaining data from websites is **Web Scraping**, which makes it possible to **gather** and **analyze** data effectively. The **requests** library, **BeautifulSoup**, **Selenium**, and **Scrapy** provide special benefits for various scraping requirements and enable developers to explore the web and retrieve important data easily. I encourage you to explore these tools further to unlock the full potential of web scraping to interact with and analyze web data.
 
 
 [1]: https://beautiful-soup-4.readthedocs.io/en/latest/
@@ -428,5 +455,9 @@ Output:
 [4]: https://requests.readthedocs.io/en/latest/
 [5]: beautifulsoup.png
 [6]: selenium.png
-[7]: jsonfile.png
-[8]: htmlfile.png
+[7]: http://quotes.toscrape.com
+[8]: jsonfile.png
+[9]: htmlfile.png
+[10]: apioutput.png
+[11]: apikeyzip1.png
+[12]: apikeyzip2.png
