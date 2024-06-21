@@ -1,29 +1,29 @@
 # Introduction to Web Development Using Python 
 # Introduction 
- Importance of Web Development The backbone of our online experience is based on web creation Web sites, web applications help businesses run smoothly, ease education processes, facilitate communication and enhance entertainment. On these grounds, we use them to share information, carry out electronic transactions and other related tasks; thus, they should be part of every organization’s endeavors. In addition, when people are seeking friends or life partners, they build new relationships through the social services they subscribe into.
+Importance of **Web Development** The **backbone** of our **online experience** is based on **web creation** **Web sites**, **web applications** help **businesses** run smoothly, ease **education processes**, facilitate **communication** and enhance **entertainment**. On these grounds, we use them to share **information**, carry out **electronic transactions** and other related tasks; thus, they should be part of every **organization’s endeavors**. In addition, when people are seeking **friends** or **life partners**, they build new **relationships** through the **social services** they subscribe into.
  # Overview of the Tutorial
 The tutorial will introduce the most basic concepts of developing tools and technologies for the Web using Python. 
 This includes the following:
-- Base concepts of web development.
-- Differentiating between front-end development and back-end development.
-- The role of Python in web development.
-- How to set up a development environment
-- Creating a simple web application
-- Understanding HTTP and URLs
-- Handling requests and responses
-- Templating and rendering dynamic content.
-- Database and its working
-- Deploying and hosting your web application
-- References for additional topics
+- **Base concepts of web development.**
+- **Differentiating between front-end development and back-end development.**
+- **The role of Python in web development.**
+- **How to set up a development environment**
+- **Creating a simple web application**
+- **Understanding HTTP and URLs**
+- **Handling requests and responses**
+- **Templating and rendering dynamic content.**
+- **Database and its working**
+- **Deploying and hosting your web application**
+- **References for additional topics**
 # What is Web Development?
-Web development is the process of creating and maintaining websites and web applications. It involves independent works on -
+Web development is the process of **creating and maintaining websites and web applications**. It involves independent works on -
  **Frontend Development:** User interface creation with HTML, CSS, and JavaScript.
  **Backend Development:** Management of the server, application, and database.
  **Full-Stack Development:** Both frontend and backend development tasks are handled.
-The functionality, usability, and efficiency of websites are ensured through web development, which has become quite important for the visibility and functioning of any business.
+The **functionality, usability, and efficiency** of websites are ensured through web development, which has become quite important for the visibility and functioning of any business.
 # Client-Server Architecture
 ## Client
-Its the web browser-like Chrome, Firefox-that:
+Its the web browser-like **Chrome, Firefox**-that:
 - **Renders Content:** Shows HTML, CSS, and JavaScript.
 - **Manages Interaction:** Collects the user inputs and submits to the server.
 - **Local Storage:** Saves data locally for performance and offline use.
@@ -41,12 +41,12 @@ HTTP protocol is used for:
 This design is to enable webs in and around the network so that servers do the work, which is resource-intensive, with the client giving a user-friendly look.
 # Frontend vs. Backend Development
 ## Frontend Development
-It deals with the user interface and user experience of a website—directly connected to the user. This involves creating visual and interactive features that users will view and interact with in their web browser.
+It deals with the **user interface and user experience** of a website—directly connected to the user. This involves creating visual and interactive features that users will view and interact with in their web browser.
 - **Technologies:** HTML, CSS, JavaScript
 - **Tools:** Some of these are frameworks like React, Angular, and Vue.js.
 - **Responsibilities:** Designing layout, implementing responsive design, handling user interactions
 ## Backend development
-Backend development concerns the server side of a web application. It deals with the management of the server and database with application logic responsible for powering the frontend.
+Backend development concerns the **server side** of a web application. It deals with the **management of the server and database with application logic responsible** for powering the frontend.
 - **Technologies:** Python, Ruby, Java, Node.js
 - **Frameworks:** Django, Flask, Express.js
 - **Roles and Responsibilities:** Handling data storage/retrieval, user authentication, business logic, and server configuration.
@@ -62,12 +62,12 @@ Python is well-suited for web development because of its:
 - **Community:** Large community, support, and resources are widely available. 
 - **Versatility:** Used in Web Development, Data Science, etc.
 ## Some Popular Python Web Frameworks
-- **Django** — Full-stack framework. This is an ideal framework with an inbuilt admin interface, ORM, and robust security features for very complex data-driven applications. 
-- **Flask** — A lightweight microframework. This framework lays great emphasis on simplicity and flexibility, hence very well suited for small to medium applications and even prototyping. 
-- **Pyramid** — General-purpose framework. Highly flexible and scalable. It has a lot of configuration options and hence is suitable for any size of projects.
+- **Django** — Full-stack framework. This is an ideal framework with an **inbuilt admin interface, ORM, and robust security** features for very complex data-driven applications. 
+- **Flask** — A lightweight microframework. This framework lays great emphasis on **simplicity** and **flexibility**, hence very well suited for small to medium applications and even **prototyping**. 
+- **Pyramid** — General-purpose framework. Highly **flexible** and **scalable**. It has a lot of configuration options and hence is suitable for any size of projects.
 # Setting Up Your Development Environment
 ## Installing Python and a Web Framework
-You start web development with Python by installing the Python programming language, choosing a web framework that you prefer, and setting up a virtual environment.
+You start web development with Python by installing the **Python programming language**, choosing a web framework that you prefer, and setting up a virtual environment.
 [click here](https://wiki.python.org/moin/WebFrameworks) to know differnt web frameworks.
 ## Step 1: Install Python
 **Download Python:**
@@ -232,12 +232,11 @@ myproject/
 ```
 [click here](https://docs.djangoproject.com/en/5.0/intro/tutorial03/) to learn more about  Templates, Views and Routes in Django.
 ![Output](https://github.com/anuja19103/Articles/assets/125860363/c0b6e837-d42e-4665-86f1-f6f985426d0c)
-The steps above create a very basic Django web application with just one basic homepage view. Make this structure more sophisticated by adding more views, templates, and routes to get bigger applications.
+The steps above create a very basic **Django web application** with just one basic homepage view. Make this structure more sophisticated by adding more **views, templates, and routes** to get bigger applications.
 # Understanding HTTP and URLs
 ## HTTP Protocol
-HTTP stands for HyperText Transfer Protocol. It is the basis of communication on the web that allows for the transfer of data between clients, typically browsers, and servers, typically websites.
+HTTP stands for **HyperText Transfer Protocol**. It is the basis of communication on the web that allows for the transfer of data between **clients, typically browsers, and servers, typically websites**.
 Some of its main components are:
-
 - **Request:** This is sent by the client in order to request a resource from the server.
 - **Response:** This is what is sent in reply by the server, carrying either the requested resource or the outcome of that request.
 - **Methods:** define actions like GET or POST.
@@ -245,7 +244,7 @@ Some of its main components are:
 - **Headers:** This is metadata for requests and responses. For example, Content-Type.
 - **Body:** The actual data being sent, for example, HTML or JSON.
 ## URLs (Uniform Resource Locators)
-A URL is an address by which web resources are accessed. It consists of a number of parts.
+A URL is an **address** by which **web resources are accessed**. It consists of a number of parts.
 **Components of a URL**
 1. **Scheme:** Protocol, for instance, `http` or `https`.
 2. **Host:** Domain name or IP address, say, `www.example.com`.
@@ -264,7 +263,6 @@ HTTP methods define an intent to do action on a resource:
 - **HEAD :** to retrieve header only.
 ## Handling in Python (Django Example)
 1. Create a Django project and app:
-
 ```bash
    django-admin startproject myproject
    cd myproject
@@ -304,8 +302,8 @@ Below is the output.
 # Templating and Rendering
 ## Templating Engines
 **What are Templating Engines?**
-- Templating engine should be able to process the template files within the application.
-- The engine replaces variables in a template file with actual values that are passed by the application through
+- Templating engine should be able to process the **template files within the application**.
+- The engine replaces **variables** in a template file with actual values that are passed by the application through
 ```
 from django.shortcuts import render
 def hello_name(request, name):
@@ -319,10 +317,10 @@ It will render `template.html` and replace `{{name}}` with the given `name`. It 
  3. **Dynamic Content:** It is easy to generate dynamic content in templates.
 # Working with Databases
 ## Role of Databases
-Databases are one of the fundamental building blocks peripheral to web development. They store, organize, and retrieve data in a safe and efficient fashion. Be it management of user accounts, transactions processing, or storing content data—databases make sure that your data is accessible and manageable. 
+Databases are one of the fundamental **building blocks** peripheral to web development. They **store, organize**, and **retrieve** data in a safe and efficient fashion. Be it **management** of user accounts, **transactions processing**, or **storing content** data—databases make sure that your data is accessible and manageable. 
 
 ## Interacting with Databases
-Interacting with a database in web applications can be carried out by frameworks such as Django. Django operates through a compelling feature known as Object-Relational Mapping, conducting easier database operations. That is, the ORM will act as the bridge between a web application and a database. A developer is thus able to interact with the database using Python instead of writing complex SQL queries. This leads to the fastest development, readability, and maintainability of code.
+Interacting with a database in web applications can be carried out by frameworks such as **Django**. Django operates through a compelling feature known as **Object-Relational Mapping**, conducting easier database operations. That is, the ORM will act as the bridge between a web application and a database. A developer is thus able to interact with the database using Python instead of writing complex SQL queries. This leads to the **fastest development, readability, and maintainability** of code.
 ## Understanding ORM
 Object-Relational Mapping is a programming technique used for converting data between incompatible type systems in languages that use Object-oriented programming. It provides an interface that allows access between the web application and the database, thus being middleware, it enables manipulation of the database using high-level programming constructs.
 ## Example in Django
@@ -335,7 +333,7 @@ In Django, models are used to represent database tables, where every attribute c
 ```
 # Deployment and Hosting
 ## The Process of Deployment
-Basically, deploying a web application involves some critical steps for the smooth and effective running of your application within a production environment. It starts by preparing your code through testing, optimization, then finally packaging your application. You then need to decide on a hosting service that best suits your requirements.  Finally, set up a server for running your application.
+Basically, deploying a web application involves some critical steps for the smooth and effective running of your application within a **production environment**. It starts by preparing your code through testing, optimization, then finally packaging your application. You then need to decide on a hosting service that best suits your requirements.  Finally, set up a server for running your application.
 ## Web Hosting Services
 Among the plethora of choices, each web host service has its special features and plans. Heroku provides ease of use and simplicity from which beginners and small projects can add value to these qualities. AWS is destined to offer a wide variety of services and scalability options suitable for small and large-scale applications. 
 ## Choosing the Right Service for Hosting
@@ -351,4 +349,4 @@ Choosing the correct form of hosting service for your web application is an admi
 - **[Django Stars Blog](https://djangostars.com/blog/)**: Articles and case studies related to Django development and best practices.
 - **"Django for Beginners" by William S. Vincent**: This book is perfect for those who are new to Django and web development.
 # Conclusion
-This tutorial was an introduction to Web Development with Python, including the frontend and backend of development, setting up a development environment, creating Web applications, understanding of HTTP, templating, working with Databases, and deployment of applications.
+This tutorial was an **introduction to Web Development with Python, including the frontend and backend of development, setting up a development environment, creating Web applications, understanding of HTTP, templating, working with Databases, and deployment of applications.**
