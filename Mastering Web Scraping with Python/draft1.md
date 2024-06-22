@@ -45,8 +45,6 @@ The libraries can be installed as follows:
 
 <div class="div-red"> <span class="alert-header">Caution:</span> <span class="alert-body"> Make sure `pip` is installed on your system.</span> </div>
 
-Working in a virtual environment is recommended since it reduces conflicts with other projects and helps manage dependencies.
-
 - Creating a virtual environment:
 
 		python -m venv sampenv
