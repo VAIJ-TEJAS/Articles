@@ -1,4 +1,4 @@
-Data gathering is made possible via **web scraping**, which automates the process of extracting information from websites. Powerful libraries like **Scrapy**, **BeautifulSoup**, and **Selenium**, together with its straightforward syntax, make **Python** the best choice. For **analysis** purposes, such as pricing tracking, review gathering, or news tracking, proficiency with web scraping is essential. In this article, we'll cover web scraping basics, usage of tools like BeautifulSoup, Selenium, and Scrapy and **Requests** for **API scraping**.
+Data gathering is made possible via **web scraping**, which automates the process of extracting information from websites. Powerful libraries like **Scrapy**, **BeautifulSoup**, and **Selenium**, together with their straightforward syntax, make **Python** the best choice. Proficiency with web scraping is essential for **analysis** purposes, such as pricing tracking, review gathering, or news tracking. In this article, we'll cover web scraping basics, and how to use tools like BeautifulSoup, Selenium, Scrapy, and **Requests** for **API scraping**.
 
 # Understanding Web Scraping
 Web scraping makes use of a variety of tools and techniques to extract information.
@@ -9,10 +9,10 @@ Web scraping makes use of a variety of tools and techniques to extract informati
 - **Regular Expressions (regex)**: It is used to match patterns in the HTML source code and use them as filters.
 
 **Tools**
-- **BeautifulSoup**: This Python module parses HTML and XML documents and can easily extract information by building a parse tree from the source code of webpages. Learn more [here][1].
-- **Scrapy**: It is an effective Python library that uses self-contained crawlers called spiders, that extract data from websites. Learn more [here][2].
-- **Selenium**: It's a browser automation tool that runs a web browser in a regular manner by scraping dynamic material generated using JavaScript. Learn more [here][3].
-- **Requests**: It is an HTTP library for Python that allows you to send and handle HTTP requests and responses. Learn more [here][4].
+- **BeautifulSoup**: This Python module parses HTML and XML documents and can easily extract information by building a parse tree from the source code of webpages. Learn more about BeautifulSoup in its [official documentation][1].
+- **Scrapy**: It is an effective Python library that uses self-contained crawlers called spiders, that extract data from websites. Learn more about Scrapy [here][2].
+- **Selenium**: It's a browser automation tool that runs a web browser in a regular manner by scraping dynamic material generated using JavaScript. Explore more on Selenium in its [official documentation][3].
+- **Requests**: It is an HTTP library for Python that allows you to send and handle HTTP requests and responses. You can visit the [official Requests documentation][4] to know more.
 
 **Legal Considerations**
 - Many websites' Terms of Service (TOS) specifically ban scraping.
@@ -282,9 +282,9 @@ Output:
 # Scraping with Scrapy
 
 A Python-based framework for online crawling and scraping, Scrapy provides a number of tools for effectively extracting data from webpages. It effortlessly pulls data, follows links, and manages requests.  
-An item is a container that item pipelines use to process and store scraped data. An item pipeline component is any Python class that implements a method on items.
+An item is a container that item pipelines use to process and store scraped data. An item pipeline is a Python class that parses, validates and stores scraped data.
 
-Let's understand how to set up and define pipelines in for a Scrapy project using an example. We will be scraping [this][7] webpage
+Let's understand how to set up and define pipelines for a Scrapy project using an example. We will be scraping [this][7] webpage
 
 
 **Setting up Scrapy Projects and Defining Item Pipelines**
@@ -340,9 +340,9 @@ This ensures that `JsonWriterPipeline` executes before `HtmlWriterPipeline`. The
 		        self.file.write(f"<li><p>{item['text']}</p><p>{item['author']}</p><p>{', '.join(item['tags'])}</p></li>")     # extracted data is stored in a list format
 		        return item
 
-This code formats the fields and stores the extracted data into two files, `quotes.json` and `quotes.html`.
+This code formats the fields and stores the extracted data into two files, `quotes.json` and `quotes.html`, in JSON and HTML format respectively.
 
-6. Open `scrapy_test/spiders`, then create `scrapy_code.py`. This file will include spider classes to define URLs to crawl, process answers, and retrieve data using XPath or CSS selectors. The item classes in `items.py` are used by the spider.
+6. Open `scrapy_test/spiders`, then create `scrapy_code.py` file here. This file will include spider classes to define URLs to crawl, process answers, and retrieve data using XPath or CSS selectors. The item classes in `items.py` are used by the spider.
 
 		import scrapy
 		from scrapy_test.items import ScrapyTestItem
@@ -417,7 +417,7 @@ Output:
 
 ![apioutput][10]
 
-You can also use `Requests` to download ZIP file. For example, to download a Kaggle dataset:
+You can also use `Requests` to download a ZIP file from a website. For example, to download a Kaggle dataset:
 
 	import os
 	import requests
@@ -444,13 +444,13 @@ Output:
 
 
 # Conclusion
-Thus, a potent method for obtaining data from websites is **Web Scraping**, which makes it possible to **gather** and **analyze** data effectively. The **requests** library, **BeautifulSoup**, **Selenium**, and **Scrapy** provide special benefits for various scraping requirements and enable developers to explore the web and retrieve important data easily. I encourage you to explore these tools further to unlock the full potential of web scraping to interact with and analyze web data.
+Thus, a potent method for obtaining data from websites is **Web Scraping**, which makes it possible to **gather** and **analyze** data effectively. The **Requests** library, **BeautifulSoup**, **Selenium**, and **Scrapy** provide special benefits for various scraping requirements and enable developers to explore the web and retrieve important data easily. I encourage you to explore these tools further to unlock the full potential of web scraping to interact with and analyze web data.
 
 
-[1]: https://beautiful-soup-4.readthedocs.io/en/latest/
-[2]: https://docs.scrapy.org/en/latest/
+[1]: https://www.crummy.com/software/BeautifulSoup/
+[2]: https://scrapy.org/
 [3]: https://www.selenium.dev/documentation/
-[4]: https://requests.readthedocs.io/en/latest/
+[4]: https://docs.python-requests.org/en/v2.9.1/
 [5]: beautifulsoup.png
 [6]: selenium.png
 [7]: http://quotes.toscrape.com
