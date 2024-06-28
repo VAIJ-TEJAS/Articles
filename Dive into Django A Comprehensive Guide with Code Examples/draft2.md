@@ -161,7 +161,7 @@ Output:
 
 		urlpatterns = [ 
 			path('hello/', MyView.as_view(), name='my_view'), 
-		  	path('pass_data/', PassDataView.as_view(), name='pass_data'),
+		  path('pass_data/', PassDataView.as_view(), name='pass_data'),
 		]
 
 	Here, the two classes, `MyView` and `PassDataView`, each are mapped to the URLs `hello/` and `pass_data/` respectively.
@@ -178,7 +178,7 @@ Output:
 Django's template system is a tool used to build dynamic web pages by combining HTML with Django template language (DTL) syntax. It allows you to create reusable components and generate HTML dynamically based on data from the server easily.
 
 **Creating and Rendering Templates**
-Create a file with a `.html` extension within the `templates` directory of your Django app. Template tags and filters can be used to insert dynamic data, loop through data, and perform logic within this template.
+Create a file with a `.html` extension within the `templates` directory of your Django app. In the example, I named the app `dispapp`, and the HTML templates are stored in `dispapp/templates`. Template tags and filters can be used to insert dynamic data, loop through data, and perform logic within this template.
 To render a template, use the `render` shortcut function and pass the template name and context data as arguments in the `views.py` file.
 
 **Template Inheritance and Extending Base Templates**
@@ -186,65 +186,69 @@ In Django, you can create a base template with common elements such as headers, 
 
 Let's take a look at an example:
 
-`base.html`:
+`templates/base.html`:
 
 	<!DOCTYPE html>
-	<html lang="en">
+	<html>
 	<head>
-	    <meta charset="UTF-8">
-	    <title>{% block title %}Base Template{% endblock %}</title>
+	    <title>{% block title %}Sample Site{% endblock %}</title>
 	</head>
 	<body>
-	    <div class="container">
-	        <header>
-	            <h1>Welcome to my website</h1>
-	        </header>
-	        <main>
-	            {% block content %}
-	            {% endblock %}
-	        </main>
-	        <footer>
-	            <p>&copy; 2024 My Website</p>
-	        </footer>
+	    <div>
+	        <h1>Template Inheritance Demo</h1>
+	        {% block content %}
+	        <!-- Content from your child template will be inserted here -->
+	        {% endblock %}
 	    </div>
 	</body>
 	</html>
 
-`child.html`:
+`templates/child.html`:
 
-	{% extends 'base.html' %}
+	{% extends "base.html" %}
 
-	{% block title %}Child Template{% endblock %}
+	{% block title %}Child Page{% endblock %}
 
 	{% block content %}
-	    <h2>This is content for the child template</h2>
-	    <p>Hello, {{ name }}! You are {{ age }} years old.</p>
+	    <p>This is the child template.</p>
+	    <p>Name: {{ name }}</p>
+	    <p>Age: {{ age }}</p>
 	{% endblock %}
 
-Context data from views, can be passed to templates using dictionaries. This enables you to dynamically enter data from the server into templates.
+Context data from views can be passed to templates using dictionaries. This enables you to dynamically enter data from the server into templates.
 
-`views.py`:
+For `views.py`, use the class-based view from the last topic, but replace the `PassDataView` class as follows:
 
-	from django.shortcuts import render
+	class PassDataView(View):
+	    def get(self, request):
+	        context = {'name': 'Bethany', 'age': 37}
+	        return render(request, 'child.html', context)
 
-	def child_view(request):
-	    context = {
-	        'name': 'John',
-	        'age': 30
-	    }
-	    return render(request, 'child.html', context)
+Make sure `views.py` is located in the same directory as `templates` directory.
 
-`urls.py`:
+`dispapp/urls.py`:
 
-	from django.urls import path
-	from . import views
+Same as `views.py` from the class-based view's example.
 
-	urlpatterns = [path('child/', views.child_view, name='child_view'),]
+`myproject/views.py`:
+
+	from django.contrib import admin
+	from django.urls import path, include
+
+	urlpatterns = [
+	    path('admin/', admin.site.urls),
+	    path('', include('dispapp.urls')),
+	]
+
+This code is needed to register and reroute the app into the `dispapp.urls` module.
+
+<div class="div-red"> <span class="alert-header">Caution:</span> Make sure your app's name (`dispapp`) is included in the `INSTALLED_APPS` section in `settings.py`.</div>
 
 Output:
 
+![templates][6]
 
-Visit the [Django documentation on templates][10] for more information.
+Visit the [Django documentation on templates][7] for more information.
 
 
 # Django Forms
@@ -309,6 +313,8 @@ Let's take an example as follows:
 	    products = Product.objects.all()
 	    return render(request, 'product_list.html', {'products': products})
 
+It provides 2 views: `create_product` which allows you to enter the details of a product; `product_list` which displays the list of the entered product.
+
 `urls.py`:
 
 	from django.urls import path
@@ -335,6 +341,8 @@ Django's form system also integrates with models, allowing you to create forms d
 	    def __str__(self):
 	        return self.name
 
+This creates a database with 4 columns as given.
+
 `forms.py`:
 
 	from django import forms
@@ -345,94 +353,54 @@ Django's form system also integrates with models, allowing you to create forms d
 	        model = Product
 	        fields = ['name', 'description', 'price']
 
+It displays a form containing columns `name`, `description` and `price` of the new product and then redirects to the page displaying entered products later.
+
 Outputs:
+
+![create_prod][8]
+
+![disp_list][9]
 
 
 # Django Admin
 
 The **Django admin interface** provides a user-friendly interface to perform CRUD operations on your data. The interface is built using Django's ORM, which provides an effective way to perform administrative tasks.
 
-1. You need to **register** your models with the admin site to access them in the interface. For this, you have to create a `admin.py` file in your app directory and import your models into it. Then, use the `admin.site.register()` method to register your models.
+1. You need to **register** your models with the admin site to access them in the interface. For this, you have to create a `admin.py` file in your app directory and import your models into it. Then, use the `admin.site.register()`or the`@admin.register()` method to register your models.
 2. The Django admin interface allows you to tweak the interface to your project's needs. You can customize the admin interface's appearance, behavior, functionality, etc. Some common customizations include:
 
 	- **Adding custom actions**: You can perform bulk operations on selected objects in the admin interface using custom actions. This can involve exporting data or sending emails.
 	- **Customizing list views**: You can customize the list views to display additional fields, filters, etc.
 	- **Inlines**: You can edit related objects directly within the parent model's admin page using inline models.
 	- **ModelAdmin options**: ModelAdmin options such as `list_display`, `list_filter`, and `search_fields` can help you customize the behavior of your models in the interface.
+3. Create a superuser to gain access to the interface. Run this command in the terminal and enter a username, email and password when prompted:
 
-Let's demonstrate the topics stated above with some code examples:
+		python manage.py createsuperuser
 
-`admin.py`:
+To understand this concept, let's add the `admin.py` file to the example we looked at while learning Forms.
+
+`dispapp/admin.py`:
 
 	from django.contrib import admin
-	from .models import Category, Product
+	from .models import Product
 
-	@admin.action(description='Mark selected products as discounted')
-	def make_discounted(modeladmin, request, queryset):
-	    queryset.update(price=0)
-
-	class ProductInline(admin.TabularInline):
-	    model = Product
-	    extra = 1
-
-	class CategoryAdmin(admin.ModelAdmin):
-	    inlines = [ProductInline]
-
+	@admin.register(Product)
 	class ProductAdmin(admin.ModelAdmin):
-	    list_display = ('name', 'category', 'price', 'created_at')
-	    list_filter = ('created_at', 'price', 'category')
-	    search_fields = ('name', 'description', 'category__name')
-	    ordering = ('-created_at',)
-	    list_editable = ('price',)
-	    readonly_fields = ('created_at',)
-	    fieldsets = (
-	        (None, {
-	            'fields': ('name', 'description', 'category')
-	        }),
-	        ('Advanced options', {
-	            'classes': ('collapse',),
-	            'fields': ('price', 'created_at'),
-	        }),
-	    )
-	    prepopulated_fields = {'name': ('description',)}
-	    actions = [make_discounted]
+	    list_display = ('name', 'price', 'created_at')
+	    list_filter = ('created_at',)
+	    search_fields = ('name', 'description')
 
-	admin.site.register(Category, CategoryAdmin)
-	admin.site.register(Product, ProductAdmin)
+This code allows you to access the admin interface when you go to `http://127.0.0.1:8000/admin/` and enter the username and password. You can then enter more or view existing products in the `Products` table and also view users and groups that have access to the interface.
 
+Output:
 
-`models.py`:
+![dashboard][10]
 
-	from django.db import models
+![options][11]
 
-	class Category(models.Model):
-	    name = models.CharField(max_length=100)
+![Products][12]
 
-	    def __str__(self):
-	        return self.name
-
-	class Product(models.Model):
-	    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-	    name = models.CharField(max_length=100)
-	    description = models.TextField()
-	    price = models.DecimalField(max_digits=10, decimal_places=2)
-	    created_at = models.DateTimeField(auto_now_add=True)
-	    
-	    def __str__(self):
-	        return self.name
-
-`urls.py`:
-
-	from django.contrib import admin
-	from django.urls import path, include
-
-	urlpatterns = [
-	    path('admin/', admin.site.urls),
-	    path('myapp/', include('myapp.urls')),
-	]
-
-
-![Django Admin](django_admin.png)
+![Users][13]
 
 
 # Django Authentication and Authorization
@@ -447,62 +415,94 @@ The User Login View authenticates the users' credentials, creates a user session
 **Restricting Access to Views Based on User Authentication**
 You can also restrict access to certain views or functionalities based on whether a user is authenticated or not. Decorators such as `login_required` can be used to enforce authentication requirements on views.
 
-Let's take a look at sample `forms.py` and `views.py` files to understand this topic:
+As an example, we shall be adding the following codes to the example we used while learning Admin:
 
-`forms.py`:
+`templates/register.html`:
 
-	from django import forms
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <title>User Registration</title>
+	</head>
+	<body>
+	    <h2>Register</h2>
+	    <form method="post">
+	        {% csrf_token %}
+	        {{ form.as_p }}
+	        <button type="submit">Register</button>
+	    </form>
+	</body>
+	</html>
+
+This displays the registration form.
+
+`templates/login.html`:
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <title>User Login</title>
+	</head>
+	<body>
+	    <h2>Login</h2>
+	    <form method="post">
+	        {% csrf_token %}
+	        {{ form.as_p }}
+	        <button type="submit">Login</button>
+	    </form>
+	</body>
+	</html>
+
+This displays the login form.
+
+`forms.py` (add):
+
 	from django.contrib.auth.forms import UserCreationForm
 	from django.contrib.auth.models import User
-
-	class UserRegisterForm(UserCreationForm):
+	class UserRegistrationForm(UserCreationForm):
 	    email = forms.EmailField()
-
 	    class Meta:
 	        model = User
 	        fields = ['username', 'email', 'password1', 'password2']
 
-`views.py`:
+It uses the `auth` module to handle registration.
 
-	from django.shortcuts import render, redirect
-	from django.contrib.auth import login, authenticate
-	from django.contrib.auth.forms import AuthenticationForm
-	from django.contrib.auth.decorators import login_required
-	from .forms import UserRegisterForm
+`views.py` (add):
 
+	from django.contrib.auth.forms import UserCreationForm
+	from .forms import UserRegistrationForm
 	def register(request):
 	    if request.method == 'POST':
-	        form = UserRegisterForm(request.POST)
+	        form = UserRegistrationForm(request.POST)
 	        if form.is_valid():
 	            form.save()
-	            username = form.cleaned_data.get('username')
-	            password = form.cleaned_data.get('password1')
-	            user = authenticate(username=username, password=password)
-	            login(request, user)
-	            return redirect('home')
+	            return redirect('login')
 	    else:
-	        form = UserRegisterForm()
+	        form = UserRegistrationForm()
 	    return render(request, 'register.html', {'form': form})
 
-	def login_view(request):
-	    if request.method == 'POST':
-	        form = AuthenticationForm(request, data=request.POST)
-	        if form.is_valid():
-	            username = form.cleaned_data.get('username')
-	            password = form.cleaned_data.get('password')
-	            user = authenticate(username=username, password=password)
-	            if user is not None:
-	                login(request, user)
-	                return redirect('home')
-	    else:
-	        form = AuthenticationForm()
-	    return render(request, 'login.html', {'form': form})
+It uses the `auth` module to handle registration and login. After registration, you will be redirected to the login page.
 
-	@login_required
-	def home(request):
-	    return render(request, 'home.html')
+`dispapp/urls.py` (modify urlpatterns):
+
+	urlpatterns = [
+	    path('create/', views.create_product, name='create_product'),
+	    path('list/', views.product_list, name='product_list'),
+	    path('register/', views.register, name='register'),
+	    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+	]
+
+`settings.py` (add):
+
+	LOGIN_REDIRECT_URL = '/list/'
+
+After you log in, you will be redirected to the page containing the list of entered products.
 
 Output:
+
+![register][14]
+
+![login][15]
 
 
 
@@ -514,7 +514,7 @@ The Django Rest Framework (DRF) is an intuitive toolkit that allows you to creat
 Serializers convert complex data types, such as queryset and model instances, into native Python datatypes. These can then be easily rendered into JSON, XML, or other formats.
 Views in DRF are similar to Django views but additionally provide built-in support to handle HTTP methods such as GET, POST, PUT, DELETE, etc., and allow easy creation of API endpoints.
 
-![Get Request](get_request.png)
+![Get Request][16]
 
 **Authentication and Permissions in DRF**
 Authentication and permissions mechanisms provided by DRF can be used to secure your API endpoints. Tokens, session authentication, OAuth, or custom authentication schemes can be employed for authentication.  Access to resources can be controlled using permissions based on user roles and permissions defined in your application.
@@ -550,11 +550,11 @@ Let's take a look at an example to understand the concepts better:
 	    path('mymodel/', MyModelListView.as_view(), name='mymodel-list'),
 	]
 
-![API Calls](API_call.png)
+![API Calls][17]
 
 
 # Conclusion
-**Django** is a powerful, yet flexible, Python framework used for building web applications. It provides **models** to interact with databases, **views** for handling requests, **URLs** for routing and **forms** to handle user input. Django also provides simple and efficient authorization and authentication mechanisms using the `auth` module. **DRF** is a versatile toolkit that allows you to build robust RESTful APIs for your web applications. I highly encourage you to take a look at the [official Django documentation][12] to explore more about this topic in detail.
+**Django** is a powerful, yet flexible, Python framework used for building web applications. It provides **models** to interact with databases, **views** for handling requests, **URLs** for routing and **forms** to handle user input. Django also provides simple and efficient authorization and authentication mechanisms using the `auth` module. **DRF** is a versatile toolkit that allows you to build robust RESTful APIs for your web applications. I highly encourage you to take a look at the [official Django documentation][14] to explore more about this topic in detail.
 
 
 
@@ -563,5 +563,16 @@ Let's take a look at an example to understand the concepts better:
 [3]: django_model.png
 [4]: https://books.agiliq.com/projects/django-orm-cookbook/en/latest/
 [5]: pass_data.png
-[11]: https://docs.djangoproject.com/en/3.2/topics/templates/
-[12]: https://docs.djangoproject.com/en/5.0/
+[6]: templates.png
+[7]: https://docs.djangoproject.com/en/3.2/topics/templates/
+[8]: create_prod.png
+[9]: disp_list.png
+[10]: dashboard.png
+[11]: options.png
+[12]: products.png
+[13]: users.png
+[14]: register.png
+[15]: login.png
+[16]: get_request.png
+[17]: API_call.png
+[18]: https://docs.djangoproject.com/en/5.0/
