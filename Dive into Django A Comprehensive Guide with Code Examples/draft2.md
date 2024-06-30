@@ -558,7 +558,7 @@ Let's take a look at an example to understand the concepts better:
 
 
 
-[1]: command_prompt.png
+[1]: comand_prompt.png
 [2]: hello_wrld.png
 [3]: django_model.png
 [4]: https://books.agiliq.com/projects/django-orm-cookbook/en/latest/
