@@ -1,12 +1,11 @@
-**RESTful APIs** are an integral part of modern **web development** due to their **scalability** and ability to **communicate** across various platforms over the internet. They are built using the Python frameworks **Flask**, which is known for its flexibility, and **Django**, which comes with a multitude of features including database management, authentication, etc. RESTful APIs adhere to the principles of Representational State Transfer (REST), which is used to create networked applications, identified by **URIs (Uniform Resource Identifiers)** and handled using HTTP methods.  In this article, we'll explore how to use Flask and Django to build RESTful APIs. You'll find practical examples and code snippets to guide you through the process.
+**RESTful APIs** are an integral part of modern **web development** due to their **scalability** and ability to **communicate** across various platforms over the internet. They are built using the Python frameworks **Flask**, which is known for its flexibility, and **Django**, which comes with a multitude of features including database management, authentication, etc. RESTful APIs adhere to the principles of Representational State Transfer (REST), which is used to create networked applications, identified by **URIs (Uniform Resource Identifiers)** and handled using HTTP methods.  In this article, we'll explore how to use Flask and Django to build RESTful APIs along with code examples.
 
 # Introduction to RESTful APIs
-REST is a design framework that uses a set of constraints, such as statelessness, a uniform interface, and a client-server architecture, for developing scalable web services.
+REST is a design framework that comprises of statelessness, a uniform interface, and a client-server architecture, for developing scalable web services.
 
 RESTful APIs are scalable, flexible, simple and platform-independent, allowing systems to handle increasing loads, decouple client and server, while using HTTP-based architecture to simplify designing.
 
 HTTP methods determine the actions that can be performed on a resource in RESTful API designs. Let's take a look at the most commonly used HTTP methods and their CRUD operations:
-
 - **GET**: Retrieves data from the server.
 - **POST**: Adds a new resource to the server.
 - **PUT**: Updates an existing resource on the server.
@@ -16,11 +15,7 @@ HTTP methods determine the actions that can be performed on a resource in RESTfu
 
 
 # Setting Up Flask/Django Projects for API Development
-
-Here, I'll guide you through setting up a **Flask** or **Django** project for API development.
-
 **Creating a new Flask/Django project**
-
 - Flask:
 	- To install Flask, run this command in the terminal:
 
@@ -40,7 +35,6 @@ Here, I'll guide you through setting up a **Flask** or **Django** project for AP
 			cd django_project
 
 **Installing necessary dependencies for API development**
-
 - Flask:
 	- You will need to install Flask-RESTful for building RESTful APIs:
 
@@ -53,7 +47,6 @@ Here, I'll guide you through setting up a **Flask** or **Django** project for AP
 			pip install django djangorestframework
 
 **Running the development server**
-
 - Flask:
 	- To run the development server for Flask, execute your `app.py` file:
 
@@ -71,34 +64,6 @@ For more detailed guides, refer to the official documentation for [Flask][1] and
 # Handling Requests and Responses
 Both Flask and Django provide mechanisms for handling incoming HTTP requests. In Flask, Python functions are mapped to URL routes using decorators. In Django, a URL dispatcher maps URL patterns to view functions or class-based views.
 
-Here's an example of handling a GET request in Flask:
-
-	from flask import Flask, request
-	app = Flask(__name__)
-	@app.route('/hello', methods=['GET'])
-	def hello():
-	    name = request.args.get('name', 'Guest')
-	    return f'Hello, {name}!'
-
-The Django equivalent to this code will be:
-
-`views.py`:
-
-	from django.http import HttpResponse
-
-	def hello(request):
-	    name = request.GET.get('name', 'Guest')
-	    return HttpResponse(f'Hello, {name}!')
-
-`urls.py`:
-
-	from django.urls import path
-	from . import views
-
-	urlpatterns = [path('hello/', views.hello, name='hello'),]
-
-Both the codes display `Hello, Guest!` in the `hello/` URL.
-
 **Serializing and Deserializing Data (JSON, XML) in Flask/Django**
 In web applications, it's common to send and receive data in JSON or XML formats. Flask and Django allow serializing and deserializing data to and from these formats.
 
@@ -115,21 +80,6 @@ In Django, you can use serializers to serialize querysets or model instances to 
 
 **Constructing HTTP Responses with Appropriate Status Codes**
 Flask and Django allow you to construct HTTP responses to indicate the success or failure of a request.
-
-In Flask:
-
-	from flask import make_response
-	@app.route('/not_found')
-	def not_found():
-	    return make_response('Resource not found', 404)
-This code redirects you to a page displaying the error message upon failure of a request.
-
-In Django:
-
-	from django.http import HttpResponseNotFound
-	def not_found(request):
-	    return HttpResponseNotFound('Resource not found')
-This code displays the error message upon failure of a request.
 
 Let's look at examples demonstrating request handling and response construction:
 - Flask:
@@ -153,7 +103,7 @@ Let's look at examples demonstrating request handling and response construction:
 		    return jsonify(data)
 
 		app.run(debug=True)
-	Upon running the code, the page displays a welcome message. The `/not_found` page will display the error message, and the `json_ex` page displays the searialised data in JSON format.
+	Upon running the code, the page displays a welcome message. The `/not_found` endpoint will display the error message, and the `json_ex` endpoint displays the searialised data in JSON format.
 
 - Django:
 	`views.py`:
@@ -192,7 +142,6 @@ The outputs of both the codes will be the same:
 
 
 # URL Routing and Resource Endpoints
-
 URL routes are the entry points to access different resources or functionalities of a web application. In Flask or Django, URL routes are defined in the application's main **URL configuration file**, where each route is associated with a specific HTTP method and corresponds to a particular view.
 
 Once the URL routes have been created, they must be mapped to the relevant views or viewsets containing the actual business logic. In Flask, views are Python functions marked with `@app.route` decorator, but in Django, views are generally specified as methods within a class-based viewset in the `urls.py` file.
@@ -253,13 +202,12 @@ Outputs:
 
 
 # Authentication and Authorization in Web APIs
-
-Authentication and authorization play important roles in securing applications, especially when it comes to building APIs that expose sensitive data or perform critical actions.
+Authentication and authorization are essential to secure applications, especially when it comes to building APIs that expose sensitive data or perform critical actions.
 
 **Implementing Authentication for API Endpoints**
-Authentication is the process of verifying the identity of a user or entity accessing an application or service. There are several methods for implementing authentication for API endpoints:
+Authentication verifies the identity of a user or entity accessing an application or service. There are several methods for implementing authentication for API endpoints:
 
-- **Token-based Authentication**: In this method, clients are issued unique tokens upon successful login. These tokens are then used in subsequent requests to authenticate the user.
+- **Token-based Authentication**: In this method, clients are issued unique tokens upon successful login. Subsequent requests made later, use these tokens to authenticate the user.
 - **JSON Web Tokens (JWT)**: JWT is URL-safe method of encoding information that will be exchanged between two parties, such as client and server.
 
 **Enforcing Authorization Rules for Accessing API Resources**
@@ -275,7 +223,7 @@ Flask offers extensions like Flask-Login and Flask-JWT-Extended, and Django offe
 Let's take a look at an example of implementing token-based authentication using Flask:
 
 	from flask import Flask, request, jsonify
-	from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+	from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required
 
 	app = Flask(__name__)
 	app.config['JWT_SECRET_KEY'] ='supersecret'
@@ -288,7 +236,6 @@ Let's take a look at an example of implementing token-based authentication using
 	    data = request.get_json()
 	    username = data.get('username')
 	    password = data.get('password')
-	    
 	    if username in users and users[username] == password:
 	        access_token = create_access_token(identity=username)
 	        return jsonify(access_token=access_token), 200
@@ -311,506 +258,268 @@ Output:
 ![protected][9]
 
 
-## 6. Serializers and Deserializers
+# Serializers and Deserializers
+Serialization is the conversion of a complex data structure, like Python object, into a format that can be transmitted or stored in a file easily, like JSON (JavaScript Object Notation), XML (eXtensible Markup Language) or YAML.
 
-In web development, **serialization** and **deserialization** are crucial concepts, especially in frameworks like Flask and Django. These processes involve converting complex data types into formats that can be easily transmitted over the network and then reconstructing them back into their original form. In this article, we'll delve into the fundamentals of serialization and deserialization, explore their implementation in Flask and Django, and provide code examples for better understanding.
+Deserialization is the reconversion of the serialized data to its original data structure. This is important to process incoming client requests.
 
-### Introduction to Serialization and Deserialization
+Django REST Framework (DRF) in Django provides powerful serializers for converting model instances into JSON or XML formats. The `Serializer` class in DRF is where the serializers are defined. In Flask, libraries like [Marshmallow][10] or [Flask-RESTful][11] offer similar functionality.
 
-Serialization is the process of converting a complex data structure, such as a Python object or a database record, into a format that can be easily transmitted over a network or stored in a file. This format is typically **JSON (JavaScript Object Notation)** or **XML (eXtensible Markup Language)**, although other formats like YAML are also common. 
+**Integration with Validation Libraries**
+Both Flask and Django provide integration with validation libraries that can be used to ensure integrity of the data.
 
-Deserialization, on the other hand, involves reconstructing the original data structure from the serialized format. This is often necessary when receiving data from a client request or reading from a file.
+DRF serializers in Django have built-in validation capabilities and Marshmallow in Flask provides support for validation through its `Schema` class.
 
-### Serialization and Deserialization in Flask/Django
+Let's look at the codes:
 
-Both Flask and Django come with built-in support for serialization and deserialization. In Django, the primary tool for serialization is the **Django REST Framework (DRF)**, which provides powerful serializers for converting model instances into JSON or XML representations. 
+In Django, the serialization will be done in `serializers.py` file in your app's folder:
 
-In Flask, serialization is typically handled using libraries like [Marshmallow](https://marshmallow.readthedocs.io/) or [Flask-RESTful](https://flask-restful.readthedocs.io/), which offer similar functionality to DRF's serializers.
+	from rest_framework import serializers
+	from .models import Product
 
-### Using Serializers
+	class ProductSerializer(serializers.ModelSerializer):
+	    class Meta:
+	        model = Product
+	        fields = ['id', 'name', 'description']
 
-Serializers play a crucial role in converting model instances into JSON or XML representations. In Django, serializers are defined using the `Serializer` class provided by DRF. Here's an example of how you might define a serializer for a simple model:
+Define your model in `models.py`:
 
-```python
-from rest_framework import serializers
-from myapp.models import MyModel
+	from django.db import models
 
-class MyModelSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MyModel
-        fields = ['id', 'name', 'description']
-```
+	class Product(models.Model):
+	    name = models.CharField(max_length=100)
+	    description = models.TextField()
 
-Similarly, in Flask using Marshmallow, a serializer might be defined as follows:
+	    def __str__(self):
+	        return self.name
 
-```python
-from marshmallow import Schema, fields
+`views.py`:
+	
+	from django.shortcuts import render
+	from rest_framework.response import Response
+	from rest_framework.decorators import api_view
+	from .models import Product
+	from .serializers import ProductSerializer
 
-class MyModelSchema(Schema):
-    id = fields.Int()
-    name = fields.Str()
-    description = fields.Str()
-```
+	@api_view(['GET'])
+	def product_list(request):
+	    if request.method == 'GET':
+	        products = Product.objects.all()
+	        serializer = ProductSerializer(products, many=True)
+	        return Response(serializer.data)
 
-### Deserializing Request Data
+This code serializes and deserializes the data.
 
-Deserialization comes into play when processing incoming client requests. Both Flask and Django provide mechanisms for automatically deserializing request data into Python objects. 
+Output:
 
-In Django, DRF's serializers can be used in conjunction with Django's views to handle request data:
+![ser_des_django][12]
 
-```python
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from myapp.serializers import MyModelSerializer
+<div class="div-red"> <span class="alert-header">Caution:</span> Make sure to install the `djangorestframework` module and include `rest_framework` in the `INSTALLED_APPS` section in `settings.py`. </div>
 
-@api_view(['POST'])
-def create_my_model(request):
-    serializer = MyModelSerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data, status=201)
-    return Response(serializer.errors, status=400)
-```
+The same can be done in Flask using Flask-RESTful and Marshmallow:
 
-In Flask, using Marshmallow, request data can be deserialized as follows:
+	from flask import Flask, jsonify, request
+	from marshmallow import Schema, fields, ValidationError
 
-```python
-from flask import request, jsonify
-from myapp.schemas import MyModelSchema
+	app = Flask(__name__)
+	products = [
+	    {
+	        "name": "Laptop",
+	        "description": "High-performance laptop with SSD storage",
+	        "price": 1200.00
+	    },
+	    {
+	        "name": "Smartphone",
+	        "description": "Latest model with dual-camera setup",
+	        "price": 800.00
+	    }
+	]    # sample data
 
-@app.route('/mymodel', methods=['POST'])
-def create_mymodel():
-    schema = MyModelSchema()
-    data = schema.load(request.json)
-    # Process the deserialized data
-    return jsonify(data), 201
-```
+	class ProductSchema(Schema):
+	    name = fields.Str(required=True)
+	    description = fields.Str(required=True)
+	    price = fields.Float(required=True)
 
-### Integration with Validation Libraries
+	@app.route('/api', methods=['GET'])
+	def get_products():
+	    return jsonify(products), 200
 
-In addition to serialization and deserialization, validation is often an important aspect of handling data in web applications. Both Flask and Django provide integration with validation libraries that can be used in conjunction with serializers to ensure that incoming data meets certain criteria.
-
-In Django, DRF serializers come with built-in validation capabilities, allowing you to define rules for each field in your serializer. Similarly, in Flask, Marshmallow provides support for validation through its `Schema` class.
-
-## 7. CRUD Operations with Flask/Django ORM
-
-In this article, we'll explore how to perform CRUD operations (Create, Read, Update, Delete) using the Object-Relational Mapping (ORM) provided by **Flask** and **Django** frameworks. Both Flask and Django offer powerful ORM tools that simplify database interactions and make CRUD operations straightforward.
-
-### Introduction to CRUD Operations
-
-CRUD operations are fundamental in any web application as they enable the manipulation of data stored in a database. Here’s a quick rundown of each operation:
-
-- **Create**: Adding new records to the database.
-- **Read**: Retrieving existing records from the database.
-- **Update**: Modifying existing records in the database.
-- **Delete**: Removing records from the database.
-
-### Performing CRUD Operations with Flask/Django ORM
-
-#### Flask ORM
-
-Flask provides a lightweight ORM called **SQLAlchemy**, which offers a high-level abstraction for interacting with relational databases. Let's take a look at how to perform CRUD operations using Flask and SQLAlchemy.
-
-**1. Create Operation**
-
-To create a new record in the database with Flask and SQLAlchemy, you can define a model class and use the `session.add()` method followed by `session.commit()`.
-
-```python
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
-
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-
-# Creating a new user
-new_user = User(username='john_doe', email='john@example.com')
-db.session.add(new_user)
-db.session.commit()
-```
-**2. Read Operation**
-
-To retrieve records from the database, you can use SQLAlchemy's query methods such as `query.all()` or `query.filter()`.
-
-```python
-# Retrieving all users
-all_users = User.query.all()
-
-# Retrieving a specific user by ID
-user = User.query.get(1)
-
-# Filtering users by criteria
-filtered_users = User.query.filter_by(username='john_doe').all()
-```
-
-**3. Update Operation**
-
-Updating existing records involves fetching the record, modifying its attributes, and then committing the changes.
-
-```python
-# Fetching the user to update
-user = User.query.get(1)
-
-# Modifying user attributes
-user.email = 'new_email@example.com'
-
-# Committing the changes
-db.session.commit()
-```
-
-**4. Delete Operation**
-
-To delete records from the database, you can use the `session.delete()` method followed by `session.commit()`.
-
-```python
-# Fetching the user to delete
-user = User.query.get(1)
-
-# Deleting the user
-db.session.delete(user)
-db.session.commit()
-```
-
-#### Django ORM
-
-Django comes with its built-in ORM, which provides a higher-level abstraction for interacting with databases. Let's see how to perform CRUD operations using Django's ORM.
-
-**1. Create Operation**
-
-With Django ORM, creating new records is as simple as creating a new instance of a model and calling the `save()` method.
-
-```python
-from myapp.models import User
-
-# Creating a new user
-new_user = User(username='john_doe', email='john@example.com')
-new_user.save()
-```
-**2. Read Operation**
-
-Reading records from the database in Django involves using queryset methods such as `all()`, `get()`, or `filter()`.
-
-```python
-# Retrieving all users
-all_users = User.objects.all()
-
-# Retrieving a specific user by ID
-user = User.objects.get(pk=1)
-
-# Filtering users by criteria
-filtered_users = User.objects.filter(username='john_doe')
-```
-**3. Update Operation**
-
-Updating records in Django is similar to Flask. You fetch the record, modify its attributes, and then call the `save()` method.
-
-```python
-# Fetching the user to update
-user = User.objects.get(pk=1)
-
-# Modifying user attributes
-user.email = 'new_email@example.com'
-
-# Saving the changes
-user.save()
-```
-**4. Delete Operation**
-
-Deleting records in Django involves fetching the record and calling the `delete()` method.
-
-```python
-# Fetching the user to delete
-user = User.objects.get(pk=1)
-
-# Deleting the user
-user.delete()
-```
-![Request/Response using Django ORM](https://request_response_django.png)
-
-### Handling Validation and Error Cases with Flask
-
-In Flask, you can handle validation and error cases using Flask-WTF for forms and Flask's error handling mechanisms. Here's an example:
-
-```python
-from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_sqlalchemy import SQLAlchemy
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, Email
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database.db'
-
-db = SQLAlchemy(app)
-
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-
-class UserForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    submit = SubmitField('Submit')
-
-@app.route('/create_user', methods=['GET', 'POST'])
-def create_user():
-    form = UserForm()
-    if form.validate_on_submit():
-        new_user = User(username=form.username.data, email=form.email.data)
-        db.session.add(new_user)
-        db.session.commit()
-        flash('User created successfully!', 'success')
-        return redirect(url_for('index'))
-    return render_template('create_user.html', form=form)
-
-if __name__ == '__main__':
     app.run(debug=True)
-```
 
-In this code snippet, we use Flask-WTF to define a form for creating a new user. We validate the form data and handle errors appropriately.
+This code performs serialization and deserialization and displays the data in `/api`.
 
-### Handling Validation and Error Cases with Django
+Output:
 
-In Django, you can handle validation and error cases using Django forms and Django's built-in error handling features. Here's an example:
+![ser_des_flask][13]
 
-```python
-from django import forms
-from django.shortcuts import render, redirect
-from .models import User
 
-class UserForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['username', 'email']
+# CRUD Operations with Flask/Django ORM
+CRUD operations allow you to manipulate data stored in your database. Here's what each operation does:
 
-def create_user(request):
-    if request.method == 'POST':
-        form = UserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'User created successfully!')
-            return redirect('index')
-    else:
-        form = UserForm()
-    return render(request, 'create_user.html', {'form': form})
-```
+- **Create**: Adds new records to the database.
+- **Read**: Retrieves records from the database.
+- **Update**: Modifies records in the database.
+- **Delete**: Removes records from the database.
 
-In this Django code snippet, we define a Django form for creating a new user. We validate the form data using `is_valid()` and handle errors appropriately using Django's built-in `messages` framework.
+**Flask ORM**
+The SQLAlchemy ORM in Flask allows you to interact with data in databases.
 
-## 8. Versioning and Pagination: Best Practices for APIs
+- Create
+To enter a new record in your database, you can define a model class and use the `session.add()` method and then `session.commit()`.
 
-In the world of web development, **APIs** (Application Programming Interfaces) serve as a bridge between different software applications, allowing them to communicate and share data. However, as APIs evolve and grow, it becomes essential to manage changes effectively to ensure compatibility and usability. This article explores best practices for **versioning APIs** and handling **pagination** for large datasets, with a focus on implementation in Flask and Django frameworks.
+- Read
+To retrieve records from your database, you can use `query.all()` to retrieve all or `query.filter()` to retrieve based on a condition.
 
-### Versioning APIs - Best Practices for Versioning
+- Update
+To update records, you need to fetch, modify and commit changes in a record.
 
-Versioning an API is crucial to ensure backward compatibility while introducing new features or making changes. Below are some standard practices for versioning APIs:
+- Delete
+To delete records, you can use the `session.delete()` method and then `session.commit()`.
 
-1. **Semantic Versioning**: Adopting **Semantic Versioning** (SemVer) ensures that version numbers convey meaning about the underlying code changes. SemVer consists of three numbers separated by dots (e.g., MAJOR.MINOR.PATCH), where incrementing each number indicates specific types of changes.
-   
-2. **URL Versioning**: Including the version number in the URL (e.g., `/api/v1/resource`) is a common approach. It provides clear visibility and allows clients to specify the version they want to use explicitly.
+This example code demonstrates CRUD operations in Flask. Note that a simple HTML script named `product.html` has been used:
 
-3. **Header Versioning**: Alternatively, version information can be passed in the request headers. This approach keeps the URL clean but requires additional header parsing on both the client and server sides.
+	from flask import Flask, request, render_template, redirect, url_for
+	from flask_sqlalchemy import SQLAlchemy
 
-4. **Maintain Documentation**: Documenting API changes, including deprecated features and migration guides, helps developers understand and adapt to new versions seamlessly.
+	app = Flask(__name__)
+	app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///products.db'    # database
+	db = SQLAlchemy(app)
+
+	class Product(db.Model):
+	    id = db.Column(db.Integer, primary_key=True)
+	    name = db.Column(db.String(100), nullable=False)
+	    description = db.Column(db.Text, nullable=True)
+	    price = db.Column(db.Float, nullable=False)
 
-### Implementing API Versioning in Flask/Django
+	@app.route('/', methods=['GET', 'POST'])
+	def product_list():
+	    if request.method == 'POST':
+	        name = request.form['name']
+	        description = request.form['description']
+	        price = float(request.form['price'])
+	        new_product = Product(name=name, description=description, price=price)
+	        db.session.add(new_product)    # create
+	        db.session.commit()
+	        return redirect(url_for('product_list')) 
+	    products = Product.query.all()    # retrieve
+	    return render_template('product.html', products=products)
 
-#### Flask
+	@app.route('/update/<int:id>', methods=['GET', 'POST'])
+	def update_product(id):    # update
+	    product = Product.query.get_or_404(id)
+	    if request.method == 'POST':
+	        product.name = request.form['name']
+	        product.description = request.form['description']
+	        product.price = float(request.form['price'])
+	        db.session.commit()
+	        return redirect(url_for('product_list'))
+	    return render_template('product.html', product=product)
 
-In Flask, you can implement API versioning using URL prefixes or custom request headers. Here's a simple example using URL prefixes:
+	@app.route('/delete/<int:id>', methods=['POST'])
+	def delete_product(id):    # delete
+	    product = Product.query.get_or_404(id)
+	    db.session.delete(product)
+	    db.session.commit()
+	    return redirect(url_for('product_list'))
 
-```python
-from flask import Flask
+	with app.app_context():
+		db.create_all()
+	app.run(debug=True)
 
-app = Flask(__name__)
+Upon execution, a page containing existing records and a form to create a new entry will appear. Options to update and delete will be provided along each entry.
 
-@app.route('/api/v1/resource')
-def get_resource():
-    return 'This is version 1 of the resource.'
+Output:
 
-@app.route('/api/v2/resource')
-def get_resource_v2():
-    return 'This is version 2 of the resource.'
+![crud1_flask][14]
 
-if __name__ == '__main__':
-    app.run()
-```
+![crud2_flask][15]
 
-#### Django
+**Django ORM**
+Django consists of built-in ORM, which allows interaction with databases.
 
-Django offers built-in support for versioning through URL patterns. Here's how you can achieve API versioning in Django:
+- Create
+To enter a new record, create a new instance of the model and call the `save()` method.
 
-```python
-from django.urls import path
-from .views import resource_view_v1, resource_view_v2
+- Read
+You can use queryset methods such as `all()`, `get()`, or `filter()` to retrieve records.
 
-urlpatterns = [
-    path('api/v1/resource/', resource_view_v1),
-    path('api/v2/resource/', resource_view_v2),
-]
-```
-### Handling Pagination for Large Datasets
+- Update Operation
+To update records, you need to fetch, modify and save changes to the record using the `save()` method.
 
-When dealing with large datasets, returning all records at once can overwhelm both the server and client. Pagination solves this problem by splitting data into manageable chunks. Here's how to handle pagination effectively:
+- Delete Operation
+To delete, you have to fetch the record and call the `delete()` method.
 
-1. **Limit-Offset Pagination**: This method involves specifying a limit (number of items per page) and an offset (starting point). Subsequent pages are fetched by incrementing the offset.
+Let's observe CRUD operations using the following example:
 
-2. **Cursor Pagination**: Cursor pagination uses a unique identifier (e.g., primary key) to fetch the next set of results. It avoids issues with skipping or duplicating records when data is modified between requests.
+`views.py`:
 
-3. **Metadata Response**: Include metadata in the API response to provide information about total record count, current page number, and links to previous and next pages.
+	from django.shortcuts import render, redirect, get_object_or_404
+	from .models import Product
+	from .forms import ProductForm
 
-### Code Examples for Versioning and Pagination
+	def product_list(request):    # create and retrieve
+	    if request.method == 'POST':
+	        form = ProductForm(request.POST)
+	        if form.is_valid():
+	            form.save()
+	            return redirect('product_list')
+	    else:
+	        form = ProductForm()
+	    products = Product.objects.all()
+	    return render(request, 'product.html', {'products': products, 'form': form})
 
-For comprehensive code examples on API versioning and pagination in Flask and Django, refer to the following repositories:
+	def update_product(request, id):    # update
+	    product = get_object_or_404(Product, id=id)
+	    if request.method == 'POST':
+	        form = ProductForm(request.POST, instance=product)
+	        if form.is_valid():
+	            form.save()
+	            return redirect('product_list')
+	    else:
+	        form = ProductForm(instance=product)
+	    return render(request, 'product.html', {'form': form})
 
-- [Flask Versioning Example](https://github.com/samanyougarg/rest-api-example)
-- [Django Pagination Example](https://github.com/testdrivenio/django-pagination-example)
+	def delete_product(request, id):    # delete
+	    product = get_object_or_404(Product, id=id)
+	    if request.method == 'POST':
+	        product.delete()
+	        return redirect('product_list')
+	    return render(request, 'product.html', {'product': product})
 
-In summary, versioning APIs and implementing pagination are essential aspects of API development. By following best practices and using appropriate techniques, developers can ensure scalability, maintainability, and compatibility in their applications.
+`models.py`:
 
-## 9. Testing RESTful APIs
+	from django.db import models
 
-Testing RESTful APIs is a crucial aspect of software development to ensure their functionality, reliability, and performance. In this section, we'll explore various testing approaches, techniques, and tools for testing Flask and Django APIs.
+	class Product(models.Model):
+	    name = models.CharField(max_length=100)
+	    description = models.TextField(blank=True)
+	    price = models.DecimalField(max_digits=10, decimal_places=2)
 
-### Overview of Testing Approaches
+	    def __str__(self):
+	        return self.name
 
-When it comes to testing RESTful APIs, there are several approaches you can take:
+`urls.py`:
 
-1. **Unit Testing:** Testing individual components or functions of the API in isolation to verify that they work as expected.
-2. **Integration Testing:** Testing the interactions between different components or modules to ensure they integrate correctly.
-3. **End-to-End Testing:** Testing the entire system from start to finish to validate the flow of data and functionality.
+	from django.urls import path
+	from . import views
 
-### Writing Unit and Integration Tests
+	urlpatterns = [
+	    path('', views.product_list, name='product_list'),
+	    path('update/<int:id>/', views.update_product, name='update_product'),
+	    path('delete/<int:id>/', views.delete_product, name='delete_product'),
+	]
 
-For Flask and Django APIs, writing unit and integration tests is essential to maintain code quality and prevent regressions. Here's how you can do it:
+This code performs the exact same operations as the Flask code.
 
-- **Flask:** Use the built-in `unittest` module or popular testing frameworks like **pytest** to write unit tests for Flask routes and integration tests for testing interactions between different parts of the application.
+Output:
 
-- **Django:** Django provides a built-in testing framework with tools like the **TestCase** class for writing unit tests and the **Client** class for simulating HTTP requests to test views.
+![crud1_dj][16]
 
-### Using Testing Libraries and Frameworks
+![crud2_dj][17]
 
-There are several testing libraries and frameworks available for Python that can streamline the testing process:
 
-- **[pytest](https://docs.pytest.org/en/latest/):** A feature-rich testing framework that makes writing simple and scalable tests easy. It offers powerful features such as fixtures, parametrization, and plugins.
-
-- **Django REST framework's test client:** Specifically designed for testing Django REST APIs, it provides a simple yet powerful interface for making requests to API endpoints and validating responses.
-
-### Code Examples
-
-Let's take a look at some code examples for testing Flask and Django APIs:
-
-```python
-# Flask Unit Test Example
-import unittest
-from myapp import app
-
-class TestApp(unittest.TestCase):
-    def setUp(self):
-        self.app = app.test_client()
-
-    def test_hello_world(self):
-        response = self.app.get('/')
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data, b'Hello, World!')
-
-# Django Integration Test Example
-from django.test import TestCase
-from myapp.models import MyModel
-
-class MyModelTestCase(TestCase):
-    def setUp(self):
-        MyModel.objects.create(name='Test')
-
-    def test_my_model(self):
-        obj = MyModel.objects.get(name='Test')
-        self.assertEqual(obj.name, 'Test')
-```
-
-## 10. Deployment and Documentation
-
-Deploying Flask and Django APIs is a crucial step in making them accessible to users. Additionally, documenting your APIs helps other developers understand how to interact with them effectively.
-
-### Deployment Options
-
-There are various deployment options available for Flask and Django APIs:
-
-- **Docker:** Containerization allows you to package your application with its dependencies into a standardized unit, making it easy to deploy and scale.
-- **Heroku:** A cloud platform that enables you to deploy, manage, and scale applications effortlessly.
-- **AWS (Amazon Web Services):** Provides a range of services for deploying and hosting applications, including Elastic Beanstalk, Lambda, and EC2.
-
-### Configuration for Production Environments
-
-When deploying APIs to production, it's essential to configure them properly for performance, security, and scalability. 
-
-<div class="div-red"> <span class="alert-header">Caution:</span> Its important to configure settings such as database connections, caching, logging, and security measures like HTTPS. </div>
-
-### Generating API Documentation
-
-Tools like [Swagger](https://swagger.io/docs/) and OpenAPI make it easy to generate interactive API documentation from your code. These tools automatically generate documentation based on annotations in your code, making it easier for developers to understand how to use your API.
-
-### Code Examples
-
-Here's an example of how you can deploy a Flask API using Heroku and generate API documentation with Swagger:
-
-```bash
-# Deploying Flask API to Heroku
-$ heroku login
-$ git init
-$ heroku create myapp
-$ git add .
-$ git commit -m "Initial commit"
-$ git push heroku master
-
-# Generating API Documentation with Swagger
-$ pip install flask-restx
-```
-
-```python
-# app.py
-from flask import Flask
-from flask_restx import Api, Resource
-
-app = Flask(__name__)
-api = Api(app)
-
-@api.route('/')
-class HelloWorld(Resource):
-    def get(self):
-        """Returns 'Hello, World!'"""
-        return {'message': 'Hello, World!'}
-
-if __name__ == '__main__':
-    app.run(debug=True)
-```
-
-```python
-# swagger.py
-from flask import Flask
-from flask_restx import Api, Resource
-
-app = Flask(__name__)
-api = Api(app)
-
-@api.route('/')
-class HelloWorld(Resource):
-    def get(self):
-        """Returns 'Hello, World!'"""
-        return {'message': 'Hello, World!'}
-
-if __name__ == '__main__':
-    app.run(debug=True)
-```
-## Conclusion
-
-In conclusion, this article has provided a comprehensive guide to building **RESTful APIs** with **Flask** and **Django**, two popular frameworks in the world of web development. We began with an overview of REST principles and the significance of understanding them for designing APIs. Then, we delved into setting up Flask and Django projects for API development, including installing dependencies and structuring the project. We explored handling requests and responses, URL routing, authentication, and authorization, with **code examples** illustrating each concept. Additionally, we discussed serializers and deserializers, CRUD operations with Flask/Django ORM, versioning, pagination, and testing strategies for APIs. Finally, we covered deployment options and the importance of documenting APIs using tools like Swagger/OpenAPI. By following the practical examples and code snippets provided throughout the article, developers can confidently build robust and scalable RESTful APIs with Flask and Django. 
-
-By following the practical examples and code snippets provided in this guide, you'll be well-equipped to design and implement RESTful APIs that meet the needs of your web development projects. Whether you choose Flask, Django, or another framework, the principles of REST will serve as a solid foundation for building scalable and interoperable APIs.
-
+# Conclusion
+In this article, we have explored various functionalities that **Flask** and **Django** frameworks offer to create useful RESTful APIs. Features such as **authentication**, **authorization**, **serialization** and **CRUD** operations using ORMs allow us to use the two frameworks to create extremely efficient APIs that are platform independent. We highly encourage you to explore the documentations provided throughout the article to deepen your knowledge about the features and leverage them to the fullest.
 
 [1]: https://flask.palletsprojects.com/
 [2]: https://docs.djangoproject.com/en/stable/
@@ -821,3 +530,11 @@ By following the practical examples and code snippets provided in this guide, yo
 [7]: bob.png
 [8]: login.png
 [9]: protected.png
+[10]: https://marshmallow.readthedocs.io/en/stable/
+[11]: https://flask-restful.readthedocs.io/en/latest/
+[12]: ser_des_django.png
+[13]: ser_des_flask.png
+[14]: crud1_flask.png
+[15]: crud2_flask.png
+[16]: crud1_dj.png
+[17]: crud2_dj.png
