@@ -363,6 +363,161 @@ Now, we can send a `POST` request with `name` and `age` values in the terminal a
 ![json][18]
 
 
+# Flask Extensions
+Flask offers a variety of features, which can be accessed using several libraries. Let's take a look at some of them.
+
+**Flask-SQLAlchemy**
+It allows you to access databases and perform CRUD operations, simplifying the use of SQL databases in Flask.
+It is installed using the following command:
+
+	pip install Flask-SQLAlchemy
+
+**Flask-WTF**
+It is a library that helps in form handling, validating entered data and rendering HTML forms. It uses the WTForms library to do so.
+
+You can install it using the following command:
+
+	pip install Flask-WTF
+
+**Flask-RESTful**
+This library is extremely useful for developing RESTful APIs and maintain API endpoints, while following REST principles.
+
+It can be installed by the command:
+
+	pip install Flask-RESTful
+
+Here is an example of the Flask-SQLAlchemy extension:
+
+	from flask import Flask, render_template
+	from flask_sqlalchemy import SQLAlchemy
+
+	app = Flask(__name__)
+	app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+	db = SQLAlchemy(app)
+
+	class User(db.Model):
+	    id = db.Column(db.Integer, primary_key=True)
+	    username = db.Column(db.String(80), unique=True, nullable=False)
+	    email = db.Column(db.String(120), unique=True, nullable=False)
+
+	    def __repr__(self):
+	        return f'<User {self.username}>'
+
+	@app.route('/')
+	def home():
+	    users = User.query.all()
+	    return render_template('entries.html', users=users)
+
+	@app.route('/add')
+	def add_users():
+	    user1 = User(username='Amelia', email='amelia@some.com')
+	    user2 = User(username='Harry', email='har2y@some.com')
+	    user3 = User(username='Becky', email='beck@example.com')
+	    
+	    db.session.add(user1)
+	    db.session.add(user2)
+	    db.session.add(user3)
+	    db.session.commit()
+	    
+	    return 'Users added! Go to the home page to see them.'
+
+	with app.app_context():
+	    db.create_all()
+	app.run(debug=True)
+
+
+This code creates a database named `users.db` upon execution. Going to the `/add` endpoint adds the sample users' data using the `db.session.add()` function and the changes are committed using the `db.session.commit()` function. The saved data is retrieved using `User.query.all()` function and displayed on the Home page.
+
+<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> A simple HTML template named `entries.html` is also used to display the database entries.</span> </div>
+
+Output:
+
+![sql_add][19]
+
+![sql_home][20]
+
+
+# Working with Databases
+Here, we will take a look at using Flask-SQLAlchemy in a bit more detail. As mentioned earlier, this library provides an easy way to interact with SQLite databases and perform CRUD operations on them.
+
+When paired up with **Flask-Migrate**, you can handle database migration using Alembic and update the structure of your SQLAlchemy database when needed. You can install it using the command:
+
+	pip install Flask-Migrate
+
+- Initialize a migrations directory by running:
+
+		flask db init
+	This is done only once.
+- In the previous example, if the model `User` is altered to add a new column `age`, the changes are induced to the database by running:
+
+		flask db migrate -m "New column added"
+	This detects changes and generates a migration script.
+- To save changes, run:
+
+		flask db upgrade
+
+**CRUD Operations**
+The new model would look as follows:
+
+	from flask_migrate import Migrate
+	migrate = Migrate(app, db)
+
+	class User(db.Model):
+	    id = db.Column(db.Integer, primary_key=True)
+	    username = db.Column(db.String(100), unique=True, nullable=False)
+	    email = db.Column(db.String(120), unique=True, nullable=False)
+	    age = db.Column(db.Integer)
+
+- Create and Retrieve: The `User.query.all()` retrieves all existing records to display, and `db.session.add()` adds a new record, while `db.session.commit()` commits the changes.
+
+		@app.route('/', methods=['GET', 'POST'])
+		def user_list():
+		    if request.method == 'POST':
+		        username = request.form['username']
+		        email = request.form['email']
+		        age = int(request.form['age']) if request.form['age'] else None
+		        new_user = User(username=username, email=email, age=age)
+		        db.session.add(new_user)
+		        db.session.commit()
+		        return redirect(url_for('user_list'))
+
+		    users = User.query.all()
+		    return render_template('entries.html', users=users)
+
+- Update: The unique `id` of an entry to be updated is retrieved using `User.query.get_or_404(id)` and the changes are committed using `db.session.commit()`.
+
+		@app.route('/update/<int:id>', methods=['GET', 'POST'])
+		def update_user(id):
+		    user = User.query.get_or_404(id)
+		    if request.method == 'POST':
+		        user.username = request.form['username']
+		        user.email = request.form['email']
+		        user.age = int(request.form['age']) if request.form['age'] else None
+		        db.session.commit()
+		        return redirect(url_for('user_list'))
+		    return render_template('entries.html', user=user)
+
+- Delete: The `id` of a record is retrieved and deleted using `db.session.delete()`.
+
+		@app.route('/delete/<int:id>', methods=['POST'])
+		def delete_user(id):
+		    user = User.query.get_or_404(id)
+		    db.session.delete(user)
+		    db.session.commit()
+		    return redirect(url_for('user_list'))
+
+Output:
+
+![crud1][21]
+
+![crud2][22]
+
+
+# Authentication and Authorization
+
+
+
+
 
 [1]: hello_term.png
 [2]: hello_world.png
@@ -382,3 +537,7 @@ Now, we can send a `POST` request with `name` and `age` values in the terminal a
 [16]: file1.png
 [17]: file2.png
 [18]: json.png
+[19]: sql_add.png
+[20]: sql_home.png
+[21]: crud1.png
+[22]: crud2.png
