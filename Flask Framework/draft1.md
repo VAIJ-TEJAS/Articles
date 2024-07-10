@@ -1,8 +1,8 @@
 
-**Flask** is a Python web framework, known for its **flexibility** and **versatility**. It seamlessly integrates multiple functionalities, including **authentication systems** and **database connectivity**. It emphasizes modular design, code readability and minimalism. In this article, we will explore **routing**, **templating** with **Jinja2**, **request handling** and designing **RESTful APIs** with Flask with code examples to aid understanding.
+**Flask** is a Python web framework, known for its **flexibility** and **versatility**. It seamlessly integrates multiple functionalities, including **authentication systems** and **database connectivity**. It emphasizes modular design, code readability and minimalism. In this article, we will explore **routing**, **templating** with **Jinja2**, **request handling** and **Flask extensions** with code examples to aid understanding.
 
 # Getting Started with Flask
-Let's take a look and installing and setting up a Flask application.
+Let's install and set up a Flask application.
 
 <div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> You may run the following on the terminal or in a code editor or IDE like Visual Studio Code.</span> </div>
 
@@ -22,13 +22,11 @@ Let's take a look and installing and setting up a Flask application.
 	- On Linux or macOS:
 
 			source flaskenv/bin/activate
-
 3. Create your Flask application and navigate into it:
 
 		mkdir first_app
 		cd first_app
-
-4. In this directory, we will create a Python file (app.py) to write our code in:
+4. In this directory, we will create a Python file `app.py` to write our code in:
 
 		from flask import Flask
 		
@@ -39,9 +37,9 @@ Let's take a look and installing and setting up a Flask application.
 
 		app.run(debug=True)
 
-	`Flask(__name__)` creates an instance of the Flask class and `@app.route('/')` binds `say_hello` function to root URL of the web application. 
+	`Flask(__name__)` creates an instance of the Flask class and `@app.route('/')` binds `say_hello` function to the root URL of the web application. 
 
-5. To run the application, we will set the `FLASK_APP` environment variable and then run it:
+5. To run the application, we set the `FLASK_APP` environment variable and run it:
 	
 	- Setting on Windows:
 
@@ -52,8 +50,7 @@ Let's take a look and installing and setting up a Flask application.
 	- Run:
 
 			flask run
-
-This creates your first Flask application which outputs a "Hello, World" statement in the localhost.
+This creates a Flask application that outputs "Hello, World" in the localhost.
 
 Output:
 
@@ -63,18 +60,17 @@ Output:
 
 
 # Routing
-In Flask, you use routes to map URLs to functions in your web applications using the `@app.route` decorator. A route determines the logic that should be executed when a user visits a specific URL on your application. 
+In Flask, routes map URLs to functions in your web applications using the `@app.route` decorator. A route determines the logic to be executed when a user visits a specific URL on your application.
 
-Different HTTP methods, including `GET`, `POST`, `PUT`, `DELETE`, etc., can be handled by Flask routes. A route only reacts to `GET` requests by default. You can determine the type of request and respond using `request.method`.
+Different HTTP methods like `GET`, `POST`, `PUT`, `DELETE`, etc., are handled by Flask routes. A route reacts to `GET` requests by default. You can determine the type of request and respond using `request.method`.
 
-Let's understand it better using an example:
+Let's look at an example:
 
 `app.py`:
 
 	from flask import Flask, request
 	
 	app = Flask(__name__)
-
 	@app.route('/')
 	def home():
 	    return '''
@@ -108,7 +104,6 @@ Let's understand it better using an example:
 	    '''
 
 	app.run(debug=True)
-
 This code first takes you to the Home page with 3 links:
 - The `about` page has no requests specified. Hence, it reacts when a `GET` request is made.
 - The `contact` page can handle `GET` and `POST` requests. It displays slightly different sentences depending on the request made.
@@ -129,12 +124,12 @@ Output:
 
 
 # Templates and Jinja2
-You can incorporate dynamic HTML pages using Python embeddings in Flask by using Jinja2 templates. Jinja2 uses a number of features like filters, template inheritance, etc. to provide complex templates. It is essential to separate the application logic from the presentation logic in order to modularize your code.
+You can incorporate dynamic HTML pages using Python embeddings in Flask by using Jinja2 templates. Jinja2 uses many features like filters, template inheritance, etc. to provide complex templates. It is essential to separate the application logic from the presentation logic to modularize your code.
 
 **Creating and Rendering Templates in Flask**
 <div class="div-green"> <span class="alert-header">Tip:</span> <span class="alert-body"> It is recommended to store your templates in a separate directory named `templates` within your project directory.</span> </div>
 
-We will be using the example mentioned in the previous to build upon. Our code will consist of 4 HTML templates, each containing the structure of the Home, `about`, `contact` and `form` pages.
+We will use the example mentioned in the previous to build upon. Our code will consist of 4 HTML templates, each containing the structure of the Home, `about`, `contact` and `form` pages.
 
 In the `templates` folder, create the following templates:
 
@@ -240,8 +235,7 @@ Finally, these templates can be used in `app.py` using the `render_template()` f
 
 	app.run(debug=True)
 
-Notice that you can also pass dynamic data to your templates and have them stored in variables. In this example, `form.html` stores the name you enter and then displays it.
-`contact.html` can also send a `POST` request, and the type of request is stored in the `method` variable and the page is updated accordingly.
+Notice that you can also pass dynamic data to your templates and store them in variables. Here, `form.html` stores the entered name and displays it. `contact.html` stores the type of request in the `method` variable and the page is updated accordingly.
 
 Output:
 
@@ -272,16 +266,8 @@ We can build upon that code to display how `GET` parameters can be used. Let's u
 	def greet():
 	    name = request.args.get('name')
 	    return render_template('greet.html', name=name)
+`greet.html` (body):
 
-`greet.html`:
-
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>Greet</title>
-	</head>
 	<body>
 	    <h1>Greetings!</h1>
 	    <form method="get" action="/greet">
@@ -293,14 +279,12 @@ We can build upon that code to display how `GET` parameters can be used. Let's u
 	    {% endif %}
 	    <p><a href="/">Home</a></p>
 	</body>
-	</html>
 
 Output:
 
 ![greet_get1][14]
 
 ![greet_get2][15]
-
 
 **File Uploads with Flask**
 You can easily provide an option to access an uploaded file in your web application using Flask. This is possible using `request.files` that accesses uploaded files.
@@ -316,33 +300,13 @@ Let's build upon the previous code to understand this better. Add these lines to
 	            return f'File {file.filename} uploaded successfully!'
 	    return render_template('upload.html')
 
-`upload.html`:
-
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>Upload File</title>
-	</head>
-	<body>
-	    <h1>Upload a File</h1>
-	    <form method="post" enctype="multipart/form-data">
-	        <input type="file" name="file">
-	        <input type="submit" value="Upload">
-	    </form>
-	    <p><a href="/">Home</a></p>
-	</body>
-	</html>
-
-This code saves the file you upload, to the mentioned path.
+The `upload.html` script provides an option to upload files. This code saves the file you upload, to the mentioned path.
 
 Output:
 
 ![file1][16]
 
 ![file2][17]
-
 
 **Handling JSON requests**
 JSON format is mostly used to handle client-server exchange. It is a lightweight format and can also be interpreted easily by humans. Hence, handling JSON requests is essential in Flask and it is made easy with the help of `request.get_json()`.
@@ -357,35 +321,26 @@ Building upon the previous example, add the following lines to `app.py`:
 	    age = data.get('age')
 	    response = {'message': f'Name: {name}, Age: {age}'}
 	    return jsonify(response)
-
-Now, we can send a `POST` request with `name` and `age` values in the terminal after running the program. The final output would look as follows:
+Now, send a `POST` request with `name` and `age` values in the terminal after running the program. The final output would look as follows:
 
 ![json][18]
 
 
 # Flask Extensions
-Flask offers a variety of features, which can be accessed using several libraries. Let's take a look at some of them.
+Flask offers several features, which can be accessed using libraries. Let's explore some of them.
 
 **Flask-SQLAlchemy**
-It allows you to access databases and perform CRUD operations, simplifying the use of SQL databases in Flask.
-It is installed using the following command:
+It allows you to access databases and perform CRUD operations, simplifying the use of SQL databases in Flask. Install it using the following command:
 
 	pip install Flask-SQLAlchemy
-
 **Flask-WTF**
-It is a library that helps in form handling, validating entered data and rendering HTML forms. It uses the WTForms library to do so.
-
-You can install it using the following command:
+It is a library that handles forms, validates entered data and renders HTML forms. It uses the WTForms library to do so. Install it by running:
 
 	pip install Flask-WTF
-
 **Flask-RESTful**
-This library is extremely useful for developing RESTful APIs and maintain API endpoints, while following REST principles.
-
-It can be installed by the command:
+This library is useful to develop RESTful APIs and maintain API endpoints while following REST principles. Install it using the command:
 
 	pip install Flask-RESTful
-
 Here is an example of the Flask-SQLAlchemy extension:
 
 	from flask import Flask, render_template
@@ -412,23 +367,16 @@ Here is an example of the Flask-SQLAlchemy extension:
 	def add_users():
 	    user1 = User(username='Amelia', email='amelia@some.com')
 	    user2 = User(username='Harry', email='har2y@some.com')
-	    user3 = User(username='Becky', email='beck@example.com')
-	    
 	    db.session.add(user1)
 	    db.session.add(user2)
-	    db.session.add(user3)
 	    db.session.commit()
-	    
 	    return 'Users added! Go to the home page to see them.'
 
 	with app.app_context():
 	    db.create_all()
 	app.run(debug=True)
-
-
 This code creates a database named `users.db` upon execution. Going to the `/add` endpoint adds the sample users' data using the `db.session.add()` function and the changes are committed using the `db.session.commit()` function. The saved data is retrieved using `User.query.all()` function and displayed on the Home page.
-
-<div class="div-blue"> <span class="alert-header">Note:</span> <span class="alert-body"> A simple HTML template named `entries.html` is also used to display the database entries.</span> </div>
+A simple HTML template named `entries.html` is also used to display the database entries.
 
 Output:
 
@@ -438,12 +386,11 @@ Output:
 
 
 # Working with Databases
-Here, we will take a look at using Flask-SQLAlchemy in a bit more detail. As mentioned earlier, this library provides an easy way to interact with SQLite databases and perform CRUD operations on them.
+Here, we will learn to use Flask-SQLAlchemy in a bit more detail. As mentioned earlier, this library provides an easy way to interact with SQLite databases and perform CRUD operations on them.
 
 When paired up with **Flask-Migrate**, you can handle database migration using Alembic and update the structure of your SQLAlchemy database when needed. You can install it using the command:
 
 	pip install Flask-Migrate
-
 - Initialize a migrations directory by running:
 
 		flask db init
@@ -483,7 +430,6 @@ The new model would look as follows:
 
 		    users = User.query.all()
 		    return render_template('entries.html', users=users)
-
 - Update: The unique `id` of an entry to be updated is retrieved using `User.query.get_or_404(id)` and the changes are committed using `db.session.commit()`.
 
 		@app.route('/update/<int:id>', methods=['GET', 'POST'])
@@ -496,7 +442,6 @@ The new model would look as follows:
 		        db.session.commit()
 		        return redirect(url_for('user_list'))
 		    return render_template('entries.html', user=user)
-
 - Delete: The `id` of a record is retrieved and deleted using `db.session.delete()`.
 
 		@app.route('/delete/<int:id>', methods=['POST'])
@@ -514,10 +459,107 @@ Output:
 
 
 # Authentication and Authorization
+Session management tasks like logging in and logging out, can be handled easily with the help of the **Flask-Login** library. It can be installed using the following command:
+
+	pip install Flask-Login
+The **Flask-Principal** library is used for stronger security, which offers role-based access control (RBAC). It restricts access to certain actions, depending on the user's role. To install Flask-Principal, run:
+
+	pip install Flask-Principal
+- Import the necessary libraries to start the project:
+
+		from flask import Flask, request, render_template, redirect, url_for
+		from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+		from flask_principal import Principal, RoleNeed, identity_loaded, UserNeed, Identity, AnonymousIdentity, identity_changed
+
+		app = Flask(__name__)
+		app.secret_key = 'sample'  # Replace with a stronger key
+
+		users = {1: {'id': 1, 'username': 'Har2y', 'password': 'harrypass', 'roles': ['admin']},
+		    2: {'id': 2, 'username': 'Amelia', 'password': 'bedeliamy', 'roles': []},}
+	The secret key is needed to enable session cookies and for security. We have created two sample users, `Har2y` (admin), and `Amelia`.
+- Next, create and initialize instances to enable authentication and RBAC:
+
+		login_manager = LoginManager()
+		login_manager.init_app(app)
+		login_manager.login_view = 'login'
+		principals = Principal(app)
+- Create a class that inherits `UserMixin` to provide default implementation to methods like `is_authenticated` (checks if the user is authenticated), `is_active` (checks if an account is active), etc. and give it attributes:
+
+		class User(UserMixin):
+		    def __init__(self, user_data):
+		        self.id = user_data['id']
+		        self.username = user_data['username']
+		        self.password = user_data['password']
+		        self.roles = user_data.get('roles', [])
+- Next, create functions to load a user object based on their `id` and assign roles upon authentication.
+
+		@login_manager.user_loader
+		def load_user(user_id):
+		    user_data = users.get(int(user_id))
+		    if user_data:
+		        return User(user_data)
+		    return None
+
+		@identity_loaded.connect_via(app)
+		def on_identity_loaded(sender, identity):
+		    identity.user = current_user
+		    if hasattr(current_user, 'id'):
+		        identity.provides.add(UserNeed(current_user.id))
+		        if current_user.roles:
+		            for role in current_user.roles:
+		                identity.provides.add(RoleNeed(role))
+- A function for logging in accepts the username and password and checks if the details entered are correct.
+
+		@app.route('/', methods=['GET', 'POST'])
+		def login():
+		    if request.method == 'POST':
+		        username = request.form['username']
+		        password = request.form['password']
+		        user = next((u for u in users.values() if u['username'] == username and u['password'] == password), None)
+		        if user:
+		            user_obj = User(user)
+		            login_user(user_obj)
+		            identity_changed.send(app, identity=Identity(user['id']))
+		            return redirect(url_for('dashboard'))
+		    return render_template('login.html')
+- The user is taken to the dashboard if the credentials are correct.
+
+		@app.route('/dashboard')
+		@login_required
+		def dashboard():
+		    return f'Hello, {current_user.username}! <a href="{url_for("logout")}">Logout</a>'
+- The `/admin` endpoint can be accessed only by admins who have logged in.
+
+		@app.route('/admin')
+		@login_required
+		def admin():
+		    if 'admin' in current_user.roles:
+		        return 'You are an admin!'
+		    return 'Access Denied!'
+- When the user logs out, a function changes the identity to anonymous and redirects to the Login Page.
+
+		@app.route('/logout')
+		@login_required
+		def logout():
+		    logout_user()
+		    identity_changed.send(app, identity=AnonymousIdentity())
+		    return redirect(url_for('login'))
+
+		app.run(debug=True)
+
+Output:
+
+![login][23]
+
+![dashboard][24]
+
+![har2y_admin][25]
+
+![amelia_admin][26]
 
 
-
-
+# Conclusion
+Flask offers robust tools for modern web development, including extensions like **Flask-Login** and **Flask-Principal** to streamline user management and secure endpoint authorization, enhancing application security. By integrating **SQLAlchemy** for database operations, Flask ensures scalable and efficient data handling, making it a versatile option for building dynamic web apps in Python.
 
 [1]: hello_term.png
 [2]: hello_world.png
@@ -541,3 +583,7 @@ Output:
 [20]: sql_home.png
 [21]: crud1.png
 [22]: crud2.png
+[23]: login.png
+[24]: dashboard.png
+[25]: har2y_admin.png
+[26]: amelia_admin.png
