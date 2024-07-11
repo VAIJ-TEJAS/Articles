@@ -341,6 +341,7 @@ It is a library that handles forms, validates entered data and renders HTML form
 This library is useful to develop RESTful APIs and maintain API endpoints while following REST principles. Install it using the command:
 
 	pip install Flask-RESTful
+You can learn more by going through the [official documentation][27].
 Here is an example of the Flask-SQLAlchemy extension:
 
 	from flask import Flask, render_template
@@ -388,7 +389,7 @@ Output:
 # Working with Databases
 Here, we will learn to use Flask-SQLAlchemy in a bit more detail. As mentioned earlier, this library provides an easy way to interact with SQLite databases and perform CRUD operations on them.
 
-When paired up with **Flask-Migrate**, you can handle database migration using Alembic and update the structure of your SQLAlchemy database when needed. You can install it using the command:
+When paired up with **Flask-Migrate**, you can handle database migration and update the structure of your database when needed. You can install it using the command:
 
 	pip install Flask-Migrate
 - Initialize a migrations directory by running:
@@ -459,7 +460,7 @@ Output:
 
 
 # Authentication and Authorization
-Session management tasks like logging in and logging out, can be handled easily with the help of the **Flask-Login** library. It can be installed using the following command:
+Session management tasks like logging in and logging out, can be handled easily using the **Flask-Login** library. It can be installed using the following command:
 
 	pip install Flask-Login
 The **Flask-Principal** library is used for stronger security, which offers role-based access control (RBAC). It restricts access to certain actions, depending on the user's role. To install Flask-Principal, run:
@@ -477,13 +478,13 @@ The **Flask-Principal** library is used for stronger security, which offers role
 		users = {1: {'id': 1, 'username': 'Har2y', 'password': 'harrypass', 'roles': ['admin']},
 		    2: {'id': 2, 'username': 'Amelia', 'password': 'bedeliamy', 'roles': []},}
 	The secret key is needed to enable session cookies and for security. We have created two sample users, `Har2y` (admin), and `Amelia`.
-- Next, create and initialize instances to enable authentication and RBAC:
+- Create and initialize instances to enable authentication and RBAC:
 
 		login_manager = LoginManager()
 		login_manager.init_app(app)
 		login_manager.login_view = 'login'
 		principals = Principal(app)
-- Create a class that inherits `UserMixin` to provide default implementation to methods like `is_authenticated` (checks if the user is authenticated), `is_active` (checks if an account is active), etc. and give it attributes:
+- Create a class that inherits `UserMixin` to provide default implementation to methods like `is_authenticated` (checks if the user is authenticated), `is_active` (checks if an account is active), etc. and define attributes:
 
 		class User(UserMixin):
 		    def __init__(self, user_data):
@@ -491,7 +492,7 @@ The **Flask-Principal** library is used for stronger security, which offers role
 		        self.username = user_data['username']
 		        self.password = user_data['password']
 		        self.roles = user_data.get('roles', [])
-- Next, create functions to load a user object based on their `id` and assign roles upon authentication.
+- Create functions to load a user object based on their `id` and assign roles upon authentication.
 
 		@login_manager.user_loader
 		def load_user(user_id):
@@ -559,7 +560,7 @@ Output:
 
 
 # Conclusion
-Flask offers robust tools for modern web development, including extensions like **Flask-Login** and **Flask-Principal** to streamline user management and secure endpoint authorization, enhancing application security. By integrating **SQLAlchemy** for database operations, Flask ensures scalable and efficient data handling, making it a versatile option for building dynamic web apps in Python.
+Flask offers robust tools for modern web development, including extensions like **Flask-Login** and **Flask-Principal** to streamline user management and provide security, enhancing application security. By integrating **SQLAlchemy** for CRUD operations, Flask ensures scalable and efficient data handling, making it a versatile option for building dynamic web apps in Python.
 
 [1]: hello_term.png
 [2]: hello_world.png
@@ -587,3 +588,4 @@ Flask offers robust tools for modern web development, including extensions like 
 [24]: dashboard.png
 [25]: har2y_admin.png
 [26]: amelia_admin.png
+[27]: https://flask-restful.readthedocs.io/en/latest/
