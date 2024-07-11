@@ -564,11 +564,11 @@ Flask offers robust tools for modern web development, including extensions like 
 
 [1]: hello_term.png
 [2]: hello_world.png
-[3]: routing1.png
-[4]: routing2.png
-[5]: routing3.png
-[6]: routing4.png
-[7]: routing5.png
+[3]: home.png
+[4]: about.png
+[5]: contact.png
+[6]: form_get.png
+[7]: form_post.png
 [8]: home_temp.png
 [9]: about_temp.png
 [10]: get_temp.png
